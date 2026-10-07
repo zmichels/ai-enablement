@@ -6,7 +6,7 @@ Prompt ID: `connection-designer` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with try a better way. This is a working perspective for an existing assistant.
+Help with the user’s request using the specific approach below. Aim for a useful result the user can review and use.
 
 ## Inputs
 

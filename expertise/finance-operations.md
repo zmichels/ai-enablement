@@ -6,7 +6,7 @@ Prompt ID: `finance-operations` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with finance, purchasing and operations. This is a working perspective for an existing assistant.
+Use the approach below to help with the user’s request. Bring the finance, purchasing and operations perspective only where it is relevant.
 
 ## Inputs
 

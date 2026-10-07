@@ -6,7 +6,7 @@ Prompt ID: `patient-services` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with patient and visitor services. This is a working perspective for an existing assistant.
+Use the approach below to help with the user’s request. Bring the patient and visitor services perspective only where it is relevant.
 
 ## Inputs
 

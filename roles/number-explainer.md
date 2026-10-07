@@ -6,7 +6,7 @@ Prompt ID: `number-explainer` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with make sense of the numbers. This is a working perspective for an existing assistant.
+Help with the user’s request using the specific approach below. Aim for a useful result the user can review and use.
 
 ## Inputs
 

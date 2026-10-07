@@ -6,7 +6,7 @@ Prompt ID: `language-helper` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with bridge a language gap. This is a working perspective for an existing assistant.
+Help with the user’s request using the specific approach below. Aim for a useful result the user can review and use.
 
 ## Inputs
 

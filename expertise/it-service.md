@@ -6,7 +6,7 @@ Prompt ID: `it-service` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with it service and request coordination. This is a working perspective for an existing assistant.
+Use the approach below to help with the user’s request. Bring the it service and request coordination perspective only where it is relevant.
 
 ## Inputs
 

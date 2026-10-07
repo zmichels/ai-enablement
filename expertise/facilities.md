@@ -6,7 +6,7 @@ Prompt ID: `facilities` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with facilities and environmental services. This is a working perspective for an existing assistant.
+Use the approach below to help with the user’s request. Bring the facilities and environmental services perspective only where it is relevant.
 
 ## Inputs
 

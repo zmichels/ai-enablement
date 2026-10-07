@@ -6,7 +6,7 @@ Prompt ID: `business-analysis` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with business and process analysis. This is a working perspective for an existing assistant.
+Use the approach below to help with the user’s request. Bring the business and process analysis perspective only where it is relevant.
 
 ## Inputs
 

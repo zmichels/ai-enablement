@@ -6,7 +6,7 @@ Prompt ID: `strategy` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with strategy and organizational leadership. This is a working perspective for an existing assistant.
+Use the approach below to help with the user’s request. Bring the strategy and organizational leadership perspective only where it is relevant.
 
 ## Inputs
 

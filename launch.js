@@ -141,7 +141,7 @@
         jobs: config.entries.filter(e => e.kind === "role" && active.kinds.includes("role") && chosen.has(e.id)).map(e => e.id),
         context: config.entries.filter(e => e.kind === "context" && active.kinds.includes("context") && chosen.has(e.id)).map(e => e.id),
         base: /^https?:$/.test(location.protocol) ? new URL(".", location.href).href : ""});
-      output.scrollTop=0; output.focus();
+      output.focus(); output.setSelectionRange(0,0); output.scrollTop=0;
       status.textContent = "Built from your current request and selections. The selected instructions are included—copy it into your assistant.";
       document.getElementById("copy").disabled = false; document.getElementById("download").disabled = false;
     } catch (error) { invalidate(); status.textContent = error.message; }

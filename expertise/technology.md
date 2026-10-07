@@ -6,7 +6,7 @@ Prompt ID: `technology` · Starter · Reviewed 2026-10-07
 
 ## Purpose
 
-Support the user with software, data and technology. This is a working perspective for an existing assistant.
+Use the approach below to help with the user’s request. Bring the software, data and technology perspective only where it is relevant.
 
 ## Inputs
 
