@@ -1,0 +1,23 @@
+{
+  "package_id": "ai-enablement-core",
+  "version": "0.1.0",
+  "audience": "public candidate",
+  "source_commit": "3fd97b402ec475972f37a5aab9d325fb383f4d03",
+  "publication_state": "candidate; no publication approval or upload implied",
+  "files": {
+    "START_HERE.md": "241b7893414d24b78e9d8dd26aaa97598d31aab577fa3f0930ccde99498f4157",
+    "catalog.json": "814d1cd07cf81c8ab4bae3d87eedf8f4616bbd39883050dba6239d7c25a66692",
+    "learning-loop.md": "a2f4cc797743127e5e31e233bbc2dc4313a004907ee4217050e6d48164c936c7",
+    "lesson-template.md": "d5c693baab19f3ba2cc1f61f313deeeb15e6462eae95948698d5215863ec035c",
+    "overlay-contract.md": "2182fcc08d48cc57626cd33b872d8636ef4756bbe9982c6a266d8db5850ef19b",
+    "exercise.md": "7b29851b089d83c38fd70dd243d4778451c81f397d5139d70ea8ef61b90609c7",
+    "starter/README.md": "b8a5a2ba4e7e82338c0e96655e73b278bb87bb4f7622dc0f15cd5ea9d2b52c8e",
+    "starter/catalog.md": "d3ebc6cc792750b4005e94e21981d2f1d326165b47d639521e3d5a6866efff27",
+    "starter/role-prompts.md": "b2d0cea4d4500f1a92dd46839df8b8a90e9318af4db03c130306cc80651fa809",
+    "starter/project-brief.md": "1dae98c41043b337623daecde5b468e236faa8db678d8a57c3adeffe42d08ce9",
+    "starter/project-run.md": "384721f8823a373334ea44bd60d1ce05d678a0579be2e6214c677713ab9736e7",
+    "starter/coordinator-prompt.md": "0e3aad09a28956f606fa224a759481e486b6a356a81d397925ec9436dc991ac7",
+    "starter/handoff.md": "10bcfee63dc72cc57992c4e0712987f3a1a72c388ef6f31d2e7e38326c483d57",
+    "starter/example.md": "1bda02bc5e25593c4ac4823f728227ba14f221feef5a7bbad626e215bc73970f"
+  }
+}

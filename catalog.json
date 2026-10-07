@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "package_id": "ai-enablement-core",
+  "version": "0.1.0",
+  "audience": "public candidate",
+  "entry_point": "START_HERE.md",
+  "sources": {
+    "original-project-starter": "Original generic role and project starter design.",
+    "original-learning-design": "Original method design; evidence maturity and adoption are tracked separately.",
+    "original-layer-design": "Original public-core and optional-context architecture."
+  },
+  "entries": [
+    {
+      "id": "project-coordinator",
+      "kind": "prompt",
+      "use_when": "A job spans multiple roles",
+      "path": "starter/coordinator-prompt.md",
+      "audience": "public candidate",
+      "scope": "Generic project coordination",
+      "maturity": "starter",
+      "source_refs": [
+        "original-project-starter"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
+      "limitations": "Conversation and files only; no persistent executor."
+    },
+    {
+      "id": "delivery-roles",
+      "kind": "role-catalog",
+      "use_when": "Choose a job and returned artifact",
+      "path": "starter/catalog.md",
+      "audience": "public candidate",
+      "scope": "Generic workflow delivery",
+      "maturity": "starter",
+      "source_refs": [
+        "original-project-starter"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
+      "limitations": "Starter roles; not organizational assignments."
+    },
+    {
+      "id": "learning-loop",
+      "kind": "method",
+      "use_when": "Retain a useful result or failure",
+      "path": "learning-loop.md",
+      "audience": "public candidate",
+      "scope": "Evidence-based reusable improvement",
+      "maturity": "starter",
+      "source_refs": [
+        "original-learning-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
+      "limitations": "Not evaluated across real projects yet."
+    },
+    {
+      "id": "lesson-record",
+      "kind": "template",
+      "use_when": "Record a candidate reusable lesson",
+      "path": "lesson-template.md",
+      "audience": "public candidate",
+      "scope": "Candidate learning artifact",
+      "maturity": "starter",
+      "source_refs": [
+        "original-learning-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
+      "limitations": "Filled records can contain private evidence."
+    },
+    {
+      "id": "context-overlay",
+      "kind": "contract",
+      "use_when": "Add scoped organizational context",
+      "path": "overlay-contract.md",
+      "audience": "public candidate",
+      "scope": "Optional independent context pack",
+      "maturity": "starter",
+      "source_refs": [
+        "original-layer-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
+      "limitations": "Adds no execution authority."
+    },
+    {
+      "id": "package-exercise",
+      "kind": "evaluation",
+      "use_when": "Evaluate the package before adoption",
+      "path": "exercise.md",
+      "audience": "public candidate",
+      "scope": "Package behavior and utility",
+      "maturity": "starter",
+      "source_refs": [
+        "original-layer-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
+      "limitations": "Test plan; no outcome claimed."
+    }
+  ]
+}
