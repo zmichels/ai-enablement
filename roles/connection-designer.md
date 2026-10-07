@@ -1,6 +1,6 @@
 # Design an improvement
 
-Role ID: `connection-designer`. Use when: choose how people, agents and tools should work together.
+Role ID: `connection-designer`. Use when: Choose what to change and how it should work.
 
 ## Inputs
 

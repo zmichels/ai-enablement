@@ -1,6 +1,6 @@
 # Recover prior knowledge
 
-Role ID: `evidence-miner`. Use when: find useful context in permitted sources.
+Role ID: `evidence-miner`. Use when: Find relevant facts, decisions, and past work.
 
 ## Inputs
 

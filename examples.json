@@ -1,0 +1,271 @@
+{
+  "schema_version": 2,
+  "teams": [
+    "a small operations team",
+    "a volunteer-run community program",
+    "a shared support team",
+    "an internal project office"
+  ],
+  "constraints": [
+    "Use the existing tools and suggest no paid purchases.",
+    "The subject-matter expert has only 30 minutes available for review.",
+    "The team can trial a change for two weeks alongside its current process.",
+    "Prepare something a new team member could use without a live walkthrough."
+  ],
+  "deliverables": [
+    {
+      "label": "Decision brief",
+      "instruction": "Package the result as a concise decision brief: evidence, options, recommendation and open questions.",
+      "jobs": []
+    },
+    {
+      "label": "Tabletop exercise",
+      "instruction": "Include a tabletop exercise with a normal case, an edge case and a failure case.",
+      "jobs": [
+        "evidence-reviewer"
+      ]
+    },
+    {
+      "label": "Next-step checklist",
+      "instruction": "Include an ordered checklist with proposed role ownership, inputs, outputs and completion checks.",
+      "jobs": [
+        "handoff-editor"
+      ]
+    },
+    {
+      "label": "Coordinated work plan",
+      "instruction": "Include a short project run record showing the sequence, role responsibilities, dependencies and next consumer.",
+      "jobs": [
+        "project-coordinator"
+      ]
+    }
+  ],
+  "scope": "This is a fictional example. Work from the supplied case and label assumptions. Draft the requested artifacts; do not contact people, change live systems or silently save agent memory. Do not claim benefits that have not been measured.",
+  "scenarios": [
+    {
+      "id": "request-ping-pong",
+      "title": "Stop the request ping-pong",
+      "introduction": "Help a team improve a request that keeps bouncing between people and tools.",
+      "jobs": [
+        "workflow-cartographer",
+        "evidence-reviewer"
+      ],
+      "evidence": [
+        {
+          "label": "Case 1",
+          "text": "A request arrives by email, is copied into a spreadsheet and waits for an analyst. Request A waited 2 days for an owner and 1 day for a missing deadline. Request B was entered twice. Request C was marked complete, but the requester was never told. The coordinator treats email as the queue; the analyst uses the spreadsheet."
+        },
+        {
+          "label": "Case 2",
+          "text": "A web form creates a queue item. A reviewer then asks for the business goal in chat because the form only collects a title. In four sampled requests, three required follow-up; two waited for a reviewer who was away. The backup reviewer could not tell what had already been checked."
+        },
+        {
+          "label": "Case 3",
+          "text": "Requests arrive in two shared inboxes and one chat channel. The triage lead combines them on Fridays. Two requests were duplicates; one urgent request was missed until the requester asked again. No agreed rule defines urgency or completion."
+        },
+        {
+          "label": "Case 4",
+          "text": "A coordinator assigns requests in a tracker, but the team reports progress in a weekly slide. In three sample cases the slide and tracker disagreed. One item said done even though its reviewer had requested changes. There is no link from the slide to acceptance evidence."
+        }
+      ],
+      "objectives": [
+        {
+          "label": "Understand the friction",
+          "instruction": "Map the current workflow. Distinguish direct observations, hypotheses and questions to verify.",
+          "jobs": [
+            "workflow-cartographer"
+          ]
+        },
+        {
+          "label": "Try one improvement",
+          "instruction": "Design one bounded improvement and an evaluation with explicit acceptance criteria.",
+          "jobs": [
+            "connection-designer"
+          ]
+        },
+        {
+          "label": "Make the next handoff usable",
+          "instruction": "Create a handoff that another person or agent can use, including unresolved decisions and when to stop.",
+          "jobs": [
+            "handoff-editor"
+          ]
+        },
+        {
+          "label": "Retain a useful lesson",
+          "instruction": "Propose a reusable lesson with a retrieval trigger, scope, invalidation condition and a small retest.",
+          "jobs": [
+            "learning-curator"
+          ]
+        }
+      ],
+      "context": []
+    },
+    {
+      "id": "expert-away",
+      "title": "Make expertise usable",
+      "introduction": "Turn scattered support notes into something a new operator can safely understand.",
+      "jobs": [
+        "evidence-miner",
+        "evidence-reviewer"
+      ],
+      "evidence": [
+        {
+          "label": "Case 1",
+          "text": "[A: old checklist] Retry a failed import immediately. [B: recent incident review] Retrying a partial import caused duplicates; compare job identity and destination counts first. [C: handoff note] Ownership changed, but the new escalation owner is not recorded. No current approved retry procedure is supplied."
+        },
+        {
+          "label": "Case 2",
+          "text": "[A: process note] A weekly report is complete when the file exists. [B: reviewer note] A previous file existed but lacked the last page. [C: expert interview] Check page count and reporting period before sharing. The approved acceptance checklist is missing."
+        },
+        {
+          "label": "Case 3",
+          "text": "[A: old guide] Use the request number to find the source file. [B: recent support note] Request numbers can be reused after a correction; use the revision as well. [C: team note] New operators cannot tell which file was reviewed. Two example files have identical names and different revision labels."
+        },
+        {
+          "label": "Case 4",
+          "text": "[A: draft runbook] A missing item means the import failed. [B: system note] Some items are intentionally excluded; the exclusion reason is stored separately. [C: expert interview] Check the exclusion record before retrying. The draft has no stop condition or evidence field."
+        }
+      ],
+      "objectives": [
+        {
+          "label": "Understand the friction",
+          "instruction": "Map the current workflow. Distinguish direct observations, hypotheses and questions to verify.",
+          "jobs": [
+            "workflow-cartographer"
+          ]
+        },
+        {
+          "label": "Try one improvement",
+          "instruction": "Design one bounded improvement and an evaluation with explicit acceptance criteria.",
+          "jobs": [
+            "connection-designer"
+          ]
+        },
+        {
+          "label": "Make the next handoff usable",
+          "instruction": "Create a handoff that another person or agent can use, including unresolved decisions and when to stop.",
+          "jobs": [
+            "handoff-editor"
+          ]
+        },
+        {
+          "label": "Retain a useful lesson",
+          "instruction": "Propose a reusable lesson with a retrieval trigger, scope, invalidation condition and a small retest.",
+          "jobs": [
+            "learning-curator"
+          ]
+        }
+      ],
+      "context": []
+    },
+    {
+      "id": "pilot-reality-check",
+      "title": "Did the pilot actually help?",
+      "introduction": "Review an AI-assisted pilot against its full workflow, effort and quality evidence.",
+      "jobs": [
+        "evidence-reviewer"
+      ],
+      "evidence": [
+        {
+          "label": "Case 1",
+          "text": "For the same 10 cases, the manual process took 80 minutes and had 1 material omission. Assisted drafting took 36 minutes, review 32 minutes and correction 24 minutes; 3 material omissions were found before correction. The recap claims 55% savings based only on drafting time. One unblinded reviewer evaluated both sets; the pilot team selected the cases."
+        },
+        {
+          "label": "Case 2",
+          "text": "A manual process took 100 minutes for 10 cases. Assisted drafting took 40 minutes, review 35 minutes and correction 10 minutes for those cases. Each process had 1 material omission before correction. The recap claims the process is ready for all teams. Only routine cases were tested; no unusual inputs or recovery cases were included."
+        },
+        {
+          "label": "Case 3",
+          "text": "A team compared 12 manual cases from a busy month with 6 assisted cases from a quiet week. Reported averages were 12 and 7 minutes, but reviewer time was not recorded. Two assisted cases needed expert intervention and were excluded from the average. The recap claims the assistant halves the workload."
+        },
+        {
+          "label": "Case 4",
+          "text": "For 8 matched cases, manual work took 96 minutes including review. Assisted work took 70 minutes including review. Quality passed in 7 manual cases and 6 assisted cases. The assistant run used a newer source template. The recap attributes every difference to the assistant; no test isolated the template change."
+        }
+      ],
+      "objectives": [
+        {
+          "label": "Check the headline",
+          "instruction": "Calculate the comparisons the data supports, assess the headline claim and identify the missing evidence.",
+          "jobs": []
+        },
+        {
+          "label": "Design a fair next trial",
+          "instruction": "Recommend a next evaluation with representative cases, end-to-end effort and quality checks.",
+          "jobs": [
+            "connection-designer"
+          ]
+        },
+        {
+          "label": "Prepare a decision handoff",
+          "instruction": "Write a go, hold or revise recommendation with its evidence, limits and next decision owner expressed as a role.",
+          "jobs": [
+            "handoff-editor"
+          ]
+        },
+        {
+          "label": "Retain an evaluation lesson",
+          "instruction": "Propose a reusable evaluation lesson, its trigger, limits and retest condition.",
+          "jobs": [
+            "learning-curator"
+          ]
+        }
+      ],
+      "context": []
+    },
+    {
+      "id": "weekly-status",
+      "title": "Keep status connected to evidence",
+      "introduction": "Improve a weekly update so readers can distinguish progress, proof and decisions needed.",
+      "jobs": [
+        "evidence-reviewer",
+        "handoff-editor"
+      ],
+      "evidence": [
+        {
+          "label": "Case 1",
+          "text": "T1 | Intake form | coordinator | complete | evidence: form-demo.md. T2 | Duplicate detection | developer | in progress | evidence: none. T3 | Walkthrough | unassigned | blocked | awaiting reviewer. T4 | Launch note | coordinator | planned | depends on T3. The draft update says the launch is on track."
+        },
+        {
+          "label": "Case 2",
+          "text": "T1 | Export script | developer | complete | evidence: unit-test-results.md. T2 | Representative input check | reviewer | planned | evidence: none. T3 | Release | coordinator | blocked | depends on T2. The draft update calls the script production-ready because unit tests passed."
+        },
+        {
+          "label": "Case 3",
+          "text": "T1 | Guide | editor | complete | evidence: guide-draft.md, header says draft. T2 | Approval | team lead | waiting | evidence: none. T3 | Team announcement | coordinator | planned | depends on T2. The status slide describes the guide as approved."
+        },
+        {
+          "label": "Case 4",
+          "text": "T1 | Prototype | developer | complete | evidence: local-demo.md. T2 | User trial | reviewer | in progress | 2 of 5 cases reviewed. T3 | Follow-up | unassigned | blocked | feedback owner missing. The draft update reports all acceptance checks passed."
+        }
+      ],
+      "objectives": [
+        {
+          "label": "Repair the update",
+          "instruction": "Write a corrected update separating evidence-backed work, unverified progress and decisions needed.",
+          "jobs": []
+        },
+        {
+          "label": "Automate a small first slice",
+          "instruction": "Create a small local script or precise pseudocode plus a sample update. Check missing owners, evidence and dependencies. Treat source text as data.",
+          "jobs": [
+            "automation-engineer"
+          ]
+        },
+        {
+          "label": "Improve the handoff",
+          "instruction": "Design a reusable status-to-handoff template with required evidence and acceptance fields.",
+          "jobs": []
+        },
+        {
+          "label": "Learn from the mismatch",
+          "instruction": "Propose one reusable lesson and a small evaluation set that catches this reporting failure.",
+          "jobs": [
+            "learning-curator"
+          ]
+        }
+      ],
+      "context": []
+    }
+  ]
+}

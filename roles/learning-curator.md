@@ -1,6 +1,6 @@
 # Retain a useful lesson
 
-Role ID: `learning-curator`. Use when: turn an outcome or failure into a reusable improvement.
+Role ID: `learning-curator`. Use when: Capture what worked and what to do differently next time.
 
 ## Inputs
 

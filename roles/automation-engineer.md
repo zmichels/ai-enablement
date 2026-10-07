@@ -1,6 +1,6 @@
 # Build a bounded automation
 
-Role ID: `automation-engineer`. Use when: turn a reviewed workflow into a testable implementation.
+Role ID: `automation-engineer`. Use when: Build and test a small automation for a defined task.
 
 ## Inputs
 

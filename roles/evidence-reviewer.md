@@ -1,6 +1,6 @@
 # Review the result
 
-Role ID: `evidence-reviewer`. Use when: decide what a trial actually established.
+Role ID: `evidence-reviewer`. Use when: Check the output, find gaps, and decide what is ready.
 
 ## Inputs
 

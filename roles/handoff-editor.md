@@ -1,6 +1,6 @@
 # Prepare a handoff
 
-Role ID: `handoff-editor`. Use when: make work usable by the next person or agent.
+Role ID: `handoff-editor`. Use when: Summarize progress, open questions, and next steps.
 
 ## Inputs
 

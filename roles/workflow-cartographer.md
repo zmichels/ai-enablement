@@ -1,6 +1,6 @@
 # Understand the work
 
-Role ID: `workflow-cartographer`. Use when: map a representative case before designing changes.
+Role ID: `workflow-cartographer`. Use when: Map the steps, people, and tools involved.
 
 ## Inputs
 

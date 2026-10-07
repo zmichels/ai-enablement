@@ -17,3 +17,5 @@ For a visual start, open `index.html` from a downloaded or cloned folder. Select
 Organizations can add a separate [context pack](overlay-contract.md). This public catalog works without one. Actual project evidence and assignments belong in your authorized project workspace.
 
 Version 0.2.0 is a starter with checked package links and launch behavior. Use the [exercise](exercise.md) to evaluate practical benefit; no general effectiveness claim is made.
+
+In the launch page, choose an example theme or **Surprise me**, then click **Generate example**. It mixes fictional evidence, an objective, a team, a constraint and an output format, and selects matching roles or context. Edit the result and click **Build launch prompt** yourself. **Restore my draft** recovers your earlier input and selections.

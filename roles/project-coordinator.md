@@ -1,6 +1,6 @@
 # Coordinate a project
 
-Role ID: `project-coordinator`. Use when: connect several jobs into a resumable plan.
+Role ID: `project-coordinator`. Use when: Define roles, break down tasks, and plan the work.
 
 ## Inputs
 
