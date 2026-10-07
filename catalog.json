@@ -1,104 +1,196 @@
 {
   "schema_version": 1,
   "package_id": "ai-enablement-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "audience": "public candidate",
   "entry_point": "START_HERE.md",
   "sources": {
-    "original-project-starter": "Original generic role and project starter design.",
-    "original-learning-design": "Original method design; evidence maturity and adoption are tracked separately.",
-    "original-layer-design": "Original public-core and optional-context architecture."
+    "product-design": "Versioned role and learning design; starter methods pending representative project evaluation."
   },
   "entries": [
     {
       "id": "project-coordinator",
-      "kind": "prompt",
-      "use_when": "A job spans multiple roles",
-      "path": "starter/coordinator-prompt.md",
+      "title": "Coordinate a project",
+      "kind": "role",
+      "use_when": "Connect several jobs into a resumable plan",
+      "path": "roles/project-coordinator.md",
+      "artifact": "starter/project-run.md",
       "audience": "public candidate",
-      "scope": "Generic project coordination",
+      "scope": "Generic delivery and learning",
       "maturity": "starter",
       "source_refs": [
-        "original-project-starter"
+        "product-design"
       ],
       "reviewed_at": "2026-10-06",
-      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
-      "limitations": "Conversation and files only; no persistent executor."
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
     },
     {
-      "id": "delivery-roles",
-      "kind": "role-catalog",
-      "use_when": "Choose a job and returned artifact",
-      "path": "starter/catalog.md",
+      "id": "workflow-cartographer",
+      "title": "Understand the work",
+      "kind": "role",
+      "use_when": "Map a representative case before designing changes",
+      "path": "roles/workflow-cartographer.md",
+      "artifact": "artifacts/workflow-observation.md",
       "audience": "public candidate",
-      "scope": "Generic workflow delivery",
+      "scope": "Generic delivery and learning",
       "maturity": "starter",
       "source_refs": [
-        "original-project-starter"
+        "product-design"
       ],
       "reviewed_at": "2026-10-06",
-      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
-      "limitations": "Starter roles; not organizational assignments."
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
+    },
+    {
+      "id": "connection-designer",
+      "title": "Design an improvement",
+      "kind": "role",
+      "use_when": "Choose how people, agents and tools should work together",
+      "path": "roles/connection-designer.md",
+      "artifact": "artifacts/connection-design.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
+    },
+    {
+      "id": "evidence-reviewer",
+      "title": "Review the result",
+      "kind": "role",
+      "use_when": "Decide what a trial actually established",
+      "path": "roles/evidence-reviewer.md",
+      "artifact": "artifacts/evidence-review.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
+    },
+    {
+      "id": "handoff-editor",
+      "title": "Prepare a handoff",
+      "kind": "role",
+      "use_when": "Make work usable by the next person or agent",
+      "path": "roles/handoff-editor.md",
+      "artifact": "starter/handoff.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
+    },
+    {
+      "id": "evidence-miner",
+      "title": "Recover prior knowledge",
+      "kind": "role",
+      "use_when": "Find useful context in permitted sources",
+      "path": "roles/evidence-miner.md",
+      "artifact": "artifacts/evidence-map.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
+    },
+    {
+      "id": "automation-engineer",
+      "title": "Build a bounded automation",
+      "kind": "role",
+      "use_when": "Turn a reviewed workflow into a testable implementation",
+      "path": "roles/automation-engineer.md",
+      "artifact": "artifacts/implementation.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
+    },
+    {
+      "id": "learning-curator",
+      "title": "Retain a useful lesson",
+      "kind": "role",
+      "use_when": "Turn an outcome or failure into a reusable improvement",
+      "path": "roles/learning-curator.md",
+      "artifact": "lesson-template.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner."
     },
     {
       "id": "learning-loop",
+      "title": "How agents retain lessons",
       "kind": "method",
-      "use_when": "Retain a useful result or failure",
+      "use_when": "How agents retain lessons",
       "path": "learning-loop.md",
       "audience": "public candidate",
-      "scope": "Evidence-based reusable improvement",
+      "scope": "Generic method",
       "maturity": "starter",
       "source_refs": [
-        "original-learning-design"
+        "product-design"
       ],
       "reviewed_at": "2026-10-06",
-      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
-      "limitations": "Not evaluated across real projects yet."
-    },
-    {
-      "id": "lesson-record",
-      "kind": "template",
-      "use_when": "Record a candidate reusable lesson",
-      "path": "lesson-template.md",
-      "audience": "public candidate",
-      "scope": "Candidate learning artifact",
-      "maturity": "starter",
-      "source_refs": [
-        "original-learning-design"
-      ],
-      "reviewed_at": "2026-10-06",
-      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
-      "limitations": "Filled records can contain private evidence."
+      "freshness": "Review on source change or failed use.",
+      "limitations": "Method, not a hosted runtime or validated benefit claim."
     },
     {
       "id": "context-overlay",
-      "kind": "contract",
-      "use_when": "Add scoped organizational context",
+      "title": "Add organizational context",
+      "kind": "method",
+      "use_when": "Add organizational context",
       "path": "overlay-contract.md",
       "audience": "public candidate",
-      "scope": "Optional independent context pack",
+      "scope": "Generic method",
       "maturity": "starter",
       "source_refs": [
-        "original-layer-design"
+        "product-design"
       ],
       "reviewed_at": "2026-10-06",
-      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
-      "limitations": "Adds no execution authority."
+      "freshness": "Review on source change or failed use.",
+      "limitations": "Method, not a hosted runtime or validated benefit claim."
     },
     {
       "id": "package-exercise",
-      "kind": "evaluation",
-      "use_when": "Evaluate the package before adoption",
+      "title": "Evaluate this package",
+      "kind": "method",
+      "use_when": "Evaluate this package",
       "path": "exercise.md",
       "audience": "public candidate",
-      "scope": "Package behavior and utility",
+      "scope": "Generic method",
       "maturity": "starter",
       "source_refs": [
-        "original-layer-design"
+        "product-design"
       ],
       "reviewed_at": "2026-10-06",
-      "freshness": "Recheck on source change or failed use; no live platform state asserted.",
-      "limitations": "Test plan; no outcome claimed."
+      "freshness": "Review on source change or failed use.",
+      "limitations": "Method, not a hosted runtime or validated benefit claim."
     }
   ]
 }
