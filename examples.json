@@ -1,271 +1,1340 @@
 {
-  "schema_version": 2,
-  "teams": [
-    "a small operations team",
-    "a volunteer-run community program",
-    "a shared support team",
-    "an internal project office"
-  ],
-  "constraints": [
-    "Use the existing tools and suggest no paid purchases.",
-    "The subject-matter expert has only 30 minutes available for review.",
-    "The team can trial a change for two weeks alongside its current process.",
-    "Prepare something a new team member could use without a live walkthrough."
-  ],
-  "deliverables": [
-    {
-      "label": "Decision brief",
-      "instruction": "Package the result as a concise decision brief: evidence, options, recommendation and open questions.",
-      "jobs": []
-    },
-    {
-      "label": "Tabletop exercise",
-      "instruction": "Include a tabletop exercise with a normal case, an edge case and a failure case.",
-      "jobs": [
-        "evidence-reviewer"
-      ]
-    },
-    {
-      "label": "Next-step checklist",
-      "instruction": "Include an ordered checklist with proposed role ownership, inputs, outputs and completion checks.",
-      "jobs": [
-        "handoff-editor"
-      ]
-    },
-    {
-      "label": "Coordinated work plan",
-      "instruction": "Include a short project run record showing the sequence, role responsibilities, dependencies and next consumer.",
-      "jobs": [
-        "project-coordinator"
-      ]
-    }
-  ],
-  "scope": "This is a fictional example. Work from the supplied case and label assumptions. Draft the requested artifacts; do not contact people, change live systems or silently save agent memory. Do not claim benefits that have not been measured.",
+  "schema_version": 3,
+  "synthetic": true,
+  "description": "Made-up situations with scenario-specific requests, formats and preferences.",
   "scenarios": [
     {
-      "id": "request-ping-pong",
-      "title": "Stop the request ping-pong",
-      "introduction": "Help a team improve a request that keeps bouncing between people and tools.",
+      "id": "email",
+      "title": "An email I have rewritten six times",
       "jobs": [
-        "workflow-cartographer",
-        "evidence-reviewer"
+        "message-writer"
       ],
-      "evidence": [
+      "context": [],
+      "situations": [
         {
-          "label": "Case 1",
-          "text": "A request arrives by email, is copied into a spreadsheet and waits for an analyst. Request A waited 2 days for an owner and 1 day for a missing deadline. Request B was entered twice. Request C was marked complete, but the requester was never told. The coordinator treats email as the queue; the analyst uses the spreadsheet."
+          "label": "Late reply",
+          "text": "I owe a colleague a reply. They asked on Monday whether I could cover their Thursday meeting. I can join the first 20 minutes, but I have another commitment after that. I keep writing a whole paragraph to say this."
         },
         {
-          "label": "Case 2",
-          "text": "A web form creates a queue item. A reviewer then asks for the business goal in chat because the form only collects a title. In four sampled requests, three required follow-up; two waited for a reviewer who was away. The backup reviewer could not tell what had already been checked."
+          "label": "Missing information",
+          "text": "I need to ask someone to send the room number and start time for a training session. They have already sent me a long email about the agenda, so I do not want this to sound like I ignored it."
         },
         {
-          "label": "Case 3",
-          "text": "Requests arrive in two shared inboxes and one chat channel. The triage lead combines them on Fridays. Two requests were duplicates; one urgent request was missed until the requester asked again. No agreed rule defines urgency or completion."
-        },
-        {
-          "label": "Case 4",
-          "text": "A coordinator assigns requests in a tracker, but the team reports progress in a weekly slide. In three sample cases the slide and tracker disagreed. One item said done even though its reviewer had requested changes. There is no link from the slide to acceptance evidence."
+          "label": "Change of plan",
+          "text": "We said we would send our team update on Friday. We are still checking two figures and can send it Tuesday instead. I want to explain the delay without making it sound like a catastrophe."
         }
       ],
-      "objectives": [
+      "requests": [
         {
-          "label": "Understand the friction",
-          "instruction": "Map the current workflow. Distinguish direct observations, hypotheses and questions to verify.",
-          "jobs": [
-            "workflow-cartographer"
-          ]
-        },
-        {
-          "label": "Try one improvement",
-          "instruction": "Design one bounded improvement and an evaluation with explicit acceptance criteria.",
-          "jobs": [
-            "connection-designer"
-          ]
-        },
-        {
-          "label": "Make the next handoff usable",
-          "instruction": "Create a handoff that another person or agent can use, including unresolved decisions and when to stop.",
-          "jobs": [
-            "handoff-editor"
-          ]
-        },
-        {
-          "label": "Retain a useful lesson",
-          "instruction": "Propose a reusable lesson with a retrieval trigger, scope, invalidation condition and a small retest.",
-          "jobs": [
-            "learning-curator"
-          ]
-        }
-      ],
-      "context": []
-    },
-    {
-      "id": "expert-away",
-      "title": "Make expertise usable",
-      "introduction": "Turn scattered support notes into something a new operator can safely understand.",
-      "jobs": [
-        "evidence-miner",
-        "evidence-reviewer"
-      ],
-      "evidence": [
-        {
-          "label": "Case 1",
-          "text": "[A: old checklist] Retry a failed import immediately. [B: recent incident review] Retrying a partial import caused duplicates; compare job identity and destination counts first. [C: handoff note] Ownership changed, but the new escalation owner is not recorded. No current approved retry procedure is supplied."
-        },
-        {
-          "label": "Case 2",
-          "text": "[A: process note] A weekly report is complete when the file exists. [B: reviewer note] A previous file existed but lacked the last page. [C: expert interview] Check page count and reporting period before sharing. The approved acceptance checklist is missing."
-        },
-        {
-          "label": "Case 3",
-          "text": "[A: old guide] Use the request number to find the source file. [B: recent support note] Request numbers can be reused after a correction; use the revision as well. [C: team note] New operators cannot tell which file was reviewed. Two example files have identical names and different revision labels."
-        },
-        {
-          "label": "Case 4",
-          "text": "[A: draft runbook] A missing item means the import failed. [B: system note] Some items are intentionally excluded; the exclusion reason is stored separately. [C: expert interview] Check the exclusion record before retrying. The draft has no stop condition or evidence field."
-        }
-      ],
-      "objectives": [
-        {
-          "label": "Understand the friction",
-          "instruction": "Map the current workflow. Distinguish direct observations, hypotheses and questions to verify.",
-          "jobs": [
-            "workflow-cartographer"
-          ]
-        },
-        {
-          "label": "Try one improvement",
-          "instruction": "Design one bounded improvement and an evaluation with explicit acceptance criteria.",
-          "jobs": [
-            "connection-designer"
-          ]
-        },
-        {
-          "label": "Make the next handoff usable",
-          "instruction": "Create a handoff that another person or agent can use, including unresolved decisions and when to stop.",
-          "jobs": [
-            "handoff-editor"
-          ]
-        },
-        {
-          "label": "Retain a useful lesson",
-          "instruction": "Propose a reusable lesson with a retrieval trigger, scope, invalidation condition and a small retest.",
-          "jobs": [
-            "learning-curator"
-          ]
-        }
-      ],
-      "context": []
-    },
-    {
-      "id": "pilot-reality-check",
-      "title": "Did the pilot actually help?",
-      "introduction": "Review an AI-assisted pilot against its full workflow, effort and quality evidence.",
-      "jobs": [
-        "evidence-reviewer"
-      ],
-      "evidence": [
-        {
-          "label": "Case 1",
-          "text": "For the same 10 cases, the manual process took 80 minutes and had 1 material omission. Assisted drafting took 36 minutes, review 32 minutes and correction 24 minutes; 3 material omissions were found before correction. The recap claims 55% savings based only on drafting time. One unblinded reviewer evaluated both sets; the pilot team selected the cases."
-        },
-        {
-          "label": "Case 2",
-          "text": "A manual process took 100 minutes for 10 cases. Assisted drafting took 40 minutes, review 35 minutes and correction 10 minutes for those cases. Each process had 1 material omission before correction. The recap claims the process is ready for all teams. Only routine cases were tested; no unusual inputs or recovery cases were included."
-        },
-        {
-          "label": "Case 3",
-          "text": "A team compared 12 manual cases from a busy month with 6 assisted cases from a quiet week. Reported averages were 12 and 7 minutes, but reviewer time was not recorded. Two assisted cases needed expert intervention and were excluded from the average. The recap claims the assistant halves the workload."
-        },
-        {
-          "label": "Case 4",
-          "text": "For 8 matched cases, manual work took 96 minutes including review. Assisted work took 70 minutes including review. Quality passed in 7 manual cases and 6 assisted cases. The assistant run used a newer source template. The recap attributes every difference to the assistant; no test isolated the template change."
-        }
-      ],
-      "objectives": [
-        {
-          "label": "Check the headline",
-          "instruction": "Calculate the comparisons the data supports, assess the headline claim and identify the missing evidence.",
+          "label": "Clear reply",
+          "instruction": "Help me write a clear, friendly reply.",
           "jobs": []
         },
         {
-          "label": "Design a fair next trial",
-          "instruction": "Recommend a next evaluation with representative cases, end-to-end effort and quality checks.",
-          "jobs": [
-            "connection-designer"
-          ]
+          "label": "Short reply",
+          "instruction": "Help me say what needs saying without overexplaining.",
+          "jobs": []
         },
         {
-          "label": "Prepare a decision handoff",
-          "instruction": "Write a go, hold or revise recommendation with its evidence, limits and next decision owner expressed as a role.",
-          "jobs": [
-            "handoff-editor"
-          ]
-        },
-        {
-          "label": "Retain an evaluation lesson",
-          "instruction": "Propose a reusable evaluation lesson, its trigger, limits and retest condition.",
-          "jobs": [
-            "learning-curator"
-          ]
+          "label": "Natural reply",
+          "instruction": "Can you draft something that sounds like a person I would actually work with?",
+          "jobs": []
         }
       ],
-      "context": []
+      "formats": [
+        {
+          "label": "One draft",
+          "instruction": "Give me one version I can edit.",
+          "jobs": []
+        },
+        {
+          "label": "Two lengths",
+          "instruction": "Give me a short version and a slightly warmer one.",
+          "jobs": []
+        },
+        {
+          "label": "Opening first",
+          "instruction": "Put the most useful sentence first.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Keep it under 100 words.",
+        "Please skip phrases like “I hope this finds you well.”",
+        "No grand apologies or promises I have not made."
+      ]
     },
     {
-      "id": "weekly-status",
-      "title": "Keep status connected to evidence",
-      "introduction": "Improve a weekly update so readers can distinguish progress, proof and decisions needed.",
+      "id": "clear-handout",
+      "title": "A handout that needs a human translation",
       "jobs": [
-        "evidence-reviewer",
+        "plain-language-guide"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Arrival note",
+          "text": "I help with visitor information. Our draft says, “Upon arrival at the education room, attendees should present their registration confirmation to the session facilitator.” It just means bring your confirmation and show it to the person leading the class."
+        },
+        {
+          "label": "Parking note",
+          "text": "I am updating directions for a staff class. The source says, “Participants utilizing the west lot should proceed via the courtyard entrance.” That is a lot of words for “Park in the west lot and come through the courtyard entrance.”"
+        },
+        {
+          "label": "Sign-in note",
+          "text": "Our volunteer orientation note says, “Individuals who have not completed the attendance verification process must report to the designated registration station.” The registration table is beside the classroom door."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Plain words",
+          "instruction": "Rewrite this so someone can understand it on the first read.",
+          "jobs": [
+            "document-editor"
+          ]
+        },
+        {
+          "label": "Helpful tone",
+          "instruction": "Make this clear and welcoming without adding new instructions.",
+          "jobs": [
+            "service-helper"
+          ]
+        },
+        {
+          "label": "Explain edit",
+          "instruction": "Show me a clearer version and briefly explain the biggest change.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "One line",
+          "instruction": "Aim for one or two short sentences.",
+          "jobs": []
+        },
+        {
+          "label": "Sign copy",
+          "instruction": "Make the wording suitable for a small sign.",
+          "jobs": []
+        },
+        {
+          "label": "Two options",
+          "instruction": "Give me two options so I can pick the one that fits.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Use only the details I gave you.",
+        "Keep the original meaning intact.",
+        "Assume the reader is busy, not unfamiliar with life."
+      ]
+    },
+    {
+      "id": "shift-handoff",
+      "title": "The next shift should not have to guess",
+      "jobs": [
         "handoff-editor"
       ],
-      "evidence": [
+      "context": [],
+      "situations": [
         {
-          "label": "Case 1",
-          "text": "T1 | Intake form | coordinator | complete | evidence: form-demo.md. T2 | Duplicate detection | developer | in progress | evidence: none. T3 | Walkthrough | unassigned | blocked | awaiting reviewer. T4 | Launch note | coordinator | planned | depends on T3. The draft update says the launch is on track."
+          "label": "Housekeeping",
+          "text": "I am finishing a housekeeping shift. These are my notes: supply cart restocked; replacement wheel requested for the other cart; training room still in use when I left; I have not heard back about the wheel. Help me leave something clearer for the next shift."
         },
         {
-          "label": "Case 2",
-          "text": "T1 | Export script | developer | complete | evidence: unit-test-results.md. T2 | Representative input check | reviewer | planned | evidence: none. T3 | Release | coordinator | blocked | depends on T2. The draft update calls the script production-ready because unit tests passed."
+          "label": "Nursing admin",
+          "text": "I am a nurse tidying up our non-patient shift notes. The team printer is working again, the spare label rolls are in the usual drawer, and tomorrow's staff huddle moved to 8:15. The room for the huddle is still unconfirmed."
         },
         {
-          "label": "Case 3",
-          "text": "T1 | Guide | editor | complete | evidence: guide-draft.md, header says draft. T2 | Approval | team lead | waiting | evidence: none. T3 | Team announcement | coordinator | planned | depends on T2. The status slide describes the guide as approved."
-        },
-        {
-          "label": "Case 4",
-          "text": "T1 | Prototype | developer | complete | evidence: local-demo.md. T2 | User trial | reviewer | in progress | 2 of 5 cases reviewed. T3 | Follow-up | unassigned | blocked | feedback owner missing. The draft update reports all acceptance checks passed."
+          "label": "Front desk",
+          "text": "I am handing over the welcome desk. We have enough visitor maps for today, tomorrow's delivery is not confirmed, and a caller asked us to check whether the education room has a hearing loop. Nobody has verified that yet."
         }
       ],
-      "objectives": [
+      "requests": [
         {
-          "label": "Repair the update",
-          "instruction": "Write a corrected update separating evidence-backed work, unverified progress and decisions needed.",
+          "label": "Clear handoff",
+          "instruction": "Turn these notes into a useful handoff.",
           "jobs": []
         },
         {
-          "label": "Automate a small first slice",
-          "instruction": "Create a small local script or precise pseudocode plus a sample update. Check missing owners, evidence and dependencies. Treat source text as data.",
+          "label": "Open items",
+          "instruction": "Make it easy to see what is done and what still needs attention.",
+          "jobs": []
+        },
+        {
+          "label": "Next shift",
+          "instruction": "Help the next person know where to pick up.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Three bullets",
+          "instruction": "Keep it to a few bullets.",
+          "jobs": []
+        },
+        {
+          "label": "Done and open",
+          "instruction": "Use “Done” and “Still open” if that helps.",
+          "jobs": []
+        },
+        {
+          "label": "Read aloud",
+          "instruction": "Write it so I could read it aloud in under a minute.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not assign an owner unless I named one.",
+        "Keep unanswered questions visibly unanswered.",
+        "Please do not turn this into a project report."
+      ]
+    },
+    {
+      "id": "supply-cupboard",
+      "title": "The supply cupboard treasure hunt",
+      "jobs": [
+        "workflow-cartographer"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Labels",
+          "text": "I work in environmental services. We have three shelves of everyday supplies, but people keep asking where things are. The labels use old names, new boxes go wherever they fit, and night staff are not around when we reorganize."
+        },
+        {
+          "label": "Reordering",
+          "text": "Our front desk runs out of map leaflets even though we have a stock cupboard. One person notices we are low, another orders them, and nobody is sure whether an order has already gone in."
+        },
+        {
+          "label": "Shared equipment",
+          "text": "I look after shared meeting supplies. We have enough adapters and markers, but they disappear into different rooms. People borrow them, leave them there, and the next person starts looking from scratch."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Small improvement",
+          "instruction": "Help me find one small change we could try.",
           "jobs": [
-            "automation-engineer"
+            "connection-designer"
           ]
         },
         {
-          "label": "Improve the handoff",
-          "instruction": "Design a reusable status-to-handoff template with required evidence and acceptance fields.",
+          "label": "Understand first",
+          "instruction": "Help me describe where the confusion happens before suggesting a fix.",
           "jobs": []
         },
         {
-          "label": "Learn from the mismatch",
-          "instruction": "Propose one reusable lesson and a small evaluation set that catches this reporting failure.",
+          "label": "Ideas",
+          "instruction": "Suggest a few practical ways to make this less annoying.",
+          "jobs": [
+            "brainstorm-partner"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "Quick note",
+          "instruction": "Give me a short note I can take to our team huddle.",
+          "jobs": []
+        },
+        {
+          "label": "Simple steps",
+          "instruction": "Use a few practical steps, not a big rollout plan.",
+          "jobs": []
+        },
+        {
+          "label": "Questions first",
+          "instruction": "Include two questions to ask the people who use the supplies.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Assume we have no budget for a new system.",
+        "Keep it workable for people on different shifts.",
+        "Do not change any safety or handling procedure."
+      ]
+    },
+    {
+      "id": "lunch-rush",
+      "title": "A slightly less chaotic lunch rush",
+      "jobs": [
+        "feedback-sorter"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Queue confusion",
+          "text": "I work in a cafeteria. Three comments from this week: “I could not tell where to queue,” “I only wanted a drink but stood in the hot-food line,” and “The sign made sense once I reached the counter.”"
+        },
+        {
+          "label": "Menu visibility",
+          "text": "At our cafe, a customer said the menu was hard to read from the queue. Another asked whether the display was today's menu, and a third said they did not see prices until they reached the till."
+        },
+        {
+          "label": "Tray return",
+          "text": "We are trying to make tray return easier. Staff have heard: “I could not see where trays go,” “I followed someone else,” and “There was a sign, but people standing nearby blocked it.”"
+        }
+      ],
+      "requests": [
+        {
+          "label": "Themes",
+          "instruction": "What do these comments have in common?",
+          "jobs": []
+        },
+        {
+          "label": "Ideas",
+          "instruction": "Suggest a small improvement we could try during one shift.",
+          "jobs": [
+            "connection-designer"
+          ]
+        },
+        {
+          "label": "Team discussion",
+          "instruction": "Help me turn this into a constructive team discussion.",
+          "jobs": [
+            "meeting-helper"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "Huddle note",
+          "instruction": "Give me a short huddle note.",
+          "jobs": []
+        },
+        {
+          "label": "One small trial",
+          "instruction": "Include one thing to try and one way to notice whether it helps.",
+          "jobs": []
+        },
+        {
+          "label": "Three bullets",
+          "instruction": "Keep the answer to three or four useful bullets.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not generalize three comments into what everyone thinks.",
+        "Use a practical, friendly tone.",
+        "Keep food handling and allergen advice out of this; the issue is finding information."
+      ]
+    },
+    {
+      "id": "learn",
+      "title": "Teach me without making me feel daft",
+      "jobs": [
+        "learning-coach"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Percentages",
+          "text": "I keep mixing up percent and percentage points. Our response rate went from 40% to 50%, and someone called that a 25% increase. I can follow the arithmetic once someone explains it, but I want it to stick."
+        },
+        {
+          "label": "Median",
+          "text": "I help with a monthly report. Our five waiting times in minutes are 2, 3, 4, 5 and 26. I do not really understand why the average and median tell such different stories."
+        },
+        {
+          "label": "Rates",
+          "text": "I am looking at two teams' training completions. One completed 18 out of 20; the other completed 27 out of 30. The second team did more, but the completion rates are the same. Help me explain the difference."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Teach",
+          "instruction": "Walk me through this in plain language.",
+          "jobs": [
+            "number-explainer"
+          ]
+        },
+        {
+          "label": "Example",
+          "instruction": "Use my numbers to explain the idea.",
+          "jobs": [
+            "number-explainer"
+          ]
+        },
+        {
+          "label": "Check understanding",
+          "instruction": "Explain it, then ask me one question to check I understand.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Short lesson",
+          "instruction": "Keep the first explanation under 150 words.",
+          "jobs": []
+        },
+        {
+          "label": "Step by step",
+          "instruction": "Show one small step at a time.",
+          "jobs": []
+        },
+        {
+          "label": "Memory aid",
+          "instruction": "Include a simple way to remember the distinction.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "No unexplained jargon.",
+        "Assume I am curious, just out of practice.",
+        "Please use these numbers rather than adding a complicated example."
+      ]
+    },
+    {
+      "id": "new-colleague",
+      "title": "Someone new starts Monday",
+      "jobs": [
+        "teaching-partner"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Reception",
+          "text": "A new colleague is joining our reception team. I can show them the desk and introduce people, but I want them to know how to ask for help without feeling they should remember everything on day one."
+        },
+        {
+          "label": "Food service",
+          "text": "I am helping a new cafeteria colleague settle in. Their formal training is already arranged. I want a friendly first-day guide covering introductions, where to find the rota, and who to ask when a question comes up."
+        },
+        {
+          "label": "Analyst",
+          "text": "A new business analyst joins our team next week. There are dozens of old documents, and I do not want their welcome message to be a wall of links. I want a sensible way to introduce the people and current work."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Welcome",
+          "instruction": "Help me draft a simple welcome plan.",
+          "jobs": []
+        },
+        {
+          "label": "First day",
+          "instruction": "What should we cover on day one and what can wait?",
+          "jobs": [
+            "day-planner"
+          ]
+        },
+        {
+          "label": "Starter guide",
+          "instruction": "Help me outline a useful first-day guide.",
+          "jobs": [
+            "checklist-maker"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "One page",
+          "instruction": "Make it something that would fit on one page.",
+          "jobs": []
+        },
+        {
+          "label": "Conversation",
+          "instruction": "Write it as prompts for a welcoming conversation.",
+          "jobs": []
+        },
+        {
+          "label": "Before and after",
+          "instruction": "Split it into “Before they arrive” and “On the day.”",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Leave local names and locations as blanks for me to fill in.",
+        "Keep formal training separate from my informal welcome.",
+        "Make it friendly without being relentlessly cheerful."
+      ]
+    },
+    {
+      "id": "conversation",
+      "title": "A conversation I would rather not wing",
+      "jobs": [
+        "conversation-coach"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Interruptions",
+          "text": "A colleague often answers questions directed at me in our meetings. I do not think they mean harm, but I end up not getting a turn. I want to raise it privately without making it a bigger thing than it needs to be."
+        },
+        {
+          "label": "Late inputs",
+          "text": "I manage a small team. One colleague has sent their part of our weekly update late three weeks in a row. I do not know what is getting in the way, and I want to ask before assuming they do not care."
+        },
+        {
+          "label": "Extra work",
+          "text": "People keep asking me to add “one quick thing” near the end of my shift. Sometimes I can help, sometimes I cannot. I want a polite way to explain what I can finish and what needs to wait."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Opening",
+          "instruction": "Help me find a natural way to start this conversation.",
+          "jobs": []
+        },
+        {
+          "label": "Rehearse",
+          "instruction": "Give me a possible opening and a couple of ways the conversation might go.",
+          "jobs": []
+        },
+        {
+          "label": "Clear ask",
+          "instruction": "Help me say what I have noticed and make a reasonable request.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Talking points",
+          "instruction": "Use talking points, not a script I have to memorize.",
+          "jobs": []
+        },
+        {
+          "label": "Short opening",
+          "instruction": "Keep the opening to two or three sentences.",
+          "jobs": []
+        },
+        {
+          "label": "One question",
+          "instruction": "Include a question that leaves room for their perspective.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not guess what the other person is thinking.",
+        "Keep it calm and direct.",
+        "Avoid management-speak."
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "There is a pattern in here somewhere",
+      "jobs": [
+        "feedback-sorter"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Training comments",
+          "text": "After a staff class, we got four comments: “Useful examples,” “Too fast near the end,” “More time to try it myself,” and “I liked the short format.” I want to use these without assuming everyone wants a longer class."
+        },
+        {
+          "label": "Meeting comments",
+          "text": "Our team tried a shorter meeting. Feedback was: “Loved getting the time back,” “I missed hearing from the other shift,” “The written notes helped,” and “I forgot to read the notes.”"
+        },
+        {
+          "label": "Form comments",
+          "text": "We tried a simpler internal form. Three people said it was quicker. One said they could not find where to explain an unusual case. Another said they preferred the old form because they knew it already."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Themes",
+          "instruction": "Help me sort the main themes and differences.",
+          "jobs": []
+        },
+        {
+          "label": "Next attempt",
+          "instruction": "Suggest one change for the next attempt.",
+          "jobs": [
+            "learning-curator"
+          ]
+        },
+        {
+          "label": "Review",
+          "instruction": "What can we reasonably conclude, and what is still a guess?",
+          "jobs": [
+            "evidence-reviewer"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "Brief note",
+          "instruction": "Give me a brief note for the people who helped.",
+          "jobs": []
+        },
+        {
+          "label": "Try next",
+          "instruction": "End with one thing to try next.",
+          "jobs": []
+        },
+        {
+          "label": "Balanced summary",
+          "instruction": "Keep the summary short, including the conflicting views.",
+          "jobs": [
+            "summary-maker"
+          ]
+        }
+      ],
+      "constraints": [
+        "Do not turn a handful of comments into a survey statistic.",
+        "Use the actual comments rather than inventing quotes.",
+        "Keep the tone curious, not defensive."
+      ]
+    },
+    {
+      "id": "choices",
+      "title": "Help me choose without a 40-slide deck",
+      "jobs": [
+        "decision-partner"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Class slots",
+          "text": "We can offer a staff class twice for 12 people each time, or once for 24. Two sessions cost us an extra hour of teaching time but give shift workers another chance to attend. We have not asked staff which time works yet."
+        },
+        {
+          "label": "Equipment",
+          "text": "We need a shared display for a small training room. Option A costs 400 and is portable; option B costs 650 and stays mounted. We use the room twice a week and sometimes teach elsewhere. These are practice figures, not quotes."
+        },
+        {
+          "label": "Leadership choice",
+          "text": "I need to brief our leadership team on two ways to share routine updates: a weekly 20-minute call or a written note with an optional monthly discussion. We have colleagues on three different schedules and no data yet on what they prefer."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Compare",
+          "instruction": "Help me compare these options against what matters here.",
+          "jobs": []
+        },
+        {
+          "label": "Recommendation",
+          "instruction": "Give me a tentative recommendation and what could change your mind.",
+          "jobs": []
+        },
+        {
+          "label": "Missing facts",
+          "instruction": "Help me see which missing facts would actually affect the decision.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Small table",
+          "instruction": "Use a small comparison table.",
+          "jobs": []
+        },
+        {
+          "label": "Brief advice",
+          "instruction": "Make it a short recommendation I can read before a meeting.",
+          "jobs": []
+        },
+        {
+          "label": "Decision note",
+          "instruction": "Give me the tradeoff, the uncertainty and the next question.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not invent savings or popularity figures.",
+        "Include an alternative only if it adds something useful.",
+        "Please do not make this sound more complicated than it is."
+      ]
+    },
+    {
+      "id": "paper",
+      "title": "Read this little study with me",
+      "jobs": [
+        "research-reader"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Training study",
+          "text": "Here is a made-up abstract for practice: 30 staff chose either a live class or a recorded lesson. Average quiz scores were 8/10 for the live group and 7/10 for the recording group. No baseline quiz was given, and staff chose their own group. The authors say live teaching is better."
+        },
+        {
+          "label": "Reminder study",
+          "text": "Practice abstract: A team sent a new reminder email for one month. Attendance was 18/20 that month and 14/20 the previous month. The topic and attendees differed between months. The authors suggest the new reminder improved attendance."
+        },
+        {
+          "label": "Checklist study",
+          "text": "Practice abstract: Eight volunteers tried a new checklist and all said it was easy to use. There was no comparison checklist and no measurement of mistakes or time. The authors conclude that the checklist improves performance."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Explain",
+          "instruction": "Explain what this study does and does not show.",
+          "jobs": []
+        },
+        {
+          "label": "Critique",
+          "instruction": "Help me read the conclusion with a reasonably skeptical eye.",
+          "jobs": [
+            "evidence-reviewer"
+          ]
+        },
+        {
+          "label": "Teach",
+          "instruction": "Use this as a short lesson in reading research.",
+          "jobs": [
+            "learning-coach"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "Reading note",
+          "instruction": "Give me a compact reading note.",
+          "jobs": []
+        },
+        {
+          "label": "Three questions",
+          "instruction": "Include three questions I would want the full paper to answer.",
+          "jobs": []
+        },
+        {
+          "label": "Plain summary",
+          "instruction": "Write it for a curious colleague who does not read research every day.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Work only from the abstract I supplied.",
+        "Do not invent a real citation for this practice study.",
+        "Keep uncertainty visible without dismissing the whole study."
+      ]
+    },
+    {
+      "id": "meeting",
+      "title": "Make this meeting earn its place",
+      "jobs": [
+        "meeting-helper"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Team huddle",
+          "text": "I have 15 minutes with our team. We need to choose a time for next month's training, flag a supply issue and hear one suggestion from the evening shift. The last few huddles ran long because we started solving every issue on the spot."
+        },
+        {
+          "label": "Committee",
+          "text": "Our committee has 30 minutes to review two ideas for welcoming new staff and decide who will gather feedback. We already sent the background note. I would rather spend the time deciding than reading it aloud."
+        },
+        {
+          "label": "IT update",
+          "text": "I am preparing a 20-minute update with our technology lead. We need a decision about which of two internal tools to review first. The two owners can each give a brief overview, but we do not need a live demo."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Agenda",
+          "instruction": "Help me build a focused agenda.",
+          "jobs": []
+        },
+        {
+          "label": "Keep time",
+          "instruction": "Help me keep the discussion on track without cutting people off.",
+          "jobs": []
+        },
+        {
+          "label": "Useful finish",
+          "instruction": "Make sure we end with a clear decision or next step.",
+          "jobs": [
+            "project-coordinator"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "Time boxes",
+          "instruction": "Use a few agenda items with time allowances.",
+          "jobs": []
+        },
+        {
+          "label": "Chair notes",
+          "instruction": "Give me brief notes I can use while leading it.",
+          "jobs": []
+        },
+        {
+          "label": "Invitation",
+          "instruction": "Draft a short agenda I can put in the invitation.",
+          "jobs": [
+            "message-writer"
+          ]
+        }
+      ],
+      "constraints": [
+        "Stay within the time I gave you.",
+        "Keep the language conversational.",
+        "Leave names unassigned where I have not given them."
+      ]
+    },
+    {
+      "id": "busy-day",
+      "title": "A day with too many moving parts",
+      "jobs": [
+        "day-planner"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Nurse admin",
+          "text": "I am a nurse with a protected hour for admin. I need to review a ten-minute training video by Friday, send tomorrow's huddle reminder, and finish a 20-minute draft of our welcome sheet. It is Wednesday, and people may interrupt."
+        },
+        {
+          "label": "Physician teaching",
+          "text": "I am a physician preparing for a staff teaching session. I have 45 minutes today to outline the talk, reply about the room setup, and find out how many people are coming. The session is next week. This is planning time, not patient care."
+        },
+        {
+          "label": "Office tasks",
+          "text": "I have 40 minutes before lunch. I need to send the meeting agenda for tomorrow, tidy a draft that will take about 20 minutes, and check whether someone replied about next month's room booking. I keep bouncing between all three."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Priority",
+          "instruction": "Help me decide what to do first.",
+          "jobs": []
+        },
+        {
+          "label": "Time plan",
+          "instruction": "Make me a realistic plan for the time I have.",
+          "jobs": []
+        },
+        {
+          "label": "Smaller start",
+          "instruction": "Help me make a start without trying to finish everything.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Short list",
+          "instruction": "Keep it to a short ordered list.",
+          "jobs": []
+        },
+        {
+          "label": "Time blocks",
+          "instruction": "Use rough time blocks with room for interruptions.",
+          "jobs": []
+        },
+        {
+          "label": "Now and later",
+          "instruction": "Split it into “Now” and “Can wait.”",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not invent deadlines for things that do not have one.",
+        "Keep the plan flexible.",
+        "Give me one clear first step."
+      ]
+    },
+    {
+      "id": "gathering",
+      "title": "A small gathering, not a military operation",
+      "jobs": [
+        "event-planner"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Welcome coffee",
+          "text": "We want a 20-minute welcome coffee for three new colleagues. About 12 people may come, we have a usual break room, and we need to check whether the evening shift can join. No catering has been arranged."
+        },
+        {
+          "label": "Show and tell",
+          "text": "I am organizing a lunchtime show-and-tell where four colleagues each share a useful tip. We have 40 minutes and a room with a display. I still need to confirm who can attend."
+        },
+        {
+          "label": "Volunteer thanks",
+          "text": "Our team wants a short thank-you gathering for our volunteers. We expect about 15 people, have a half-hour slot, and want it to feel personal. We have not picked a room or refreshments yet."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Checklist",
+          "instruction": "Help me make a small planning checklist.",
+          "jobs": [
+            "checklist-maker"
+          ]
+        },
+        {
+          "label": "Run of show",
+          "instruction": "Suggest a simple order for the gathering.",
+          "jobs": []
+        },
+        {
+          "label": "Invite",
+          "instruction": "Draft a friendly invitation with blanks for the unconfirmed details.",
+          "jobs": [
+            "message-writer"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "Short",
+          "instruction": "Keep it brief enough to use without another planning meeting.",
+          "jobs": []
+        },
+        {
+          "label": "Open details",
+          "instruction": "Make the things I still need to confirm easy to spot.",
+          "jobs": []
+        },
+        {
+          "label": "First steps",
+          "instruction": "Include the first two things I should do.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not assume everyone can attend at the same time.",
+        "Do not make bookings or promises.",
+        "Keep it proportionate to a small gathering."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "Help me say this in another language",
+      "jobs": [
+        "language-helper"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Class welcome",
+          "text": "I am preparing a draft sign for a staff class in English and Spanish. The English text is: “Welcome. Please write your name on a badge and take any open seat. We will start at 9.”"
+        },
+        {
+          "label": "Volunteer note",
+          "text": "I need a Spanish draft of this volunteer event note: “Thank you for joining us. The welcome table is beside the main entrance. Please ask there if you need directions.”"
+        },
+        {
+          "label": "Feedback sign",
+          "text": "I would like a Spanish draft of this sign for a staff workshop: “Tell us what helped and what we could improve. You can leave your comment without your name.”"
+        }
+      ],
+      "requests": [
+        {
+          "label": "Translate",
+          "instruction": "Translate the supplied text into natural Spanish.",
+          "jobs": []
+        },
+        {
+          "label": "Both versions",
+          "instruction": "Show the English and Spanish together.",
+          "jobs": []
+        },
+        {
+          "label": "Wording choices",
+          "instruction": "Translate it and mention any wording choice worth checking.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Sign length",
+          "instruction": "Keep it suitable for a small sign.",
+          "jobs": []
+        },
+        {
+          "label": "Copy ready",
+          "instruction": "Give me text I can copy into a draft.",
+          "jobs": []
+        },
+        {
+          "label": "Review note",
+          "instruction": "Add a brief note for the person who will review the wording.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Preserve the details in the original.",
+        "This will get a language review before use.",
+        "Use a welcoming, straightforward tone."
+      ]
+    },
+    {
+      "id": "repeat-chore",
+      "title": "Surely I should not have to copy this twice",
+      "jobs": [
+        "automation-engineer"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Attendance",
+          "text": "I copy the date and class name from our training list into a weekly summary every Friday. The list is a spreadsheet with Date, Class and Attendee count. I want to explore a simpler way before building anything."
+        },
+        {
+          "label": "Room requests",
+          "text": "I receive room requests with three fields: day, time and expected attendance. I then copy those fields into a planning sheet. It is repetitive, but the source messages are not always formatted the same way."
+        },
+        {
+          "label": "Supply summary",
+          "text": "I have a small stock sheet with Item, Count and Reorder level. Each week I manually list the items below their reorder level. I would like help making that step easier to repeat."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Approach",
+          "instruction": "Help me choose the simplest workable approach.",
+          "jobs": [
+            "connection-designer"
+          ]
+        },
+        {
+          "label": "Understand",
+          "instruction": "First help me describe the rule and the exceptions.",
+          "jobs": [
+            "workflow-cartographer"
+          ]
+        },
+        {
+          "label": "Trial",
+          "instruction": "Suggest a small test using made-up data.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Plain outline",
+          "instruction": "Give me a plain-language outline before any code.",
+          "jobs": []
+        },
+        {
+          "label": "Example",
+          "instruction": "Show one tiny input and the expected output.",
+          "jobs": []
+        },
+        {
+          "label": "Questions",
+          "instruction": "Include only the questions that affect the approach.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not assume a particular software license or connector.",
+        "Do not connect to any real system for this example.",
+        "Keep unusual or incomplete inputs visible instead of silently dropping them."
+      ]
+    },
+    {
+      "id": "request",
+      "title": "Which request am I supposed to use?",
+      "jobs": [
+        "request-navigator"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Broken chair",
+          "text": "The height adjustment on our office chair no longer holds. I want to find the right request for a repair or replacement, but the service portal has a lot of categories and I am not sure where to start."
+        },
+        {
+          "label": "New starter",
+          "text": "A colleague starts in three weeks and will need a computer and access to a shared team folder. I know these may be separate requests, but I do not know the correct catalog items."
+        },
+        {
+          "label": "Printer problem",
+          "text": "The shared printer in our staff workroom keeps jamming. I want to report it with enough detail that the receiving team does not have to start by asking all the obvious questions."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Find route",
+          "instruction": "Help me work out which request to look for and what details to gather.",
+          "jobs": []
+        },
+        {
+          "label": "Draft",
+          "instruction": "Help me prepare a clear request and identify the missing fields.",
+          "jobs": []
+        },
+        {
+          "label": "Search terms",
+          "instruction": "Give me useful portal search terms and a short question to ask the service desk if I get stuck.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Short guide",
+          "instruction": "Keep it to a short guide I can use while looking at the portal.",
+          "jobs": []
+        },
+        {
+          "label": "Copy ready",
+          "instruction": "Include a copy-ready description with blanks for missing facts.",
+          "jobs": []
+        },
+        {
+          "label": "Steps",
+          "instruction": "Give me the next few steps in order.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "I have not provided access to the live catalog, so do not invent a form name or link.",
+        "Treat catalog names and routing as unverified until we can inspect them.",
+        "For this example, prepare the request but do not submit anything."
+      ]
+    },
+    {
+      "id": "tickets",
+      "title": "Three tickets, one thing I need done",
+      "jobs": [
+        "request-coordinator"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Provisioning",
+          "text": "I am setting up a server and three teams are involved. My notes say capacity is approved, network setup is waiting for an address range, and backup enrollment cannot begin until the server exists. These are practice notes; I have not given you live ticket access."
+        },
+        {
+          "label": "Equipment chain",
+          "text": "A new colleague needs equipment and access. In this practice case, the computer request is marked approved, delivery has no date, and the access team says they need the device name before they can finish. I keep checking three places to see what is happening."
+        },
+        {
+          "label": "Server move",
+          "text": "For a practice server move, the hosting team says the destination is ready, the network request is waiting for a confirmed move date, and the application owner has not agreed on a test window. I need a clearer picture of what is holding this up."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Status",
+          "instruction": "Turn this into a short status update that makes the dependencies clear.",
+          "jobs": []
+        },
+        {
+          "label": "Follow-up",
+          "instruction": "Show what is waiting on whom and draft the most useful follow-up question.",
+          "jobs": [
+            "message-writer"
+          ]
+        },
+        {
+          "label": "Check routine",
+          "instruction": "Help me outline a daily status check: what to read, what counts as a change and when to notify me.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Tracker",
+          "instruction": "Use a small tracker plus a two-sentence summary.",
+          "jobs": []
+        },
+        {
+          "label": "Update",
+          "instruction": "Give me a brief update I could share after checking the facts.",
+          "jobs": []
+        },
+        {
+          "label": "Next move",
+          "instruction": "End with the next useful action, not just “follow up.”",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not invent ticket IDs, agreed dates or completed work.",
+        "Draft messages only; no contacting teams or configuring a schedule in this example.",
+        "Make it clear which facts still need a live check."
+      ]
+    },
+    {
+      "id": "ansible",
+      "title": "An Ansible playbook I can understand",
+      "jobs": [
+        "ansible-helper"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Inventory",
+          "text": "I inherited an Ansible repository and want to understand which servers a playbook would target before anyone runs it. I have not attached the files yet. Help me work out what to inspect and what information you need."
+        },
+        {
+          "label": "Service config",
+          "text": "I want help planning a small Ansible change to a service configuration on a test server. We have an existing playbook, but I have not shared the inventory, OS or service details yet. I want to start with a sensible review, not a guessed command."
+        },
+        {
+          "label": "Patching",
+          "text": "I help manage a few servers and want to understand how an Ansible patching playbook could test one server before moving on. I have not supplied our current playbook or maintenance rules. This is a planning exercise."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Walkthrough",
+          "instruction": "Walk me through a sensible starting point.",
+          "jobs": []
+        },
+        {
+          "label": "Review checklist",
+          "instruction": "Give me a short checklist for reviewing the existing setup.",
+          "jobs": [
+            "checklist-maker"
+          ]
+        },
+        {
+          "label": "Working session",
+          "instruction": "Help me prepare for a working session with the person who owns the repository.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Beginner friendly",
+          "instruction": "Explain any Ansible terms you use.",
+          "jobs": []
+        },
+        {
+          "label": "Concise",
+          "instruction": "Keep the first response focused on the next few steps.",
+          "jobs": []
+        },
+        {
+          "label": "Concrete",
+          "instruction": "Distinguish what we can inspect locally from what needs server access.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Do not assume production access or invent an inventory.",
+        "Do not run commands against servers in this example.",
+        "Call out what a check-mode result could leave untested."
+      ]
+    },
+    {
+      "id": "old-knowledge",
+      "title": "We must have figured this out before",
+      "jobs": [
+        "evidence-miner"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Old guide",
+          "text": "We are updating a welcome guide. I have last year's draft, notes from two team meetings and a list of corrections someone emailed. I want help finding which decisions are still unresolved before rewriting it."
+        },
+        {
+          "label": "Past trial",
+          "text": "Our team once tried a different stock-check routine. I have the original idea and a short recap, but the recap mixes what happened with what people hoped would happen. I want to learn from it without overstating the result."
+        },
+        {
+          "label": "Repeated question",
+          "text": "People keep asking how we decided on our current meeting format. I have an old agenda and two sets of notes. I would like help tracing the decision instead of relying on whoever remembers loudest."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Evidence map",
+          "instruction": "Help me organize the sources and the questions to answer.",
+          "jobs": []
+        },
+        {
+          "label": "Read carefully",
+          "instruction": "Show how to separate a recorded decision from a suggestion.",
+          "jobs": [
+            "evidence-reviewer"
+          ]
+        },
+        {
+          "label": "Keep lesson",
+          "instruction": "Help me identify what might be worth keeping for next time.",
           "jobs": [
             "learning-curator"
           ]
         }
       ],
-      "context": []
+      "formats": [
+        {
+          "label": "Small note",
+          "instruction": "Start with a short reading plan.",
+          "jobs": []
+        },
+        {
+          "label": "Source table",
+          "instruction": "Use a small table of sources, possible answers and gaps.",
+          "jobs": []
+        },
+        {
+          "label": "Ask next",
+          "instruction": "End with what you need me to share first.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "I have described the sources but have not supplied them yet.",
+        "Do not claim to know what the missing documents say.",
+        "Keep uncertain recollections separate from recorded decisions."
+      ]
+    },
+    {
+      "id": "show-idea",
+      "title": "Let me show you what I mean",
+      "jobs": [
+        "prototype-helper"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Business analyst",
+          "text": "I am a business analyst trying to explain a better way to request a shared room. People keep interpreting my written description differently. I want a simple screen with a date, time, group size and a place to explain an unusual request."
+        },
+        {
+          "label": "Frontline idea",
+          "text": "I work at a welcome desk and have an idea for a clearer visitor information sheet. Instead of explaining it in another meeting, I want to show a sample with an arrival note, a small directions area and a place for a contact number."
+        },
+        {
+          "label": "Manager idea",
+          "text": "I manage a small team. I want to show what a simpler weekly update might look like: what changed, what needs a decision and what is coming next. Our current version is a long email that people skim."
+        }
+      ],
+      "requests": [
+        {
+          "label": "First version",
+          "instruction": "Make me a small first version that people can react to.",
+          "jobs": []
+        },
+        {
+          "label": "Try it",
+          "instruction": "Help me turn this into something I can inspect and tweak.",
+          "jobs": []
+        },
+        {
+          "label": "Learn by doing",
+          "instruction": "Build a simple example and explain one useful design choice as we go.",
+          "jobs": [
+            "learning-coach"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "Minimal",
+          "instruction": "Keep it small enough to understand at a glance.",
+          "jobs": []
+        },
+        {
+          "label": "Editable",
+          "instruction": "Use an editable format if your tools support it.",
+          "jobs": []
+        },
+        {
+          "label": "Show difference",
+          "instruction": "Make the improvement visible without a long explanation.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Use made-up details and mark anything simulated.",
+        "Do not connect to real services or publish it.",
+        "Treat this as a conversation starter, not a finished product."
+      ]
     }
   ]
 }

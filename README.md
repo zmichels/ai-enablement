@@ -1,21 +1,17 @@
-# AI Enablement public catalog
+# AI Enablement
 
-**[Open the public launch](https://zmichels.github.io/ai-enablement/)** · [Browse the catalog](CATALOG.md) · [Give START_HERE.md to your agent](START_HERE.md)
+**[Try the launch page](https://zmichels.github.io/ai-enablement/)** · [Build your helper](library.html) · [Browse the catalog](CATALOG.md) · [Give START_HERE.md to your agent](START_HERE.md)
 
-Choose useful agent jobs, connect them into a project, and retain tested lessons from the work.
+A little help with the work in front of you. Write a clearer message, learn something new, organize a busy day, untangle requests—or work on servers with Ansible.
 
-**[Launch with your agent](START_HERE.md) · [Browse the catalog](CATALOG.md) · [Open the launch page](index.html)**
+Choose the help you need, describe the task and click **Build launch prompt**. Give the result to your assistant; the selected instructions are included. Start with one job; combine a few when useful. A quick question should still get a quick answer.
 
-Give an existing assistant this folder and a task:
+Not sure where to start? Choose an example theme or **Surprise me**. Each click combines a believable situation, request, format and preference from the same theme. The situations and sample details are made up. Edit anything, then build your prompt. **Start with my own task** clears the example text while keeping your selections. **Restore my draft** brings back your earlier input and choices.
 
-> Read START_HERE.md. My outcome is [outcome]. Select the relevant jobs, return [deliverable], and continue within [authorized scope].
+The page also works from a downloaded folder: open [index.html](index.html). It makes no network requests and stores no input. It prepares a prompt; it does not run a model, submit tickets, manage servers or schedule background work. Those capabilities depend on the assistant's actual tools and your authorization.
 
-The catalog includes coordination, workflow discovery, connection design, evidence review, handoff, knowledge recovery, automation engineering and lesson curation. Each job has a role prompt, required inputs, returned artifact and stop conditions.
+There are guides for [connected service requests](guides/request-tracking.md), [Ansible help](guides/ansible.md), [retaining useful lessons](learning-loop.md) and [adding organizational context](overlay-contract.md). Local context stays in a separate package. Keep actual work records in your authorized workspace.
 
-For a visual start, open `index.html` from a downloaded or cloned folder. Select jobs, describe the outcome and copy or download the launch prompt. The page works locally and makes no network requests. Give the prompt and package access to your assistant; the page does not call a model itself.
+These are starter prompts. Package and launch checks cover structure and behavior, not a claim that every role has been evaluated in practice. Use the [exercise](exercise.md) to try a real task and improve what falls short.
 
-Organizations can add a separate [context pack](overlay-contract.md). This public catalog works without one. Actual project evidence and assignments belong in your authorized project workspace.
-
-Version 0.2.0 is a starter with checked package links and launch behavior. Use the [exercise](exercise.md) to evaluate practical benefit; no general effectiveness claim is made.
-
-In the launch page, choose an example theme or **Surprise me**, then click **Generate example**. It mixes fictional evidence, an objective, a team, a constraint and an output format, and selects matching roles or context. Edit the result and click **Build launch prompt** yourself. **Restore my draft** recovers your earlier input and selections.
+Want reusable expertise instead of a single task? [Build your helper](library.html) combines work areas and practical skills into one prompt or separate prompts. The [cheat sheet](prompt-cheat-sheet.md) has useful adjustments and a little room to play; the [authoring guide](prompt-authoring.md) explains the shared structure and sources.

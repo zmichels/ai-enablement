@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "sections": [
+    "Purpose",
+    "Inputs",
+    "Approach",
+    "Output",
+    "Boundaries",
+    "Checks"
+  ],
+  "applies_to": [
+    "role",
+    "expertise"
+  ],
+  "requirement_words": {
+    "MUST": "required boundary",
+    "MUST NOT": "prohibited behavior",
+    "SHOULD": "default with justified exceptions",
+    "MAY": "optional"
+  },
+  "notes": "Local authoring convention; does not override governing instructions or guarantee model behavior."
+}
