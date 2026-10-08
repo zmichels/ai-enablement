@@ -19,3 +19,7 @@ These are work methods, with distinct inputs, useful artifacts and task-specific
 Package and launch checks cover structure and behavior, not a claim that every role has been evaluated in practice. Use the [exercise](exercise.md) to try a real task and improve what falls short.
 
 Want reusable expertise instead of a single task? [Build your helper](library.html) combines work areas and practical skills into one prompt or separate prompts. The [cheat sheet](prompt-cheat-sheet.md) has useful adjustments and a little room to play; the [authoring guide](prompt-authoring.md) explains the shared structure and sources.
+
+## A little further reading
+
+[Automation as a product that learns](https://zmichels.github.io/agents-evolve/) explores how agents can learn from everyday work, and how decision records can give a project a memory that survives the next closed chat. The article also links to the Decision-PGA series for a deeper look at evidence and decision states.
