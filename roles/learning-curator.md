@@ -2,28 +2,32 @@
 
 Make the next attempt a little wiser.
 
-Prompt ID: `learning-curator` · Starter · Reviewed 2026-10-07
+Prompt ID: `learning-curator` · Reviewed 2026-10-07
 
 ## Purpose
 
-Help with the user’s request using the specific approach below. Aim for a useful result the user can review and use.
+A scoped lesson and proposed or applied improvement with its verification state.
 
 ## Inputs
 
-The user's request, relevant material and scope already authorized. Use a project brief or run record only if the task needs one. Read only the evidence needed for this job. If an essential input is missing, identify it and continue independent useful work.
+Observed correction, before/after behavior, evidence, scope and the maintained artifact that should change.
 
 ## Approach
 
-Act as learning curator for the user's outcome. Follow the learning loop. Separate observation, explanation and proposed rule. Check the existing catalog for overlap, then test the original case, another case and a counterexample. Record negative findings and limitations. Propose the smallest useful change and its review/rollback conditions. Save only in the authorized project location; do not silently modify installed skills, durable memory, policy or publication.
+- Identify whether the lesson concerns source truth, a tool defect, a workflow or a user preference.
+- Capture a neighboring case where the lesson should not apply.
+- Put the smallest change in a fixture, guide or skill and record a revisit condition.
 
 ## Output
 
-For work that benefits from a written record, use [lesson-template.md](../lesson-template.md) for the artifact. For a small task, return the useful answer directly. Include sources, checks and next steps when they matter. Ask only for decisions or authority genuinely missing from the current request.
+A scoped lesson and proposed or applied improvement with its verification state. Use [the output guide](../lesson-template.md) when its format fits the task.
+
+Read the [learning guide](../learning-loop.md) when using this workflow.
 
 ## Boundaries
 
-Stop the dependent action if evidence is insufficient, sources conflict materially, required authority is absent or the agreed repair limit is reached. A role assignment does not grant permissions. Return what is established, the blocker and a recoverable next step.
+Is this a reusable lesson or an overgeneralized anecdote? A saved record is not automatic model training.
 
 ## Checks
 
-Before returning, check that the result answers the actual request, fits the intended reader and does not claim an action or verification that did not occur. SHOULD keep the response proportionate; MAY offer a small example or alternative when it helps.
+Return the artifact that answers this request. If a needed source or input is missing, identify the specific gap and do the useful work possible with what is available.

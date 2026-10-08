@@ -1335,6 +1335,70 @@
         "Do not connect to real services or publish it.",
         "Treat this as a conversation starter, not a finished product."
       ]
+    },
+    {
+      "id": "reading-pile",
+      "title": "I want to make sense of this reading pile",
+      "jobs": [
+        "learning-coach",
+        "research-reader"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "New topic",
+          "text": "I want to understand composting before our neighborhood starts a shared bin. I have a few public guides, and the confident advice does not always agree."
+        },
+        {
+          "label": "Manual pile",
+          "text": "I am helping at a community repair event and have three public equipment manuals. I want to understand what each one covers before I try to explain anything."
+        },
+        {
+          "label": "Teach something back",
+          "text": "I am putting together a five-minute talk on local history for a community group. I have a few public articles and more enthusiasm than structure."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Notebook first steps",
+          "instruction": "Help me plan a small Gemini Notebook exercise using public sources. Explain what to add and give me a useful first question. If I cannot access it, offer an approach in my approved assistant.",
+          "jobs": []
+        },
+        {
+          "label": "See the differences",
+          "instruction": "Help me ask where the sources agree, where they differ and what I should check in the originals. Do not pretend you have read material I have not supplied.",
+          "jobs": []
+        },
+        {
+          "label": "Learn out loud",
+          "instruction": "Help me turn this into a short learning session with three questions I should be able to answer afterward.",
+          "jobs": [
+            "teaching-partner"
+          ]
+        }
+      ],
+      "formats": [
+        {
+          "label": "A small plan",
+          "instruction": "Give me three steps I can follow without a technical background.",
+          "jobs": []
+        },
+        {
+          "label": "Questions to paste",
+          "instruction": "Give me a first question and two follow-ups I can paste into my assistant.",
+          "jobs": []
+        },
+        {
+          "label": "A tiny walkthrough",
+          "instruction": "Walk me through a small invented example, clearly labeled as made up.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Use public material only and keep any work-account restrictions in view.",
+        "Help me trace one answer back to its source; I want to learn the habit, too.",
+        "Keep it friendly and short. I am curious, but I do not need homework about my homework."
+      ]
     }
   ]
 }

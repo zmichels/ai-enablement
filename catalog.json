@@ -1,11 +1,17 @@
 {
   "schema_version": 1,
   "package_id": "ai-enablement-core",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "audience": "public candidate",
   "entry_point": "START_HERE.md",
   "sources": {
-    "product-design": "Authored starter prompts for everyday work and specialist tasks; not a claim of evaluated benefit or professional authority."
+    "product-design": "Authored starter prompts for everyday work and specialist tasks; not a claim of evaluated benefit or professional authority.",
+    "google-notebook": {
+      "title": "Google Gemini Notebook Help",
+      "url": "https://support.google.com/gemininotebook/answer/16164461?hl=en",
+      "reviewed_at": "2026-10-07",
+      "notes": "Official product guidance; account editions, organization access and features vary."
+    }
   },
   "entries": [
     {
@@ -863,6 +869,23 @@
       "reviewed_at": "2026-10-07",
       "freshness": "Verify current local practices and consequential facts for each use.",
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "gemini-notebook",
+      "title": "Meet Gemini Notebook",
+      "kind": "method",
+      "use_when": "Turn a few public sources into a conversation and check what you learn.",
+      "path": "guides/gemini-notebook.md",
+      "category": "Getting started",
+      "audience": "public candidate",
+      "scope": "An introductory source-based learning exercise",
+      "maturity": "authored exercise; product documentation checked",
+      "source_refs": [
+        "google-notebook"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Check current Google guidance and your organization’s access rules.",
+      "limitations": "Does not establish workplace approval, upload sources, run a model or guarantee generated answers."
     }
   ]
 }

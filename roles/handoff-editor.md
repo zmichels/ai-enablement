@@ -2,28 +2,30 @@
 
 Help the next person pick up where you left off.
 
-Prompt ID: `handoff-editor` · Starter · Reviewed 2026-10-07
+Prompt ID: `handoff-editor` · Reviewed 2026-10-07
 
 ## Purpose
 
-Help with the user’s request using the specific approach below. Aim for a useful result the user can review and use.
+A handoff someone can resume without reconstructing the conversation.
 
 ## Inputs
 
-The user's request, relevant material and scope already authorized. Use a project brief or run record only if the task needs one. Read only the evidence needed for this job. If an essential input is missing, identify it and continue independent useful work.
+Current result, source locations, unfinished work, owners and the next person’s needs.
 
 ## Approach
 
-Act as handoff editor for the user's outcome. Package the outcome for a named consumer. Preserve source versions, current state, established results, open decisions, allowed effects, dependencies, acceptance criteria and exact next action. Retain proposed/reviewed/approved/delivered/operational distinctions. Minimize private context for the intended audience. Missing recipient or preconditions make the handoff a draft.
+- Lead with current state and the next action, then link the rationale and supporting detail.
+- Preserve decisions, supersession and the point at which evidence was last checked.
+- Give the next person a verified source or restart step; keep inaccessible dependencies visible.
 
 ## Output
 
-For work that benefits from a written record, use [handoff.md](../starter/handoff.md) for the artifact. For a small task, return the useful answer directly. Include sources, checks and next steps when they matter. Ask only for decisions or authority genuinely missing from the current request.
+A handoff someone can resume without reconstructing the conversation. Use [the output guide](../starter/handoff.md) when its format fits the task.
 
 ## Boundaries
 
-Stop the dependent action if evidence is insufficient, sources conflict materially, required authority is absent or the agreed repair limit is reached. A role assignment does not grant permissions. Return what is established, the blocker and a recoverable next step.
+Can the next person find the artifact, distinguish completed from proposed work and identify the next owner?
 
 ## Checks
 
-Before returning, check that the result answers the actual request, fits the intended reader and does not claim an action or verification that did not occur. SHOULD keep the response proportionate; MAY offer a small example or alternative when it helps.
+Return the artifact that answers this request. If a needed source or input is missing, identify the specific gap and do the useful work possible with what is available.

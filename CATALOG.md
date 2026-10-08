@@ -1,6 +1,6 @@
 # Help for the work in front of you
 
-[Start with an agent](START_HERE.md) · [Open the launch page](index.html)
+[Start with an agent](START_HERE.md) · [Open the launch page](index.html) · [New to AI? Start here](get-started.html)
 
 [Build your helper](library.html) · [Prompt cheat sheet](prompt-cheat-sheet.md) · [How prompts are written](prompt-authoring.md)
 
@@ -97,3 +97,9 @@ Choose what fits. Sources, scope and limits are recorded in [the index](catalog.
 | Systems administration | Servers, configuration, patching and careful troubleshooting. | [Prompt or guide](expertise/systems-administration.md) |
 | Software, data and technology | Build, investigate or improve a technical tool. | [Prompt or guide](expertise/technology.md) |
 | Strategy and organizational leadership | A clear decision amid competing priorities. | [Prompt or guide](expertise/strategy.md) |
+
+## Getting started
+
+| Help or context | Use it to | Read |
+|---|---|---|
+| Meet Gemini Notebook | Turn a few public sources into a conversation and check what you learn. | [Prompt or guide](guides/gemini-notebook.md) |

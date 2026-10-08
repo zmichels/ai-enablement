@@ -4,7 +4,7 @@ A reusable prompt should tell the assistant what to help with, what it can use, 
 
 ## Our small contract
 
-Every selectable role and work-area prompt uses the same six sections. The [template](prompt-template.md) is the starting point; [prompt-contract.json](prompt-contract.json) lets the package validator check structure.
+Every selectable role and work-area method uses six sections for maintainability. Each section must earn its place with task-specific content. The [template](prompt-template.md) is the starting point; [prompt-contract.json](prompt-contract.json) lets the package validator check structure.
 
 | Section | The question it answers |
 |---|---|
@@ -29,7 +29,17 @@ Sources checked 2026-10-07. No universal agent-authoring standard is asserted by
 
 Work-area prompts supply perspective; help roles supply methods. A combined helper is instructed to choose the relevant contributions, resolve overlap and produce one useful result. It should surface a real conflict instead of inventing consensus. The browser assembles these instructions deterministically; the receiving assistant adapts them to the actual task.
 
-The helper library embeds selected instructions, so copied prompts work without fetching this repository. Specialist companion guides are included where required. The separate-prompt option gives each selected role or work area the same explicit task and preferences. Context remains separate from authority.
+The builders include the relevant method, useful artifact and task-specific check. Full guides remain available by link instead of being pasted into every brief. `work-patterns.json` supplies explicitly phrase-matched variants, such as diagnosing a failed playbook versus planning a patch rollout. These suggestions are deterministic and fallible; the receiving assistant should discard a mismatch.
+
+The resource shelf names the kind and availability of each reference. An automation collection, a document, an agent skill and an installed tool are different things. Public builders contain public references only.
+
+Optional **Tailor this with AI** sends a reviewed brief to a host-configured model. It asks the model to select an approach and a concrete first artifact, reconcile methods and preserve user constraints. The page labels the output as a draft and validates referenced capability IDs. That validation cannot establish that the model’s reasoning or factual claims are correct.
+
+## Write for an already capable assistant
+
+Keep guidance that changes a decision: a diagnostic split, an overlooked dependency, a useful output, a source requirement or a domain-specific failure check. Delete advice that could be pasted unchanged into every role. “Be thorough and helpful” is not a specialist method. Neither is a persona title.
+
+For example, server troubleshooting should distinguish connection, privilege, module and service failures; queue improvement should distinguish ordering, payment, preparation and pickup. Neither needs a paragraph announcing expertise.
 
 ## Try a prompt before trusting it
 
