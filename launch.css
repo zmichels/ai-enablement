@@ -16,17 +16,17 @@
 .skillforge :is(.card,.resource-shelf,.mix-preview,.mix-card,.chip,select,textarea,input[type=search],input[type=text]){background:var(--forge-surface);color:var(--ink);border-color:var(--line)}
 .skillforge .card:has(input:checked){background:var(--forge-selected);border-color:var(--accent);box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 15%,transparent)}
 .skillforge :is(.play,.mix-tuning,.helper-result){border-color:var(--line)}.skillforge button{background:var(--accent);color:var(--paper)}.skillforge button:is(.secondary,.text-button,.chip){background:transparent;color:var(--accent)}.skillforge #helper-build{background:var(--forge-action);border-color:var(--forge-action);color:#282014;box-shadow:0 3px 15px #edb75b18}.skillforge :focus-visible{outline-color:var(--forge-amber)}
-html[data-forge-theme=dark] .skillforge{--ink:#e8edf7;--muted:#acb8cf;--line:#39455c;--paper:#10141e;--accent:#80d4e5;--yellow:#1b2232;--forge-surface:#181f2d;--forge-selected:#203641;--forge-violet:#b6a0ed;--forge-amber:#f0bc67;color-scheme:dark}
-@media(prefers-color-scheme:dark){html:not([data-forge-theme=light]) .skillforge{--ink:#e8edf7;--muted:#acb8cf;--line:#39455c;--paper:#10141e;--accent:#80d4e5;--yellow:#1b2232;--forge-surface:#181f2d;--forge-selected:#203641;--forge-violet:#b6a0ed;--forge-amber:#f0bc67;color-scheme:dark}}
+html[data-forge-theme=dark] .skillforge{--ink:#e7edf5;--muted:#91a1b6;--line:#283445;--paper:#0b1017;--accent:#83dcea;--yellow:#172130;--forge-surface:#121a25;--forge-selected:#203641;--forge-violet:#b6a0ed;--forge-amber:#f0bc67;color-scheme:dark}
+@media(prefers-color-scheme:dark){html:not([data-forge-theme=light]) .skillforge{--ink:#e7edf5;--muted:#91a1b6;--line:#283445;--paper:#0b1017;--accent:#83dcea;--yellow:#172130;--forge-surface:#121a25;--forge-selected:#203641;--forge-violet:#b6a0ed;--forge-amber:#f0bc67;color-scheme:dark}}
 @media(max-width:520px){.theme-control{margin-top:18px;justify-content:flex-end}.forge-name{font-size:21px}.forge-mark{width:58px;height:58px}.forge-identity{gap:12px}}
 
 /* Shared workspace shell. Labels stay visible beside the geometric family marks. */
-.skillforge main{max-width:1280px;margin-left:236px;padding:44px clamp(24px,4vw,64px) 64px}
-.site-rail{position:fixed;inset:0 auto 0 0;width:236px;padding:34px 20px;background:var(--forge-surface);border-right:1px solid var(--line);overflow-y:auto;z-index:5}
-.site-rail .brand{display:block;color:var(--ink);text-decoration:none;font-size:21px;letter-spacing:-.7px;padding:0 12px}.rail-context{display:block;font:11px ui-monospace,monospace;color:var(--muted);padding:6px 12px 0}
-.site-rail nav{display:grid;gap:6px}.rail-start{margin-top:28px;padding-bottom:20px;border-bottom:1px solid var(--line)}.rail-tools{margin-top:20px}.site-rail nav a{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--muted);padding:12px;border-radius:9px;font-size:14px;font-weight:600;min-height:48px}.site-rail nav a:hover{background:var(--yellow);color:var(--ink)}.site-rail nav a[aria-current=page]{background:var(--forge-selected);color:var(--accent);box-shadow:inset 3px 0 var(--accent)}.site-rail svg{width:23px;height:23px;flex-shrink:0}.site-rail small{display:block;font:9px ui-monospace,monospace;letter-spacing:1.5px;margin-top:4px;color:var(--muted)}.site-rail a[href="library.html"] svg{color:var(--forge-violet)}.site-rail a[href="launch.html"] svg{color:var(--forge-amber)}.site-rail .theme-control{margin:36px 12px 0;display:block}.site-rail .theme-control select{width:100%;margin-top:8px}
-.skip-link{position:fixed;left:250px;top:-100px;z-index:10;background:var(--forge-surface);padding:12px}.skip-link:focus{top:10px}
-.skillforge header{padding:18px 0 30px}.skillforge header p{font-size:19px}.skillforge header .note{font-size:14px}.skillforge .example-link{font-size:14px}.skillforge .setup{border:1px solid var(--line);background:var(--yellow);gap:22px}.skillforge :is(.examples,.launch,.starter-jumps,.notebook-feature,.notebook-prompts details){border-color:var(--line)}
+.skillforge{font-size:14px}.skillforge main{max-width:1600px;margin-left:192px;padding:28px clamp(24px,3vw,48px) 48px}
+.site-rail{position:fixed;inset:0 auto 0 0;width:192px;padding:24px 14px;background:var(--forge-surface);border-right:1px solid var(--line);overflow-y:auto;z-index:5}
+.site-rail .brand{display:block;color:var(--ink);text-decoration:none;font-size:18px;letter-spacing:.4px;padding:0 12px}.rail-context{display:block;font:11px ui-monospace,monospace;color:var(--muted);padding:6px 12px 0}
+.site-rail nav{display:grid;gap:6px}.rail-start{margin-top:28px;padding-bottom:20px;border-bottom:1px solid var(--line)}.rail-tools{margin-top:20px}.site-rail nav a{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--muted);padding:10px;border-radius:7px;font-size:13px;font-weight:600;min-height:48px}.site-rail nav a:hover{background:var(--yellow);color:var(--ink)}.site-rail nav a[aria-current=page]{background:var(--forge-selected);color:var(--accent);box-shadow:inset 3px 0 var(--accent)}.site-rail svg{width:23px;height:23px;flex-shrink:0}.site-rail small{display:block;font:9px ui-monospace,monospace;letter-spacing:1.5px;margin-top:4px;color:var(--muted)}.site-rail a[href="library.html"] svg{color:var(--forge-violet)}.site-rail a[href="launch.html"] svg{color:var(--forge-amber)}.site-rail .theme-control{margin:36px 12px 0;display:block}.site-rail .theme-control select{width:100%;margin-top:8px}
+.skip-link{position:fixed;left:206px;top:-100px;z-index:10;background:var(--forge-surface);padding:12px}.skip-link:focus{top:10px}
+.skillforge header{padding:18px 0 30px}.skillforge header p{font-size:15px;margin:12px 0 0}.skillforge header .note{font-size:14px}.skillforge .example-link{font-size:14px}.skillforge .setup{border:1px solid var(--line);background:var(--yellow);gap:22px}.skillforge :is(.examples,.launch,.starter-jumps,.notebook-feature,.notebook-prompts details){border-color:var(--line)}
 .skillforge :is(.path-card,.practice-prompt){background:var(--forge-surface);color:var(--ink)}.skillforge .path-card:first-child{background:var(--yellow);border-color:var(--line)}.skillforge .path-card{padding:28px}.skillforge .path-kicker{font:11px ui-monospace,monospace;letter-spacing:1px;color:var(--accent)}.skillforge .path-card:nth-child(2) .path-kicker{color:var(--forge-amber)}.skillforge .starter-invitation{background:var(--forge-surface)}.skillforge .possibility-grid p{border-color:var(--forge-violet);font-size:16px}.skillforge .possibility-grid strong{font-size:19px}.skillforge .notebook-feature{background:var(--yellow)}.skillforge #prompt{background:var(--forge-surface);color:var(--ink);border-color:var(--line)}.skillforge .practice-prompt{font-size:18px}.skillforge .starter-section{margin:36px 0}.skillforge .starter-jumps{gap:12px;padding-bottom:24px}.skillforge .starter-jumps a{background:var(--forge-surface);border:1px solid var(--line);padding:10px 14px;border-radius:8px;text-decoration:none}.skillforge .launch button[type=submit]{background:var(--forge-action);border-color:var(--forge-action);color:#282014}.skillforge input::placeholder,.skillforge textarea::placeholder{color:var(--muted);opacity:1}.skillforge :is(input,select):disabled{background:var(--yellow);color:var(--muted)}
 @media(min-width:901px) and (max-width:1150px){.skillforge .catalog{grid-template-columns:repeat(2,minmax(0,1fr))}.skillforge .setup,.skillforge .examples{grid-template-columns:1fr}.skillforge .preferences{grid-template-columns:1fr}}
 @media(max-width:600px){.skillforge main{margin-left:0;padding:0 22px 44px}.site-rail{position:relative;inset:auto;width:auto;margin:0 0 28px;padding:20px 22px;border-right:0;border-bottom:1px solid var(--line)}.site-rail .brand{padding:0;display:inline-block}.site-rail .rail-context{padding-left:0}.site-rail .nav-toggle{position:absolute;right:22px;top:16px;padding:9px 14px}.site-rail nav{grid-template-columns:repeat(2,minmax(0,1fr))}.site-rail .rail-start{margin-top:18px;padding-bottom:12px}.site-rail .rail-tools{margin-top:12px}.site-rail .theme-control{margin:18px 12px 0;display:flex;justify-content:flex-start}.site-rail .theme-control select{width:auto;margin:0}.skillforge header{padding-top:8px}.skip-link{left:16px}.skillforge .path-grid{grid-template-columns:1fr}.skillforge .catalog{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -60,12 +60,12 @@ html[data-forge-theme=dark] .skillforge{--ink:#e8edf7;--muted:#acb8cf;--line:#39
 @media(max-width:600px){.resource-details dl{grid-template-columns:1fr;gap:.2rem}.resource-details dd{margin-bottom:.65rem}}
 
 /* Shared mark stays in the header, never over form controls. */
-.skillforge .prism-header{position:relative;max-width:none;padding-right:clamp(165px,24vw,290px);min-height:260px}
-.forge-art{position:absolute;right:0;top:0;width:clamp(110px,15.4vw,182px);color:var(--accent);pointer-events:none;user-select:none}
+.skillforge .prism-header{position:relative;max-width:none;padding:8px 100px 24px 0;min-height:132px}.skillforge h1{font-size:clamp(30px,3.5vw,45px);letter-spacing:-1.5px;margin:12px 0}.skillforge h2{font-size:20px}
+.forge-art{position:absolute;right:0;top:0;width:72px;color:var(--accent);pointer-events:none;user-select:none}
 .forge-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 24px color-mix(in srgb,var(--forge-violet) 12%,transparent))}
 .prism-header .forge-mark{display:none}
-@media(min-width:601px) and (max-width:1100px){.skillforge .prism-header{padding-right:170px}.forge-art{width:110px;top:10px}}
-@media(max-width:600px){.skillforge .prism-header{padding-right:0;min-height:0}.forge-art{width:58px;right:0;top:0;opacity:.85}.prism-header>.eyebrow,.prism-header .forge-identity{padding-right:94px;min-height:94px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.prism-header .forge-identity{margin-bottom:10px}.prism-header .forge-name{font-size:20px;letter-spacing:2px}.prism-header .forge-identity .eyebrow{letter-spacing:1px;font-size:10px}}
+@media(min-width:601px) and (max-width:1100px){.skillforge .prism-header{padding-right:94px}.forge-art{width:68px;top:10px}}
+@media(max-width:600px){.skillforge .prism-header{padding-right:0;min-height:0}.forge-art{width:58px;right:0;top:0;opacity:.85}.prism-header>.eyebrow,.prism-header .forge-identity{padding-right:94px;min-height:32px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.prism-header .forge-identity{margin-bottom:10px}.prism-header .forge-name{font-size:20px;letter-spacing:2px}.prism-header .forge-identity .eyebrow{letter-spacing:1px;font-size:10px}}
 
 /* Helper selections form a compact matrix; explanatory copy stays in Details. */
 .skillforge .selector-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,205px),1fr));gap:10px;align-items:stretch;margin:14px 0 28px}
@@ -96,11 +96,11 @@ html[data-forge-theme=dark] .skillforge{--ink:#e8edf7;--muted:#acb8cf;--line:#39
 
 /* Shared Workbench discovery; the static builder remains usable offline. */
 .web-workbench main{max-width:1700px;padding-inline:clamp(22px,3vw,48px)}
-.web-workbench .prism-header{min-height:175px;padding-block:8px 22px}
-.web-workbench h1{font-size:clamp(36px,4vw,54px);margin-block:10px 12px}
-.web-workbench .forge-art{width:95px;top:8px}
-.web-workspace{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
-.work-catalog{min-width:0}.catalog-title{cursor:pointer;font-size:23px;font-weight:650;padding-block:6px 18px}
+.web-workbench .prism-header{min-height:132px;padding-block:8px 24px}
+.web-workbench h1{font-size:clamp(30px,3.5vw,45px);margin-block:12px}
+.web-workbench .forge-art{width:72px;top:4px}
+.web-workspace{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-areas:"catalog mix" "output mix";gap:20px;align-items:start}
+.work-catalog{grid-area:catalog;min-width:0}.catalog-title{list-style:none}.catalog-title::-webkit-details-marker{display:none}.catalog-title:after{content:"⌄";float:right;color:var(--muted);font-size:18px}.work-catalog:not([open])>.catalog-title:after{content:"›"}.catalog-title .eyebrow{display:block;font-size:10px;margin-bottom:10px}.catalog-title{cursor:pointer;font-size:21px;font-weight:650;padding-block:0 16px}
 .catalog-title .selection-tally{margin-left:10px;font:12px ui-monospace,monospace;color:var(--muted)}
 .web-catalog-search{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:10px}
 .web-catalog-search select{margin:0}.web-catalog-search :is(input,select){font-size:14px;padding:11px}
@@ -112,39 +112,108 @@ html[data-forge-theme=dark] .skillforge{--ink:#e8edf7;--muted:#acb8cf;--line:#39
 .catalog-layout-row select{width:auto;margin:0;padding:7px;font-size:12px}
 .catalog-layout-row>.text-button,.catalog-filter-row>.text-button{font-size:12px;padding:8px}
 .web-workbench .catalog.selector-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,205px),1fr));gap:8px;margin:14px 0}
-.web-workbench .catalog.catalog-tree{display:block}
+.web-workbench .catalog.catalog-tree{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px;align-items:start}
 .catalog-branch{border-top:1px solid var(--line);margin-block:12px}
 .branch-heading{display:flex;align-items:center;gap:9px;cursor:pointer;min-height:46px;font-size:14px;font-weight:650;list-style:none}
 .branch-heading::-webkit-details-marker{display:none}.branch-heading:before{content:'›';font-size:20px;width:12px;color:var(--muted)}
 .catalog-branch[open]>.branch-heading:before{transform:rotate(90deg)}
 .branch-symbol svg{width:18px;height:18px;display:block;color:var(--accent)}
 .branch-count{margin-left:auto;font:11px ui-monospace,monospace;color:var(--muted)}
-.branch-nodes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,235px),1fr));gap:5px;padding-left:20px;border-left:1px solid var(--line);margin-left:6px}
-.catalog-subgroups{padding-left:20px}.catalog-subgroups .catalog-branch{margin-block:0;border-top:0}
+.branch-nodes{display:flex;flex-direction:column;gap:5px;padding-left:12px;border-left:1px solid var(--line);margin-left:6px}
+.catalog-subgroups{padding-left:12px;border-left:1px solid var(--line);margin-left:6px}.catalog-subgroups .catalog-branch{margin-block:0;border-top:0}
 .web-workbench .selector-grid .card{padding:0 10px;display:grid;grid-template-columns:1fr 26px;gap:0 4px;border:1px solid var(--line);border-radius:6px;min-width:0}
-.web-workbench .selector-grid .card:has(input:checked){border-color:var(--accent);background:var(--forge-selected)}
+.web-workbench .selector-grid .card:has(input:checked){padding:0 10px;border-color:var(--accent);background:var(--forge-selected)}
 .web-workbench .selector-grid .card label{font-size:13px;min-height:44px;line-height:1.35;margin:0;align-items:center;gap:8px;padding-block:8px}
 .web-workbench .selector-grid .card input{width:16px;height:16px;margin:0}
 .web-workbench .selector-grid .card label strong{font-weight:550}
 .web-workbench .selector-detail{margin:0;align-self:start;min-width:0}.web-workbench .selector-detail>summary{min-height:44px;padding:10px 4px;font-size:16px;list-style:none}
 .web-workbench .selector-detail[open]{grid-column:1/-1;padding-bottom:12px}.web-workbench .selector-detail[open]>summary{min-height:28px;padding:0}
 .web-workbench .selector-detail .resource-details dl{display:block}.web-workbench .selector-detail dd{margin-bottom:10px}
-.web-mix{position:sticky;top:24px;min-width:0;display:grid;gap:14px}
-.mix-box,.web-context,.web-workbench .helper-settings{padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--forge-surface)}
-.mix-box h2{font-size:20px;display:flex;align-items:center;justify-content:space-between}.mix-box h2 span{font:13px ui-monospace,monospace;color:var(--accent)}
+.web-mix{grid-area:mix;position:sticky;top:20px;min-width:0;display:grid;gap:14px}
+.mix-box,.web-context,.web-workbench .helper-settings{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--forge-surface)}
+.mix-box .eyebrow{font-size:10px;margin-bottom:10px}.mix-box h2{font-size:20px;display:flex;align-items:center;justify-content:space-between}.mix-box h2 span{font:13px ui-monospace,monospace;color:var(--accent)}
 .web-workbench .selected-helpers{margin:12px 0 18px;font-size:13px;gap:6px}.web-workbench .chip{font-size:12px;text-align:left;padding:6px 8px}
 .web-workbench #helper-build{width:100%}.mix-box .note{font-size:12px;margin:10px 0 0}
 .web-context>summary,.web-workbench .helper-settings>summary{cursor:pointer;font-size:14px;font-weight:650}.web-context>summary span{float:right;color:var(--muted);font-size:11px;font-weight:400}
 .web-context label{margin-top:14px;font-size:13px}.web-context textarea{font-size:14px}
 .web-workbench .helper-settings[open]{max-height:75vh;overflow:auto}.web-workbench .helper-settings :is(.preferences,.mix-controls,.mix-boundaries,.mix-preview dl>div){grid-template-columns:1fr}
 .web-workbench .helper-settings label{font-size:12px}.web-workbench .helper-settings select{font-size:13px}.web-workbench .mix-preview{padding:12px}
-.web-output{grid-column:1/-1;min-width:0;border-top:1px solid var(--line);padding-top:24px}.web-output h2{font-size:23px}
+.web-output{grid-area:output;min-width:0;border:1px solid var(--line);border-radius:10px;background:var(--forge-surface);padding:20px;scroll-margin-top:20px}.web-output h2{font-size:23px}
 .about-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0 36px}
 .about-grid section{border-top:2px solid var(--accent);padding:18px 0}.about-grid h2{font-size:20px}.about-grid p{font-size:15px;color:var(--muted)}
 .about-page .release-line{font:12px ui-monospace,monospace;color:var(--accent)}
 @media(max-width:1190px){.web-workspace{grid-template-columns:minmax(0,1fr) 275px}.web-catalog-search{grid-template-columns:1fr}.web-mix{top:12px}.mix-box,.web-context,.web-workbench .helper-settings{padding:15px}}
-@media(max-width:1000px){.web-workspace{grid-template-columns:1fr}.web-mix{position:static;grid-row:1;grid-template-columns:1fr 1fr}.web-workbench .mix-box{grid-column:1/-1}.web-workbench .selected-helpers{margin-bottom:12px}.web-workbench #helper-build{width:auto;min-width:180px}.about-grid{grid-template-columns:1fr}.web-catalog-search{grid-template-columns:1fr 160px}}
+@media(max-width:1000px){.web-workspace{grid-template-columns:1fr;grid-template-areas:"catalog" "mix" "output"}.web-mix{position:static;grid-template-columns:1fr 1fr}.web-workbench .mix-box{grid-column:1/-1}.web-workbench .selected-helpers{margin-bottom:12px}.web-workbench #helper-build{width:auto;min-width:180px}.about-grid{grid-template-columns:1fr}.web-catalog-search{grid-template-columns:1fr 160px}}
 @media(max-width:600px){.web-workbench .prism-header{min-height:0;padding-right:70px}.web-workbench .prism-header>.eyebrow{min-height:0;padding-right:0}.web-workbench .forge-art{width:54px}.web-mix{grid-template-columns:1fr}.web-catalog-search{grid-template-columns:1fr}.branch-nodes{padding-left:10px}.catalog-subgroups{padding-left:10px}.web-workbench .catalog-filter-row{gap:4px}}
 
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Bounded selection and a nearby result keep the web tools in one workspace. */
+.web-workbench #catalog-grid{max-height:min(60vh,630px);overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent;padding:0 6px 4px 0}
+.web-workbench .catalog-branch:first-child{margin-top:0}
+.web-workbench .branch-heading{min-height:40px}
+.web-workbench .web-output .helper-result{margin-top:12px;padding-top:12px}
+.web-workbench .web-output textarea{max-height:48vh;min-height:200px}
+.web-workbench .web-output h2{font-size:21px;margin-bottom:8px}
+.web-output:has(#helper-results:empty){background:transparent;border-style:dashed}
+.skillforge .ai-tailoring{margin-top:18px;padding-top:14px;font-size:13px}
+.skillforge .ai-tailoring summary{font-size:14px}
+.skillforge button{font-size:13px;padding:10px 14px}
+.skillforge #helper-build{background:var(--accent);border-color:var(--accent);color:var(--paper);box-shadow:none}
+.task-workspace{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:24px;align-items:start}
+.task-inputs{min-width:0}
+.task-workbench .setup{display:block;padding:18px;margin:0 0 24px;background:var(--forge-surface);border-radius:10px}
+.task-workbench .setup h2{margin-bottom:14px}
+.task-workbench .setup label{font-size:13px}
+.task-workbench #outcome{margin-top:6px;min-height:110px;font-size:14px}
+.task-workbench .examples{display:block;margin-top:14px;padding-top:12px;font-size:13px}
+.task-workbench .examples>summary{cursor:pointer;color:var(--muted)}
+.task-workbench .example-controls{margin-top:14px}
+.task-workbench .catalog-controls{gap:12px}
+.task-workbench .catalog-controls :is(input,select){font-size:13px;padding:10px}
+.task-workbench #catalog{max-height:530px;overflow:auto;overscroll-behavior:contain;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:8px;scrollbar-width:thin;padding-right:5px}
+.task-workbench .card,.task-workbench .card:has(input:checked){padding:12px;border-width:1px;border-radius:7px}
+.task-workbench .card label{font-size:14px;margin-top:7px;line-height:1.35}
+.task-workbench .card p{font-size:12px;margin:8px 0}
+.task-workbench .card a,.task-workbench .card small{font-size:11px}
+.task-workbench .launch{position:sticky;top:20px;padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--forge-surface);min-width:0}
+.task-workbench .launch .actions{gap:8px}
+.task-workbench .launch .note{font-size:12px}
+.task-workbench #task-experience{font-size:13px;margin:0}
+.task-workbench #prompt{min-height:240px;max-height:50vh;margin-block:10px}
+.task-workbench .build-actions{margin-top:14px}
+.task-workbench .step{font-size:11px;width:22px;height:22px;vertical-align:2px}
+.home-workbench .path-grid{gap:18px}
+.home-workbench .path-card{padding:24px;border-radius:10px}
+.home-workbench .path-card h2{font-size:27px;margin:12px 0}
+.home-workbench .path-card p{font-size:15px;margin-bottom:24px}
+.home-workbench .path-note{margin:16px 0 24px}
+.home-workbench .starter-invitation{padding:16px 22px;margin-bottom:24px}
+.home-workbench .possibility-grid{gap:16px}
+.home-workbench .possibility-grid p{font-size:13px}
+.home-workbench .possibility-grid strong{font-size:16px}
+.home-workbench .possibilities{margin-bottom:24px}
+@media(max-width:1190px){.task-workspace{grid-template-columns:minmax(0,1fr) 300px}}
+@media(max-width:1000px){.task-workspace{grid-template-columns:1fr}.task-workbench .launch{position:static}.web-workbench #catalog-grid{max-height:580px}.task-workbench #catalog{max-height:500px}}
+@media(max-width:600px){.skillforge main{padding-inline:16px}.skillforge .site-rail{padding:18px 16px;margin-bottom:20px}.skillforge h1{font-size:32px}.skillforge .prism-header{padding-bottom:22px}.skillforge .forge-art{width:54px}.web-workspace{gap:16px}.web-workbench #catalog-grid{max-height:55vh}.web-output{padding:16px}.catalog-layout-row{gap:8px}.task-workbench .launch{padding:16px}}
+
+/* One Workbench route; guides stay available without competing with the tool. */
+.rail-guides{margin:20px 10px 0;color:var(--muted);font-size:12px}
+.rail-guides>summary{cursor:pointer;padding-block:10px}
+.rail-guides .rail-tools{margin-top:4px}
+.rail-guides nav a{font-size:12px;padding:9px 0}
+.rail-guides nav svg{width:18px;height:18px}
+.output-title{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.output-title h2{margin:0}
+.output-purpose{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);font-weight:500}
+.output-purpose select{width:auto;margin:0;font-size:12px;padding:7px}
+.catalog-tree .card{position:relative}
+.catalog-tree .card:before{content:'';position:absolute;left:-13px;top:22px;width:12px;border-top:1px solid var(--line)}
+.catalog-tree .card:has(input:checked):before{border-color:var(--accent)}
+.catalog-tree .catalog-branch:has(input:checked)>.branch-heading .branch-symbol{color:var(--forge-amber)}
+.catalog-tree .catalog-subgroups>.catalog-branch{position:relative}
+.catalog-tree .catalog-subgroups>.catalog-branch:before{content:'';position:absolute;left:-13px;top:20px;width:12px;border-top:1px solid var(--line)}
+@media(max-width:1190px){.web-workbench .catalog.catalog-tree{grid-template-columns:1fr}}
+@media(min-width:601px) and (max-width:900px){.rail-guides{margin:16px 0 0;text-align:center;font-size:10px}.rail-guides nav a{font-size:11px}}
+@media(max-width:600px){.rail-guides{margin:12px 10px 0}.output-title{align-items:start}.output-purpose{width:100%;justify-content:space-between}.output-purpose select{max-width:75%}.branch-nodes{padding-left:12px}.catalog-subgroups{padding-left:12px}}

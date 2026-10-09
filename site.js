@@ -31,6 +31,12 @@
         toggle.setAttribute('aria-expanded', String(!nav.hidden));
       });
     }
+    document.querySelectorAll('a[href="#catalog-panel"]').forEach(link => {
+      link.addEventListener('click', () => {
+        const catalog = document.getElementById('catalog-panel');
+        if (catalog) catalog.open = true;
+      });
+    });
     document.querySelectorAll('[data-copy-prompt]').forEach(button => {
       button.addEventListener('click', async () => {
         const source = document.getElementById(button.dataset.copyPrompt);
