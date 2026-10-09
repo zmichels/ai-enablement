@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "ansible-galaxy",
+    "title": "Ansible Galaxy",
+    "kind": "Automation collection catalog",
+    "url": "https://galaxy.ansible.com/",
+    "for_ids": [
+      "ansible-helper"
+    ],
+    "cues": [
+      "ansible",
+      "collection",
+      "playbook"
+    ],
+    "why": "Find maintained Ansible collections for an automation need.",
+    "status": "External catalog; Ansible collections are not agent skills. Check publisher and version.",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Find maintained Ansible collections for an automation need.",
+    "inputs": "Required capability, Ansible version and publisher requirements.",
+    "approach": "Compare collection documentation, maintenance and version compatibility.",
+    "outputs": "Candidate collection and version to evaluate.",
+    "requirements": "Catalog access to browse; Ansible environment to install or execute a collection.",
+    "limits": "Collections are automation packages, not agent skills; selecting one does not install it.",
+    "source_url": "https://galaxy.ansible.com/",
+    "reviewed": "2026-10-08",
+    "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+    "supporting_files": []
+  }
+}

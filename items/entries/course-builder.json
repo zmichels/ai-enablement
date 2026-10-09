@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "course-builder",
+    "title": "Build and improve a course",
+    "kind": "role",
+    "use_when": "Plan a syllabus, connect objectives and use course feedback in your LMS.",
+    "category": "Work with people",
+    "featured": true,
+    "path": "roles/course-builder.md",
+    "artifact": "artifacts/course-workspace.md",
+    "audience": "public candidate",
+    "scope": "Course planning, linked documents, LMS inspection and evaluation-informed revisions",
+    "maturity": "authored starter; live LMS behavior not tested",
+    "source_refs": [
+      "product-design",
+      "course-platforms"
+    ],
+    "reviewed_at": "2026-10-08",
+    "freshness": "Verify current platform, institution, course view and source versions before dependent work.",
+    "limitations": "An instruction set for an existing assistant; browser access and action authority depend on the host and task. No course has been published or learner outcome evaluated."
+  },
+  "pattern": {
+    "cues": [
+      "course",
+      "syllabus",
+      "learning objectives",
+      "lms",
+      "curriculum",
+      "course evaluation",
+      "blackboard",
+      "brightspace",
+      "canvas",
+      "moodle"
+    ],
+    "variants": [],
+    "activation": "an instructor is planning or revising a course, connecting course documents, inspecting an LMS or considering evaluation feedback."
+  },
+  "discovery": {
+    "aliases": [
+      "course design",
+      "curriculum planning"
+    ],
+    "use_cases": [
+      {
+        "id": "syllabus-to-course-map",
+        "title": "Turn a syllabus into a course map",
+        "cues": [
+          "syllabus",
+          "objective alignment"
+        ],
+        "outcome": "Linked objectives, activities and assessments, with genuine gaps visible."
+      },
+      {
+        "id": "evaluation-to-revision",
+        "title": "Turn a course evaluation into revisions",
+        "cues": [
+          "course evaluation",
+          "revise a course"
+        ],
+        "outcome": "Proposed changes tied to findings and a way to check the next offering."
+      }
+    ],
+    "links": [
+      {
+        "target": "resource:course-building-guide",
+        "relation": "uses",
+        "why": "Use the guide for LMS concepts, linked documents and checks on course changes.",
+        "status": "curated"
+      },
+      {
+        "target": "entry:teaching-partner",
+        "relation": "overlaps",
+        "why": "Course building connects a whole course; teaching help shapes a particular explanation or lesson.",
+        "status": "curated"
+      }
+    ]
+  }
+}

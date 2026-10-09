@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "service-team",
+    "title": "Service team support",
+    "kind": "expertise",
+    "use_when": "Coordinate shifts, handoffs and learning across a service team.",
+    "path": "expertise/service-team.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-08",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "service team",
+      "shift",
+      "handoff",
+      "frontline",
+      "team coordination"
+    ],
+    "variants": [],
+    "activation": "a service team needs clearer handoffs, coordinated shifts or practical staff learning."
+  }
+}

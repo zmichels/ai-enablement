@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "request-guide",
+    "title": "Request tracking guide",
+    "kind": "Included guide",
+    "url": "guides/request-tracking.md",
+    "for_ids": [
+      "request-coordinator",
+      "it-service"
+    ],
+    "cues": [
+      "tickets",
+      "provisioning",
+      "follow up"
+    ],
+    "why": "Coordinate several requests toward one outcome.",
+    "status": "Authored method; no ticket connection or monitor is installed",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Coordinate several requests toward one outcome.",
+    "inputs": "Outcome, request IDs/links, owners and dated status evidence.",
+    "approach": "Track dependencies and distinguish administrative closure from observed completion.",
+    "outputs": "Small request tracker, blocker summary and follow-up drafts.",
+    "requirements": "Supplied snapshots or an authorized source connection.",
+    "limits": "Stale observations stay dated; sending and scheduled checks are separate capabilities and actions.",
+    "source_url": "guides/request-tracking.md",
+    "reviewed": "2026-10-08",
+    "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+    "supporting_files": [],
+    "entrypoint_sha256": "8c80b73ead245ea3366a4c9c5ea379bc34ccf8978b2c0dc2d40c1654f751f900"
+  },
+  "discovery": {
+    "aliases": [
+      "request status guide"
+    ],
+    "use_cases": [
+      {
+        "id": "closure-vs-completion",
+        "title": "Check what closed actually means",
+        "cues": [
+          "closed ticket",
+          "fulfilled request"
+        ],
+        "outcome": "A distinction between recorded status and evidence that the requested outcome occurred."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:request-coordinator",
+        "relation": "complements",
+        "why": "Apply the guide while tracing related records and drafting a specific follow-up.",
+        "status": "curated"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "document-editor",
+    "title": "Tighten this up",
+    "kind": "role",
+    "use_when": "Keep your meaning. Lose the clutter.",
+    "category": "Write & explain",
+    "featured": false,
+    "path": "roles/document-editor.md",
+    "artifact": "artifacts/document-editor.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "edit",
+      "rewrite",
+      "improve this draft",
+      "revise",
+      "proofread"
+    ],
+    "variants": [],
+    "activation": "a draft buries its point, repeats itself or leaves readers unsure what to do."
+  }
+}

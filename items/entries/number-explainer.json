@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "number-explainer",
+    "title": "Make sense of the numbers",
+    "kind": "role",
+    "use_when": "What changed? What matters? What is missing?",
+    "category": "Think it through",
+    "featured": false,
+    "path": "roles/number-explainer.md",
+    "artifact": "artifacts/number-explainer.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "numbers",
+      "percent",
+      "percentage",
+      "spreadsheet",
+      "budget",
+      "chart"
+    ],
+    "variants": [],
+    "activation": "a calculation, comparison, percentage or chart needs checking and explaining in everyday terms."
+  }
+}

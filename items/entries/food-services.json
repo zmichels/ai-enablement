@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "food-services",
+    "title": "Food and hospitality services",
+    "kind": "expertise",
+    "use_when": "The work behind a smoother meal or better welcome.",
+    "path": "expertise/food-services.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "cafeteria",
+      "food",
+      "meal",
+      "menu",
+      "queue",
+      "kitchen"
+    ],
+    "variants": [
+      {
+        "label": "Find the queue",
+        "cues": [
+          "queue",
+          "line",
+          "wait",
+          "lunch rush"
+        ],
+        "method": "Time ordering, payment, preparation and pickup separately. Compare demand bursts with each station’s throughput and test the smallest bottleneck change.",
+        "output": "A station-by-station observation sheet and one lunch-period trial."
+      },
+      {
+        "label": "Plan replenishment",
+        "cues": [
+          "stock",
+          "waste",
+          "run out",
+          "leftovers"
+        ],
+        "method": "Compare portions prepared, sold and left by service period; separate stockouts from low demand before changing batch size.",
+        "output": "A simple replenishment experiment and a waste/stockout measure."
+      }
+    ],
+    "activation": "meal service, stocking, a busy shift or a customer message needs practical coordination."
+  }
+}

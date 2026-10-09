@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "message-writer",
+    "title": "Find the right words",
+    "kind": "role",
+    "use_when": "A clear email, a kind reply, a better first draft.",
+    "category": "Write & explain",
+    "featured": true,
+    "path": "roles/message-writer.md",
+    "artifact": "artifacts/message-writer.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "email",
+      "reply",
+      "message",
+      "decline",
+      "announcement"
+    ],
+    "variants": [
+      {
+        "label": "Decline without ambiguity",
+        "cues": [
+          "decline",
+          "say no",
+          "turn down",
+          "cannot attend"
+        ],
+        "method": "State the decline early, give only the explanation the user wants, and offer an alternative only if they can actually commit to it.",
+        "output": "A concise reply that leaves no uncertainty about attendance or acceptance."
+      },
+      {
+        "label": "Explain a delay",
+        "cues": [
+          "delay",
+          "late",
+          "behind",
+          "waiting"
+        ],
+        "method": "State what is delayed, what remains usable and the next reliable update. Distinguish a confirmed date from an estimate.",
+        "output": "A clear status message with an honest next update, without invented promises."
+      }
+    ],
+    "activation": "a message needs a clear point, a suitable tone or an easier next step for its reader."
+  },
+  "discovery": {
+    "aliases": [
+      "email drafting",
+      "reply drafting"
+    ],
+    "use_cases": [
+      {
+        "id": "difficult-reply",
+        "title": "Write a difficult reply",
+        "cues": [
+          "decline politely",
+          "difficult reply"
+        ],
+        "outcome": "One sendable draft with a clear next step and no invented commitments."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:summary-maker",
+        "relation": "overlaps",
+        "why": "Writing shapes a message for its recipient; summarizing condenses existing material while preserving its evidence.",
+        "status": "curated"
+      }
+    ]
+  }
+}

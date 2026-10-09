@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "project-learning-ledger",
+    "title": "Give the project a memory",
+    "kind": "method",
+    "use_when": "Keep the ideas worth finding again.",
+    "path": "guides/project-memory.md",
+    "audience": "public candidate",
+    "scope": "Project-local context capture, retrieval and optional analysis preparation",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design",
+      "agents-evolve"
+    ],
+    "reviewed_at": "2026-10-08",
+    "freshness": "Review after use or a schema/upstream analysis-contract change.",
+    "limitations": "No automatic cross-session memory or background monitoring. Structured adapter checks do not establish agent behavior or learning benefit."
+  }
+}

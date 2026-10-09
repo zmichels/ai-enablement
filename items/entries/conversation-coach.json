@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "conversation-coach",
+    "title": "Prepare for a tricky conversation",
+    "kind": "role",
+    "use_when": "Find a way in, without writing a speech.",
+    "category": "Work with people",
+    "featured": false,
+    "path": "roles/conversation-coach.md",
+    "artifact": "artifacts/conversation-coach.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "conversation",
+      "feedback",
+      "conflict",
+      "awkward",
+      "talk to"
+    ],
+    "variants": [],
+    "activation": "a conversation involves disagreement, expectations, sensitive feedback or a difficult request."
+  }
+}

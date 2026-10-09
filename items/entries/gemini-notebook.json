@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "gemini-notebook",
+    "title": "Meet Gemini Notebook",
+    "kind": "method",
+    "use_when": "Turn a few public sources into a conversation and check what you learn.",
+    "path": "guides/gemini-notebook.md",
+    "category": "Getting started",
+    "audience": "public candidate",
+    "scope": "An introductory source-based learning exercise",
+    "maturity": "authored exercise; product documentation checked",
+    "source_refs": [
+      "google-notebook"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Check current Google guidance and your organization’s access rules.",
+    "limitations": "Does not establish workplace approval, upload sources, run a model or guarantee generated answers."
+  }
+}

@@ -1,0 +1,709 @@
+{
+  "schema_version": 1,
+  "project_id": "synthetic-handoff-practice",
+  "records": [
+    {
+      "id": "PM-001",
+      "kind": "question",
+      "title": "What should happen next in this handoff?",
+      "text": "Compare support for proceeding, clarifying the wording, and retrieving missing context.",
+      "scope": "Fabricated checklist exercise only",
+      "parent_id": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      },
+      "evidence": {
+        "state": "proposed",
+        "summary": "Synthetic observations illustrate format and geometry, not measured improvement."
+      },
+      "decision": {
+        "state": "open",
+        "by": null,
+        "authority": "No operational action is authorized by this fixture."
+      },
+      "revisit": "Replace with a scoped question and real authorized observations before drawing conclusions.",
+      "metric": null,
+      "changes": []
+    }
+  ],
+  "relations": [],
+  "spaces": [
+    {
+      "id": "handoff-coarse-v1",
+      "version": "1",
+      "question": "What should happen next in this handoff?",
+      "level": "coarse-action",
+      "labels": [
+        "proceed",
+        "investigate"
+      ],
+      "definitions": {
+        "proceed": "Enough support to proceed in the exercise",
+        "investigate": "Seek more information or resolve ambiguity"
+      },
+      "parent": null
+    },
+    {
+      "id": "handoff-fine-v1",
+      "version": "1",
+      "question": "What should happen next in this handoff?",
+      "level": "fine-action",
+      "labels": [
+        "proceed",
+        "clarify-wording",
+        "retrieve-context"
+      ],
+      "definitions": {
+        "proceed": "Enough support to proceed in the exercise",
+        "clarify-wording": "Resolve ambiguous wording",
+        "retrieve-context": "Seek missing contextual information"
+      },
+      "parent": {
+        "space_id": "handoff-coarse-v1",
+        "mapping": {
+          "proceed": "proceed",
+          "clarify-wording": "investigate",
+          "retrieve-context": "investigate"
+        }
+      }
+    }
+  ],
+  "protocols": [
+    {
+      "id": "synthetic-v1",
+      "version": "1",
+      "kind": "synthetic",
+      "definition": "Hand-authored normalized vectors; no model probabilities, people or observations measured.",
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    }
+  ],
+  "populations": [
+    {
+      "id": "baseline",
+      "definition": "Synthetic baseline exercise",
+      "sampling_unit": "case, with repeated runs nested within case",
+      "sampling_plan": "Fabricated two cases, two repeats per case; not representative of a real population.",
+      "comparability_notes": "Illustrative before/after populations share case IDs but are invented; cannot establish benefit."
+    },
+    {
+      "id": "revised",
+      "definition": "Synthetic revised-checklist exercise",
+      "sampling_unit": "case, with repeated runs nested within case",
+      "sampling_plan": "Fabricated two cases, two repeats per case; not representative of a real population.",
+      "comparability_notes": "Illustrative before/after populations share case IDs but are invented; cannot establish benefit."
+    }
+  ],
+  "configurations": [
+    {
+      "id": "config-v1",
+      "workflow_revision": "checklist-v1",
+      "model": null,
+      "prompt_revision": "fixture-v1",
+      "tool_revision": null,
+      "data_revision": "synthetic-cases-v1"
+    },
+    {
+      "id": "config-v2",
+      "workflow_revision": "checklist-v2",
+      "model": null,
+      "prompt_revision": "fixture-v1",
+      "tool_revision": null,
+      "data_revision": "synthetic-cases-v1"
+    }
+  ],
+  "runs": [
+    {
+      "id": "baseline-run-1",
+      "population_id": "baseline",
+      "case_id": "case-1",
+      "repeat_index": 0,
+      "config_id": "config-v1",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    },
+    {
+      "id": "baseline-run-2",
+      "population_id": "baseline",
+      "case_id": "case-1",
+      "repeat_index": 1,
+      "config_id": "config-v1",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    },
+    {
+      "id": "baseline-run-3",
+      "population_id": "baseline",
+      "case_id": "case-2",
+      "repeat_index": 0,
+      "config_id": "config-v1",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    },
+    {
+      "id": "baseline-run-4",
+      "population_id": "baseline",
+      "case_id": "case-2",
+      "repeat_index": 1,
+      "config_id": "config-v1",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    },
+    {
+      "id": "revised-run-1",
+      "population_id": "revised",
+      "case_id": "case-1",
+      "repeat_index": 0,
+      "config_id": "config-v2",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    },
+    {
+      "id": "revised-run-2",
+      "population_id": "revised",
+      "case_id": "case-1",
+      "repeat_index": 1,
+      "config_id": "config-v2",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    },
+    {
+      "id": "revised-run-3",
+      "population_id": "revised",
+      "case_id": "case-2",
+      "repeat_index": 0,
+      "config_id": "config-v2",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    },
+    {
+      "id": "revised-run-4",
+      "population_id": "revised",
+      "case_id": "case-2",
+      "repeat_index": 1,
+      "config_id": "config-v2",
+      "started_at": null,
+      "outcome": {
+        "state": "unmeasured",
+        "summary": "No real outcome check; vectors are made up.",
+        "source": null
+      }
+    }
+  ],
+  "observations": [
+    {
+      "id": "baseline-run-1-input",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-1",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.3,
+        0.315,
+        0.385
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-1-context",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-1",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.36,
+        0.288,
+        0.352
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-1-review",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-1",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.42,
+        0.261,
+        0.319
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-2-input",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-2",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.31,
+        0.3105,
+        0.3795
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-2-context",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-2",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.37,
+        0.2835,
+        0.3465
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-2-review",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-2",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.43,
+        0.2565,
+        0.3135
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-3-input",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-3",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.32,
+        0.306,
+        0.374
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-3-context",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-3",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.38,
+        0.279,
+        0.341
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-3-review",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-3",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.44,
+        0.252,
+        0.308
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-4-input",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-4",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.33,
+        0.3015,
+        0.3685
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-4-context",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-4",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.39,
+        0.2745,
+        0.3355
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "baseline-run-4-review",
+      "record_id": "PM-001",
+      "run_id": "baseline-run-4",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.45,
+        0.2475,
+        0.3025
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-1-input",
+      "record_id": "PM-001",
+      "run_id": "revised-run-1",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.3,
+        0.315,
+        0.385
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-1-context",
+      "record_id": "PM-001",
+      "run_id": "revised-run-1",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.45,
+        0.2475,
+        0.3025
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-1-review",
+      "record_id": "PM-001",
+      "run_id": "revised-run-1",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.6,
+        0.18,
+        0.22
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-2-input",
+      "record_id": "PM-001",
+      "run_id": "revised-run-2",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.31,
+        0.3105,
+        0.3795
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-2-context",
+      "record_id": "PM-001",
+      "run_id": "revised-run-2",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.46,
+        0.243,
+        0.297
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-2-review",
+      "record_id": "PM-001",
+      "run_id": "revised-run-2",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.61,
+        0.1755,
+        0.2145
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-3-input",
+      "record_id": "PM-001",
+      "run_id": "revised-run-3",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.32,
+        0.306,
+        0.374
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-3-context",
+      "record_id": "PM-001",
+      "run_id": "revised-run-3",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.47,
+        0.2385,
+        0.2915
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-3-review",
+      "record_id": "PM-001",
+      "run_id": "revised-run-3",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.62,
+        0.171,
+        0.209
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-4-input",
+      "record_id": "PM-001",
+      "run_id": "revised-run-4",
+      "stage": "input",
+      "sequence": 0,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.33,
+        0.3015,
+        0.3685
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-4-context",
+      "record_id": "PM-001",
+      "run_id": "revised-run-4",
+      "stage": "context",
+      "sequence": 1,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.48,
+        0.234,
+        0.286
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    },
+    {
+      "id": "revised-run-4-review",
+      "record_id": "PM-001",
+      "run_id": "revised-run-4",
+      "stage": "review",
+      "sequence": 2,
+      "space_id": "handoff-fine-v1",
+      "protocol_id": "synthetic-v1",
+      "probabilities": [
+        0.63,
+        0.1665,
+        0.2035
+      ],
+      "missing_reason": null,
+      "source": {
+        "locator": "Synthetic fixture authored for compatibility tests; no real team or run",
+        "observed_at": null,
+        "revision": "fixture-v1"
+      }
+    }
+  ],
+  "measurements": []
+}

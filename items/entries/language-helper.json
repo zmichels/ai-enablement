@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "language-helper",
+    "title": "Bridge a language gap",
+    "kind": "role",
+    "use_when": "A translation draft with the meaning intact.",
+    "category": "Write & explain",
+    "featured": false,
+    "path": "roles/language-helper.md",
+    "artifact": "artifacts/language-helper.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "translate",
+      "translation",
+      "language",
+      "bilingual"
+    ],
+    "variants": [],
+    "activation": "people need to communicate across languages or check wording whose meaning may not carry across."
+  }
+}

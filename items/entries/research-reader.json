@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "research-reader",
+    "title": "Get the point of a paper",
+    "kind": "role",
+    "use_when": "The question, the finding, and the fine print.",
+    "category": "Learn & understand",
+    "featured": false,
+    "path": "roles/research-reader.md",
+    "artifact": "artifacts/research-reader.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "paper",
+      "study",
+      "evidence",
+      "literature",
+      "article"
+    ],
+    "variants": [],
+    "activation": "a paper or research claim needs its evidence, limitations and applicability unpacked."
+  }
+}

@@ -1,0 +1,543 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Catalog item sidecar",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "type",
+    "entry"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "type": {
+      "enum": [
+        "entry",
+        "resource"
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "kind",
+        "audience"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "audience": {
+          "enum": [
+            "public candidate",
+            "internal candidate",
+            "public",
+            "internal"
+          ]
+        }
+      }
+    },
+    "pattern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "activation",
+        "cues",
+        "variants"
+      ],
+      "properties": {
+        "activation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "cues",
+              "method"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "not": {
+                  "enum": [
+                    "auto",
+                    "usual"
+                  ]
+                }
+              },
+              "cues": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "method": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "output": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          }
+        }
+      }
+    },
+    "briefing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_url",
+        "purpose",
+        "inputs",
+        "approach",
+        "outputs",
+        "requirements",
+        "limits",
+        "reviewed",
+        "review_scope"
+      ],
+      "properties": {
+        "source_url": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "inputs": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "approach": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "outputs": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "requirements": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "limits": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reviewed": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "review_scope": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "source_revision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "entrypoint_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "entrypoint_path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "supporting_files": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source_url": {
+                "not": {
+                  "pattern": "^https://"
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "entrypoint_sha256"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "source_revision"
+            ]
+          },
+          "then": {
+            "required": [
+              "entrypoint_sha256"
+            ]
+          }
+        }
+      ]
+    },
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "use_cases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "cues": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "outcome": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "target",
+              "relation",
+              "why",
+              "status"
+            ],
+            "properties": {
+              "target": {
+                "type": "string",
+                "pattern": "^(entry|resource):[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "relation": {
+                "enum": [
+                  "alternative",
+                  "complements",
+                  "overlaps",
+                  "specializes",
+                  "uses"
+                ]
+              },
+              "why": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "status": {
+                "enum": [
+                  "curated",
+                  "proposed"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "resource"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "briefing"
+        ],
+        "not": {
+          "required": [
+            "pattern"
+          ]
+        },
+        "properties": {
+          "entry": {
+            "required": [
+              "url",
+              "why",
+              "status",
+              "for_ids",
+              "cues"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "why": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "status": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "for_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "cues": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "audience": {
+                "enum": [
+                  "public",
+                  "internal"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "entry"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "required": [
+            "briefing"
+          ]
+        },
+        "properties": {
+          "entry": {
+            "required": [
+              "path",
+              "use_when",
+              "scope",
+              "maturity",
+              "source_refs",
+              "reviewed_at",
+              "freshness",
+              "limitations"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "artifact": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "use_when": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "maturity": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "category": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "reviewed_at": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "freshness": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "limitations": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "kind": {
+                "enum": [
+                  "role",
+                  "expertise",
+                  "context",
+                  "method"
+                ]
+              },
+              "audience": {
+                "enum": [
+                  "public candidate",
+                  "internal candidate"
+                ]
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 1
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "not": {
+                        "const": "method"
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "category"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "entry": {
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "role",
+                        "expertise"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "pattern"
+              ]
+            },
+            "else": {
+              "not": {
+                "required": [
+                  "pattern"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "description": "Identity and source fields are structural. Discovery is optional and editorial: curated does not mean evaluated. The compiler also checks link targets, audience separation, source paths, source bindings and unique local use-case IDs."
+}

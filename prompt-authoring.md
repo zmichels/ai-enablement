@@ -4,7 +4,7 @@ A reusable prompt should tell the assistant what to help with, what it can use, 
 
 ## Our small contract
 
-Every selectable role and work-area method uses six sections for maintainability. Each section must earn its place with task-specific content. The [template](prompt-template.md) is the starting point; [prompt-contract.json](prompt-contract.json) lets the package validator check structure.
+Only **Approach** is required: the specific method that changes what the assistant does. Add the other sections when they earn their place; leave them out when they would repeat generic advice. The [minimal template](prompt-template.md) and [contract](prompt-contract.json) make that explicit.
 
 | Section | The question it answers |
 |---|---|
@@ -29,7 +29,9 @@ Sources checked 2026-10-07. No universal agent-authoring standard is asserted by
 
 Work-area prompts supply perspective; help roles supply methods. A combined helper is instructed to choose the relevant contributions, resolve overlap and produce one useful result. It should surface a real conflict instead of inventing consensus. The browser assembles these instructions deterministically; the receiving assistant adapts them to the actual task.
 
-The builders include the relevant method, useful artifact and task-specific check. Full guides remain available by link instead of being pasted into every brief. `work-patterns.json` supplies explicitly phrase-matched variants, such as diagnosing a failed playbook versus planning a patch rollout. These suggestions are deterministic and fallible; the receiving assistant should discard a mismatch.
+The builders include the relevant method, useful artifact and task-specific check. Full guides remain available by link instead of being pasted into every brief. Each item’s sidecar supplies activation cues and explicitly phrase-matched variants, such as diagnosing a failed playbook versus planning a patch rollout. These suggestions are deterministic and fallible; the receiving assistant should discard a mismatch.
+
+Item sidecars also hold optional search aliases, use cases and explained connections. The generated indexes feed both builders; edit the sidecar rather than the generated catalog. A curated connection is an editorial suggestion, not evidence of successful use.
 
 The resource shelf names the kind and availability of each reference. An automation collection, a document, an agent skill and an installed tool are different things. Public builders contain public references only.
 

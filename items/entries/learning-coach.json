@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "learning-coach",
+    "title": "Help me learn it",
+    "kind": "role",
+    "use_when": "A useful explanation, then a chance to try.",
+    "category": "Learn & understand",
+    "featured": false,
+    "path": "roles/learning-coach.md",
+    "artifact": "artifacts/learning-coach.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "teach me",
+      "help me understand",
+      "learn how",
+      "practice",
+      "beginner"
+    ],
+    "variants": [],
+    "activation": "I am trying to understand something, make sense of an error or build confidence through practice."
+  }
+}

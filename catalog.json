@@ -11,18 +11,47 @@
       "url": "https://support.google.com/gemininotebook/answer/16164461?hl=en",
       "reviewed_at": "2026-10-07",
       "notes": "Official product guidance; account editions, organization access and features vary."
+    },
+    "agents-evolve": {
+      "title": "Automation as a product that learns",
+      "url": "https://zmichels.github.io/agents-evolve/",
+      "reviewed_at": "2026-10-08",
+      "notes": "Public perspective on learning through use and portable project memory; not validation of this authored skill."
+    },
+    "course-platforms": {
+      "title": "Official LMS and institutional course-design references",
+      "url": "https://teachingsupport.umn.edu/prepare-teach/set-your-canvas-course-site",
+      "reviewed_at": "2026-10-08",
+      "notes": "Canvas, Brightspace, Blackboard and Moodle orientation; linked official sources and scope in guides/course-building.md. No LMS integration or instructor session tested."
     }
   },
   "entries": [
     {
-      "id": "message-writer",
-      "title": "Find the right words",
+      "id": "administration",
+      "title": "Administration and coordination",
+      "kind": "expertise",
+      "use_when": "Calendars, documents, meetings and the details between them.",
+      "path": "expertise/administration.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "ansible-helper",
+      "title": "Work on servers with Ansible",
       "kind": "role",
-      "use_when": "A clear email, a kind reply, a better first draft.",
-      "category": "Write & explain",
-      "featured": true,
-      "path": "roles/message-writer.md",
-      "artifact": "artifacts/message-writer.md",
+      "use_when": "A playbook, a test, and a rollout you can explain.",
+      "category": "Technical help",
+      "featured": false,
+      "path": "roles/ansible-helper.md",
+      "artifact": "artifacts/ansible-helper.md",
       "audience": "public candidate",
       "scope": "Everyday work and specialist help",
       "maturity": "starter",
@@ -34,14 +63,33 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "summary-maker",
-      "title": "Give me the short version",
+      "id": "automation-engineer",
+      "title": "Skip the copy and paste",
       "kind": "role",
-      "use_when": "Less wall of text. More point.",
-      "category": "Write & explain",
+      "use_when": "Put a repetitive chore on a shorter leash.",
+      "path": "roles/automation-engineer.md",
+      "artifact": "artifacts/implementation.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "category": "Technical help",
+      "featured": false
+    },
+    {
+      "id": "brainstorm-partner",
+      "title": "Get a few fresh ideas",
+      "kind": "role",
+      "use_when": "More possibilities. Less blank-page staring.",
+      "category": "Think it through",
       "featured": true,
-      "path": "roles/summary-maker.md",
-      "artifact": "artifacts/summary-maker.md",
+      "path": "roles/brainstorm-partner.md",
+      "artifact": "artifacts/brainstorm-partner.md",
       "audience": "public candidate",
       "scope": "Everyday work and specialist help",
       "maturity": "starter",
@@ -53,42 +101,21 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "plain-language-guide",
-      "title": "Make this make sense",
-      "kind": "role",
-      "use_when": "Explain the tricky bits. Skip the jargon.",
-      "category": "Learn & understand",
-      "featured": true,
-      "path": "roles/plain-language-guide.md",
-      "artifact": "artifacts/plain-language-guide.md",
+      "id": "business-analysis",
+      "title": "Business and process analysis",
+      "kind": "expertise",
+      "use_when": "Understand the need before reaching for a solution.",
+      "path": "expertise/business-analysis.md",
+      "category": "Work areas",
       "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
+      "scope": "A perspective to combine with selected help roles",
       "maturity": "starter",
       "source_refs": [
         "product-design"
       ],
       "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "day-planner",
-      "title": "Sort out my day",
-      "kind": "role",
-      "use_when": "Find a sensible next step in a very full list.",
-      "category": "Plan & organize",
-      "featured": true,
-      "path": "roles/day-planner.md",
-      "artifact": "artifacts/day-planner.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
     },
     {
       "id": "checklist-maker",
@@ -110,14 +137,145 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "meeting-helper",
-      "title": "Make the meeting worth it",
+      "id": "communications",
+      "title": "Writing and communications",
+      "kind": "expertise",
+      "use_when": "Make the message work for the person reading it.",
+      "path": "expertise/communications.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "connection-designer",
+      "title": "Try a better way",
       "kind": "role",
-      "use_when": "A point, a plan, and fewer “quick follow-ups.”",
+      "use_when": "Choose a small change worth trying.",
+      "path": "roles/connection-designer.md",
+      "artifact": "artifacts/connection-design.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "category": "Make work easier",
+      "featured": false
+    },
+    {
+      "id": "context-overlay",
+      "title": "Add organizational context",
+      "kind": "method",
+      "use_when": "Add organizational context",
+      "path": "overlay-contract.md",
+      "audience": "public candidate",
+      "scope": "Generic method",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review on source change or failed use.",
+      "limitations": "Method, not a hosted runtime or validated benefit claim."
+    },
+    {
+      "id": "conversation-coach",
+      "title": "Prepare for a tricky conversation",
+      "kind": "role",
+      "use_when": "Find a way in, without writing a speech.",
+      "category": "Work with people",
+      "featured": false,
+      "path": "roles/conversation-coach.md",
+      "artifact": "artifacts/conversation-coach.md",
+      "audience": "public candidate",
+      "scope": "Everyday work and specialist help",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+    },
+    {
+      "id": "course-builder",
+      "title": "Build and improve a course",
+      "kind": "role",
+      "use_when": "Plan a syllabus, connect objectives and use course feedback in your LMS.",
       "category": "Work with people",
       "featured": true,
-      "path": "roles/meeting-helper.md",
-      "artifact": "artifacts/meeting-helper.md",
+      "path": "roles/course-builder.md",
+      "artifact": "artifacts/course-workspace.md",
+      "audience": "public candidate",
+      "scope": "Course planning, linked documents, LMS inspection and evaluation-informed revisions",
+      "maturity": "authored starter; live LMS behavior not tested",
+      "source_refs": [
+        "product-design",
+        "course-platforms"
+      ],
+      "reviewed_at": "2026-10-08",
+      "freshness": "Verify current platform, institution, course view and source versions before dependent work.",
+      "limitations": "An instruction set for an existing assistant; browser access and action authority depend on the host and task. No course has been published or learner outcome evaluated.",
+      "discovery": {
+        "aliases": [
+          "course design",
+          "curriculum planning"
+        ],
+        "use_cases": [
+          {
+            "id": "syllabus-to-course-map",
+            "title": "Turn a syllabus into a course map",
+            "cues": [
+              "syllabus",
+              "objective alignment"
+            ],
+            "outcome": "Linked objectives, activities and assessments, with genuine gaps visible."
+          },
+          {
+            "id": "evaluation-to-revision",
+            "title": "Turn a course evaluation into revisions",
+            "cues": [
+              "course evaluation",
+              "revise a course"
+            ],
+            "outcome": "Proposed changes tied to findings and a way to check the next offering."
+          }
+        ],
+        "links": [
+          {
+            "target": "resource:course-building-guide",
+            "relation": "uses",
+            "why": "Use the guide for LMS concepts, linked documents and checks on course changes.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:teaching-partner",
+            "relation": "overlaps",
+            "why": "Course building connects a whole course; teaching help shapes a particular explanation or lesson.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "day-planner",
+      "title": "Sort out my day",
+      "kind": "role",
+      "use_when": "Find a sensible next step in a very full list.",
+      "category": "Plan & organize",
+      "featured": true,
+      "path": "roles/day-planner.md",
+      "artifact": "artifacts/day-planner.md",
       "audience": "public candidate",
       "scope": "Everyday work and specialist help",
       "maturity": "starter",
@@ -148,63 +306,6 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "brainstorm-partner",
-      "title": "Get a few fresh ideas",
-      "kind": "role",
-      "use_when": "More possibilities. Less blank-page staring.",
-      "category": "Think it through",
-      "featured": true,
-      "path": "roles/brainstorm-partner.md",
-      "artifact": "artifacts/brainstorm-partner.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "prototype-helper",
-      "title": "Show the idea",
-      "kind": "role",
-      "use_when": "A quick mockup can say what a meeting cannot.",
-      "category": "Think it through",
-      "featured": true,
-      "path": "roles/prototype-helper.md",
-      "artifact": "artifacts/prototype-helper.md",
-      "audience": "public candidate",
-      "scope": "Small illustrative prototypes and mockups",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review against the actual audience and intended use.",
-      "limitations": "A concept illustration; not a tested or deployed product."
-    },
-    {
-      "id": "teaching-partner",
-      "title": "Show someone the ropes",
-      "kind": "role",
-      "use_when": "Turn “watch me do it” into something reusable.",
-      "category": "Work with people",
-      "featured": true,
-      "path": "roles/teaching-partner.md",
-      "artifact": "artifacts/teaching-partner.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
       "id": "document-editor",
       "title": "Tighten this up",
       "kind": "role",
@@ -213,120 +314,6 @@
       "featured": false,
       "path": "roles/document-editor.md",
       "artifact": "artifacts/document-editor.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "learning-coach",
-      "title": "Help me learn it",
-      "kind": "role",
-      "use_when": "A useful explanation, then a chance to try.",
-      "category": "Learn & understand",
-      "featured": false,
-      "path": "roles/learning-coach.md",
-      "artifact": "artifacts/learning-coach.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "research-reader",
-      "title": "Get the point of a paper",
-      "kind": "role",
-      "use_when": "The question, the finding, and the fine print.",
-      "category": "Learn & understand",
-      "featured": false,
-      "path": "roles/research-reader.md",
-      "artifact": "artifacts/research-reader.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "conversation-coach",
-      "title": "Prepare for a tricky conversation",
-      "kind": "role",
-      "use_when": "Find a way in, without writing a speech.",
-      "category": "Work with people",
-      "featured": false,
-      "path": "roles/conversation-coach.md",
-      "artifact": "artifacts/conversation-coach.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "language-helper",
-      "title": "Bridge a language gap",
-      "kind": "role",
-      "use_when": "A translation draft with the meaning intact.",
-      "category": "Write & explain",
-      "featured": false,
-      "path": "roles/language-helper.md",
-      "artifact": "artifacts/language-helper.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "number-explainer",
-      "title": "Make sense of the numbers",
-      "kind": "role",
-      "use_when": "What changed? What matters? What is missing?",
-      "category": "Think it through",
-      "featured": false,
-      "path": "roles/number-explainer.md",
-      "artifact": "artifacts/number-explainer.md",
-      "audience": "public candidate",
-      "scope": "Everyday work and specialist help",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after use; verify current external facts before relying on them.",
-      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
-    },
-    {
-      "id": "service-helper",
-      "title": "Make it easier to get help",
-      "kind": "role",
-      "use_when": "Clear directions for someone having a long day.",
-      "category": "Work with people",
-      "featured": false,
-      "path": "roles/service-helper.md",
-      "artifact": "artifacts/service-helper.md",
       "audience": "public candidate",
       "scope": "Everyday work and specialist help",
       "maturity": "starter",
@@ -357,6 +344,86 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
+      "id": "evidence-miner",
+      "title": "Find what we already know",
+      "kind": "role",
+      "use_when": "Useful answers may already be sitting somewhere.",
+      "path": "roles/evidence-miner.md",
+      "artifact": "artifacts/evidence-map.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "category": "Learn & understand",
+      "featured": false,
+      "discovery": {
+        "aliases": [
+          "source tracing",
+          "find prior decisions"
+        ],
+        "use_cases": [
+          {
+            "id": "recover-decision-evidence",
+            "title": "Recover the basis for an old decision",
+            "cues": [
+              "why was this decided",
+              "conflicting sources"
+            ],
+            "outcome": "An evidence map with source dates, disagreements and missing facts."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:workflow-cartographer",
+            "relation": "complements",
+            "why": "Use the recovered evidence to distinguish what a process actually does from what a guide says it should do.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "evidence-reviewer",
+      "title": "Give it a second look",
+      "kind": "role",
+      "use_when": "Find gaps before someone else does.",
+      "path": "roles/evidence-reviewer.md",
+      "artifact": "artifacts/evidence-review.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "category": "Think it through",
+      "featured": false
+    },
+    {
+      "id": "facilities",
+      "title": "Facilities and environmental services",
+      "kind": "expertise",
+      "use_when": "Practical support for the places people work.",
+      "path": "expertise/facilities.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
       "id": "feedback-sorter",
       "title": "Find the pattern in feedback",
       "kind": "role",
@@ -376,14 +443,199 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "request-navigator",
-      "title": "Find the right request",
+      "id": "finance-operations",
+      "title": "Finance, purchasing and operations",
+      "kind": "expertise",
+      "use_when": "Numbers, resources and choices that need to add up.",
+      "path": "expertise/finance-operations.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "food-services",
+      "title": "Food and hospitality services",
+      "kind": "expertise",
+      "use_when": "The work behind a smoother meal or better welcome.",
+      "path": "expertise/food-services.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "gemini-notebook",
+      "title": "Meet Gemini Notebook",
+      "kind": "method",
+      "use_when": "Turn a few public sources into a conversation and check what you learn.",
+      "path": "guides/gemini-notebook.md",
+      "category": "Getting started",
+      "audience": "public candidate",
+      "scope": "An introductory source-based learning exercise",
+      "maturity": "authored exercise; product documentation checked",
+      "source_refs": [
+        "google-notebook"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Check current Google guidance and your organization’s access rules.",
+      "limitations": "Does not establish workplace approval, upload sources, run a model or guarantee generated answers."
+    },
+    {
+      "id": "handoff-editor",
+      "title": "Leave a good handoff",
       "kind": "role",
-      "use_when": "Find the right form. Skip the portal scavenger hunt.",
-      "category": "Make work easier",
+      "use_when": "Help the next person pick up where you left off.",
+      "path": "roles/handoff-editor.md",
+      "artifact": "starter/handoff.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "category": "Plan & organize",
+      "featured": false
+    },
+    {
+      "id": "it-service",
+      "title": "IT service and request coordination",
+      "kind": "expertise",
+      "use_when": "Get to the right team—and keep the handoffs visible.",
+      "path": "expertise/it-service.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "language-helper",
+      "title": "Bridge a language gap",
+      "kind": "role",
+      "use_when": "A translation draft with the meaning intact.",
+      "category": "Write & explain",
+      "featured": false,
+      "path": "roles/language-helper.md",
+      "artifact": "artifacts/language-helper.md",
+      "audience": "public candidate",
+      "scope": "Everyday work and specialist help",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+    },
+    {
+      "id": "learning-coach",
+      "title": "Help me learn it",
+      "kind": "role",
+      "use_when": "A useful explanation, then a chance to try.",
+      "category": "Learn & understand",
+      "featured": false,
+      "path": "roles/learning-coach.md",
+      "artifact": "artifacts/learning-coach.md",
+      "audience": "public candidate",
+      "scope": "Everyday work and specialist help",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+    },
+    {
+      "id": "learning-curator",
+      "title": "Keep the lesson",
+      "kind": "role",
+      "use_when": "Make the next attempt a little wiser.",
+      "path": "roles/learning-curator.md",
+      "artifact": "lesson-template.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-08",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "category": "Learn & understand",
+      "featured": false,
+      "discovery": {
+        "aliases": [
+          "capture one lesson",
+          "review a correction"
+        ],
+        "use_cases": [
+          {
+            "id": "correction-to-check",
+            "title": "Turn a correction into a reusable check",
+            "cues": [
+              "learn from a mistake",
+              "capture a lesson"
+            ],
+            "outcome": "One scoped lesson, a small proposed or applied change, and evidence of what was checked."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:project-memory",
+            "relation": "complements",
+            "why": "Keep the lesson in the existing project record so later work can retrieve its evidence and limits.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "learning-loop",
+      "title": "How agents retain lessons",
+      "kind": "method",
+      "use_when": "How agents retain lessons",
+      "path": "learning-loop.md",
+      "audience": "public candidate",
+      "scope": "Generic method",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review on source change or failed use.",
+      "limitations": "Method, not a hosted runtime or validated benefit claim."
+    },
+    {
+      "id": "meeting-helper",
+      "title": "Make the meeting worth it",
+      "kind": "role",
+      "use_when": "A point, a plan, and fewer “quick follow-ups.”",
+      "category": "Work with people",
       "featured": true,
-      "path": "roles/request-navigator.md",
-      "artifact": "artifacts/request-navigator.md",
+      "path": "roles/meeting-helper.md",
+      "artifact": "artifacts/meeting-helper.md",
       "audience": "public candidate",
       "scope": "Everyday work and specialist help",
       "maturity": "starter",
@@ -395,14 +647,58 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "request-coordinator",
-      "title": "Keep requests moving",
+      "id": "message-writer",
+      "title": "Find the right words",
       "kind": "role",
-      "use_when": "Several tickets. One clear picture.",
-      "category": "Make work easier",
+      "use_when": "A clear email, a kind reply, a better first draft.",
+      "category": "Write & explain",
+      "featured": true,
+      "path": "roles/message-writer.md",
+      "artifact": "artifacts/message-writer.md",
+      "audience": "public candidate",
+      "scope": "Everyday work and specialist help",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task.",
+      "discovery": {
+        "aliases": [
+          "email drafting",
+          "reply drafting"
+        ],
+        "use_cases": [
+          {
+            "id": "difficult-reply",
+            "title": "Write a difficult reply",
+            "cues": [
+              "decline politely",
+              "difficult reply"
+            ],
+            "outcome": "One sendable draft with a clear next step and no invented commitments."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:summary-maker",
+            "relation": "overlaps",
+            "why": "Writing shapes a message for its recipient; summarizing condenses existing material while preserving its evidence.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "number-explainer",
+      "title": "Make sense of the numbers",
+      "kind": "role",
+      "use_when": "What changed? What matters? What is missing?",
+      "category": "Think it through",
       "featured": false,
-      "path": "roles/request-coordinator.md",
-      "artifact": "artifacts/request-coordinator.md",
+      "path": "roles/number-explainer.md",
+      "artifact": "artifacts/number-explainer.md",
       "audience": "public candidate",
       "scope": "Everyday work and specialist help",
       "maturity": "starter",
@@ -414,14 +710,47 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "ansible-helper",
-      "title": "Work on servers with Ansible",
+      "id": "package-exercise",
+      "title": "Evaluate this package",
+      "kind": "method",
+      "use_when": "Evaluate this package",
+      "path": "exercise.md",
+      "audience": "public candidate",
+      "scope": "Generic method",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-06",
+      "freshness": "Review on source change or failed use.",
+      "limitations": "Method, not a hosted runtime or validated benefit claim."
+    },
+    {
+      "id": "people-leadership",
+      "title": "People and team leadership",
+      "kind": "expertise",
+      "use_when": "Clear expectations, useful conversations and a workable plan.",
+      "path": "expertise/people-leadership.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "plain-language-guide",
+      "title": "Make this make sense",
       "kind": "role",
-      "use_when": "A playbook, a test, and a rollout you can explain.",
-      "category": "Technical help",
-      "featured": false,
-      "path": "roles/ansible-helper.md",
-      "artifact": "artifacts/ansible-helper.md",
+      "use_when": "Explain the tricky bits. Skip the jargon.",
+      "category": "Learn & understand",
+      "featured": true,
+      "path": "roles/plain-language-guide.md",
+      "artifact": "artifacts/plain-language-guide.md",
       "audience": "public candidate",
       "scope": "Everyday work and specialist help",
       "maturity": "starter",
@@ -452,321 +781,185 @@
       "featured": false
     },
     {
-      "id": "workflow-cartographer",
-      "title": "Untangle a process",
-      "kind": "role",
-      "use_when": "See the steps—and where things get stuck.",
-      "path": "roles/workflow-cartographer.md",
-      "artifact": "artifacts/workflow-observation.md",
+      "id": "project-learning-ledger",
+      "title": "Give the project a memory",
+      "kind": "method",
+      "use_when": "Keep the ideas worth finding again.",
+      "path": "guides/project-memory.md",
       "audience": "public candidate",
-      "scope": "Generic delivery and learning",
+      "scope": "Project-local context capture, retrieval and optional analysis preparation",
       "maturity": "starter",
       "source_refs": [
-        "product-design"
+        "product-design",
+        "agents-evolve"
       ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after failed use or a source/contract change.",
-      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
-      "category": "Make work easier",
-      "featured": false
+      "reviewed_at": "2026-10-08",
+      "freshness": "Review after use or a schema/upstream analysis-contract change.",
+      "limitations": "No automatic cross-session memory or background monitoring. Structured adapter checks do not establish agent behavior or learning benefit."
     },
     {
-      "id": "connection-designer",
-      "title": "Try a better way",
+      "id": "project-memory",
+      "title": "Remember and learn as we go",
       "kind": "role",
-      "use_when": "Choose a small change worth trying.",
-      "path": "roles/connection-designer.md",
-      "artifact": "artifacts/connection-design.md",
+      "use_when": "Keep useful ideas, decisions and lessons close at hand.",
+      "path": "roles/project-memory.md",
+      "artifact": "skills/project-learning-ledger/assets/ledger.empty.json",
       "audience": "public candidate",
-      "scope": "Generic delivery and learning",
+      "scope": "Project-local memory, retrieval and learning from observed work",
       "maturity": "starter",
       "source_refs": [
-        "product-design"
+        "product-design",
+        "agents-evolve"
       ],
-      "reviewed_at": "2026-10-07",
+      "reviewed_at": "2026-10-08",
       "freshness": "Review after failed use or a source/contract change.",
-      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
-      "category": "Make work easier",
-      "featured": false
+      "limitations": "Requires an existing assistant and authorized storage. No automatic model training, background monitoring or cross-session recall.",
+      "category": "Learn & understand",
+      "featured": true,
+      "discovery": {
+        "aliases": [
+          "project ledger",
+          "ongoing project memory"
+        ],
+        "use_cases": [
+          {
+            "id": "resume-with-context",
+            "title": "Resume work without losing the reasoning",
+            "cues": [
+              "resume a project",
+              "remember decisions"
+            ],
+            "outcome": "A current-state view backed by dated decisions, open questions and recoverable history."
+          }
+        ],
+        "links": [
+          {
+            "target": "resource:project-learning-ledger",
+            "relation": "uses",
+            "why": "Use the portable record format and integrity checks for saved project memory.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:learning-curator",
+            "relation": "overlaps",
+            "why": "Project memory captures and retrieves ongoing context; lesson curation turns a particular correction into a scoped improvement.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
-      "id": "evidence-reviewer",
-      "title": "Give it a second look",
+      "id": "prototype-helper",
+      "title": "Show the idea",
       "kind": "role",
-      "use_when": "Find gaps before someone else does.",
-      "path": "roles/evidence-reviewer.md",
-      "artifact": "artifacts/evidence-review.md",
-      "audience": "public candidate",
-      "scope": "Generic delivery and learning",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after failed use or a source/contract change.",
-      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "use_when": "A quick mockup can say what a meeting cannot.",
       "category": "Think it through",
-      "featured": false
+      "featured": true,
+      "path": "roles/prototype-helper.md",
+      "artifact": "artifacts/prototype-helper.md",
+      "audience": "public candidate",
+      "scope": "Small illustrative prototypes and mockups",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review against the actual audience and intended use.",
+      "limitations": "A concept illustration; not a tested or deployed product."
     },
     {
-      "id": "handoff-editor",
-      "title": "Leave a good handoff",
+      "id": "request-coordinator",
+      "title": "Keep requests moving",
       "kind": "role",
-      "use_when": "Help the next person pick up where you left off.",
-      "path": "roles/handoff-editor.md",
-      "artifact": "starter/handoff.md",
+      "use_when": "Several tickets. One clear picture.",
+      "category": "Make work easier",
+      "featured": false,
+      "path": "roles/request-coordinator.md",
+      "artifact": "artifacts/request-coordinator.md",
       "audience": "public candidate",
-      "scope": "Generic delivery and learning",
+      "scope": "Everyday work and specialist help",
       "maturity": "starter",
       "source_refs": [
         "product-design"
       ],
       "reviewed_at": "2026-10-07",
-      "freshness": "Review after failed use or a source/contract change.",
-      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
-      "category": "Plan & organize",
-      "featured": false
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task.",
+      "discovery": {
+        "aliases": [
+          "ticket dependencies",
+          "request follow-up"
+        ],
+        "use_cases": [
+          {
+            "id": "blocked-request-chain",
+            "title": "Untangle a blocked request chain",
+            "cues": [
+              "blocked tickets",
+              "request dependencies"
+            ],
+            "outcome": "A dependency/status table and the next useful owner-specific follow-up."
+          }
+        ],
+        "links": [
+          {
+            "target": "resource:request-guide",
+            "relation": "uses",
+            "why": "Use the tracking guide to keep status evidence, dependencies and follow-ups distinct.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:request-navigator",
+            "relation": "complements",
+            "why": "If the chain needs another request, identify its supported route before treating it as submitted.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
-      "id": "evidence-miner",
-      "title": "Find what we already know",
+      "id": "request-navigator",
+      "title": "Find the right request",
       "kind": "role",
-      "use_when": "Useful answers may already be sitting somewhere.",
-      "path": "roles/evidence-miner.md",
-      "artifact": "artifacts/evidence-map.md",
+      "use_when": "Find the right form. Skip the portal scavenger hunt.",
+      "category": "Make work easier",
+      "featured": true,
+      "path": "roles/request-navigator.md",
+      "artifact": "artifacts/request-navigator.md",
       "audience": "public candidate",
-      "scope": "Generic delivery and learning",
+      "scope": "Everyday work and specialist help",
       "maturity": "starter",
       "source_refs": [
         "product-design"
       ],
       "reviewed_at": "2026-10-07",
-      "freshness": "Review after failed use or a source/contract change.",
-      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
-      "category": "Learn & understand",
-      "featured": false
-    },
-    {
-      "id": "automation-engineer",
-      "title": "Skip the copy and paste",
-      "kind": "role",
-      "use_when": "Put a repetitive chore on a shorter leash.",
-      "path": "roles/automation-engineer.md",
-      "artifact": "artifacts/implementation.md",
-      "audience": "public candidate",
-      "scope": "Generic delivery and learning",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after failed use or a source/contract change.",
-      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
-      "category": "Technical help",
-      "featured": false
-    },
-    {
-      "id": "learning-curator",
-      "title": "Keep the lesson",
-      "kind": "role",
-      "use_when": "Make the next attempt a little wiser.",
-      "path": "roles/learning-curator.md",
-      "artifact": "lesson-template.md",
-      "audience": "public candidate",
-      "scope": "Generic delivery and learning",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Review after failed use or a source/contract change.",
-      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
-      "category": "Learn & understand",
-      "featured": false
-    },
-    {
-      "id": "learning-loop",
-      "title": "How agents retain lessons",
-      "kind": "method",
-      "use_when": "How agents retain lessons",
-      "path": "learning-loop.md",
-      "audience": "public candidate",
-      "scope": "Generic method",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-06",
-      "freshness": "Review on source change or failed use.",
-      "limitations": "Method, not a hosted runtime or validated benefit claim."
-    },
-    {
-      "id": "context-overlay",
-      "title": "Add organizational context",
-      "kind": "method",
-      "use_when": "Add organizational context",
-      "path": "overlay-contract.md",
-      "audience": "public candidate",
-      "scope": "Generic method",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-06",
-      "freshness": "Review on source change or failed use.",
-      "limitations": "Method, not a hosted runtime or validated benefit claim."
-    },
-    {
-      "id": "package-exercise",
-      "title": "Evaluate this package",
-      "kind": "method",
-      "use_when": "Evaluate this package",
-      "path": "exercise.md",
-      "audience": "public candidate",
-      "scope": "Generic method",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-06",
-      "freshness": "Review on source change or failed use.",
-      "limitations": "Method, not a hosted runtime or validated benefit claim."
-    },
-    {
-      "id": "care-team",
-      "title": "Clinical team support",
-      "kind": "expertise",
-      "use_when": "The work around care: coordination, learning and clear communication.",
-      "path": "expertise/care-team.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "patient-services",
-      "title": "Patient and visitor services",
-      "kind": "expertise",
-      "use_when": "Help people find their way and understand the next step.",
-      "path": "expertise/patient-services.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "administration",
-      "title": "Administration and coordination",
-      "kind": "expertise",
-      "use_when": "Calendars, documents, meetings and the details between them.",
-      "path": "expertise/administration.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "facilities",
-      "title": "Facilities and environmental services",
-      "kind": "expertise",
-      "use_when": "Practical support for the places people work.",
-      "path": "expertise/facilities.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "food-services",
-      "title": "Food and hospitality services",
-      "kind": "expertise",
-      "use_when": "The work behind a smoother meal or better welcome.",
-      "path": "expertise/food-services.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "people-leadership",
-      "title": "People and team leadership",
-      "kind": "expertise",
-      "use_when": "Clear expectations, useful conversations and a workable plan.",
-      "path": "expertise/people-leadership.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "business-analysis",
-      "title": "Business and process analysis",
-      "kind": "expertise",
-      "use_when": "Understand the need before reaching for a solution.",
-      "path": "expertise/business-analysis.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "finance-operations",
-      "title": "Finance, purchasing and operations",
-      "kind": "expertise",
-      "use_when": "Numbers, resources and choices that need to add up.",
-      "path": "expertise/finance-operations.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task.",
+      "discovery": {
+        "aliases": [
+          "find a form",
+          "service request routing"
+        ],
+        "use_cases": [
+          {
+            "id": "choose-request-route",
+            "title": "Find the request that fits the need",
+            "cues": [
+              "which form",
+              "where to request"
+            ],
+            "outcome": "A source-backed route and draft fields; uncertain ownership remains visible."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:request-coordinator",
+            "relation": "complements",
+            "why": "Navigation finds the route and prepares a request; coordination follows related records and blockers after they exist.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "id": "research-education",
@@ -786,45 +979,49 @@
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
     },
     {
-      "id": "communications",
-      "title": "Writing and communications",
-      "kind": "expertise",
-      "use_when": "Make the message work for the person reading it.",
-      "path": "expertise/communications.md",
-      "category": "Work areas",
+      "id": "research-reader",
+      "title": "Get the point of a paper",
+      "kind": "role",
+      "use_when": "The question, the finding, and the fine print.",
+      "category": "Learn & understand",
+      "featured": false,
+      "path": "roles/research-reader.md",
+      "artifact": "artifacts/research-reader.md",
       "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
+      "scope": "Everyday work and specialist help",
       "maturity": "starter",
       "source_refs": [
         "product-design"
       ],
       "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "it-service",
-      "title": "IT service and request coordination",
-      "kind": "expertise",
-      "use_when": "Get to the right team—and keep the handoffs visible.",
-      "path": "expertise/it-service.md",
-      "category": "Work areas",
+      "id": "service-helper",
+      "title": "Make it easier to get help",
+      "kind": "role",
+      "use_when": "Clear directions for someone having a long day.",
+      "category": "Work with people",
+      "featured": false,
+      "path": "roles/service-helper.md",
+      "artifact": "artifacts/service-helper.md",
       "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
+      "scope": "Everyday work and specialist help",
       "maturity": "starter",
       "source_refs": [
         "product-design"
       ],
       "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
-      "id": "systems-administration",
-      "title": "Systems administration",
+      "id": "service-team",
+      "title": "Service team support",
       "kind": "expertise",
-      "use_when": "Servers, configuration, patching and careful troubleshooting.",
-      "path": "expertise/systems-administration.md",
+      "use_when": "Coordinate shifts, handoffs and learning across a service team.",
+      "path": "expertise/service-team.md",
       "category": "Work areas",
       "audience": "public candidate",
       "scope": "A perspective to combine with selected help roles",
@@ -832,24 +1029,7 @@
       "source_refs": [
         "product-design"
       ],
-      "reviewed_at": "2026-10-07",
-      "freshness": "Verify current local practices and consequential facts for each use.",
-      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
-    },
-    {
-      "id": "technology",
-      "title": "Software, data and technology",
-      "kind": "expertise",
-      "use_when": "Build, investigate or improve a technical tool.",
-      "path": "expertise/technology.md",
-      "category": "Work areas",
-      "audience": "public candidate",
-      "scope": "A perspective to combine with selected help roles",
-      "maturity": "starter",
-      "source_refs": [
-        "product-design"
-      ],
-      "reviewed_at": "2026-10-07",
+      "reviewed_at": "2026-10-08",
       "freshness": "Verify current local practices and consequential facts for each use.",
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
     },
@@ -871,21 +1051,162 @@
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
     },
     {
-      "id": "gemini-notebook",
-      "title": "Meet Gemini Notebook",
-      "kind": "method",
-      "use_when": "Turn a few public sources into a conversation and check what you learn.",
-      "path": "guides/gemini-notebook.md",
-      "category": "Getting started",
+      "id": "summary-maker",
+      "title": "Give me the short version",
+      "kind": "role",
+      "use_when": "Less wall of text. More point.",
+      "category": "Write & explain",
+      "featured": true,
+      "path": "roles/summary-maker.md",
+      "artifact": "artifacts/summary-maker.md",
       "audience": "public candidate",
-      "scope": "An introductory source-based learning exercise",
-      "maturity": "authored exercise; product documentation checked",
+      "scope": "Everyday work and specialist help",
+      "maturity": "starter",
       "source_refs": [
-        "google-notebook"
+        "product-design"
       ],
       "reviewed_at": "2026-10-07",
-      "freshness": "Check current Google guidance and your organization’s access rules.",
-      "limitations": "Does not establish workplace approval, upload sources, run a model or guarantee generated answers."
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task.",
+      "discovery": {
+        "aliases": [
+          "briefing",
+          "condense a document"
+        ],
+        "use_cases": [
+          {
+            "id": "decisions-from-notes",
+            "title": "Pull decisions from scattered notes",
+            "cues": [
+              "decisions from notes",
+              "short brief"
+            ],
+            "outcome": "A brief separating decisions, actions and open questions, with source locations."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:message-writer",
+            "relation": "complements",
+            "why": "After extracting the important points, shape them into a message for a particular recipient.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "systems-administration",
+      "title": "Systems administration",
+      "kind": "expertise",
+      "use_when": "Servers, configuration, patching and careful troubleshooting.",
+      "path": "expertise/systems-administration.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "teaching-partner",
+      "title": "Show someone the ropes",
+      "kind": "role",
+      "use_when": "Turn “watch me do it” into something reusable.",
+      "category": "Work with people",
+      "featured": true,
+      "path": "roles/teaching-partner.md",
+      "artifact": "artifacts/teaching-partner.md",
+      "audience": "public candidate",
+      "scope": "Everyday work and specialist help",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after use; verify current external facts before relying on them.",
+      "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+    },
+    {
+      "id": "technology",
+      "title": "Software, data and technology",
+      "kind": "expertise",
+      "use_when": "Build, investigate or improve a technical tool.",
+      "path": "expertise/technology.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "visitor-services",
+      "title": "Customer and visitor services",
+      "kind": "expertise",
+      "use_when": "Help people find their way and understand the next step.",
+      "path": "expertise/visitor-services.md",
+      "category": "Work areas",
+      "audience": "public candidate",
+      "scope": "A perspective to combine with selected help roles",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-08",
+      "freshness": "Verify current local practices and consequential facts for each use.",
+      "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "workflow-cartographer",
+      "title": "Untangle a process",
+      "kind": "role",
+      "use_when": "See the steps—and where things get stuck.",
+      "path": "roles/workflow-cartographer.md",
+      "artifact": "artifacts/workflow-observation.md",
+      "audience": "public candidate",
+      "scope": "Generic delivery and learning",
+      "maturity": "starter",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-07",
+      "freshness": "Review after failed use or a source/contract change.",
+      "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+      "category": "Make work easier",
+      "featured": false,
+      "discovery": {
+        "aliases": [
+          "process mapping",
+          "handoff mapping"
+        ],
+        "use_cases": [
+          {
+            "id": "trace-one-case",
+            "title": "Trace where one case gets stuck",
+            "cues": [
+              "process bottleneck",
+              "handoff delay"
+            ],
+            "outcome": "A current-state map separating observed steps, assumptions, waits and exceptions."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:evidence-miner",
+            "relation": "complements",
+            "why": "Mapping follows the work through steps; evidence search checks the documents and decisions behind uncertain steps.",
+            "status": "curated"
+          }
+        ]
+      }
     }
   ]
 }

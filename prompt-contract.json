@@ -18,5 +18,8 @@
     "SHOULD": "default with justified exceptions",
     "MAY": "optional"
   },
-  "notes": "Local authoring convention; does not override governing instructions or guarantee model behavior."
+  "notes": "Only the specific method is required. Add other sections when they change the work; omit filler. This local convention does not override governing instructions or guarantee behavior.",
+  "required_sections": [
+    "Approach"
+  ]
 }

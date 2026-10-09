@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "handoff-editor",
+    "title": "Leave a good handoff",
+    "kind": "role",
+    "use_when": "Help the next person pick up where you left off.",
+    "path": "roles/handoff-editor.md",
+    "artifact": "starter/handoff.md",
+    "audience": "public candidate",
+    "scope": "Generic delivery and learning",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after failed use or a source/contract change.",
+    "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+    "category": "Plan & organize",
+    "featured": false
+  },
+  "pattern": {
+    "cues": [
+      "handoff",
+      "resume",
+      "transition",
+      "next shift",
+      "transfer"
+    ],
+    "variants": [],
+    "activation": "work is pausing, changing hands or resuming after the original conversation is no longer handy."
+  }
+}

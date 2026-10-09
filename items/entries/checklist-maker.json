@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "checklist-maker",
+    "title": "Make a checklist",
+    "kind": "role",
+    "use_when": "Get the important steps out of your head.",
+    "category": "Plan & organize",
+    "featured": true,
+    "path": "roles/checklist-maker.md",
+    "artifact": "artifacts/checklist-maker.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "checklist",
+      "repeatable steps",
+      "routine procedure"
+    ],
+    "variants": [],
+    "activation": "a recurring task has steps, exceptions or a handoff that people could easily miss."
+  }
+}

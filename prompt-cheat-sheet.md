@@ -16,6 +16,9 @@ You do not need to learn a secret language. Tell the assistant what would make t
 | A particular voice | “Sound like a helpful colleague. Skip the corporate warm-up.” |
 | A usable format | “Make a checklist I can use during the task, not a report about it.” |
 | A clear boundary | “Use these sources. Say what they do not establish.” |
+| Useful project memory | “Keep a small ledger of decisions, ideas and lessons. Notice what would be costly to rediscover; skip routine recap.” |
+
+The [project-memory skill and prompt](guides/project-memory.md) add a structured record, quiet capture, later retrieval and optional analysis of repeated observations.
 
 ## A little room to play
 

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "event-planner",
+    "title": "Pull a gathering together",
+    "kind": "role",
+    "use_when": "A small event with fewer loose ends.",
+    "category": "Plan & organize",
+    "featured": false,
+    "path": "roles/event-planner.md",
+    "artifact": "artifacts/event-planner.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "plan an event",
+      "workshop",
+      "gathering",
+      "organize an event"
+    ],
+    "variants": [],
+    "activation": "a gathering needs practical coordination, a run-of-show or a check for overlooked preparations."
+  }
+}

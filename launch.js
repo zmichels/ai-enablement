@@ -14,8 +14,7 @@
     const context = selected(input.context, "context");
     const outcome = (input.outcome || "").trim();
     if (!outcome) throw new Error("Describe the outcome you want.");
-    if (route.kinds.includes("role") && !jobs.length) throw new Error("Select at least one job.");
-    if (route.kinds.includes("context") && !context.length) throw new Error("Select at least one context area.");
+    if (!jobs.length && !context.length) throw new Error("Select at least one skill or guide.");
     const base = /^https?:\/\//.test(input.base || "") ? input.base : "";
     const ref = path => base ? new URL(path, base).href : path;
     return Brief.compose(config,{entries:[...jobs,...context],task:outcome,experience:input.experience,base,
@@ -74,29 +73,31 @@
     group.replaceChildren();
     const current=config.routes.find(r=>r.id===route.value);
     const categories=[...new Set(config.entries.filter(e=>current.kinds.includes(e.kind)).map(e=>e.category))];
-    [["featured","A few good starting points"],["all","Everything"],...categories.map(c=>[c,c])].forEach(([value,label])=>{
+    [["featured","Featured"],["all","All topics"],...categories.map(c=>[c,c])].forEach(([value,label])=>{
       const o=document.createElement("option");o.value=value;o.textContent=label;group.append(o);
     });
   }
   function render() {
     updateShelf();
     const current = config.routes.find(r => r.id === route.value);
-    const query = search.value.toLowerCase();
+    const query = search.value.trim();
     grid.replaceChildren();
-    count.textContent=chosen.size?chosen.size+" selected. Your choices stay selected while you browse.":"Choose one or a few. There is no perfect combination to get right.";
-    config.entries.filter(e => current.kinds.includes(e.kind) && (e.title + " " + e.use_when + " " + e.id + " " + e.category).toLowerCase().includes(query) && (query || chosen.has(e.id) || group.value==="all" || (group.value==="featured" ? e.featured : e.category===group.value))).forEach(e => {
+    count.textContent=chosen.size+" selected";
+    config.entries.filter(e => current.kinds.includes(e.kind) && Brief.searchMatches(e,query) && (query || chosen.has(e.id) || group.value==="all" || (group.value==="featured" ? e.featured : e.category===group.value))).sort((a,b)=>a.title.localeCompare(b.title)).forEach(e => {
       const card = document.createElement("article"); card.className = "card";
       const label = document.createElement("label");
       const input = document.createElement("input"); input.type = "checkbox"; input.value = e.id; input.checked = chosen.has(e.id);
-      input.addEventListener("change", () => { if(input.checked) chosen.add(e.id); else chosen.delete(e.id); invalidate(); updateShelf();count.textContent=chosen.size+" selected. Your choices stay selected while you browse."; });
+      input.addEventListener("change", () => { if(input.checked) chosen.add(e.id); else chosen.delete(e.id); invalidate(); updateShelf();count.textContent=chosen.size+" selected"; });
       const title = document.createElement("strong"); title.textContent = e.title;
       label.append(input, title);
-      const kind = document.createElement("small"); kind.textContent = e.kind === "role" ? e.category : "Context · " + e.category;
+      const kind = document.createElement("small"); kind.textContent = e.category;
       const p = document.createElement("p"); p.textContent = e.use_when;
-      const link = document.createElement("a"); link.href = e.path; link.textContent = e.kind === "role" ? "Read the prompt →" : "Read the context →";
+      const link = document.createElement("a"); link.href = e.path; link.textContent = "Source ↗";
       card.append(kind, label, p, link); grid.append(card);
+      const discovery=Brief.discoveryDetails(e,config,{internal:route.value!=="public",target:'entry:'+e.id});
+      if(discovery.childNodes.length){const details=document.createElement('details'),summary=document.createElement('summary');details.className='resource-details';summary.textContent='Use cases & connections';details.append(summary,discovery);card.append(details);}
     });
-    if (!grid.children.length) { const p = document.createElement("p"); p.textContent = "No matches. Try another term."; grid.append(p); }
+    if (!grid.children.length) { const p = document.createElement("p"); p.textContent = "No matches."; grid.append(p); }
   }
   function invalidate() { tailoring.invalidate();output.value = ""; document.getElementById("copy").disabled = true; document.getElementById("download").disabled = true; status.textContent = ""; }
   route.addEventListener("change", () => { chosen.clear(); invalidate(); renderThemes(); renderGroups(); render(); });

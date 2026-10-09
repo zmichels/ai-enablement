@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "automation-engineer",
+    "title": "Skip the copy and paste",
+    "kind": "role",
+    "use_when": "Put a repetitive chore on a shorter leash.",
+    "path": "roles/automation-engineer.md",
+    "artifact": "artifacts/implementation.md",
+    "audience": "public candidate",
+    "scope": "Generic delivery and learning",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after failed use or a source/contract change.",
+    "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+    "category": "Technical help",
+    "featured": false
+  },
+  "pattern": {
+    "cues": [
+      "automate",
+      "script",
+      "repetitive",
+      "batch",
+      "copy and paste"
+    ],
+    "variants": [],
+    "activation": "repeated copying, checking or routing has a sufficiently clear rule and a bounded implementation is useful."
+  }
+}

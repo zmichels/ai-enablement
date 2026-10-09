@@ -1,275 +1,16 @@
 {
   "schema_version": 1,
   "modules": {
-    "message-writer": {
+    "administration": {
       "cues": [
-        "email",
-        "reply",
-        "message",
-        "decline",
-        "announcement"
+        "calendar",
+        "admin",
+        "administration",
+        "coordination",
+        "organize"
       ],
-      "variants": [
-        {
-          "label": "Decline without ambiguity",
-          "cues": [
-            "decline",
-            "say no",
-            "turn down",
-            "cannot attend"
-          ],
-          "method": "State the decline early, give only the explanation the user wants, and offer an alternative only if they can actually commit to it.",
-          "output": "A concise reply that leaves no uncertainty about attendance or acceptance."
-        },
-        {
-          "label": "Explain a delay",
-          "cues": [
-            "delay",
-            "late",
-            "behind",
-            "waiting"
-          ],
-          "method": "State what is delayed, what remains usable and the next reliable update. Distinguish a confirmed date from an estimate.",
-          "output": "A clear status message with an honest next update, without invented promises."
-        }
-      ]
-    },
-    "summary-maker": {
-      "cues": [
-        "summarize",
-        "summary",
-        "notes",
-        "recap"
-      ],
-      "variants": []
-    },
-    "plain-language-guide": {
-      "cues": [
-        "plain language",
-        "jargon",
-        "simplify",
-        "explain clearly"
-      ],
-      "variants": []
-    },
-    "day-planner": {
-      "cues": [
-        "schedule my day",
-        "prioritize",
-        "to do list",
-        "plan my week",
-        "too much to do",
-        "calendar"
-      ],
-      "variants": []
-    },
-    "checklist-maker": {
-      "cues": [
-        "checklist",
-        "repeatable steps",
-        "routine procedure"
-      ],
-      "variants": []
-    },
-    "meeting-helper": {
-      "cues": [
-        "meeting",
-        "agenda",
-        "meeting minutes"
-      ],
-      "variants": [
-        {
-          "label": "Prepare a decision meeting",
-          "cues": [
-            "agenda",
-            "prepare",
-            "upcoming"
-          ],
-          "method": "Put the decision and options on the agenda, name the required input for each discussion and time-box information sharing.",
-          "output": "A short agenda with decision points and preparation requests."
-        },
-        {
-          "label": "Recover the decisions",
-          "cues": [
-            "notes",
-            "minutes",
-            "recap",
-            "transcript"
-          ],
-          "method": "Extract explicit agreements, owner commitments and unresolved disagreements; attach note locations where the evidence is ambiguous.",
-          "output": "A decision/action recap with uncertainty preserved."
-        }
-      ]
-    },
-    "decision-partner": {
-      "cues": [
-        "decide",
-        "help me choose",
-        "compare options",
-        "tradeoff",
-        "trade off"
-      ],
-      "variants": []
-    },
-    "brainstorm-partner": {
-      "cues": [
-        "brainstorm",
-        "fresh ideas",
-        "creative ideas",
-        "name ideas",
-        "possibilities"
-      ],
-      "variants": []
-    },
-    "prototype-helper": {
-      "cues": [
-        "prototype",
-        "mockup",
-        "wireframe",
-        "ui",
-        "demo"
-      ],
-      "variants": [
-        {
-          "label": "Test an interaction",
-          "cues": [
-            "click",
-            "interactive",
-            "flow",
-            "ui"
-          ],
-          "method": "Make the core interaction actually respond using fictional data, then show an empty or error state that reveals an assumption.",
-          "output": "An inspectable interactive prototype and a three-minute try-it task."
-        },
-        {
-          "label": "Compare a concept",
-          "cues": [
-            "idea",
-            "concept",
-            "sketch",
-            "wireframe"
-          ],
-          "method": "Show two structurally different ways to accomplish the same user task and explain what a stakeholder would learn from comparing them.",
-          "output": "Two small sketches with the decision their comparison should resolve."
-        }
-      ]
-    },
-    "teaching-partner": {
-      "cues": [
-        "teach",
-        "training",
-        "lesson",
-        "workshop",
-        "exercise"
-      ],
-      "variants": []
-    },
-    "document-editor": {
-      "cues": [
-        "edit",
-        "rewrite",
-        "improve this draft",
-        "revise",
-        "proofread"
-      ],
-      "variants": []
-    },
-    "learning-coach": {
-      "cues": [
-        "teach me",
-        "help me understand",
-        "learn how",
-        "practice",
-        "beginner"
-      ],
-      "variants": []
-    },
-    "research-reader": {
-      "cues": [
-        "paper",
-        "study",
-        "evidence",
-        "literature",
-        "article"
-      ],
-      "variants": []
-    },
-    "conversation-coach": {
-      "cues": [
-        "conversation",
-        "feedback",
-        "conflict",
-        "awkward",
-        "talk to"
-      ],
-      "variants": []
-    },
-    "language-helper": {
-      "cues": [
-        "translate",
-        "translation",
-        "language",
-        "bilingual"
-      ],
-      "variants": []
-    },
-    "number-explainer": {
-      "cues": [
-        "numbers",
-        "percent",
-        "percentage",
-        "spreadsheet",
-        "budget",
-        "chart"
-      ],
-      "variants": []
-    },
-    "service-helper": {
-      "cues": [
-        "customer service",
-        "reassure",
-        "complaint",
-        "visitor question"
-      ],
-      "variants": []
-    },
-    "event-planner": {
-      "cues": [
-        "plan an event",
-        "workshop",
-        "gathering",
-        "organize an event"
-      ],
-      "variants": []
-    },
-    "feedback-sorter": {
-      "cues": [
-        "feedback",
-        "comments",
-        "survey",
-        "complaints"
-      ],
-      "variants": []
-    },
-    "request-navigator": {
-      "cues": [
-        "ticket",
-        "service request",
-        "access request",
-        "provision",
-        "servicenow"
-      ],
-      "variants": []
-    },
-    "request-coordinator": {
-      "cues": [
-        "tickets",
-        "provisioning",
-        "follow up",
-        "request status",
-        "pending requests"
-      ],
-      "variants": []
+      "variants": [],
+      "activation": "schedules, documents, dependencies or follow-ups need organizing so people can act."
     },
     "ansible-helper": {
       "cues": [
@@ -313,63 +54,8 @@
           "method": "Walk through target resolution, variable precedence, task order and handlers using one host as the example. Highlight the step that actually changes state.",
           "output": "An annotated walkthrough of the supplied playbook, not a replacement playbook."
         }
-      ]
-    },
-    "project-coordinator": {
-      "cues": [
-        "project",
-        "coordinate",
-        "milestone",
-        "project plan"
       ],
-      "variants": []
-    },
-    "workflow-cartographer": {
-      "cues": [
-        "workflow",
-        "bottleneck",
-        "handoff",
-        "map the process"
-      ],
-      "variants": []
-    },
-    "connection-designer": {
-      "cues": [
-        "redesign",
-        "better way",
-        "improve the workflow",
-        "improve our process"
-      ],
-      "variants": []
-    },
-    "evidence-reviewer": {
-      "cues": [
-        "review results",
-        "verify findings",
-        "evaluate results",
-        "quality review"
-      ],
-      "variants": []
-    },
-    "handoff-editor": {
-      "cues": [
-        "handoff",
-        "resume",
-        "transition",
-        "next shift",
-        "transfer"
-      ],
-      "variants": []
-    },
-    "evidence-miner": {
-      "cues": [
-        "prior knowledge",
-        "already know",
-        "find past",
-        "previous work",
-        "search records"
-      ],
-      "variants": []
+      "activation": "server work involves Ansible inventory, playbooks, variables, failed runs or a planned rollout."
     },
     "automation-engineer": {
       "cues": [
@@ -379,45 +65,151 @@
         "batch",
         "copy and paste"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "repeated copying, checking or routing has a sufficiently clear rule and a bounded implementation is useful."
     },
-    "learning-curator": {
+    "brainstorm-partner": {
       "cues": [
-        "lesson",
-        "correction",
-        "remember",
-        "improve next time",
-        "retrospective"
+        "brainstorm",
+        "fresh ideas",
+        "creative ideas",
+        "name ideas",
+        "possibilities"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "the obvious options are not enough, or an idea needs a small experiment before committing."
     },
-    "care-team": {
+    "business-analysis": {
       "cues": [
-        "nurse",
-        "care team",
-        "clinical",
-        "clinical handoff"
+        "business analyst",
+        "requirements",
+        "stakeholder",
+        "acceptance criteria"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "a request jumps to a solution before the problem, customer need or acceptance examples are clear."
     },
-    "patient-services": {
+    "checklist-maker": {
       "cues": [
-        "patient",
-        "visitor",
-        "appointment",
-        "wayfinding"
+        "checklist",
+        "repeatable steps",
+        "routine procedure"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "a recurring task has steps, exceptions or a handoff that people could easily miss."
     },
-    "administration": {
+    "communications": {
       "cues": [
-        "calendar",
-        "admin",
-        "administration",
-        "coordination",
-        "organize"
+        "communication",
+        "writing",
+        "audience",
+        "announcement",
+        "campaign"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "an audience needs a clear message, a usable channel or a specific action made easy to find."
+    },
+    "connection-designer": {
+      "cues": [
+        "redesign",
+        "better way",
+        "improve the workflow",
+        "improve our process"
+      ],
+      "variants": [],
+      "activation": "a current workflow has friction and a small change to roles, tools or handoffs could be tried."
+    },
+    "conversation-coach": {
+      "cues": [
+        "conversation",
+        "feedback",
+        "conflict",
+        "awkward",
+        "talk to"
+      ],
+      "variants": [],
+      "activation": "a conversation involves disagreement, expectations, sensitive feedback or a difficult request."
+    },
+    "course-builder": {
+      "cues": [
+        "course",
+        "syllabus",
+        "learning objectives",
+        "lms",
+        "curriculum",
+        "course evaluation",
+        "blackboard",
+        "brightspace",
+        "canvas",
+        "moodle"
+      ],
+      "variants": [],
+      "activation": "an instructor is planning or revising a course, connecting course documents, inspecting an LMS or considering evaluation feedback."
+    },
+    "day-planner": {
+      "cues": [
+        "schedule my day",
+        "prioritize",
+        "to do list",
+        "plan my week",
+        "too much to do",
+        "calendar"
+      ],
+      "variants": [],
+      "activation": "competing commitments, interruptions or dependencies make it hard to choose what to do next."
+    },
+    "decision-partner": {
+      "cues": [
+        "decide",
+        "help me choose",
+        "compare options",
+        "tradeoff",
+        "trade off"
+      ],
+      "variants": [],
+      "activation": "there are competing options, consequential assumptions or a choice that may need revisiting."
+    },
+    "document-editor": {
+      "cues": [
+        "edit",
+        "rewrite",
+        "improve this draft",
+        "revise",
+        "proofread"
+      ],
+      "variants": [],
+      "activation": "a draft buries its point, repeats itself or leaves readers unsure what to do."
+    },
+    "event-planner": {
+      "cues": [
+        "plan an event",
+        "workshop",
+        "gathering",
+        "organize an event"
+      ],
+      "variants": [],
+      "activation": "a gathering needs practical coordination, a run-of-show or a check for overlooked preparations."
+    },
+    "evidence-miner": {
+      "cues": [
+        "prior knowledge",
+        "already know",
+        "find past",
+        "previous work",
+        "search records"
+      ],
+      "variants": [],
+      "activation": "the answer may already exist in permitted notes, documents or prior work, but is hard to recover."
+    },
+    "evidence-reviewer": {
+      "cues": [
+        "review results",
+        "verify findings",
+        "evaluate results",
+        "quality review"
+      ],
+      "variants": [],
+      "activation": "a result or claim needs checking against its sources, intended use and consequential failure cases."
     },
     "facilities": {
       "cues": [
@@ -427,7 +219,29 @@
         "room turnover",
         "equipment maintenance"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "a maintenance or environmental-services task needs a clear location, work order, shift handoff or sequence of next steps."
+    },
+    "feedback-sorter": {
+      "cues": [
+        "feedback",
+        "comments",
+        "survey",
+        "complaints"
+      ],
+      "variants": [],
+      "activation": "comments, survey responses or complaints need patterns separated from isolated but important exceptions."
+    },
+    "finance-operations": {
+      "cues": [
+        "finance",
+        "purchasing",
+        "cost",
+        "budget",
+        "procurement"
+      ],
+      "variants": [],
+      "activation": "purchasing or operating choices need a transparent comparison of costs, assumptions and practical constraints."
     },
     "food-services": {
       "cues": [
@@ -461,56 +275,19 @@
           "method": "Compare portions prepared, sold and left by service period; separate stockouts from low demand before changing batch size.",
           "output": "A simple replenishment experiment and a waste/stockout measure."
         }
-      ]
-    },
-    "people-leadership": {
-      "cues": [
-        "manager",
-        "leadership",
-        "team expectations",
-        "staff feedback",
-        "one on one"
       ],
-      "variants": []
+      "activation": "meal service, stocking, a busy shift or a customer message needs practical coordination."
     },
-    "business-analysis": {
+    "handoff-editor": {
       "cues": [
-        "business analyst",
-        "requirements",
-        "stakeholder",
-        "acceptance criteria"
+        "handoff",
+        "resume",
+        "transition",
+        "next shift",
+        "transfer"
       ],
-      "variants": []
-    },
-    "finance-operations": {
-      "cues": [
-        "finance",
-        "purchasing",
-        "cost",
-        "budget",
-        "procurement"
-      ],
-      "variants": []
-    },
-    "research-education": {
-      "cues": [
-        "research",
-        "education",
-        "study",
-        "teaching",
-        "reading"
-      ],
-      "variants": []
-    },
-    "communications": {
-      "cues": [
-        "communication",
-        "writing",
-        "audience",
-        "announcement",
-        "campaign"
-      ],
-      "variants": []
+      "variants": [],
+      "activation": "work is pausing, changing hands or resuming after the original conversation is no longer handy."
     },
     "it-service": {
       "cues": [
@@ -520,7 +297,297 @@
         "access request",
         "it incident"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "an incident, access request or service dependency needs routing, a status explanation or a useful follow-up."
+    },
+    "language-helper": {
+      "cues": [
+        "translate",
+        "translation",
+        "language",
+        "bilingual"
+      ],
+      "variants": [],
+      "activation": "people need to communicate across languages or check wording whose meaning may not carry across."
+    },
+    "learning-coach": {
+      "cues": [
+        "teach me",
+        "help me understand",
+        "learn how",
+        "practice",
+        "beginner"
+      ],
+      "variants": [],
+      "activation": "I am trying to understand something, make sense of an error or build confidence through practice."
+    },
+    "learning-curator": {
+      "cues": [
+        "lesson",
+        "correction",
+        "remember",
+        "improve next time",
+        "retrospective",
+        "ledger",
+        "project memory",
+        "learn as we work",
+        "decision pga"
+      ],
+      "variants": [
+        {
+          "label": "Keep a project memory",
+          "cues": [
+            "ledger",
+            "project memory",
+            "learn as we work",
+            "decision records",
+            "decision pga",
+            "decision-pga"
+          ],
+          "method": "Use the project-learning-ledger contract to keep a small structured JSON ledger and a brief human view in the authorized workspace. Capture explicit requests and consequential discoveries at natural pauses, not routine recap. Preserve stable IDs, typed links, sources, uncertainty, supersession and separate adoption/authority states. Retrieve relevant records before related decisions. When repeated observations exist, preserve population, case, run, stage, protocol, candidate space and configuration versions for optional Decision-PGA analysis at explicit coarse/fine scales. Leave missing values missing; check outcomes before promoting a lesson. Do not start a background monitor or claim model retraining.",
+          "output": "A saved ledger or clearly unsaved draft, a short current-state view, and the next useful check; optional analysis exports with source IDs and selection metadata."
+        }
+      ],
+      "activation": "a correction, failed attempt or successful change reveals a specific lesson worth testing and reusing."
+    },
+    "meeting-helper": {
+      "cues": [
+        "meeting",
+        "agenda",
+        "meeting minutes"
+      ],
+      "variants": [
+        {
+          "label": "Prepare a decision meeting",
+          "cues": [
+            "agenda",
+            "prepare",
+            "upcoming"
+          ],
+          "method": "Put the decision and options on the agenda, name the required input for each discussion and time-box information sharing.",
+          "output": "A short agenda with decision points and preparation requests."
+        },
+        {
+          "label": "Recover the decisions",
+          "cues": [
+            "notes",
+            "minutes",
+            "recap",
+            "transcript"
+          ],
+          "method": "Extract explicit agreements, owner commitments and unresolved disagreements; attach note locations where the evidence is ambiguous.",
+          "output": "A decision/action recap with uncertainty preserved."
+        }
+      ],
+      "activation": "a meeting needs a purpose, a decision or follow-through from its notes."
+    },
+    "message-writer": {
+      "cues": [
+        "email",
+        "reply",
+        "message",
+        "decline",
+        "announcement"
+      ],
+      "variants": [
+        {
+          "label": "Decline without ambiguity",
+          "cues": [
+            "decline",
+            "say no",
+            "turn down",
+            "cannot attend"
+          ],
+          "method": "State the decline early, give only the explanation the user wants, and offer an alternative only if they can actually commit to it.",
+          "output": "A concise reply that leaves no uncertainty about attendance or acceptance."
+        },
+        {
+          "label": "Explain a delay",
+          "cues": [
+            "delay",
+            "late",
+            "behind",
+            "waiting"
+          ],
+          "method": "State what is delayed, what remains usable and the next reliable update. Distinguish a confirmed date from an estimate.",
+          "output": "A clear status message with an honest next update, without invented promises."
+        }
+      ],
+      "activation": "a message needs a clear point, a suitable tone or an easier next step for its reader."
+    },
+    "number-explainer": {
+      "cues": [
+        "numbers",
+        "percent",
+        "percentage",
+        "spreadsheet",
+        "budget",
+        "chart"
+      ],
+      "variants": [],
+      "activation": "a calculation, comparison, percentage or chart needs checking and explaining in everyday terms."
+    },
+    "people-leadership": {
+      "cues": [
+        "manager",
+        "leadership",
+        "team expectations",
+        "staff feedback",
+        "one on one"
+      ],
+      "variants": [],
+      "activation": "team priorities, expectations, workload or feedback need a fair and usable way forward."
+    },
+    "plain-language-guide": {
+      "cues": [
+        "plain language",
+        "jargon",
+        "simplify",
+        "explain clearly"
+      ],
+      "variants": [],
+      "activation": "jargon, dense instructions or unexplained terms are getting in the way of understanding."
+    },
+    "project-coordinator": {
+      "cues": [
+        "project",
+        "coordinate",
+        "milestone",
+        "project plan"
+      ],
+      "variants": [],
+      "activation": "work needs sequencing, ownership, dependency management or a clear handoff between contributors."
+    },
+    "project-memory": {
+      "cues": [
+        "project memory",
+        "remember as we go",
+        "ledger",
+        "learn as we work",
+        "decision pga"
+      ],
+      "variants": [],
+      "activation": "a decision, useful idea, correction, connection, open question or proposed measure is worth finding again; also when resuming work or revisiting a related choice."
+    },
+    "prototype-helper": {
+      "cues": [
+        "prototype",
+        "mockup",
+        "wireframe",
+        "ui",
+        "demo"
+      ],
+      "variants": [
+        {
+          "label": "Test an interaction",
+          "cues": [
+            "click",
+            "interactive",
+            "flow",
+            "ui"
+          ],
+          "method": "Make the core interaction actually respond using fictional data, then show an empty or error state that reveals an assumption.",
+          "output": "An inspectable interactive prototype and a three-minute try-it task."
+        },
+        {
+          "label": "Compare a concept",
+          "cues": [
+            "idea",
+            "concept",
+            "sketch",
+            "wireframe"
+          ],
+          "method": "Show two structurally different ways to accomplish the same user task and explain what a stakeholder would learn from comparing them.",
+          "output": "Two small sketches with the decision their comparison should resolve."
+        }
+      ],
+      "activation": "people are talking past each other about an idea that a sketch or small mockup could make tangible."
+    },
+    "request-coordinator": {
+      "cues": [
+        "tickets",
+        "provisioning",
+        "follow up",
+        "request status",
+        "pending requests"
+      ],
+      "variants": [],
+      "activation": "several tickets or teams depend on one another, or updates leave the next owner and action unclear."
+    },
+    "request-navigator": {
+      "cues": [
+        "ticket",
+        "service request",
+        "access request",
+        "provision",
+        "servicenow"
+      ],
+      "variants": [],
+      "activation": "work depends on finding the right service request, owning team or information to include."
+    },
+    "research-education": {
+      "cues": [
+        "research",
+        "education",
+        "study",
+        "teaching",
+        "reading"
+      ],
+      "variants": [],
+      "activation": "research or teaching work needs source-grounded reasoning, a useful discussion or a learning activity."
+    },
+    "research-reader": {
+      "cues": [
+        "paper",
+        "study",
+        "evidence",
+        "literature",
+        "article"
+      ],
+      "variants": [],
+      "activation": "a paper or research claim needs its evidence, limitations and applicability unpacked."
+    },
+    "service-helper": {
+      "cues": [
+        "customer service",
+        "reassure",
+        "complaint",
+        "visitor question"
+      ],
+      "variants": [],
+      "activation": "someone is stuck finding help, understanding a service or knowing what happens next."
+    },
+    "service-team": {
+      "cues": [
+        "service team",
+        "shift",
+        "handoff",
+        "frontline",
+        "team coordination"
+      ],
+      "variants": [],
+      "activation": "a service team needs clearer handoffs, coordinated shifts or practical staff learning."
+    },
+    "strategy": {
+      "cues": [
+        "strategy",
+        "portfolio",
+        "executive",
+        "priorities",
+        "investment"
+      ],
+      "variants": [],
+      "activation": "a direction or investment needs alternatives, tradeoffs and evidence for continuing, adjusting or stopping."
+    },
+    "summary-maker": {
+      "cues": [
+        "summarize",
+        "summary",
+        "notes",
+        "recap"
+      ],
+      "variants": [],
+      "activation": "long notes, a thread or a document are hiding the decision, change or action someone needs."
     },
     "systems-administration": {
       "cues": [
@@ -556,7 +623,19 @@
           "method": "Separate host readiness, network, identity and application dependencies. Link the request owned by each team to the state it must deliver.",
           "output": "A provisioning dependency map with the next owner action and acceptance evidence."
         }
-      ]
+      ],
+      "activation": "a server or service needs diagnosis, a scoped change, verification or a recovery plan."
+    },
+    "teaching-partner": {
+      "cues": [
+        "teach",
+        "training",
+        "lesson",
+        "workshop",
+        "exercise"
+      ],
+      "variants": [],
+      "activation": "someone needs to learn a process, practice a new task or explain it to a colleague."
     },
     "technology": {
       "cues": [
@@ -567,17 +646,29 @@
         "database",
         "application"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "software, data or a technical integration needs implementation or diagnosis grounded in observed behavior."
     },
-    "strategy": {
+    "visitor-services": {
       "cues": [
-        "strategy",
-        "portfolio",
-        "executive",
-        "priorities",
-        "investment"
+        "customer",
+        "visitor",
+        "reception",
+        "appointment",
+        "wayfinding"
       ],
-      "variants": []
+      "variants": [],
+      "activation": "a customer or visitor needs clear directions, service information or a helpful handoff."
+    },
+    "workflow-cartographer": {
+      "cues": [
+        "workflow",
+        "bottleneck",
+        "handoff",
+        "map the process"
+      ],
+      "variants": [],
+      "activation": "a process is confusing, a handoff keeps failing or nobody has a shared picture of the actual steps."
     }
   }
 }

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "people-leadership",
+    "title": "People and team leadership",
+    "kind": "expertise",
+    "use_when": "Clear expectations, useful conversations and a workable plan.",
+    "path": "expertise/people-leadership.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "manager",
+      "leadership",
+      "team expectations",
+      "staff feedback",
+      "one on one"
+    ],
+    "variants": [],
+    "activation": "team priorities, expectations, workload or feedback need a fair and usable way forward."
+  }
+}

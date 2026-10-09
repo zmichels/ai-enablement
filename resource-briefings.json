@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "briefings": {
+    "ansible-check-mode": {
+      "purpose": "Understand what Ansible check and diff modes can establish.",
+      "inputs": "Playbook tasks, module versions and expected side effects.",
+      "approach": "Compare each module's dry-run support and explicit task overrides.",
+      "outputs": "A realistic validation plan and known blind spots.",
+      "requirements": "Official version-matched docs and the relevant playbook.",
+      "limits": "Dry runs cannot establish every execution path; diff output may contain sensitive content.",
+      "source_url": "https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_checkmode.html",
+      "reviewed": "2026-10-08",
+      "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+      "supporting_files": []
+    },
+    "ansible-galaxy": {
+      "purpose": "Find maintained Ansible collections for an automation need.",
+      "inputs": "Required capability, Ansible version and publisher requirements.",
+      "approach": "Compare collection documentation, maintenance and version compatibility.",
+      "outputs": "Candidate collection and version to evaluate.",
+      "requirements": "Catalog access to browse; Ansible environment to install or execute a collection.",
+      "limits": "Collections are automation packages, not agent skills; selecting one does not install it.",
+      "source_url": "https://galaxy.ansible.com/",
+      "reviewed": "2026-10-08",
+      "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+      "supporting_files": []
+    },
+    "ansible-guide": {
+      "purpose": "Plan, inspect or troubleshoot a bounded Ansible change.",
+      "inputs": "Desired state, inventory, playbook, versions and target scope.",
+      "approach": "Resolve hosts, inspect side effects, validate locally and use a bounded test before rollout.",
+      "outputs": "Reviewable change, observed checks and recovery plan.",
+      "requirements": "Existing Ansible controller, collections and authorized target access for execution.",
+      "limits": "Check mode is module-dependent; diff can reveal secrets and some tasks opt out of dry-run behavior.",
+      "source_url": "guides/ansible.md",
+      "reviewed": "2026-10-08",
+      "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+      "supporting_files": [],
+      "entrypoint_sha256": "d3f4abfc3c1b6fbe03e84f832616e32a0e907dc8d6d2c52fe5aacf7b963d7f7c"
+    },
+    "course-building-guide": {
+      "purpose": "Connect course planning documents and evidence-based revisions.",
+      "inputs": "Learners, syllabus/objectives, modules, assessments and existing evaluation evidence.",
+      "approach": "Link or create missing artifacts, map objective-to-assessment alignment and inspect the actual LMS before editing.",
+      "outputs": "Connected course workspace and traceable improvement proposals.",
+      "requirements": "Document tools; authorized LMS/browser access only when portal work is needed.",
+      "limits": "Platform references do not prove local configuration; planned outcomes and observed results must stay distinct.",
+      "source_url": "guides/course-building.md",
+      "reviewed": "2026-10-08",
+      "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+      "supporting_files": [],
+      "entrypoint_sha256": "7b77ac590bc4557f48ce88d312526500832a088970b36ec93a4900ea08862d7a"
+    },
+    "project-learning-ledger": {
+      "purpose": "Keep useful project memory and optional analysis-ready records.",
+      "inputs": "Current decisions, observations, lessons and an agreed storage location.",
+      "approach": "Capture concise typed records, retrieve relevant lessons and preserve comparable analysis slices.",
+      "outputs": "Portable memory notes/JSON ledger and optional validated analysis export.",
+      "requirements": "Local files; Python for the included validator/exporter.",
+      "limits": "No memory service is included; never manufacture numeric evidence from prose or combine incomparable populations.",
+      "source_url": "guides/project-memory.md",
+      "reviewed": "2026-10-08",
+      "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+      "supporting_files": [],
+      "entrypoint_sha256": "44114b5a7cc3b797f5c3af412bdec95d0f325ebb7e8610390716fe2e703a99fc"
+    },
+    "request-guide": {
+      "purpose": "Coordinate several requests toward one outcome.",
+      "inputs": "Outcome, request IDs/links, owners and dated status evidence.",
+      "approach": "Track dependencies and distinguish administrative closure from observed completion.",
+      "outputs": "Small request tracker, blocker summary and follow-up drafts.",
+      "requirements": "Supplied snapshots or an authorized source connection.",
+      "limits": "Stale observations stay dated; sending and scheduled checks are separate capabilities and actions.",
+      "source_url": "guides/request-tracking.md",
+      "reviewed": "2026-10-08",
+      "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+      "supporting_files": [],
+      "entrypoint_sha256": "8c80b73ead245ea3366a4c9c5ea379bc34ccf8978b2c0dc2d40c1654f751f900"
+    }
+  }
+}

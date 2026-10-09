@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "ansible-helper",
+    "title": "Work on servers with Ansible",
+    "kind": "role",
+    "use_when": "A playbook, a test, and a rollout you can explain.",
+    "category": "Technical help",
+    "featured": false,
+    "path": "roles/ansible-helper.md",
+    "artifact": "artifacts/ansible-helper.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "ansible",
+      "playbook",
+      "patching",
+      "configuration management"
+    ],
+    "variants": [
+      {
+        "label": "Diagnose a failed playbook",
+        "cues": [
+          "failed",
+          "error",
+          "unreachable",
+          "timeout",
+          "debug"
+        ],
+        "method": "Locate the first failing task and compare its inputs on one failing and one healthy target. Distinguish connection, privilege, module and application failures before changing the playbook.",
+        "output": "A likely failure class, the evidence for it, and one discriminating check before a repair."
+      },
+      {
+        "label": "Plan a patch rollout",
+        "cues": [
+          "patch",
+          "update",
+          "reboot",
+          "rolling"
+        ],
+        "method": "Group hosts by service dependency. Define a canary, batch size, health check, reboot expectation and stop condition; resolve inventory and check-mode exceptions before execution.",
+        "output": "A patch playbook change plus a canary-to-batch rollout and recovery plan."
+      },
+      {
+        "label": "Explain a playbook",
+        "cues": [
+          "explain",
+          "understand",
+          "learn",
+          "what does"
+        ],
+        "method": "Walk through target resolution, variable precedence, task order and handlers using one host as the example. Highlight the step that actually changes state.",
+        "output": "An annotated walkthrough of the supplied playbook, not a replacement playbook."
+      }
+    ],
+    "activation": "server work involves Ansible inventory, playbooks, variables, failed runs or a planned rollout."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "research-education",
+    "title": "Research and education",
+    "kind": "expertise",
+    "use_when": "Read carefully, explain clearly, teach something useful.",
+    "path": "expertise/research-education.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "research",
+      "education",
+      "study",
+      "teaching",
+      "reading"
+    ],
+    "variants": [],
+    "activation": "research or teaching work needs source-grounded reasoning, a useful discussion or a learning activity."
+  }
+}

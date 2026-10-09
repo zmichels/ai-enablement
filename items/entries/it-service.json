@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "it-service",
+    "title": "IT service and request coordination",
+    "kind": "expertise",
+    "use_when": "Get to the right team—and keep the handoffs visible.",
+    "path": "expertise/it-service.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "servicenow",
+      "helpdesk",
+      "ticket",
+      "access request",
+      "it incident"
+    ],
+    "variants": [],
+    "activation": "an incident, access request or service dependency needs routing, a status explanation or a useful follow-up."
+  }
+}

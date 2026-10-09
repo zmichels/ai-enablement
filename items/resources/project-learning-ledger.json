@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "project-learning-ledger",
+    "title": "Project memory and learning",
+    "kind": "Included skill and prompt",
+    "url": "guides/project-memory.md",
+    "for_ids": [
+      "project-memory",
+      "learning-curator",
+      "decision-partner"
+    ],
+    "cues": [
+      "ledger",
+      "project memory",
+      "decision records",
+      "learn as we work",
+      "decision pga",
+      "decision-pga"
+    ],
+    "why": "Keep useful project memory and optional analysis-ready records.",
+    "status": "Authored starter; includes a JSON ledger and tested format adapter. No memory service or Decision-PGA installation is included.",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Keep useful project memory and optional analysis-ready records.",
+    "inputs": "Current decisions, observations, lessons and an agreed storage location.",
+    "approach": "Capture concise typed records, retrieve relevant lessons and preserve comparable analysis slices.",
+    "outputs": "Portable memory notes/JSON ledger and optional validated analysis export.",
+    "requirements": "Local files; Python for the included validator/exporter.",
+    "limits": "No memory service is included; never manufacture numeric evidence from prose or combine incomparable populations.",
+    "source_url": "guides/project-memory.md",
+    "reviewed": "2026-10-08",
+    "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+    "supporting_files": [],
+    "entrypoint_sha256": "44114b5a7cc3b797f5c3af412bdec95d0f325ebb7e8610390716fe2e703a99fc"
+  },
+  "discovery": {
+    "aliases": [
+      "portable memory format",
+      "learning ledger schema"
+    ],
+    "use_cases": [
+      {
+        "id": "validate-saved-memory",
+        "title": "Check a saved project ledger",
+        "cues": [
+          "validate ledger",
+          "typed memory links"
+        ],
+        "outcome": "Format and reference checks on real records; no claim that recorded lessons are true or effective."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:project-memory",
+        "relation": "complements",
+        "why": "The role supplies capture and retrieval habits; this resource supplies the portable files and validator.",
+        "status": "curated"
+      }
+    ]
+  }
+}

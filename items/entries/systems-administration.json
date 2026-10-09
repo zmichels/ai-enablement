@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "systems-administration",
+    "title": "Systems administration",
+    "kind": "expertise",
+    "use_when": "Servers, configuration, patching and careful troubleshooting.",
+    "path": "expertise/systems-administration.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "server",
+      "sysadmin",
+      "system admin",
+      "patch rollout",
+      "reboot",
+      "provision",
+      "ansible"
+    ],
+    "variants": [
+      {
+        "label": "Service failure",
+        "cues": [
+          "service down",
+          "service failure",
+          "unreachable",
+          "not responding",
+          "connection refused",
+          "service unavailable"
+        ],
+        "method": "Follow the failing request from client to name resolution, network, listener and application; compare the first diverging observation with a healthy target.",
+        "output": "An ordered fault-isolation path with expected observations and a stopping point."
+      },
+      {
+        "label": "Provisioning handoffs",
+        "cues": [
+          "provision",
+          "tickets",
+          "requests"
+        ],
+        "method": "Separate host readiness, network, identity and application dependencies. Link the request owned by each team to the state it must deliver.",
+        "output": "A provisioning dependency map with the next owner action and acceptance evidence."
+      }
+    ],
+    "activation": "a server or service needs diagnosis, a scoped change, verification or a recovery plan."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "feedback-sorter",
+    "title": "Find the pattern in feedback",
+    "kind": "role",
+    "use_when": "Spot the themes without losing the awkward bits.",
+    "category": "Think it through",
+    "featured": false,
+    "path": "roles/feedback-sorter.md",
+    "artifact": "artifacts/feedback-sorter.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "feedback",
+      "comments",
+      "survey",
+      "complaints"
+    ],
+    "variants": [],
+    "activation": "comments, survey responses or complaints need patterns separated from isolated but important exceptions."
+  }
+}

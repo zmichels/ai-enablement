@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "learning-curator",
+    "title": "Keep the lesson",
+    "kind": "role",
+    "use_when": "Make the next attempt a little wiser.",
+    "path": "roles/learning-curator.md",
+    "artifact": "lesson-template.md",
+    "audience": "public candidate",
+    "scope": "Generic delivery and learning",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-08",
+    "freshness": "Review after failed use or a source/contract change.",
+    "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+    "category": "Learn & understand",
+    "featured": false
+  },
+  "pattern": {
+    "cues": [
+      "lesson",
+      "correction",
+      "remember",
+      "improve next time",
+      "retrospective",
+      "ledger",
+      "project memory",
+      "learn as we work",
+      "decision pga"
+    ],
+    "variants": [
+      {
+        "label": "Keep a project memory",
+        "cues": [
+          "ledger",
+          "project memory",
+          "learn as we work",
+          "decision records",
+          "decision pga",
+          "decision-pga"
+        ],
+        "method": "Use the project-learning-ledger contract to keep a small structured JSON ledger and a brief human view in the authorized workspace. Capture explicit requests and consequential discoveries at natural pauses, not routine recap. Preserve stable IDs, typed links, sources, uncertainty, supersession and separate adoption/authority states. Retrieve relevant records before related decisions. When repeated observations exist, preserve population, case, run, stage, protocol, candidate space and configuration versions for optional Decision-PGA analysis at explicit coarse/fine scales. Leave missing values missing; check outcomes before promoting a lesson. Do not start a background monitor or claim model retraining.",
+        "output": "A saved ledger or clearly unsaved draft, a short current-state view, and the next useful check; optional analysis exports with source IDs and selection metadata."
+      }
+    ],
+    "activation": "a correction, failed attempt or successful change reveals a specific lesson worth testing and reusing."
+  },
+  "discovery": {
+    "aliases": [
+      "capture one lesson",
+      "review a correction"
+    ],
+    "use_cases": [
+      {
+        "id": "correction-to-check",
+        "title": "Turn a correction into a reusable check",
+        "cues": [
+          "learn from a mistake",
+          "capture a lesson"
+        ],
+        "outcome": "One scoped lesson, a small proposed or applied change, and evidence of what was checked."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:project-memory",
+        "relation": "complements",
+        "why": "Keep the lesson in the existing project record so later work can retrieve its evidence and limits.",
+        "status": "curated"
+      }
+    ]
+  }
+}

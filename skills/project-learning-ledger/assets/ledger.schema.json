@@ -1,0 +1,766 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project learning ledger v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "spaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/space"
+      }
+    },
+    "protocols": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/protocol"
+      }
+    },
+    "populations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/population"
+      }
+    },
+    "configurations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/configuration"
+      }
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/run"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/measurement"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "project_id",
+    "records",
+    "relations",
+    "spaces",
+    "protocols",
+    "populations",
+    "configurations",
+    "runs",
+    "observations",
+    "measurements"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "locator",
+        "observed_at",
+        "revision"
+      ],
+      "additionalProperties": false
+    },
+    "record": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "decision",
+            "idea",
+            "question",
+            "connection",
+            "metric",
+            "lesson",
+            "state-change"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parent_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "evidence": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "proposed",
+                "observed",
+                "evaluated",
+                "disputed",
+                "stale"
+              ]
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "state",
+            "summary"
+          ],
+          "additionalProperties": false
+        },
+        "decision": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "open",
+                "proposed",
+                "adopted",
+                "rejected",
+                "superseded"
+              ]
+            },
+            "by": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "authority": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "state",
+            "by",
+            "authority"
+          ],
+          "additionalProperties": false
+        },
+        "revisit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "decision_informed": {
+              "type": "string",
+              "minLength": 1
+            },
+            "definition": {
+              "type": "string",
+              "minLength": 1
+            },
+            "unit": {
+              "type": "string",
+              "minLength": 1
+            },
+            "denominator": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "data_source": {
+              "type": "string",
+              "minLength": 1
+            },
+            "comparison_window": {
+              "type": "string",
+              "minLength": 1
+            },
+            "limitation": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "decision_informed",
+            "definition",
+            "unit",
+            "denominator",
+            "data_source",
+            "comparison_window",
+            "limitation"
+          ],
+          "additionalProperties": false
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "minLength": 1
+              },
+              "summary": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "$ref": "#/$defs/source"
+              }
+            },
+            "required": [
+              "at",
+              "summary",
+              "source"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "title",
+        "text",
+        "scope",
+        "parent_id",
+        "source",
+        "evidence",
+        "decision",
+        "revisit",
+        "metric",
+        "changes"
+      ],
+      "additionalProperties": false
+    },
+    "relation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "supports",
+            "challenges",
+            "depends-on",
+            "suggests",
+            "supersedes",
+            "related-to"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "observed",
+            "inferred",
+            "proposed"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "id",
+        "from",
+        "to",
+        "type",
+        "basis",
+        "reason",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "space": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "type": "string",
+          "minLength": 1
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "definitions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "parent": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "space_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "mapping": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "space_id",
+            "mapping"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "question",
+        "level",
+        "labels",
+        "definitions",
+        "parent"
+      ],
+      "additionalProperties": false
+    },
+    "protocol": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "explicit-assessment",
+            "sample-frequencies",
+            "model-probabilities",
+            "synthetic"
+          ]
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "kind",
+        "definition",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "population": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sampling_unit": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sampling_plan": {
+          "type": "string",
+          "minLength": 1
+        },
+        "comparability_notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "definition",
+        "sampling_unit",
+        "sampling_plan",
+        "comparability_notes"
+      ],
+      "additionalProperties": false
+    },
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "workflow_revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "prompt_revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "tool_revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "data_revision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "workflow_revision",
+        "model",
+        "prompt_revision",
+        "tool_revision",
+        "data_revision"
+      ],
+      "additionalProperties": false
+    },
+    "run": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "population_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repeat_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "config_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "started_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "outcome": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "unmeasured",
+                "passed",
+                "failed",
+                "mixed"
+              ]
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "locator": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "observed_at": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                },
+                "revision": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "locator",
+                "observed_at",
+                "revision"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "state",
+            "summary",
+            "source"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "population_id",
+        "case_id",
+        "repeat_index",
+        "config_id",
+        "started_at",
+        "outcome"
+      ],
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "space_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "protocol_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "probabilities": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "minItems": 2
+        },
+        "missing_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "id",
+        "record_id",
+        "run_id",
+        "stage",
+        "sequence",
+        "space_id",
+        "protocol_id",
+        "probabilities",
+        "missing_reason",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "measurement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_record_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "missing_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "required": [
+        "id",
+        "metric_record_id",
+        "run_id",
+        "value",
+        "missing_reason",
+        "source"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

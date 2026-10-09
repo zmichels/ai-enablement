@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "administration",
+    "title": "Administration and coordination",
+    "kind": "expertise",
+    "use_when": "Calendars, documents, meetings and the details between them.",
+    "path": "expertise/administration.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "calendar",
+      "admin",
+      "administration",
+      "coordination",
+      "organize"
+    ],
+    "variants": [],
+    "activation": "schedules, documents, dependencies or follow-ups need organizing so people can act."
+  }
+}

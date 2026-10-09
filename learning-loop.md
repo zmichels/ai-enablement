@@ -2,6 +2,8 @@
 
 The durable unit of learning is a small, evidence-backed change that another person or agent can inspect and use. A useful lesson says when it applies, what to do, how to check it and when not to use it.
 
+To notice and retain useful context while work is happening, start with [Give the project a memory](guides/project-memory.md). It includes a portable skill, a paste-ready prompt, a structured ledger, and optional Decision-PGA exports for repeated observations at different scales. Capturing a candidate and demonstrating an improvement remain separate steps.
+
 1. Capture an observation from authorized work. Preserve expected versus actual behavior and the smallest supporting evidence reference in the private project record.
 2. Draft a candidate using [the lesson template](lesson-template.md). Separate observation, explanation and proposed rule. Record competing explanations and failures as well as successes.
 3. Check novelty against the catalog. Amend or supersede an existing lesson when appropriate; avoid duplicate rules with different names.

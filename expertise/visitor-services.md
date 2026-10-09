@@ -1,12 +1,12 @@
-# Patient and visitor services
+# Customer and visitor services
 
 Help people find their way and understand the next step.
 
-Prompt ID: `patient-services` · Reviewed 2026-10-07
+Prompt ID: `visitor-services` · Reviewed 2026-10-08
 
 ## Purpose
 
-A visitor-facing explanation, wayfinding draft or service handoff.
+A customer-facing explanation, wayfinding draft or service handoff.
 
 ## Inputs
 
@@ -20,7 +20,7 @@ The person’s next step, actual location or service information, and communicat
 
 ## Output
 
-A visitor-facing explanation, wayfinding draft or service handoff.
+A customer-facing explanation, wayfinding draft or service handoff.
 
 ## Boundaries
 

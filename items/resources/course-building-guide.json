@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "course-building-guide",
+    "title": "Course planning and LMS guide",
+    "kind": "Included guide",
+    "url": "guides/course-building.md",
+    "for_ids": [
+      "course-builder"
+    ],
+    "cues": [
+      "course",
+      "syllabus",
+      "learning objectives",
+      "lms",
+      "course evaluation"
+    ],
+    "why": "Connect course planning documents and evidence-based revisions.",
+    "status": "Authored starter; official platform references checked 2026-10-08. Live LMS authoring not tested.",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Connect course planning documents and evidence-based revisions.",
+    "inputs": "Learners, syllabus/objectives, modules, assessments and existing evaluation evidence.",
+    "approach": "Link or create missing artifacts, map objective-to-assessment alignment and inspect the actual LMS before editing.",
+    "outputs": "Connected course workspace and traceable improvement proposals.",
+    "requirements": "Document tools; authorized LMS/browser access only when portal work is needed.",
+    "limits": "Platform references do not prove local configuration; planned outcomes and observed results must stay distinct.",
+    "source_url": "guides/course-building.md",
+    "reviewed": "2026-10-08",
+    "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+    "supporting_files": [],
+    "entrypoint_sha256": "7b77ac590bc4557f48ce88d312526500832a088970b36ec93a4900ea08862d7a"
+  },
+  "discovery": {
+    "aliases": [
+      "LMS planning reference"
+    ],
+    "use_cases": [
+      {
+        "id": "inspect-course-structure",
+        "title": "Check an existing course structure",
+        "cues": [
+          "course links",
+          "module structure"
+        ],
+        "outcome": "An inventory of actual course documents, learner routes and unresolved gaps."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:course-builder",
+        "relation": "complements",
+        "why": "Pair the reference with the course method when creating or revising linked planning documents.",
+        "status": "curated"
+      }
+    ]
+  }
+}

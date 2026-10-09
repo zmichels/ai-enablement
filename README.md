@@ -16,9 +16,11 @@ There are guides for [connected service requests](guides/request-tracking.md), [
 
 These are work methods, with distinct inputs, useful artifacts and task-specific checks. Phrase-based suggestions help you browse; they do not interpret your request with AI. Only the optional AI tailoring step calls a model.
 
+Want the project to remember what it learns? [Give it a small, useful memory](guides/project-memory.md): a skill and prompt for keeping decisions, ideas and lessons, with structured links and optional Decision-PGA analysis across scales and repeated runs.
+
 Package and launch checks cover structure and behavior, not a claim that every role has been evaluated in practice. Use the [exercise](exercise.md) to try a real task and improve what falls short.
 
-Want reusable expertise instead of a single task? [Build your helper](library.html) combines work areas and practical skills into one prompt or separate prompts. The [cheat sheet](prompt-cheat-sheet.md) has useful adjustments and a little room to play; the [authoring guide](prompt-authoring.md) explains the shared structure and sources.
+[Build your helper](library.html) prepares an assistant to work with you: select expertise, working habits and useful resources, then click **Build helper prompt**. Each choice supplies when to pitch in, how to help and what to check. Project details are optional. Select **Remember and learn as we go** to include project memory and learning without describing that workflow yourself. Use one combined setup or separate prompts; **Fine-tune the mix** can narrow a contribution. The [cheat sheet](prompt-cheat-sheet.md) has useful adjustments and a little room to play; the [authoring guide](prompt-authoring.md) explains the shared structure and sources.
 
 ## A little further reading
 

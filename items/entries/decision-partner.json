@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "decision-partner",
+    "title": "Help me choose",
+    "kind": "role",
+    "use_when": "Compare the options without the sales pitch.",
+    "category": "Think it through",
+    "featured": true,
+    "path": "roles/decision-partner.md",
+    "artifact": "artifacts/decision-partner.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "decide",
+      "help me choose",
+      "compare options",
+      "tradeoff",
+      "trade off"
+    ],
+    "variants": [],
+    "activation": "there are competing options, consequential assumptions or a choice that may need revisiting."
+  }
+}

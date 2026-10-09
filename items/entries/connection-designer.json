@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "connection-designer",
+    "title": "Try a better way",
+    "kind": "role",
+    "use_when": "Choose a small change worth trying.",
+    "path": "roles/connection-designer.md",
+    "artifact": "artifacts/connection-design.md",
+    "audience": "public candidate",
+    "scope": "Generic delivery and learning",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after failed use or a source/contract change.",
+    "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+    "category": "Make work easier",
+    "featured": false
+  },
+  "pattern": {
+    "cues": [
+      "redesign",
+      "better way",
+      "improve the workflow",
+      "improve our process"
+    ],
+    "variants": [],
+    "activation": "a current workflow has friction and a small change to roles, tools or handoffs could be tried."
+  }
+}

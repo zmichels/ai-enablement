@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "communications",
+    "title": "Writing and communications",
+    "kind": "expertise",
+    "use_when": "Make the message work for the person reading it.",
+    "path": "expertise/communications.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "communication",
+      "writing",
+      "audience",
+      "announcement",
+      "campaign"
+    ],
+    "variants": [],
+    "activation": "an audience needs a clear message, a usable channel or a specific action made easy to find."
+  }
+}

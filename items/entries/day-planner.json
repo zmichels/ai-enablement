@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "day-planner",
+    "title": "Sort out my day",
+    "kind": "role",
+    "use_when": "Find a sensible next step in a very full list.",
+    "category": "Plan & organize",
+    "featured": true,
+    "path": "roles/day-planner.md",
+    "artifact": "artifacts/day-planner.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "schedule my day",
+      "prioritize",
+      "to do list",
+      "plan my week",
+      "too much to do",
+      "calendar"
+    ],
+    "variants": [],
+    "activation": "competing commitments, interruptions or dependencies make it hard to choose what to do next."
+  }
+}

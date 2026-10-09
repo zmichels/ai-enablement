@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "facilities",
+    "title": "Facilities and environmental services",
+    "kind": "expertise",
+    "use_when": "Practical support for the places people work.",
+    "path": "expertise/facilities.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "facilities",
+      "cleaning",
+      "building maintenance",
+      "room turnover",
+      "equipment maintenance"
+    ],
+    "variants": [],
+    "activation": "a maintenance or environmental-services task needs a clear location, work order, shift handoff or sequence of next steps."
+  }
+}

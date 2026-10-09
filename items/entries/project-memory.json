@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "project-memory",
+    "title": "Remember and learn as we go",
+    "kind": "role",
+    "use_when": "Keep useful ideas, decisions and lessons close at hand.",
+    "path": "roles/project-memory.md",
+    "artifact": "skills/project-learning-ledger/assets/ledger.empty.json",
+    "audience": "public candidate",
+    "scope": "Project-local memory, retrieval and learning from observed work",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design",
+      "agents-evolve"
+    ],
+    "reviewed_at": "2026-10-08",
+    "freshness": "Review after failed use or a source/contract change.",
+    "limitations": "Requires an existing assistant and authorized storage. No automatic model training, background monitoring or cross-session recall.",
+    "category": "Learn & understand",
+    "featured": true
+  },
+  "pattern": {
+    "cues": [
+      "project memory",
+      "remember as we go",
+      "ledger",
+      "learn as we work",
+      "decision pga"
+    ],
+    "variants": [],
+    "activation": "a decision, useful idea, correction, connection, open question or proposed measure is worth finding again; also when resuming work or revisiting a related choice."
+  },
+  "discovery": {
+    "aliases": [
+      "project ledger",
+      "ongoing project memory"
+    ],
+    "use_cases": [
+      {
+        "id": "resume-with-context",
+        "title": "Resume work without losing the reasoning",
+        "cues": [
+          "resume a project",
+          "remember decisions"
+        ],
+        "outcome": "A current-state view backed by dated decisions, open questions and recoverable history."
+      }
+    ],
+    "links": [
+      {
+        "target": "resource:project-learning-ledger",
+        "relation": "uses",
+        "why": "Use the portable record format and integrity checks for saved project memory.",
+        "status": "curated"
+      },
+      {
+        "target": "entry:learning-curator",
+        "relation": "overlaps",
+        "why": "Project memory captures and retrieves ongoing context; lesson curation turns a particular correction into a scoped improvement.",
+        "status": "curated"
+      }
+    ]
+  }
+}

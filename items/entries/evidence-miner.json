@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "evidence-miner",
+    "title": "Find what we already know",
+    "kind": "role",
+    "use_when": "Useful answers may already be sitting somewhere.",
+    "path": "roles/evidence-miner.md",
+    "artifact": "artifacts/evidence-map.md",
+    "audience": "public candidate",
+    "scope": "Generic delivery and learning",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after failed use or a source/contract change.",
+    "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+    "category": "Learn & understand",
+    "featured": false
+  },
+  "pattern": {
+    "cues": [
+      "prior knowledge",
+      "already know",
+      "find past",
+      "previous work",
+      "search records"
+    ],
+    "variants": [],
+    "activation": "the answer may already exist in permitted notes, documents or prior work, but is hard to recover."
+  },
+  "discovery": {
+    "aliases": [
+      "source tracing",
+      "find prior decisions"
+    ],
+    "use_cases": [
+      {
+        "id": "recover-decision-evidence",
+        "title": "Recover the basis for an old decision",
+        "cues": [
+          "why was this decided",
+          "conflicting sources"
+        ],
+        "outcome": "An evidence map with source dates, disagreements and missing facts."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:workflow-cartographer",
+        "relation": "complements",
+        "why": "Use the recovered evidence to distinguish what a process actually does from what a guide says it should do.",
+        "status": "curated"
+      }
+    ]
+  }
+}

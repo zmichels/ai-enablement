@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "strategy",
+    "title": "Strategy and organizational leadership",
+    "kind": "expertise",
+    "use_when": "A clear decision amid competing priorities.",
+    "path": "expertise/strategy.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "strategy",
+      "portfolio",
+      "executive",
+      "priorities",
+      "investment"
+    ],
+    "variants": [],
+    "activation": "a direction or investment needs alternatives, tradeoffs and evidence for continuing, adjusting or stopping."
+  }
+}

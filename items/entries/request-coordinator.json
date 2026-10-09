@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "request-coordinator",
+    "title": "Keep requests moving",
+    "kind": "role",
+    "use_when": "Several tickets. One clear picture.",
+    "category": "Make work easier",
+    "featured": false,
+    "path": "roles/request-coordinator.md",
+    "artifact": "artifacts/request-coordinator.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "tickets",
+      "provisioning",
+      "follow up",
+      "request status",
+      "pending requests"
+    ],
+    "variants": [],
+    "activation": "several tickets or teams depend on one another, or updates leave the next owner and action unclear."
+  },
+  "discovery": {
+    "aliases": [
+      "ticket dependencies",
+      "request follow-up"
+    ],
+    "use_cases": [
+      {
+        "id": "blocked-request-chain",
+        "title": "Untangle a blocked request chain",
+        "cues": [
+          "blocked tickets",
+          "request dependencies"
+        ],
+        "outcome": "A dependency/status table and the next useful owner-specific follow-up."
+      }
+    ],
+    "links": [
+      {
+        "target": "resource:request-guide",
+        "relation": "uses",
+        "why": "Use the tracking guide to keep status evidence, dependencies and follow-ups distinct.",
+        "status": "curated"
+      },
+      {
+        "target": "entry:request-navigator",
+        "relation": "complements",
+        "why": "If the chain needs another request, identify its supported route before treating it as submitted.",
+        "status": "curated"
+      }
+    ]
+  }
+}

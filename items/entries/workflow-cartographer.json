@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "workflow-cartographer",
+    "title": "Untangle a process",
+    "kind": "role",
+    "use_when": "See the steps—and where things get stuck.",
+    "path": "roles/workflow-cartographer.md",
+    "artifact": "artifacts/workflow-observation.md",
+    "audience": "public candidate",
+    "scope": "Generic delivery and learning",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after failed use or a source/contract change.",
+    "limitations": "A prompt and artifact contract; requires an existing assistant or human practitioner.",
+    "category": "Make work easier",
+    "featured": false
+  },
+  "pattern": {
+    "cues": [
+      "workflow",
+      "bottleneck",
+      "handoff",
+      "map the process"
+    ],
+    "variants": [],
+    "activation": "a process is confusing, a handoff keeps failing or nobody has a shared picture of the actual steps."
+  },
+  "discovery": {
+    "aliases": [
+      "process mapping",
+      "handoff mapping"
+    ],
+    "use_cases": [
+      {
+        "id": "trace-one-case",
+        "title": "Trace where one case gets stuck",
+        "cues": [
+          "process bottleneck",
+          "handoff delay"
+        ],
+        "outcome": "A current-state map separating observed steps, assumptions, waits and exceptions."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:evidence-miner",
+        "relation": "complements",
+        "why": "Mapping follows the work through steps; evidence search checks the documents and decisions behind uncertain steps.",
+        "status": "curated"
+      }
+    ]
+  }
+}

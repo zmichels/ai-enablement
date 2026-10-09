@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "finance-operations",
+    "title": "Finance, purchasing and operations",
+    "kind": "expertise",
+    "use_when": "Numbers, resources and choices that need to add up.",
+    "path": "expertise/finance-operations.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "finance",
+      "purchasing",
+      "cost",
+      "budget",
+      "procurement"
+    ],
+    "variants": [],
+    "activation": "purchasing or operating choices need a transparent comparison of costs, assumptions and practical constraints."
+  }
+}

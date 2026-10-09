@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "ansible-check-mode",
+    "title": "Ansible check and diff modes",
+    "kind": "Official documentation",
+    "url": "https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_checkmode.html",
+    "for_ids": [
+      "ansible-helper"
+    ],
+    "cues": [
+      "ansible",
+      "check mode",
+      "playbook"
+    ],
+    "why": "Understand what Ansible check and diff modes can establish.",
+    "status": "Documentation checked 2026-10-07; verify the installed version",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Understand what Ansible check and diff modes can establish.",
+    "inputs": "Playbook tasks, module versions and expected side effects.",
+    "approach": "Compare each module's dry-run support and explicit task overrides.",
+    "outputs": "A realistic validation plan and known blind spots.",
+    "requirements": "Official version-matched docs and the relevant playbook.",
+    "limits": "Dry runs cannot establish every execution path; diff output may contain sensitive content.",
+    "source_url": "https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_checkmode.html",
+    "reviewed": "2026-10-08",
+    "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+    "supporting_files": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "context-overlay",
+    "title": "Add organizational context",
+    "kind": "method",
+    "use_when": "Add organizational context",
+    "path": "overlay-contract.md",
+    "audience": "public candidate",
+    "scope": "Generic method",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-06",
+    "freshness": "Review on source change or failed use.",
+    "limitations": "Method, not a hosted runtime or validated benefit claim."
+  }
+}

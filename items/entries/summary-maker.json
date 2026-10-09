@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "summary-maker",
+    "title": "Give me the short version",
+    "kind": "role",
+    "use_when": "Less wall of text. More point.",
+    "category": "Write & explain",
+    "featured": true,
+    "path": "roles/summary-maker.md",
+    "artifact": "artifacts/summary-maker.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "summarize",
+      "summary",
+      "notes",
+      "recap"
+    ],
+    "variants": [],
+    "activation": "long notes, a thread or a document are hiding the decision, change or action someone needs."
+  },
+  "discovery": {
+    "aliases": [
+      "briefing",
+      "condense a document"
+    ],
+    "use_cases": [
+      {
+        "id": "decisions-from-notes",
+        "title": "Pull decisions from scattered notes",
+        "cues": [
+          "decisions from notes",
+          "short brief"
+        ],
+        "outcome": "A brief separating decisions, actions and open questions, with source locations."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:message-writer",
+        "relation": "complements",
+        "why": "After extracting the important points, shape them into a message for a particular recipient.",
+        "status": "curated"
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "meeting-helper",
+    "title": "Make the meeting worth it",
+    "kind": "role",
+    "use_when": "A point, a plan, and fewer “quick follow-ups.”",
+    "category": "Work with people",
+    "featured": true,
+    "path": "roles/meeting-helper.md",
+    "artifact": "artifacts/meeting-helper.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "meeting",
+      "agenda",
+      "meeting minutes"
+    ],
+    "variants": [
+      {
+        "label": "Prepare a decision meeting",
+        "cues": [
+          "agenda",
+          "prepare",
+          "upcoming"
+        ],
+        "method": "Put the decision and options on the agenda, name the required input for each discussion and time-box information sharing.",
+        "output": "A short agenda with decision points and preparation requests."
+      },
+      {
+        "label": "Recover the decisions",
+        "cues": [
+          "notes",
+          "minutes",
+          "recap",
+          "transcript"
+        ],
+        "method": "Extract explicit agreements, owner commitments and unresolved disagreements; attach note locations where the evidence is ambiguous.",
+        "output": "A decision/action recap with uncertainty preserved."
+      }
+    ],
+    "activation": "a meeting needs a purpose, a decision or follow-through from its notes."
+  }
+}

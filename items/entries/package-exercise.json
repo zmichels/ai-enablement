@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "package-exercise",
+    "title": "Evaluate this package",
+    "kind": "method",
+    "use_when": "Evaluate this package",
+    "path": "exercise.md",
+    "audience": "public candidate",
+    "scope": "Generic method",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-06",
+    "freshness": "Review on source change or failed use.",
+    "limitations": "Method, not a hosted runtime or validated benefit claim."
+  }
+}

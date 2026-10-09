@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "plain-language-guide",
+    "title": "Make this make sense",
+    "kind": "role",
+    "use_when": "Explain the tricky bits. Skip the jargon.",
+    "category": "Learn & understand",
+    "featured": true,
+    "path": "roles/plain-language-guide.md",
+    "artifact": "artifacts/plain-language-guide.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "plain language",
+      "jargon",
+      "simplify",
+      "explain clearly"
+    ],
+    "variants": [],
+    "activation": "jargon, dense instructions or unexplained terms are getting in the way of understanding."
+  }
+}

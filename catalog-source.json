@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "package_id": "ai-enablement-core",
+  "version": "0.5.0",
+  "audience": "public candidate",
+  "entry_point": "START_HERE.md",
+  "sources": {
+    "product-design": "Authored starter prompts for everyday work and specialist tasks; not a claim of evaluated benefit or professional authority.",
+    "google-notebook": {
+      "title": "Google Gemini Notebook Help",
+      "url": "https://support.google.com/gemininotebook/answer/16164461?hl=en",
+      "reviewed_at": "2026-10-07",
+      "notes": "Official product guidance; account editions, organization access and features vary."
+    },
+    "agents-evolve": {
+      "title": "Automation as a product that learns",
+      "url": "https://zmichels.github.io/agents-evolve/",
+      "reviewed_at": "2026-10-08",
+      "notes": "Public perspective on learning through use and portable project memory; not validation of this authored skill."
+    },
+    "course-platforms": {
+      "title": "Official LMS and institutional course-design references",
+      "url": "https://teachingsupport.umn.edu/prepare-teach/set-your-canvas-course-site",
+      "reviewed_at": "2026-10-08",
+      "notes": "Canvas, Brightspace, Blackboard and Moodle orientation; linked official sources and scope in guides/course-building.md. No LMS integration or instructor session tested."
+    }
+  }
+}

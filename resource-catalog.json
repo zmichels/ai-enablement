@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "ansible-check-mode",
+      "title": "Ansible check and diff modes",
+      "kind": "Official documentation",
+      "url": "https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_checkmode.html",
+      "for_ids": [
+        "ansible-helper"
+      ],
+      "cues": [
+        "ansible",
+        "check mode",
+        "playbook"
+      ],
+      "why": "Understand what Ansible check and diff modes can establish.",
+      "status": "Documentation checked 2026-10-07; verify the installed version",
+      "audience": "public"
+    },
+    {
+      "id": "ansible-galaxy",
+      "title": "Ansible Galaxy",
+      "kind": "Automation collection catalog",
+      "url": "https://galaxy.ansible.com/",
+      "for_ids": [
+        "ansible-helper"
+      ],
+      "cues": [
+        "ansible",
+        "collection",
+        "playbook"
+      ],
+      "why": "Find maintained Ansible collections for an automation need.",
+      "status": "External catalog; Ansible collections are not agent skills. Check publisher and version.",
+      "audience": "public"
+    },
+    {
+      "id": "ansible-guide",
+      "title": "Ansible task guide",
+      "kind": "Included guide",
+      "url": "guides/ansible.md",
+      "for_ids": [
+        "systems-administration",
+        "ansible-helper"
+      ],
+      "cues": [
+        "ansible",
+        "playbook",
+        "patch"
+      ],
+      "why": "Plan, inspect or troubleshoot a bounded Ansible change.",
+      "status": "Authored guidance; not an installed agent skill",
+      "audience": "public"
+    },
+    {
+      "id": "course-building-guide",
+      "title": "Course planning and LMS guide",
+      "kind": "Included guide",
+      "url": "guides/course-building.md",
+      "for_ids": [
+        "course-builder"
+      ],
+      "cues": [
+        "course",
+        "syllabus",
+        "learning objectives",
+        "lms",
+        "course evaluation"
+      ],
+      "why": "Connect course planning documents and evidence-based revisions.",
+      "status": "Authored starter; official platform references checked 2026-10-08. Live LMS authoring not tested.",
+      "audience": "public",
+      "discovery": {
+        "aliases": [
+          "LMS planning reference"
+        ],
+        "use_cases": [
+          {
+            "id": "inspect-course-structure",
+            "title": "Check an existing course structure",
+            "cues": [
+              "course links",
+              "module structure"
+            ],
+            "outcome": "An inventory of actual course documents, learner routes and unresolved gaps."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:course-builder",
+            "relation": "complements",
+            "why": "Pair the reference with the course method when creating or revising linked planning documents.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-learning-ledger",
+      "title": "Project memory and learning",
+      "kind": "Included skill and prompt",
+      "url": "guides/project-memory.md",
+      "for_ids": [
+        "project-memory",
+        "learning-curator",
+        "decision-partner"
+      ],
+      "cues": [
+        "ledger",
+        "project memory",
+        "decision records",
+        "learn as we work",
+        "decision pga",
+        "decision-pga"
+      ],
+      "why": "Keep useful project memory and optional analysis-ready records.",
+      "status": "Authored starter; includes a JSON ledger and tested format adapter. No memory service or Decision-PGA installation is included.",
+      "audience": "public",
+      "discovery": {
+        "aliases": [
+          "portable memory format",
+          "learning ledger schema"
+        ],
+        "use_cases": [
+          {
+            "id": "validate-saved-memory",
+            "title": "Check a saved project ledger",
+            "cues": [
+              "validate ledger",
+              "typed memory links"
+            ],
+            "outcome": "Format and reference checks on real records; no claim that recorded lessons are true or effective."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:project-memory",
+            "relation": "complements",
+            "why": "The role supplies capture and retrieval habits; this resource supplies the portable files and validator.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "request-guide",
+      "title": "Request tracking guide",
+      "kind": "Included guide",
+      "url": "guides/request-tracking.md",
+      "for_ids": [
+        "request-coordinator",
+        "it-service"
+      ],
+      "cues": [
+        "tickets",
+        "provisioning",
+        "follow up"
+      ],
+      "why": "Coordinate several requests toward one outcome.",
+      "status": "Authored method; no ticket connection or monitor is installed",
+      "audience": "public",
+      "discovery": {
+        "aliases": [
+          "request status guide"
+        ],
+        "use_cases": [
+          {
+            "id": "closure-vs-completion",
+            "title": "Check what closed actually means",
+            "cues": [
+              "closed ticket",
+              "fulfilled request"
+            ],
+            "outcome": "A distinction between recorded status and evidence that the requested outcome occurred."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:request-coordinator",
+            "relation": "complements",
+            "why": "Apply the guide while tracing related records and drafting a specific follow-up.",
+            "status": "curated"
+          }
+        ]
+      }
+    }
+  ]
+}

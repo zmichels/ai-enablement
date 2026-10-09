@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "request-navigator",
+    "title": "Find the right request",
+    "kind": "role",
+    "use_when": "Find the right form. Skip the portal scavenger hunt.",
+    "category": "Make work easier",
+    "featured": true,
+    "path": "roles/request-navigator.md",
+    "artifact": "artifacts/request-navigator.md",
+    "audience": "public candidate",
+    "scope": "Everyday work and specialist help",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review after use; verify current external facts before relying on them.",
+    "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+  },
+  "pattern": {
+    "cues": [
+      "ticket",
+      "service request",
+      "access request",
+      "provision",
+      "servicenow"
+    ],
+    "variants": [],
+    "activation": "work depends on finding the right service request, owning team or information to include."
+  },
+  "discovery": {
+    "aliases": [
+      "find a form",
+      "service request routing"
+    ],
+    "use_cases": [
+      {
+        "id": "choose-request-route",
+        "title": "Find the request that fits the need",
+        "cues": [
+          "which form",
+          "where to request"
+        ],
+        "outcome": "A source-backed route and draft fields; uncertain ownership remains visible."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:request-coordinator",
+        "relation": "complements",
+        "why": "Navigation finds the route and prepares a request; coordination follows related records and blockers after they exist.",
+        "status": "curated"
+      }
+    ]
+  }
+}

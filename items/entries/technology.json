@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "technology",
+    "title": "Software, data and technology",
+    "kind": "expertise",
+    "use_when": "Build, investigate or improve a technical tool.",
+    "path": "expertise/technology.md",
+    "category": "Work areas",
+    "audience": "public candidate",
+    "scope": "A perspective to combine with selected help roles",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Verify current local practices and consequential facts for each use.",
+    "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+  },
+  "pattern": {
+    "cues": [
+      "software",
+      "data",
+      "api",
+      "code",
+      "database",
+      "application"
+    ],
+    "variants": [],
+    "activation": "software, data or a technical integration needs implementation or diagnosis grounded in observed behavior."
+  }
+}

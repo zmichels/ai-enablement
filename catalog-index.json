@@ -1,0 +1,950 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "ref": "entry:administration",
+      "title": "Administration and coordination",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/administration.md",
+      "metadata": "items/entries/administration.json",
+      "revision": "1c7576bd325ba4bacfc41b7212855d64af7b484eb059f79b774e029258825a01"
+    },
+    {
+      "ref": "entry:ansible-helper",
+      "title": "Work on servers with Ansible",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/ansible-helper.md",
+      "metadata": "items/entries/ansible-helper.json",
+      "revision": "becb347642885b055b3337df0a5400ba26b2580d11bbe1ce14259841e857edba"
+    },
+    {
+      "ref": "entry:automation-engineer",
+      "title": "Skip the copy and paste",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/automation-engineer.md",
+      "metadata": "items/entries/automation-engineer.json",
+      "revision": "a370ad85096527b0d7dad78ab7c138fece872e7370017be4c162e5a1a8b15f12"
+    },
+    {
+      "ref": "entry:brainstorm-partner",
+      "title": "Get a few fresh ideas",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/brainstorm-partner.md",
+      "metadata": "items/entries/brainstorm-partner.json",
+      "revision": "9df27ee822eb3044a0c16e2609c25ff1586d12c5e4e0e4c4a05239ceb1e7a057"
+    },
+    {
+      "ref": "entry:business-analysis",
+      "title": "Business and process analysis",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/business-analysis.md",
+      "metadata": "items/entries/business-analysis.json",
+      "revision": "970655b708c31a21093725bb46cd07c8c1e03b7ab12ccb652d609800fc94fd62"
+    },
+    {
+      "ref": "entry:checklist-maker",
+      "title": "Make a checklist",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/checklist-maker.md",
+      "metadata": "items/entries/checklist-maker.json",
+      "revision": "dbf17a0384025758cb6c597c9d6752eed30db84a3fa86923bd77e70c9db2da9a"
+    },
+    {
+      "ref": "entry:communications",
+      "title": "Writing and communications",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/communications.md",
+      "metadata": "items/entries/communications.json",
+      "revision": "671f886b64f750644e161d05fc6624ac0c4048c54972a3a3d9dcc90de8a04769"
+    },
+    {
+      "ref": "entry:connection-designer",
+      "title": "Try a better way",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/connection-designer.md",
+      "metadata": "items/entries/connection-designer.json",
+      "revision": "ed62fe97bc2952516640a6b229caaf34a25f2153fc49d09718baaba69f7a3aec"
+    },
+    {
+      "ref": "entry:context-overlay",
+      "title": "Add organizational context",
+      "kind": "method",
+      "audience": "public",
+      "source": "overlay-contract.md",
+      "metadata": "items/entries/context-overlay.json",
+      "revision": "73ba6d0c680f69178f7abf6d92f1dc77de3c72f3f0030c5324c79218b96c0331"
+    },
+    {
+      "ref": "entry:conversation-coach",
+      "title": "Prepare for a tricky conversation",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/conversation-coach.md",
+      "metadata": "items/entries/conversation-coach.json",
+      "revision": "99023008a0b360521396ff8280eaa2da066dba60273e2752e2b7d19a8bd17442"
+    },
+    {
+      "ref": "entry:course-builder",
+      "title": "Build and improve a course",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/course-builder.md",
+      "metadata": "items/entries/course-builder.json",
+      "revision": "ded0cfa9d836a7be77860319b6332c6fe69d642428f1b841d0f90456ed44d0da",
+      "discovery": {
+        "aliases": [
+          "course design",
+          "curriculum planning"
+        ],
+        "use_cases": [
+          {
+            "id": "syllabus-to-course-map",
+            "title": "Turn a syllabus into a course map",
+            "cues": [
+              "syllabus",
+              "objective alignment"
+            ],
+            "outcome": "Linked objectives, activities and assessments, with genuine gaps visible."
+          },
+          {
+            "id": "evaluation-to-revision",
+            "title": "Turn a course evaluation into revisions",
+            "cues": [
+              "course evaluation",
+              "revise a course"
+            ],
+            "outcome": "Proposed changes tied to findings and a way to check the next offering."
+          }
+        ],
+        "links": [
+          {
+            "target": "resource:course-building-guide",
+            "relation": "uses",
+            "why": "Use the guide for LMS concepts, linked documents and checks on course changes.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:teaching-partner",
+            "relation": "overlaps",
+            "why": "Course building connects a whole course; teaching help shapes a particular explanation or lesson.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:day-planner",
+      "title": "Sort out my day",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/day-planner.md",
+      "metadata": "items/entries/day-planner.json",
+      "revision": "ec478d59c6af137dd2015f551abb6b16980f19e8d9221480d2bc4caea73381b7"
+    },
+    {
+      "ref": "entry:decision-partner",
+      "title": "Help me choose",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/decision-partner.md",
+      "metadata": "items/entries/decision-partner.json",
+      "revision": "6d21aee2d97a3a75bd8f4273cff3f91ff4407fd6f06c7e45d50eca2cd0a512dc"
+    },
+    {
+      "ref": "entry:document-editor",
+      "title": "Tighten this up",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/document-editor.md",
+      "metadata": "items/entries/document-editor.json",
+      "revision": "2e53401f442a7dfa63bf6bda3b1a6e33f4c8ccfab117391d6d96ad4aa41bc051"
+    },
+    {
+      "ref": "entry:event-planner",
+      "title": "Pull a gathering together",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/event-planner.md",
+      "metadata": "items/entries/event-planner.json",
+      "revision": "4606e149d708afe6c1333dd268e254e1c5f8d471f401f15f378149a06394ce2b"
+    },
+    {
+      "ref": "entry:evidence-miner",
+      "title": "Find what we already know",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/evidence-miner.md",
+      "metadata": "items/entries/evidence-miner.json",
+      "revision": "ef5f6d1cb0a398889a2f81fbc7aec99dd8a97db7723bb57ad54197b95f116def",
+      "discovery": {
+        "aliases": [
+          "source tracing",
+          "find prior decisions"
+        ],
+        "use_cases": [
+          {
+            "id": "recover-decision-evidence",
+            "title": "Recover the basis for an old decision",
+            "cues": [
+              "why was this decided",
+              "conflicting sources"
+            ],
+            "outcome": "An evidence map with source dates, disagreements and missing facts."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:workflow-cartographer",
+            "relation": "complements",
+            "why": "Use the recovered evidence to distinguish what a process actually does from what a guide says it should do.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:evidence-reviewer",
+      "title": "Give it a second look",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/evidence-reviewer.md",
+      "metadata": "items/entries/evidence-reviewer.json",
+      "revision": "9e16fec9e095b92b1179559b61b14c227d07cc4ce735937c0b29b1e70df8a7c2"
+    },
+    {
+      "ref": "entry:facilities",
+      "title": "Facilities and environmental services",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/facilities.md",
+      "metadata": "items/entries/facilities.json",
+      "revision": "ed2da7f2addde8a5979d961c7f27b7721af1b424b793b1a6d025b233eccd6e59"
+    },
+    {
+      "ref": "entry:feedback-sorter",
+      "title": "Find the pattern in feedback",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/feedback-sorter.md",
+      "metadata": "items/entries/feedback-sorter.json",
+      "revision": "42a9e1ed5fb0b657a0a9e23ea3f6a1132fabc4b77d6ded43b604ea4874875741"
+    },
+    {
+      "ref": "entry:finance-operations",
+      "title": "Finance, purchasing and operations",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/finance-operations.md",
+      "metadata": "items/entries/finance-operations.json",
+      "revision": "f28481c9e1176c36460487bbd4792cc1b9d3f131fadfa6f73a2dbf3f2f4cb63f"
+    },
+    {
+      "ref": "entry:food-services",
+      "title": "Food and hospitality services",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/food-services.md",
+      "metadata": "items/entries/food-services.json",
+      "revision": "cceaf67c3e71487cc2987eed3a3681f359825a4911a9103f216cd1dc3e92d351"
+    },
+    {
+      "ref": "entry:gemini-notebook",
+      "title": "Meet Gemini Notebook",
+      "kind": "method",
+      "audience": "public",
+      "source": "guides/gemini-notebook.md",
+      "metadata": "items/entries/gemini-notebook.json",
+      "revision": "39a6a3f89907eca43b636d0b8abf955dc2ab130e54fc906171b8029c247148ef"
+    },
+    {
+      "ref": "entry:handoff-editor",
+      "title": "Leave a good handoff",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/handoff-editor.md",
+      "metadata": "items/entries/handoff-editor.json",
+      "revision": "8901042f1cb4f929475804f13a6a65cbca5edc59501b83b6209712a5a4eb99b3"
+    },
+    {
+      "ref": "entry:it-service",
+      "title": "IT service and request coordination",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/it-service.md",
+      "metadata": "items/entries/it-service.json",
+      "revision": "d51c39c39dc1df0e4ba7b70812e35ee9bb80971e6d02c3fa641f9831051777f9"
+    },
+    {
+      "ref": "entry:language-helper",
+      "title": "Bridge a language gap",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/language-helper.md",
+      "metadata": "items/entries/language-helper.json",
+      "revision": "9e2cdebd6547acdcc199a4b4371063e89e9e31309e52ce342aba9c7aff562174"
+    },
+    {
+      "ref": "entry:learning-coach",
+      "title": "Help me learn it",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/learning-coach.md",
+      "metadata": "items/entries/learning-coach.json",
+      "revision": "641afd147f354bfbd972a1d80f0ab8590d2c7689a12962697dc7c31db41b19e7"
+    },
+    {
+      "ref": "entry:learning-curator",
+      "title": "Keep the lesson",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/learning-curator.md",
+      "metadata": "items/entries/learning-curator.json",
+      "revision": "c5a93c9b2c604e85c681870e3fce79a7079fd601aad1b2f16544cea17973f31c",
+      "discovery": {
+        "aliases": [
+          "capture one lesson",
+          "review a correction"
+        ],
+        "use_cases": [
+          {
+            "id": "correction-to-check",
+            "title": "Turn a correction into a reusable check",
+            "cues": [
+              "learn from a mistake",
+              "capture a lesson"
+            ],
+            "outcome": "One scoped lesson, a small proposed or applied change, and evidence of what was checked."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:project-memory",
+            "relation": "complements",
+            "why": "Keep the lesson in the existing project record so later work can retrieve its evidence and limits.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:learning-loop",
+      "title": "How agents retain lessons",
+      "kind": "method",
+      "audience": "public",
+      "source": "learning-loop.md",
+      "metadata": "items/entries/learning-loop.json",
+      "revision": "35640e44fa6e954819155812836b03fd901a318a668f3f9b70e70271c3c29ac0"
+    },
+    {
+      "ref": "entry:meeting-helper",
+      "title": "Make the meeting worth it",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/meeting-helper.md",
+      "metadata": "items/entries/meeting-helper.json",
+      "revision": "a38a204beccee6911d6d180b7699eddaa932ad1cb6ed69648ad59a08b7831d3f"
+    },
+    {
+      "ref": "entry:message-writer",
+      "title": "Find the right words",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/message-writer.md",
+      "metadata": "items/entries/message-writer.json",
+      "revision": "4a9564585ec7167e814fc4e54fc81b35fbdaaf2f9ad961c7d1b50a01f301fe07",
+      "discovery": {
+        "aliases": [
+          "email drafting",
+          "reply drafting"
+        ],
+        "use_cases": [
+          {
+            "id": "difficult-reply",
+            "title": "Write a difficult reply",
+            "cues": [
+              "decline politely",
+              "difficult reply"
+            ],
+            "outcome": "One sendable draft with a clear next step and no invented commitments."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:summary-maker",
+            "relation": "overlaps",
+            "why": "Writing shapes a message for its recipient; summarizing condenses existing material while preserving its evidence.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:number-explainer",
+      "title": "Make sense of the numbers",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/number-explainer.md",
+      "metadata": "items/entries/number-explainer.json",
+      "revision": "ceaca858324bae054acc091b68bf95205d47801033bec4763f01d214e97071db"
+    },
+    {
+      "ref": "entry:package-exercise",
+      "title": "Evaluate this package",
+      "kind": "method",
+      "audience": "public",
+      "source": "exercise.md",
+      "metadata": "items/entries/package-exercise.json",
+      "revision": "f5d397ca7c61afdd73b1e03ff59e9fbcf42ca0ba4b8ebcd12cd110099f08edac"
+    },
+    {
+      "ref": "entry:people-leadership",
+      "title": "People and team leadership",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/people-leadership.md",
+      "metadata": "items/entries/people-leadership.json",
+      "revision": "659dbdea7761187065bac456f5110d7ac3f533261c6b5857228a658ad75fdf1b"
+    },
+    {
+      "ref": "entry:plain-language-guide",
+      "title": "Make this make sense",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/plain-language-guide.md",
+      "metadata": "items/entries/plain-language-guide.json",
+      "revision": "b15b1cb08ef5917d620d93e1a3b0625b93562b7940c74f3254c94afa74d8a2b5"
+    },
+    {
+      "ref": "entry:project-coordinator",
+      "title": "Make a plan",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/project-coordinator.md",
+      "metadata": "items/entries/project-coordinator.json",
+      "revision": "cf36903c855caa0162320b636d6a581cf8e9e8b89a025706b67aaee5d838aa66"
+    },
+    {
+      "ref": "entry:project-learning-ledger",
+      "title": "Give the project a memory",
+      "kind": "method",
+      "audience": "public",
+      "source": "guides/project-memory.md",
+      "metadata": "items/entries/project-learning-ledger.json",
+      "revision": "e832410435b6d20a48ad66a8cd517032d5db204743f406c81c03020eece79c5b"
+    },
+    {
+      "ref": "entry:project-memory",
+      "title": "Remember and learn as we go",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/project-memory.md",
+      "metadata": "items/entries/project-memory.json",
+      "revision": "6a402bb8e878499a92a2cdbcb3f2873d5290217668770594c7d3e0cdc9628b67",
+      "discovery": {
+        "aliases": [
+          "project ledger",
+          "ongoing project memory"
+        ],
+        "use_cases": [
+          {
+            "id": "resume-with-context",
+            "title": "Resume work without losing the reasoning",
+            "cues": [
+              "resume a project",
+              "remember decisions"
+            ],
+            "outcome": "A current-state view backed by dated decisions, open questions and recoverable history."
+          }
+        ],
+        "links": [
+          {
+            "target": "resource:project-learning-ledger",
+            "relation": "uses",
+            "why": "Use the portable record format and integrity checks for saved project memory.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:learning-curator",
+            "relation": "overlaps",
+            "why": "Project memory captures and retrieves ongoing context; lesson curation turns a particular correction into a scoped improvement.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:prototype-helper",
+      "title": "Show the idea",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/prototype-helper.md",
+      "metadata": "items/entries/prototype-helper.json",
+      "revision": "89088a96bcf7c6d2bd11579da4fc4e9dc55850c4c010bc229148ad83bfea53f1"
+    },
+    {
+      "ref": "entry:request-coordinator",
+      "title": "Keep requests moving",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/request-coordinator.md",
+      "metadata": "items/entries/request-coordinator.json",
+      "revision": "0e57086294f19030018fcd8fddb4b8534efce39a358acb8bff727e04f193b759",
+      "discovery": {
+        "aliases": [
+          "ticket dependencies",
+          "request follow-up"
+        ],
+        "use_cases": [
+          {
+            "id": "blocked-request-chain",
+            "title": "Untangle a blocked request chain",
+            "cues": [
+              "blocked tickets",
+              "request dependencies"
+            ],
+            "outcome": "A dependency/status table and the next useful owner-specific follow-up."
+          }
+        ],
+        "links": [
+          {
+            "target": "resource:request-guide",
+            "relation": "uses",
+            "why": "Use the tracking guide to keep status evidence, dependencies and follow-ups distinct.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:request-navigator",
+            "relation": "complements",
+            "why": "If the chain needs another request, identify its supported route before treating it as submitted.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:request-navigator",
+      "title": "Find the right request",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/request-navigator.md",
+      "metadata": "items/entries/request-navigator.json",
+      "revision": "f8188055bca148a1c700beb2089d970e0ce5bb299ba20328f7cb7fdc34874607",
+      "discovery": {
+        "aliases": [
+          "find a form",
+          "service request routing"
+        ],
+        "use_cases": [
+          {
+            "id": "choose-request-route",
+            "title": "Find the request that fits the need",
+            "cues": [
+              "which form",
+              "where to request"
+            ],
+            "outcome": "A source-backed route and draft fields; uncertain ownership remains visible."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:request-coordinator",
+            "relation": "complements",
+            "why": "Navigation finds the route and prepares a request; coordination follows related records and blockers after they exist.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:research-education",
+      "title": "Research and education",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/research-education.md",
+      "metadata": "items/entries/research-education.json",
+      "revision": "aaf8f87758dd0a2fa976cb431eae52bcd8ea284bdd07e6d322cfa43fcfdcd0b1"
+    },
+    {
+      "ref": "entry:research-reader",
+      "title": "Get the point of a paper",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/research-reader.md",
+      "metadata": "items/entries/research-reader.json",
+      "revision": "715f0e8b849fec4c38743c359817bd7d88ea63364bb4bb817a90043bd323f7d5"
+    },
+    {
+      "ref": "entry:service-helper",
+      "title": "Make it easier to get help",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/service-helper.md",
+      "metadata": "items/entries/service-helper.json",
+      "revision": "d6d1268b2ddf6cde49143c80b7214674d06717be87a1486620af7c86916b4d66"
+    },
+    {
+      "ref": "entry:service-team",
+      "title": "Service team support",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/service-team.md",
+      "metadata": "items/entries/service-team.json",
+      "revision": "9a8a6e8ed5c5324944dd41edd12ccc4e4bb3942e3acf2fbabc797ca6ad83bc35"
+    },
+    {
+      "ref": "entry:strategy",
+      "title": "Strategy and organizational leadership",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/strategy.md",
+      "metadata": "items/entries/strategy.json",
+      "revision": "d98e6f327cd1727f0a21def719db6ff217b36f82ab09209b217e08fa71b6d412"
+    },
+    {
+      "ref": "entry:summary-maker",
+      "title": "Give me the short version",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/summary-maker.md",
+      "metadata": "items/entries/summary-maker.json",
+      "revision": "fcb030bc0715cf29f847aa4fa199e35378656e7706f0fb1898ec1049b3bb3ca5",
+      "discovery": {
+        "aliases": [
+          "briefing",
+          "condense a document"
+        ],
+        "use_cases": [
+          {
+            "id": "decisions-from-notes",
+            "title": "Pull decisions from scattered notes",
+            "cues": [
+              "decisions from notes",
+              "short brief"
+            ],
+            "outcome": "A brief separating decisions, actions and open questions, with source locations."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:message-writer",
+            "relation": "complements",
+            "why": "After extracting the important points, shape them into a message for a particular recipient.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:systems-administration",
+      "title": "Systems administration",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/systems-administration.md",
+      "metadata": "items/entries/systems-administration.json",
+      "revision": "92043ccd6b18e22b34573d0bbbb30c25e7f6834e727885b4475087f4b8216986"
+    },
+    {
+      "ref": "entry:teaching-partner",
+      "title": "Show someone the ropes",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/teaching-partner.md",
+      "metadata": "items/entries/teaching-partner.json",
+      "revision": "1f36123bad47d755f5cc4ca3ead219f55c5cc1f334678881f1801d2d8931e8f5"
+    },
+    {
+      "ref": "entry:technology",
+      "title": "Software, data and technology",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/technology.md",
+      "metadata": "items/entries/technology.json",
+      "revision": "181920bfcd69ed2c25db0973e48221302aff360c1abc8e72676b3fe83e0977e6"
+    },
+    {
+      "ref": "entry:visitor-services",
+      "title": "Customer and visitor services",
+      "kind": "expertise",
+      "audience": "public",
+      "source": "expertise/visitor-services.md",
+      "metadata": "items/entries/visitor-services.json",
+      "revision": "81406ea4e00cb5b2cb280a35f5ffffe476ce052d062c68e4de6d9ad79fd3f238"
+    },
+    {
+      "ref": "entry:workflow-cartographer",
+      "title": "Untangle a process",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/workflow-cartographer.md",
+      "metadata": "items/entries/workflow-cartographer.json",
+      "revision": "173fb1e3d8618b5955b0b18327ff1a72eabb8f53ac4eaecfab955b58a40b5ccf",
+      "discovery": {
+        "aliases": [
+          "process mapping",
+          "handoff mapping"
+        ],
+        "use_cases": [
+          {
+            "id": "trace-one-case",
+            "title": "Trace where one case gets stuck",
+            "cues": [
+              "process bottleneck",
+              "handoff delay"
+            ],
+            "outcome": "A current-state map separating observed steps, assumptions, waits and exceptions."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:evidence-miner",
+            "relation": "complements",
+            "why": "Mapping follows the work through steps; evidence search checks the documents and decisions behind uncertain steps.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "resource:ansible-check-mode",
+      "title": "Ansible check and diff modes",
+      "kind": "Official documentation",
+      "audience": "public",
+      "source": "https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_checkmode.html",
+      "metadata": "items/resources/ansible-check-mode.json",
+      "revision": "19154f3aacd6add83147aca08c1395cda0565f4caa0dd633ddfe0022b0bf3cb7"
+    },
+    {
+      "ref": "resource:ansible-galaxy",
+      "title": "Ansible Galaxy",
+      "kind": "Automation collection catalog",
+      "audience": "public",
+      "source": "https://galaxy.ansible.com/",
+      "metadata": "items/resources/ansible-galaxy.json",
+      "revision": "854860f3bcd84868069e4d73418bf413bfdb7d90433ad5d5e0d86f807facfd69"
+    },
+    {
+      "ref": "resource:ansible-guide",
+      "title": "Ansible task guide",
+      "kind": "Included guide",
+      "audience": "public",
+      "source": "guides/ansible.md",
+      "metadata": "items/resources/ansible-guide.json",
+      "revision": "301f51b151f78532c396054f000e3da950cd16d70e53614d59ef069f87115632"
+    },
+    {
+      "ref": "resource:course-building-guide",
+      "title": "Course planning and LMS guide",
+      "kind": "Included guide",
+      "audience": "public",
+      "source": "guides/course-building.md",
+      "metadata": "items/resources/course-building-guide.json",
+      "revision": "d2a9f9884e49b38610c6b1402342d4951d089c27b73cc80dc9d29c18590b48fd",
+      "discovery": {
+        "aliases": [
+          "LMS planning reference"
+        ],
+        "use_cases": [
+          {
+            "id": "inspect-course-structure",
+            "title": "Check an existing course structure",
+            "cues": [
+              "course links",
+              "module structure"
+            ],
+            "outcome": "An inventory of actual course documents, learner routes and unresolved gaps."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:course-builder",
+            "relation": "complements",
+            "why": "Pair the reference with the course method when creating or revising linked planning documents.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "resource:project-learning-ledger",
+      "title": "Project memory and learning",
+      "kind": "Included skill and prompt",
+      "audience": "public",
+      "source": "guides/project-memory.md",
+      "metadata": "items/resources/project-learning-ledger.json",
+      "revision": "71f9acf4e00266d2000a6e7e00ea1ccffaf71fa9af8db7508b6ed46763f5a84e",
+      "discovery": {
+        "aliases": [
+          "portable memory format",
+          "learning ledger schema"
+        ],
+        "use_cases": [
+          {
+            "id": "validate-saved-memory",
+            "title": "Check a saved project ledger",
+            "cues": [
+              "validate ledger",
+              "typed memory links"
+            ],
+            "outcome": "Format and reference checks on real records; no claim that recorded lessons are true or effective."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:project-memory",
+            "relation": "complements",
+            "why": "The role supplies capture and retrieval habits; this resource supplies the portable files and validator.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "resource:request-guide",
+      "title": "Request tracking guide",
+      "kind": "Included guide",
+      "audience": "public",
+      "source": "guides/request-tracking.md",
+      "metadata": "items/resources/request-guide.json",
+      "revision": "be4ad02a426771e4a3c9fccda439d5ea6419f5fb19ef391ff90c90f7644be4e2",
+      "discovery": {
+        "aliases": [
+          "request status guide"
+        ],
+        "use_cases": [
+          {
+            "id": "closure-vs-completion",
+            "title": "Check what closed actually means",
+            "cues": [
+              "closed ticket",
+              "fulfilled request"
+            ],
+            "outcome": "A distinction between recorded status and evidence that the requested outcome occurred."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:request-coordinator",
+            "relation": "complements",
+            "why": "Apply the guide while tracing related records and drafting a specific follow-up.",
+            "status": "curated"
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "entry:course-builder",
+      "target": "resource:course-building-guide",
+      "relation": "uses",
+      "why": "Use the guide for LMS concepts, linked documents and checks on course changes.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:course-builder",
+      "target": "entry:teaching-partner",
+      "relation": "overlaps",
+      "why": "Course building connects a whole course; teaching help shapes a particular explanation or lesson.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:evidence-miner",
+      "target": "entry:workflow-cartographer",
+      "relation": "complements",
+      "why": "Use the recovered evidence to distinguish what a process actually does from what a guide says it should do.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:learning-curator",
+      "target": "entry:project-memory",
+      "relation": "complements",
+      "why": "Keep the lesson in the existing project record so later work can retrieve its evidence and limits.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:message-writer",
+      "target": "entry:summary-maker",
+      "relation": "overlaps",
+      "why": "Writing shapes a message for its recipient; summarizing condenses existing material while preserving its evidence.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:project-memory",
+      "target": "resource:project-learning-ledger",
+      "relation": "uses",
+      "why": "Use the portable record format and integrity checks for saved project memory.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:project-memory",
+      "target": "entry:learning-curator",
+      "relation": "overlaps",
+      "why": "Project memory captures and retrieves ongoing context; lesson curation turns a particular correction into a scoped improvement.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:request-coordinator",
+      "target": "resource:request-guide",
+      "relation": "uses",
+      "why": "Use the tracking guide to keep status evidence, dependencies and follow-ups distinct.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:request-coordinator",
+      "target": "entry:request-navigator",
+      "relation": "complements",
+      "why": "If the chain needs another request, identify its supported route before treating it as submitted.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:request-navigator",
+      "target": "entry:request-coordinator",
+      "relation": "complements",
+      "why": "Navigation finds the route and prepares a request; coordination follows related records and blockers after they exist.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:summary-maker",
+      "target": "entry:message-writer",
+      "relation": "complements",
+      "why": "After extracting the important points, shape them into a message for a particular recipient.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:workflow-cartographer",
+      "target": "entry:evidence-miner",
+      "relation": "complements",
+      "why": "Mapping follows the work through steps; evidence search checks the documents and decisions behind uncertain steps.",
+      "status": "curated"
+    },
+    {
+      "source": "resource:course-building-guide",
+      "target": "entry:course-builder",
+      "relation": "complements",
+      "why": "Pair the reference with the course method when creating or revising linked planning documents.",
+      "status": "curated"
+    },
+    {
+      "source": "resource:project-learning-ledger",
+      "target": "entry:project-memory",
+      "relation": "complements",
+      "why": "The role supplies capture and retrieval habits; this resource supplies the portable files and validator.",
+      "status": "curated"
+    },
+    {
+      "source": "resource:request-guide",
+      "target": "entry:request-coordinator",
+      "relation": "complements",
+      "why": "Apply the guide while tracing related records and drafting a specific follow-up.",
+      "status": "curated"
+    }
+  ]
+}

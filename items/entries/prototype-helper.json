@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "prototype-helper",
+    "title": "Show the idea",
+    "kind": "role",
+    "use_when": "A quick mockup can say what a meeting cannot.",
+    "category": "Think it through",
+    "featured": true,
+    "path": "roles/prototype-helper.md",
+    "artifact": "artifacts/prototype-helper.md",
+    "audience": "public candidate",
+    "scope": "Small illustrative prototypes and mockups",
+    "maturity": "starter",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-07",
+    "freshness": "Review against the actual audience and intended use.",
+    "limitations": "A concept illustration; not a tested or deployed product."
+  },
+  "pattern": {
+    "cues": [
+      "prototype",
+      "mockup",
+      "wireframe",
+      "ui",
+      "demo"
+    ],
+    "variants": [
+      {
+        "label": "Test an interaction",
+        "cues": [
+          "click",
+          "interactive",
+          "flow",
+          "ui"
+        ],
+        "method": "Make the core interaction actually respond using fictional data, then show an empty or error state that reveals an assumption.",
+        "output": "An inspectable interactive prototype and a three-minute try-it task."
+      },
+      {
+        "label": "Compare a concept",
+        "cues": [
+          "idea",
+          "concept",
+          "sketch",
+          "wireframe"
+        ],
+        "method": "Show two structurally different ways to accomplish the same user task and explain what a stakeholder would learn from comparing them.",
+        "output": "Two small sketches with the decision their comparison should resolve."
+      }
+    ],
+    "activation": "people are talking past each other about an idea that a sketch or small mockup could make tangible."
+  }
+}

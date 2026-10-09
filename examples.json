@@ -142,8 +142,8 @@
           "text": "I am finishing a housekeeping shift. These are my notes: supply cart restocked; replacement wheel requested for the other cart; training room still in use when I left; I have not heard back about the wheel. Help me leave something clearer for the next shift."
         },
         {
-          "label": "Nursing admin",
-          "text": "I am a nurse tidying up our non-patient shift notes. The team printer is working again, the spare label rolls are in the usual drawer, and tomorrow's staff huddle moved to 8:15. The room for the huddle is still unconfirmed."
+          "label": "Service desk",
+          "text": "I run a service desk and am tidying up our shift notes. The team printer is working again, the spare label rolls are in the usual drawer, and tomorrow's staff huddle moved to 8:15. The room for the huddle is still unconfirmed."
         },
         {
           "label": "Front desk",
@@ -778,12 +778,12 @@
       "context": [],
       "situations": [
         {
-          "label": "Nurse admin",
-          "text": "I am a nurse with a protected hour for admin. I need to review a ten-minute training video by Friday, send tomorrow's huddle reminder, and finish a 20-minute draft of our welcome sheet. It is Wednesday, and people may interrupt."
+          "label": "Team coordinator",
+          "text": "I coordinate a service team and have an hour for admin. I need to review a ten-minute training video by Friday, send tomorrow's huddle reminder, and finish a 20-minute draft of our welcome sheet. It is Wednesday, and people may interrupt."
         },
         {
-          "label": "Physician teaching",
-          "text": "I am a physician preparing for a staff teaching session. I have 45 minutes today to outline the talk, reply about the room setup, and find out how many people are coming. The session is next week. This is planning time, not patient care."
+          "label": "Staff trainer",
+          "text": "I am preparing a staff training session. I have 45 minutes today to outline the talk, reply about the room setup, and find out how many people are coming. The session is next week."
         },
         {
           "label": "Office tasks",
@@ -1248,6 +1248,13 @@
           "jobs": [
             "learning-curator"
           ]
+        },
+        {
+          "label": "Remember as we go",
+          "instruction": "Help me recover what we already know, then keep the useful decisions and discoveries somewhere we can find them next time.",
+          "jobs": [
+            "project-memory"
+          ]
         }
       ],
       "formats": [
@@ -1398,6 +1405,67 @@
         "Use public material only and keep any work-account restrictions in view.",
         "Help me trace one answer back to its source; I want to learn the habit, too.",
         "Keep it friendly and short. I am curious, but I do not need homework about my homework."
+      ]
+    },
+    {
+      "id": "build-a-course",
+      "title": "A course that needs a clearer shape",
+      "jobs": [
+        "course-builder"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Start from a syllabus",
+          "text": "I am planning a made-up three-session course on community gardening. I have a draft syllabus and want to connect its objectives, activities and assessments."
+        },
+        {
+          "label": "Start from objectives",
+          "text": "I am designing a fictional online introduction to reading local-history sources. I have learning objectives but no syllabus or module plan yet."
+        },
+        {
+          "label": "Improve an existing course",
+          "text": "I am revising a fictional volunteer-orientation course. I have an older syllabus and a third-party course evaluation to provide; its findings have not yet been reviewed."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Connect the documents",
+          "instruction": "Inventory the documents I provide, extract objectives with source references or label proposed objectives, and draft the next missing artifact with a course index. Use real links only.",
+          "jobs": []
+        },
+        {
+          "label": "Map the learning",
+          "instruction": "Connect the objectives to modules, milestones, practice and assessment criteria. Distinguish intended outcomes from observed results; identify missing material.",
+          "jobs": []
+        },
+        {
+          "label": "Use the feedback",
+          "instruction": "When I supply an evaluation, connect its findings to the course and propose testable revisions. If it is missing, prepare the review structure without inventing findings.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Linked course map",
+          "instruction": "Give me a concise course index and objective-to-assessment map, marking links not yet available.",
+          "jobs": []
+        },
+        {
+          "label": "Syllabus draft",
+          "instruction": "Draft or revise a short syllabus using supplied objective IDs and explicit placeholders for missing dates or policies.",
+          "jobs": []
+        },
+        {
+          "label": "Revision plan",
+          "instruction": "Give me an evidence-linked change plan with the instructor decision needed and how to check each change later.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Keep the example synthetic; do not create learner records or claim course publication.",
+        "If LMS inspection becomes useful, verify the actual platform and authorized browser session before describing the course.",
+        "Reuse existing documents where possible; distinguish extracted text, proposals and approved content."
       ]
     }
   ]

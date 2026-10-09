@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "ansible-guide",
+    "title": "Ansible task guide",
+    "kind": "Included guide",
+    "url": "guides/ansible.md",
+    "for_ids": [
+      "systems-administration",
+      "ansible-helper"
+    ],
+    "cues": [
+      "ansible",
+      "playbook",
+      "patch"
+    ],
+    "why": "Plan, inspect or troubleshoot a bounded Ansible change.",
+    "status": "Authored guidance; not an installed agent skill",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Plan, inspect or troubleshoot a bounded Ansible change.",
+    "inputs": "Desired state, inventory, playbook, versions and target scope.",
+    "approach": "Resolve hosts, inspect side effects, validate locally and use a bounded test before rollout.",
+    "outputs": "Reviewable change, observed checks and recovery plan.",
+    "requirements": "Existing Ansible controller, collections and authorized target access for execution.",
+    "limits": "Check mode is module-dependent; diff can reveal secrets and some tasks opt out of dry-run behavior.",
+    "source_url": "guides/ansible.md",
+    "reviewed": "2026-10-08",
+    "review_scope": "Authored orientation to the linked guide/catalog; source-specific dates and limits remain in the source.",
+    "supporting_files": [],
+    "entrypoint_sha256": "d3f4abfc3c1b6fbe03e84f832616e32a0e907dc8d6d2c52fe5aacf7b963d7f7c"
+  }
+}
