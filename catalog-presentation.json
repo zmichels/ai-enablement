@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "compactTitles": {
+    "entry:ansible-helper": "Ansible automation",
+    "entry:automation-engineer": "Automate tasks",
+    "entry:brainstorm-partner": "Explore ideas",
+    "entry:checklist-maker": "Build checklists",
+    "entry:connection-designer": "Improve a workflow",
+    "entry:conversation-coach": "Prepare a conversation",
+    "entry:course-builder": "Design a course",
+    "entry:day-planner": "Prioritize the day",
+    "entry:decision-partner": "Compare options",
+    "entry:document-editor": "Edit writing",
+    "entry:event-planner": "Plan an event",
+    "entry:evidence-miner": "Find evidence",
+    "entry:evidence-reviewer": "Review evidence",
+    "entry:feedback-sorter": "Analyze feedback",
+    "entry:handoff-editor": "Prepare a handoff",
+    "entry:language-helper": "Translate",
+    "entry:learning-coach": "Learn a topic",
+    "entry:learning-curator": "Capture lessons",
+    "entry:meeting-helper": "Plan a meeting",
+    "entry:message-writer": "Draft messages",
+    "entry:number-explainer": "Interpret numbers",
+    "entry:plain-language-guide": "Explain a concept",
+    "entry:project-coordinator": "Coordinate a project",
+    "entry:project-memory": "Keep project context",
+    "entry:prototype-helper": "Prototype an idea",
+    "entry:request-coordinator": "Track requests",
+    "entry:request-navigator": "Navigate services",
+    "entry:research-reader": "Read research",
+    "entry:service-helper": "Improve service guidance",
+    "entry:summary-maker": "Summarize",
+    "entry:teaching-partner": "Teach a process",
+    "entry:workflow-cartographer": "Map a process",
+    "entry:administration": "Administration",
+    "entry:business-analysis": "Business analysis",
+    "entry:communications": "Communications",
+    "entry:facilities": "Facilities",
+    "entry:finance-operations": "Finance & operations",
+    "entry:food-services": "Food & hospitality",
+    "entry:it-service": "IT services",
+    "entry:people-leadership": "Team leadership",
+    "entry:research-education": "Research & education",
+    "entry:service-team": "Service teams",
+    "entry:strategy": "Strategy",
+    "entry:technology": "Software & data",
+    "entry:visitor-services": "Customer services",
+    "resource:course-building-guide": "Course & LMS guide",
+    "resource:project-learning-ledger": "Project learning guide"
+  },
+  "topics": {
+    "Learn & understand": {
+      "title": "Understand",
+      "icon": "search"
+    },
+    "Technical help": {
+      "title": "Build & automate",
+      "icon": "code"
+    },
+    "Plan & organize": {
+      "title": "Coordinate",
+      "icon": "layers"
+    },
+    "Think it through": {
+      "title": "Evaluate & explore",
+      "icon": "compass"
+    },
+    "Write & explain": {
+      "title": "Write",
+      "icon": "file"
+    },
+    "Work with people": {
+      "title": "Teach & collaborate",
+      "icon": "chat"
+    },
+    "Work areas": {
+      "title": "Work perspectives",
+      "icon": "globe"
+    }
+  },
+  "topicAliases": {
+    "Make work easier": "Plan & organize"
+  }
+}

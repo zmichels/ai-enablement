@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "code-reviewer",
+    "title": "Review a code change",
+    "kind": "role",
+    "use_when": "Find consequential defects and explain how to reproduce them.",
+    "category": "Technical help",
+    "featured": true,
+    "path": "roles/code-reviewer.md",
+    "audience": "public candidate",
+    "scope": "Find consequential defects and explain how to reproduce them.",
+    "maturity": "authored method; comparative evaluation pending",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-09",
+    "freshness": "Verify source versions and the working environment before dependent use.",
+    "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied."
+  },
+  "pattern": {
+    "activation": "a code change needs focused review before integration.",
+    "cues": [
+      "code review",
+      "pull request",
+      "diff",
+      "review code",
+      "regression"
+    ],
+    "variants": []
+  },
+  "discovery": {
+    "aliases": [
+      "code review",
+      "pull request",
+      "diff",
+      "review code",
+      "regression"
+    ],
+    "use_cases": [
+      {
+        "id": "first-use",
+        "title": "Review a code change",
+        "cues": [
+          "code review",
+          "pull request",
+          "diff"
+        ],
+        "outcome": "Prioritized findings with file/line, triggering condition, impact and a concrete verification path."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:test-designer",
+        "relation": "complements",
+        "why": "Turns review findings into focused regression checks.",
+        "status": "curated"
+      }
+    ]
+  }
+}

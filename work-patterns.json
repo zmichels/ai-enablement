@@ -89,6 +89,17 @@
       "variants": [],
       "activation": "a request jumps to a solution before the problem, customer need or acceptance examples are clear."
     },
+    "chart-designer": {
+      "activation": "someone needs to compare, explain or explore data visually.",
+      "cues": [
+        "chart",
+        "plot",
+        "visualization",
+        "dashboard",
+        "graph"
+      ],
+      "variants": []
+    },
     "checklist-maker": {
       "cues": [
         "checklist",
@@ -97,6 +108,17 @@
       ],
       "variants": [],
       "activation": "a recurring task has steps, exceptions or a handoff that people could easily miss."
+    },
+    "code-reviewer": {
+      "activation": "a code change needs focused review before integration.",
+      "cues": [
+        "code review",
+        "pull request",
+        "diff",
+        "review code",
+        "regression"
+      ],
+      "variants": []
     },
     "communications": {
       "cues": [
@@ -158,6 +180,17 @@
       "variants": [],
       "activation": "competing commitments, interruptions or dependencies make it hard to choose what to do next."
     },
+    "debugging-partner": {
+      "activation": "a failure needs diagnosis rather than a speculative rewrite.",
+      "cues": [
+        "debug",
+        "troubleshoot",
+        "error",
+        "failure",
+        "root cause"
+      ],
+      "variants": []
+    },
     "decision-partner": {
       "cues": [
         "decide",
@@ -168,6 +201,17 @@
       ],
       "variants": [],
       "activation": "there are competing options, consequential assumptions or a choice that may need revisiting."
+    },
+    "document-comparer": {
+      "activation": "two versions or sources need a traceable comparison.",
+      "cues": [
+        "document comparison",
+        "version changes",
+        "redline",
+        "policy comparison",
+        "diff"
+      ],
+      "variants": []
     },
     "document-editor": {
       "cues": [
@@ -525,6 +569,17 @@
       "variants": [],
       "activation": "work depends on finding the right service request, owning team or information to include."
     },
+    "requirements-shaper": {
+      "activation": "an idea or request needs a clear, testable definition of done.",
+      "cues": [
+        "requirements",
+        "acceptance criteria",
+        "user story",
+        "scope",
+        "specification"
+      ],
+      "variants": []
+    },
     "research-education": {
       "cues": [
         "research",
@@ -567,6 +622,17 @@
       ],
       "variants": [],
       "activation": "a service team needs clearer handoffs, coordinated shifts or practical staff learning."
+    },
+    "spreadsheet-cleaner": {
+      "activation": "a table needs cleaning, reconciliation or a reproducible preparation step.",
+      "cues": [
+        "spreadsheet",
+        "csv",
+        "excel",
+        "data cleaning",
+        "duplicates"
+      ],
+      "variants": []
     },
     "strategy": {
       "cues": [
@@ -648,6 +714,29 @@
       ],
       "variants": [],
       "activation": "software, data or a technical integration needs implementation or diagnosis grounded in observed behavior."
+    },
+    "test-designer": {
+      "activation": "a change needs proportionate tests and evidence of expected behavior.",
+      "cues": [
+        "test plan",
+        "test cases",
+        "regression",
+        "uat",
+        "validation"
+      ],
+      "variants": []
+    },
+    "usability-reviewer": {
+      "activation": "an interface needs a task-focused review of clarity, feedback and access.",
+      "cues": [
+        "usability",
+        "accessibility",
+        "ux",
+        "user journey",
+        "keyboard",
+        "mobile"
+      ],
+      "variants": []
     },
     "visitor-services": {
       "cues": [

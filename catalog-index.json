@@ -47,6 +47,44 @@
       "revision": "970655b708c31a21093725bb46cd07c8c1e03b7ab12ccb652d609800fc94fd62"
     },
     {
+      "ref": "entry:chart-designer",
+      "title": "Make a useful chart",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/chart-designer.md",
+      "metadata": "items/entries/chart-designer.json",
+      "revision": "336996d7ee39be9356d1ac94c4235896dcf86b0bec5a5e08f2a82c1c61913311",
+      "discovery": {
+        "aliases": [
+          "chart",
+          "plot",
+          "visualization",
+          "dashboard",
+          "graph"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Make a useful chart",
+            "cues": [
+              "chart",
+              "plot",
+              "visualization"
+            ],
+            "outcome": "A chart or executable chart specification, with source, units and a short interpretation."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:number-explainer",
+            "relation": "complements",
+            "why": "Turns interpreted numbers into a checkable visual.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "ref": "entry:checklist-maker",
       "title": "Make a checklist",
       "kind": "role",
@@ -54,6 +92,44 @@
       "source": "roles/checklist-maker.md",
       "metadata": "items/entries/checklist-maker.json",
       "revision": "dbf17a0384025758cb6c597c9d6752eed30db84a3fa86923bd77e70c9db2da9a"
+    },
+    {
+      "ref": "entry:code-reviewer",
+      "title": "Review a code change",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/code-reviewer.md",
+      "metadata": "items/entries/code-reviewer.json",
+      "revision": "d916d2eabd84c26b7e918791135cfa26c3d00cbe0f5e71ecf09284bd63e73e13",
+      "discovery": {
+        "aliases": [
+          "code review",
+          "pull request",
+          "diff",
+          "review code",
+          "regression"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Review a code change",
+            "cues": [
+              "code review",
+              "pull request",
+              "diff"
+            ],
+            "outcome": "Prioritized findings with file/line, triggering condition, impact and a concrete verification path."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:test-designer",
+            "relation": "complements",
+            "why": "Turns review findings into focused regression checks.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "ref": "entry:communications",
@@ -150,6 +226,44 @@
       "revision": "ec478d59c6af137dd2015f551abb6b16980f19e8d9221480d2bc4caea73381b7"
     },
     {
+      "ref": "entry:debugging-partner",
+      "title": "Trace a failure",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/debugging-partner.md",
+      "metadata": "items/entries/debugging-partner.json",
+      "revision": "4542bb62f9f2709b9439454a5224ea53803181e86291e450df029977f2b8f8c6",
+      "discovery": {
+        "aliases": [
+          "debug",
+          "troubleshoot",
+          "error",
+          "failure",
+          "root cause"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Trace a failure",
+            "cues": [
+              "debug",
+              "troubleshoot",
+              "error"
+            ],
+            "outcome": "The leading explanation, supporting observations and the next discriminating check or verified fix."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:project-memory",
+            "relation": "complements",
+            "why": "Keeps the decisive observation and repair for later work.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "ref": "entry:decision-partner",
       "title": "Help me choose",
       "kind": "role",
@@ -157,6 +271,44 @@
       "source": "roles/decision-partner.md",
       "metadata": "items/entries/decision-partner.json",
       "revision": "6d21aee2d97a3a75bd8f4273cff3f91ff4407fd6f06c7e45d50eca2cd0a512dc"
+    },
+    {
+      "ref": "entry:document-comparer",
+      "title": "Compare document versions",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/document-comparer.md",
+      "metadata": "items/entries/document-comparer.json",
+      "revision": "72b182630669f92ed2f5a42802d832963dd720d4cfeaf1e7b7c5e94ee8da3195",
+      "discovery": {
+        "aliases": [
+          "document comparison",
+          "version changes",
+          "redline",
+          "policy comparison",
+          "diff"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Compare document versions",
+            "cues": [
+              "document comparison",
+              "version changes",
+              "redline"
+            ],
+            "outcome": "A concise change table with old/new locations, implications and unresolved conflicts."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:evidence-reviewer",
+            "relation": "complements",
+            "why": "Distinguishes version change from evidence quality.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "ref": "entry:document-editor",
@@ -564,6 +716,44 @@
       }
     },
     {
+      "ref": "entry:requirements-shaper",
+      "title": "Define the requirement",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/requirements-shaper.md",
+      "metadata": "items/entries/requirements-shaper.json",
+      "revision": "0f8c57ac98800668f1f633ca4d3e6c4419e105385bbae608d2c081d025fec0e1",
+      "discovery": {
+        "aliases": [
+          "requirements",
+          "acceptance criteria",
+          "user story",
+          "scope",
+          "specification"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Define the requirement",
+            "cues": [
+              "requirements",
+              "acceptance criteria",
+              "user story"
+            ],
+            "outcome": "A compact requirement with acceptance criteria, scope decisions and unresolved questions."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:test-designer",
+            "relation": "complements",
+            "why": "Pairs observable requirements with discriminating tests.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "ref": "entry:research-education",
       "title": "Research and education",
       "kind": "expertise",
@@ -598,6 +788,44 @@
       "source": "expertise/service-team.md",
       "metadata": "items/entries/service-team.json",
       "revision": "9a8a6e8ed5c5324944dd41edd12ccc4e4bb3942e3acf2fbabc797ca6ad83bc35"
+    },
+    {
+      "ref": "entry:spreadsheet-cleaner",
+      "title": "Clean up a data table",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/spreadsheet-cleaner.md",
+      "metadata": "items/entries/spreadsheet-cleaner.json",
+      "revision": "a5e5db211644873e5025a1c41d659676416808d7f5601d4bd531e8aef66ff479",
+      "discovery": {
+        "aliases": [
+          "spreadsheet",
+          "csv",
+          "excel",
+          "data cleaning",
+          "duplicates"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Clean up a data table",
+            "cues": [
+              "spreadsheet",
+              "csv",
+              "excel"
+            ],
+            "outcome": "A cleaned copy, change log and unresolved rows; preserve the original."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:number-explainer",
+            "relation": "complements",
+            "why": "Separates data preparation from interpretation.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "ref": "entry:strategy",
@@ -668,6 +896,83 @@
       "source": "expertise/technology.md",
       "metadata": "items/entries/technology.json",
       "revision": "181920bfcd69ed2c25db0973e48221302aff360c1abc8e72676b3fe83e0977e6"
+    },
+    {
+      "ref": "entry:test-designer",
+      "title": "Design the checks",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/test-designer.md",
+      "metadata": "items/entries/test-designer.json",
+      "revision": "cf06ce5f6dfa49d84968953be19cc017cbbd658d33d7fd5e35eb37d5f3d959b1",
+      "discovery": {
+        "aliases": [
+          "test plan",
+          "test cases",
+          "regression",
+          "uat",
+          "validation"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Design the checks",
+            "cues": [
+              "test plan",
+              "test cases",
+              "regression"
+            ],
+            "outcome": "Prioritized cases with inputs, expected observations and evidence to collect."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:requirements-shaper",
+            "relation": "complements",
+            "why": "Keeps expected results tied to agreed behavior.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "entry:usability-reviewer",
+      "title": "Review the user journey",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/usability-reviewer.md",
+      "metadata": "items/entries/usability-reviewer.json",
+      "revision": "dbfeb965316594b0aee0ac67a09ded997c61d92a67b18c81c668ded79250b226",
+      "discovery": {
+        "aliases": [
+          "usability",
+          "accessibility",
+          "ux",
+          "user journey",
+          "keyboard",
+          "mobile"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Review the user journey",
+            "cues": [
+              "usability",
+              "accessibility",
+              "ux"
+            ],
+            "outcome": "A short issue list with observed behavior, user impact, location and a checkable improvement."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:plain-language-guide",
+            "relation": "complements",
+            "why": "Pairs interaction clarity with understandable language.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "ref": "entry:visitor-services",
@@ -842,6 +1147,20 @@
   ],
   "links": [
     {
+      "source": "entry:chart-designer",
+      "target": "entry:number-explainer",
+      "relation": "complements",
+      "why": "Turns interpreted numbers into a checkable visual.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:code-reviewer",
+      "target": "entry:test-designer",
+      "relation": "complements",
+      "why": "Turns review findings into focused regression checks.",
+      "status": "curated"
+    },
+    {
       "source": "entry:course-builder",
       "target": "resource:course-building-guide",
       "relation": "uses",
@@ -853,6 +1172,20 @@
       "target": "entry:teaching-partner",
       "relation": "overlaps",
       "why": "Course building connects a whole course; teaching help shapes a particular explanation or lesson.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:debugging-partner",
+      "target": "entry:project-memory",
+      "relation": "complements",
+      "why": "Keeps the decisive observation and repair for later work.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:document-comparer",
+      "target": "entry:evidence-reviewer",
+      "relation": "complements",
+      "why": "Distinguishes version change from evidence quality.",
       "status": "curated"
     },
     {
@@ -912,10 +1245,38 @@
       "status": "curated"
     },
     {
+      "source": "entry:requirements-shaper",
+      "target": "entry:test-designer",
+      "relation": "complements",
+      "why": "Pairs observable requirements with discriminating tests.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:spreadsheet-cleaner",
+      "target": "entry:number-explainer",
+      "relation": "complements",
+      "why": "Separates data preparation from interpretation.",
+      "status": "curated"
+    },
+    {
       "source": "entry:summary-maker",
       "target": "entry:message-writer",
       "relation": "complements",
       "why": "After extracting the important points, shape them into a message for a particular recipient.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:test-designer",
+      "target": "entry:requirements-shaper",
+      "relation": "complements",
+      "why": "Keeps expected results tied to agreed behavior.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:usability-reviewer",
+      "target": "entry:plain-language-guide",
+      "relation": "complements",
+      "why": "Pairs interaction clarity with understandable language.",
       "status": "curated"
     },
     {

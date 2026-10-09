@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "test-designer",
+    "title": "Design the checks",
+    "kind": "role",
+    "use_when": "Focus testing on failures that would matter.",
+    "category": "Technical help",
+    "featured": true,
+    "path": "roles/test-designer.md",
+    "audience": "public candidate",
+    "scope": "Focus testing on failures that would matter.",
+    "maturity": "authored method; comparative evaluation pending",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-09",
+    "freshness": "Verify source versions and the working environment before dependent use.",
+    "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied."
+  },
+  "pattern": {
+    "activation": "a change needs proportionate tests and evidence of expected behavior.",
+    "cues": [
+      "test plan",
+      "test cases",
+      "regression",
+      "uat",
+      "validation"
+    ],
+    "variants": []
+  },
+  "discovery": {
+    "aliases": [
+      "test plan",
+      "test cases",
+      "regression",
+      "uat",
+      "validation"
+    ],
+    "use_cases": [
+      {
+        "id": "first-use",
+        "title": "Design the checks",
+        "cues": [
+          "test plan",
+          "test cases",
+          "regression"
+        ],
+        "outcome": "Prioritized cases with inputs, expected observations and evidence to collect."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:requirements-shaper",
+        "relation": "complements",
+        "why": "Keeps expected results tied to agreed behavior.",
+        "status": "curated"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "usability-reviewer",
+    "title": "Review the user journey",
+    "kind": "role",
+    "use_when": "Find friction in a real task, including keyboard and narrow-screen use.",
+    "category": "Think it through",
+    "featured": true,
+    "path": "roles/usability-reviewer.md",
+    "audience": "public candidate",
+    "scope": "Find friction in a real task, including keyboard and narrow-screen use.",
+    "maturity": "authored method; comparative evaluation pending",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-09",
+    "freshness": "Verify source versions and the working environment before dependent use.",
+    "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied."
+  },
+  "pattern": {
+    "activation": "an interface needs a task-focused review of clarity, feedback and access.",
+    "cues": [
+      "usability",
+      "accessibility",
+      "ux",
+      "user journey",
+      "keyboard",
+      "mobile"
+    ],
+    "variants": []
+  },
+  "discovery": {
+    "aliases": [
+      "usability",
+      "accessibility",
+      "ux",
+      "user journey",
+      "keyboard",
+      "mobile"
+    ],
+    "use_cases": [
+      {
+        "id": "first-use",
+        "title": "Review the user journey",
+        "cues": [
+          "usability",
+          "accessibility",
+          "ux"
+        ],
+        "outcome": "A short issue list with observed behavior, user impact, location and a checkable improvement."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:plain-language-guide",
+        "relation": "complements",
+        "why": "Pairs interaction clarity with understandable language.",
+        "status": "curated"
+      }
+    ]
+  }
+}

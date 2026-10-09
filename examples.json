@@ -1467,6 +1467,196 @@
         "If LMS inspection becomes useful, verify the actual platform and authorized browser session before describing the course.",
         "Reuse existing documents where possible; distinguish extracted text, proposals and approved content."
       ]
+    },
+    {
+      "id": "data-quality",
+      "title": "A table worth trusting",
+      "jobs": [
+        "spreadsheet-cleaner",
+        "number-explainer",
+        "chart-designer"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Duplicate identifiers",
+          "text": "I have a synthetic equipment inventory with repeated identifiers, leading zeros and missing dates. I can provide the table."
+        },
+        {
+          "label": "Join mismatch",
+          "text": "I have two fictional event-attendance tables with unmatched keys and possible multiple rows per person. I can provide both."
+        },
+        {
+          "label": "Changing denominator",
+          "text": "I have a made-up weekly service table with completed and total counts. One week is missing and the total changes."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Prepare the data",
+          "instruction": "Inspect the supplied table, propose reversible cleaning and reconcile the result before interpreting it.",
+          "jobs": []
+        },
+        {
+          "label": "Check the comparison",
+          "instruction": "Identify the row grain, denominator and missing values; show which comparisons are supported.",
+          "jobs": []
+        },
+        {
+          "label": "Explain visually",
+          "instruction": "After checking the data, choose a chart that answers one clear question and shows missing observations.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Short report",
+          "instruction": "Return the useful finding, a compact change log and any unresolved rows.",
+          "jobs": []
+        },
+        {
+          "label": "Table and chart",
+          "instruction": "Provide a cleaned copy or repeatable recipe and a source-labeled chart when data are available.",
+          "jobs": []
+        },
+        {
+          "label": "Verification notes",
+          "instruction": "Show the checks, their observed results and the comparison that remains uncertain.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Use only the supplied synthetic material; mark missing evidence rather than inventing it.",
+        "Keep the first result concise and ask only for information that changes the next useful step.",
+        "Distinguish proposed changes and planned checks from changes made and checks actually run."
+      ]
+    },
+    {
+      "id": "review-a-change",
+      "title": "A change ready to review",
+      "jobs": [
+        "requirements-shaper",
+        "test-designer",
+        "code-reviewer",
+        "debugging-partner"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Import failure",
+          "text": "A fictional CSV import works on a small file but loses leading zeros on larger exports. I can supply the change and sample input."
+        },
+        {
+          "label": "Interrupted save",
+          "text": "A prototype task board sometimes loses a draft after a network interruption. I can supply the relevant code and observed steps."
+        },
+        {
+          "label": "Empty search",
+          "text": "A fictional catalog search has a changed empty-result path. I can provide its diff and expected behavior."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Define and test",
+          "instruction": "Turn the intended behavior into a few observable acceptance criteria and discriminating tests.",
+          "jobs": []
+        },
+        {
+          "label": "Review the change",
+          "instruction": "Review the supplied change for consequential defects, linking each finding to a trigger and consequence.",
+          "jobs": []
+        },
+        {
+          "label": "Diagnose the failure",
+          "instruction": "Use the supplied observations to compare possible causes and choose the smallest informative check.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Review notes",
+          "instruction": "Return prioritized findings, the evidence and the next verification step.",
+          "jobs": []
+        },
+        {
+          "label": "Acceptance table",
+          "instruction": "Use a compact table of starting state, input and expected result; distinguish not-run checks.",
+          "jobs": []
+        },
+        {
+          "label": "Repair plan",
+          "instruction": "Give the smallest justified correction and a targeted regression check.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Use only the supplied synthetic material; mark missing evidence rather than inventing it.",
+        "Keep the first result concise and ask only for information that changes the next useful step.",
+        "Distinguish proposed changes and planned checks from changes made and checks actually run."
+      ]
+    },
+    {
+      "id": "revise-guidance",
+      "title": "A clearer guide and journey",
+      "jobs": [
+        "document-comparer",
+        "usability-reviewer",
+        "plain-language-guide"
+      ],
+      "context": [],
+      "situations": [
+        {
+          "label": "Moved instructions",
+          "text": "I have two fictional versions of a volunteer sign-up guide with sections moved and a deadline changed."
+        },
+        {
+          "label": "New form flow",
+          "text": "I have a made-up registration form and two versions of its instructions. The confirmation step may be unclear."
+        },
+        {
+          "label": "Mobile instructions",
+          "text": "I have draft help text for a fictional inventory app plus the older version. I want to check the narrow-screen journey."
+        }
+      ],
+      "requests": [
+        {
+          "label": "Find the change",
+          "instruction": "Compare the supplied versions by meaning and link material changes to both sources.",
+          "jobs": []
+        },
+        {
+          "label": "Walk the journey",
+          "instruction": "Walk the available task path and identify observed friction, feedback and recovery gaps.",
+          "jobs": []
+        },
+        {
+          "label": "Improve the wording",
+          "instruction": "Use the comparison and observed journey to propose concise wording that preserves the actual requirements.",
+          "jobs": []
+        }
+      ],
+      "formats": [
+        {
+          "label": "Change table",
+          "instruction": "Return material changes, locations and possible implications separately.",
+          "jobs": []
+        },
+        {
+          "label": "Issue list",
+          "instruction": "Return a short issue list with a reproduction path or source location and a checkable improvement.",
+          "jobs": []
+        },
+        {
+          "label": "Revised instructions",
+          "instruction": "Draft the improved instructions and show what still needs source or interface verification.",
+          "jobs": []
+        }
+      ],
+      "constraints": [
+        "Use only the supplied synthetic material; mark missing evidence rather than inventing it.",
+        "Keep the first result concise and ask only for information that changes the next useful step.",
+        "Distinguish proposed changes and planned checks from changes made and checks actually run."
+      ]
     }
   ]
 }

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "chart-designer",
+    "title": "Make a useful chart",
+    "kind": "role",
+    "use_when": "Choose a chart that answers the question and shows its uncertainty.",
+    "category": "Technical help",
+    "featured": true,
+    "path": "roles/chart-designer.md",
+    "audience": "public candidate",
+    "scope": "Choose a chart that answers the question and shows its uncertainty.",
+    "maturity": "authored method; comparative evaluation pending",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-09",
+    "freshness": "Verify source versions and the working environment before dependent use.",
+    "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied."
+  },
+  "pattern": {
+    "activation": "someone needs to compare, explain or explore data visually.",
+    "cues": [
+      "chart",
+      "plot",
+      "visualization",
+      "dashboard",
+      "graph"
+    ],
+    "variants": []
+  },
+  "discovery": {
+    "aliases": [
+      "chart",
+      "plot",
+      "visualization",
+      "dashboard",
+      "graph"
+    ],
+    "use_cases": [
+      {
+        "id": "first-use",
+        "title": "Make a useful chart",
+        "cues": [
+          "chart",
+          "plot",
+          "visualization"
+        ],
+        "outcome": "A chart or executable chart specification, with source, units and a short interpretation."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:number-explainer",
+        "relation": "complements",
+        "why": "Turns interpreted numbers into a checkable visual.",
+        "status": "curated"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "debugging-partner",
+    "title": "Trace a failure",
+    "kind": "role",
+    "use_when": "Use observations and small experiments to isolate a cause.",
+    "category": "Technical help",
+    "featured": true,
+    "path": "roles/debugging-partner.md",
+    "audience": "public candidate",
+    "scope": "Use observations and small experiments to isolate a cause.",
+    "maturity": "authored method; comparative evaluation pending",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-09",
+    "freshness": "Verify source versions and the working environment before dependent use.",
+    "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied."
+  },
+  "pattern": {
+    "activation": "a failure needs diagnosis rather than a speculative rewrite.",
+    "cues": [
+      "debug",
+      "troubleshoot",
+      "error",
+      "failure",
+      "root cause"
+    ],
+    "variants": []
+  },
+  "discovery": {
+    "aliases": [
+      "debug",
+      "troubleshoot",
+      "error",
+      "failure",
+      "root cause"
+    ],
+    "use_cases": [
+      {
+        "id": "first-use",
+        "title": "Trace a failure",
+        "cues": [
+          "debug",
+          "troubleshoot",
+          "error"
+        ],
+        "outcome": "The leading explanation, supporting observations and the next discriminating check or verified fix."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:project-memory",
+        "relation": "complements",
+        "why": "Keeps the decisive observation and repair for later work.",
+        "status": "curated"
+      }
+    ]
+  }
+}

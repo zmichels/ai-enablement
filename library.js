@@ -62,6 +62,11 @@
   if (typeof document === "undefined") return;
   const config=JSON.parse(document.getElementById("helper-config").textContent);
   const byId=id=>document.getElementById(id);
+  const Discovery=globalThis.CatalogDiscovery,presentation=config.presentation;
+  const catalogItems=Discovery.items(config);
+  const shortTitle=e=>Discovery.label({id:(config.entries.includes(e)?'entry:':'resource:')+e.id,title:e.title},presentation);
+  let organization='topic',layout='tree',kind='all',selectedOnly=false;
+  const branchState=new Map();
   const selected=new Set();
   const mix={},resourceChoices={};
   let results=[];
@@ -71,9 +76,8 @@
     Object.entries(bank).forEach(([value,[label]])=>{const o=document.createElement("option");o.value=value;o.textContent=label;byId(id).append(o);});
   }
   byId("depth").value="balanced";
-  const categories=[...new Set(config.entries.filter(e=>e.selector_group==='skills').map(e=>e.category))];
-  for (const [value,label] of [["featured","Featured skills"],["all","All skills"],...categories.map(c=>[c,c])]) {
-    const o=document.createElement("option");o.value=value;o.textContent=label;byId("skill-group").append(o);
+  for (const [value,label] of [['','All topics'],...Discovery.group(catalogItems,'topic',presentation).map(g=>[g.key,g.title])]) {
+    const o=document.createElement('option');o.value=value;o.textContent=label;byId('skill-group').append(o);
   }
   function invalidate(){tailoring.invalidate();results=[];byId("helper-results").replaceChildren();byId("download-helpers").disabled=true;byId("helper-status").textContent="";}
   function inputState(){return {ids:[...selected],mix,resourceChoices,task:byId('helper-task').value,deliverable:byId('helper-deliverable').value,exclusions:byId('helper-exclusions').value};}
@@ -85,15 +89,15 @@
     const list=byId('mix-summary');list.replaceChildren();
     const group=(label,items)=>{if(!items.length)return;const row=element('div');row.append(element('dt',label),element('dd',items.join('; ')));list.append(row);};
     const entries=[...selected].map(id=>config.entries.find(e=>e.id===id));
-    const describe=e=>{const c=Brief.choice(mix[e.id]);const b=e.brief&&Brief.method(e,byId('helper-task').value,c.method,byId('helper-experience').value);return e.title+(c.scope&&c.use!=='full'?' — '+c.scope:'')+(b?.matched&&!['reference','omit'].includes(c.use)?' · '+b.label:'');};
+    const describe=e=>{const c=Brief.choice(mix[e.id]);const b=e.brief&&Brief.method(e,byId('helper-task').value,c.method,byId('helper-experience').value);return shortTitle(e)+(c.scope&&c.use!=='full'?' — '+c.scope:'')+(b?.matched&&!['reference','omit'].includes(c.use)?' · '+b.label:'');};
     group('Main focus',entries.filter(e=>e.kind!=='context'&&Brief.choice(mix[e.id]).use==='main').map(describe));
     group('Also use',entries.filter(e=>e.kind!=='context'&&Brief.choice(mix[e.id]).use==='full').map(describe));
     group('Borrow just',entries.filter(e=>e.kind!=='context'&&Brief.choice(mix[e.id]).use==='support').map(e=>describe(e)+(Brief.choice(mix[e.id]).scope?'':' — say which part below')));
     group('Keep handy',entries.filter(e=>e.kind!=='context'&&Brief.choice(mix[e.id]).use==='reference').map(describe));
-    group('Guidance',entries.filter(e=>e.kind==='context').map(e=>e.title));
+    group('Guidance',entries.filter(e=>e.kind==='context').map(e=>shortTitle(e)));
     const resources=Brief.resourceCandidates(config,byId('helper-task').value,activeIds(),config.internal,resourceChoices);
-    for(const [use,label] of [['main','Primary'],['support','Borrow from'],['reference','References on hand']])group(label,resources.filter(e=>Brief.choice(resourceChoices[e.id],true).use===use).map(e=>e.title+(Brief.choice(resourceChoices[e.id],true).scope?' — '+Brief.choice(resourceChoices[e.id],true).scope:'')));
-    group('Exclude',[...entries.filter(e=>e.kind!=='context'&&Brief.choice(mix[e.id]).use==='omit'),...resources.filter(e=>Brief.choice(resourceChoices[e.id],true).use==='omit')].map(e=>e.title));
+    for(const [use,label] of [['main','Primary'],['support','Borrow from'],['reference','References on hand']])group(label,resources.filter(e=>Brief.choice(resourceChoices[e.id],true).use===use).map(e=>shortTitle(e)+(Brief.choice(resourceChoices[e.id],true).scope?' — '+Brief.choice(resourceChoices[e.id],true).scope:'')));
+    group('Exclude',[...entries.filter(e=>e.kind!=='context'&&Brief.choice(mix[e.id]).use==='omit'),...resources.filter(e=>Brief.choice(resourceChoices[e.id],true).use==='omit')].map(e=>shortTitle(e)));
     group(byId('helper-experience').value==='helper'?'Preferred outputs':'Produce',byId('helper-deliverable').value.trim()?[byId('helper-deliverable').value.trim()]:[]);
     group('Exclude',byId('helper-exclusions').value.trim()?[byId('helper-exclusions').value.trim()]:[]);
     if(!list.children.length)group('Your mix',['None selected.']);
@@ -103,10 +107,10 @@
     const entries=[...selected].map(id=>config.entries.find(e=>e.id===id)).filter(e=>e.kind!=='context');
     if(!entries.length)area.append(element('p','No method adjustments.','note'));
     entries.forEach(e=>{
-      const c=Brief.choice(mix[e.id]),card=element('article',null,'mix-card');card.append(element('h3',e.title));
+      const c=Brief.choice(mix[e.id]),card=element('article',null,'mix-card');card.append(element('h3',shortTitle(e)));
       const use=field(card,'Contribution','mix-use-'+e.id,menu(Object.entries(Brief.uses),c.use));
       const scope=field(card,'Scope','mix-scope-'+e.id,element('input'));scope.type='text';scope.maxLength=1000;scope.value=c.scope;scope.placeholder='Just the dependency map and status summary';scope.disabled=!['main','support','reference'].includes(c.use);scope.setAttribute('aria-required',String(c.use==='support'));
-      use.addEventListener('change',()=>{mix[e.id]={...Brief.choice(mix[e.id]),scope:scope.value,use:use.value};if(use.value==='main')for(const id of Object.keys(mix))if(id!==e.id&&mix[id].use==='main')mix[id].use='full';invalidate();renderMix();updateShelf();byId('mix-use-'+e.id).focus();});
+      use.addEventListener('change',()=>{mix[e.id]={...Brief.choice(mix[e.id]),scope:scope.value,use:use.value};if(use.value==='main')for(const id of Object.keys(mix))if(id!==e.id&&mix[id].use==='main')mix[id].use='full';invalidate();render();byId('mix-use-'+e.id).focus();});
       scope.addEventListener('input',()=>{mix[e.id]={...Brief.choice(mix[e.id]),scope:scope.value};invalidate();renderSummary();});
       if(e.brief.variants.length){
         const method=field(card,'Method','mix-method-'+e.id,menu([['auto',byId('helper-experience').value==='helper'?'Full capability':'Match my request'],['usual','Use the usual approach'],...e.brief.variants.map(v=>[v.label,v.label])],c.method));method.disabled=['omit','reference'].includes(c.use);
@@ -129,23 +133,16 @@
       invalidate();render();
     });
     target.append(element('h3','Resources'),element('p','Keep a reference, make it primary, or borrow one part.','note'));
-    if(revealed?.type==='resource'&&!found.some(e=>e.id===revealed.item.id)){
-      const e=revealed.item,preview=element('article',null,'resource-preview');preview.id=Brief.itemElementId(revealed.target);preview.tabIndex=-1;
-      const heading=element('h4',e.title),details=Brief.resourceDetails(e,config,{internal:config.internal,onReveal:revealItem});details.open=true;
-      const add=element('button','＋ Add reference','secondary');add.type='button';add.addEventListener('click',()=>{resourceChoices[e.id]={use:'reference'};invalidate();render();});
-      const source=element('a','Source ↗');source.href=e.url;const actions=element('div',null,'actions');actions.append(add,source);
-      preview.append(element('small','Preview · not selected'),heading,element('p',e.why),details,actions);target.append(preview);
-    }
     const ul=element('ul',null,'capability-list');
     found.forEach(e=>{
-      const c=Brief.choice(resourceChoices[e.id],true),li=element('li'),link=element('a',e.title);link.href=e.url;
-      li.id=Brief.itemElementId('resource:'+e.id);li.tabIndex=-1;
-      const details=Brief.resourceDetails(e,config,{internal:config.internal,onReveal:revealItem});
+      const c=Brief.choice(resourceChoices[e.id],true),li=element('li'),link=element('a',shortTitle(e));link.href=e.url;
+      li.id='shelf-'+Brief.itemElementId('resource:'+e.id);li.tabIndex=-1;
+      const details=Brief.resourceDetails(e);
       if(revealed?.target==='resource:'+e.id){details.open=true;li.classList.add('is-revealed');}
       li.append(link,element('p',e.why),element('small',e.kind),details);
       const use=field(li,'Use as','resource-use-'+e.id,menu([['reference','Keep handy'],['main','Primary'],['support','One part'],['omit','Exclude']],c.use));
       const scope=field(li,'Scope','resource-scope-'+e.id,element('input'));scope.type='text';scope.maxLength=1000;scope.placeholder='Only the request / item / task relationships';scope.value=c.scope;scope.disabled=c.use==='omit';scope.setAttribute('aria-required',String(c.use==='support'));
-      use.addEventListener('change',()=>{resourceChoices[e.id]={...c,scope:scope.value,use:use.value};if(use.value==='main')for(const id of Object.keys(resourceChoices))if(id!==e.id&&resourceChoices[id].use==='main')resourceChoices[id].use='reference';invalidate();updateShelf();byId('resource-use-'+e.id).focus();});
+      use.addEventListener('change',()=>{resourceChoices[e.id]={...c,scope:scope.value,use:use.value};if(use.value==='main')for(const id of Object.keys(resourceChoices))if(id!==e.id&&resourceChoices[id].use==='main')resourceChoices[id].use='reference';invalidate();render();byId('resource-use-'+e.id).focus();});
       scope.addEventListener('input',()=>{resourceChoices[e.id]={...Brief.choice(resourceChoices[e.id],true),scope:scope.value};invalidate();renderSummary();});
       ul.append(li);
     });target.append(ul);
@@ -158,55 +155,66 @@
     const filterResources=()=>{
       const matching=available.filter(e=>Brief.searchMatches(e,resourceQuery));picker.replaceChildren();
       const blank=element('option','Choose a resource…');blank.value='';picker.append(blank);
-      matching.forEach(e=>{const option=element('option',e.title);option.value=e.id;picker.append(option);});
+      matching.forEach(e=>{const option=element('option',shortTitle(e));option.value=e.id;picker.append(option);});
       picker.disabled=!matching.length;tally.textContent=!available.length?'All resources added.':matching.length?matching.length+' available':'No matches.';
     };
     search.addEventListener('input',()=>{resourceQuery=search.value;filterResources();});filterResources();
-    picker.addEventListener('change',()=>{if(picker.value){const id=picker.value;resourceChoices[id]={use:'reference'};invalidate();updateShelf();byId('resource-use-'+id).focus();}});
+    picker.addEventListener('change',()=>{if(picker.value){const id=picker.value;resourceChoices[id]={use:'reference'};invalidate();render();byId('resource-use-'+id).focus();}});
     target.append(browse);
     renderSummary();
   }
+  function chosenResources(){return Brief.selectedResources(config,byId('helper-task').value,activeIds(),config.internal,resourceChoices);}
+  function isSelected(item){return item.kind==='resource'?chosenResources().some(e=>e.id===item.source.id):selected.has(item.source.id);}
   function selectionSummary(){
-    for(const [kind,id] of [['perspectives','expertise-grid'],['skills','skills-grid']]){
-      const count=byId(id+'-count');if(!count)continue;
-      count.textContent=config.entries.filter(e=>e.selector_group===kind&&selected.has(e.id)).length+' selected';
-    }
     updateShelf();
-    const area=byId("selected-helpers");area.replaceChildren();
-    if(!selected.size)area.textContent="None selected.";
-    selected.forEach(id=>{
-      const e=config.entries.find(e=>e.id===id);const button=document.createElement("button");button.type="button";button.className="chip";button.textContent=e.title+" ×";button.setAttribute("aria-label","Remove "+e.title);
-      button.addEventListener("click",()=>{selected.delete(id);delete mix[id];invalidate();render();});area.append(button);
+    const area=byId('selected-helpers');area.replaceChildren();
+    const chosen=catalogItems.filter(isSelected);byId('mix-count').textContent=String(chosen.length);
+    byId('helper-build').disabled=!chosen.length;
+    if(!chosen.length)area.textContent='No selections';
+    chosen.forEach(item=>{
+      const button=element('button',Discovery.label(item,presentation)+' ×','chip');button.type='button';button.setAttribute('aria-label','Remove '+Discovery.label(item,presentation));
+      button.addEventListener('click',()=>{if(item.kind==='resource')resourceChoices[item.source.id]={use:'omit'};else{selected.delete(item.source.id);delete mix[item.source.id];}invalidate();render();});area.append(button);
     });
     renderMix();
   }
+  function branchIcon(name){
+    const paths={search:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',code:'<path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/>',layers:'<path d="m12 3 10 6-10 6L2 9Zm-10 11 10 6 10-6"/>',compass:'<circle cx="12" cy="12" r="9"/><path d="m16 8-3 5-5 3 3-5Z"/>',file:'<path d="M5 2h9l5 5v15H5Zm9 0v6h5M8 12h8M8 16h6"/>',chat:'<path d="M3 4h18v13H8l-5 4Zm4 5h10M7 13h7"/>',globe:'<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>',spark:'<path d="m13 2-9 12h7l-1 8 10-12h-7Z"/>'};
+    const span=element('span',null,'branch-symbol');span.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'+(paths[name]||paths.layers)+'</svg>';return span;
+  }
+  function toggleBranchLabel(){const open=byId('catalog-grid').querySelector('.catalog-branch[open]');byId('toggle-branches').textContent=open?'Collapse all':'Expand all';}
   function render(){
-    const query=byId("helper-search").value.trim();
-    for (const [kind,id] of [["perspectives","expertise-grid"],["skills","skills-grid"]]) {
-      const grid=byId(id);if(!grid)continue;grid.replaceChildren();
-      config.entries.filter(e=>e.selector_group===kind && (revealed?.target==='entry:'+e.id||((!query||Brief.searchMatches(e,query))&&(kind!=='skills'||query||selected.has(e.id)||byId("skill-group").value==='all'||(byId("skill-group").value==='featured'?e.featured:e.category===byId("skill-group").value))))).sort((a,b)=>a.title.localeCompare(b.title)).forEach(e=>{
-        const card=document.createElement("article");card.className="card compact";
-        card.id=Brief.itemElementId('entry:'+e.id);card.tabIndex=-1;
-        const label=document.createElement("label");const check=document.createElement("input");check.type="checkbox";check.value=e.id;check.checked=selected.has(e.id);
-        check.addEventListener("change",()=>{if(check.checked)selected.add(e.id);else{selected.delete(e.id);delete mix[e.id];}invalidate();selectionSummary();});
-        const strong=document.createElement("strong");strong.textContent=e.title;label.append(check,strong);
-        const p=document.createElement("p");p.textContent=e.use_when;
-        const a=document.createElement("a");a.href=e.path;a.textContent="Source ↗";
-        const detail=element('details'),summary=element('summary','Details');
-        summary.setAttribute('aria-label','Details: '+e.title);detail.append(summary,p);
-        if(e.brief)detail.append(element('p','When '+e.brief.activation));
-        detail.append(Brief.discoveryDetails(e,config,{internal:config.internal,target:'entry:'+e.id,onReveal:revealItem}));
-        if(revealed?.target==='entry:'+e.id){detail.open=true;card.classList.add('is-revealed');}
-        detail.append(a);card.append(label,detail);grid.append(card);
-      });
-      if(!grid.children.length){const p=document.createElement("p");p.textContent="No matches.";grid.append(p);}
-    }
-    selectionSummary();
+    const query=byId('helper-search').value.trim(),topic=byId('skill-group').value;
+    const items=catalogItems.filter(item=>revealed?.target===item.id||((kind==='all'||item.kind===kind)&&(!topic||Discovery.inTopic(item,topic,presentation))&&(!selectedOnly||isSelected(item))&&Brief.searchMatches({...item.source,title:item.title+' '+Discovery.label(item,presentation)},query)));
+    const grid=byId('catalog-grid');grid.replaceChildren();grid.classList.toggle('catalog-tree',layout==='tree');
+    const cardFor=item=>{
+      const e=item.source,card=element('article',null,'card compact'),label=element('label'),check=element('input');
+      card.id=Brief.itemElementId(item.id);card.tabIndex=-1;check.type='checkbox';check.value=item.kind==='resource'?item.id:e.id;check.checked=isSelected(item);check.setAttribute('aria-label',Discovery.label(item,presentation)+', '+(Discovery.names[item.kind]||item.kind));
+      check.addEventListener('change',()=>{if(item.kind==='resource')resourceChoices[e.id]={use:check.checked?'reference':'omit'};else if(check.checked)selected.add(e.id);else{selected.delete(e.id);delete mix[e.id];}invalidate();render();byId(Brief.itemElementId(item.id))?.querySelector('input')?.focus();});
+      label.append(check,element('strong',Discovery.label(item,presentation)));label.title=e.use_when||e.why||'';
+      const detail=element('details',null,'selector-detail'),summary=element('summary','ⓘ');summary.setAttribute('aria-label','Details: '+Discovery.label(item,presentation));summary.title='Details';detail.append(summary,element('p',e.use_when||e.why));
+      if(e.brief)detail.append(element('p','When '+e.brief.activation));
+      if(item.kind==='resource')detail.append(Brief.resourceDetails(e));
+      detail.append(Brief.discoveryDetails(e,config,{internal:config.internal,target:item.id,onReveal:revealItem}));
+      const source=element('a','Source ↗');source.href=item.kind==='resource'?e.url:e.path;detail.append(source);
+      if(revealed?.target===item.id){detail.open=true;card.classList.add('is-revealed');}
+      card.append(label,detail);return card;
+    };
+    const branchFor=(group,parent=organization)=>{
+      const branch=element('details',null,'catalog-branch'),stateKey=parent+':'+group.key;branch.dataset.branch=stateKey;branch.open=Boolean(query)||group.items.some(i=>i.id===revealed?.target)||(branchState.get(stateKey)??true);
+      const heading=element('summary',null,'branch-heading');if(group.icon)heading.append(branchIcon(group.icon));heading.append(element('span',group.title));
+      const count=group.items.filter(isSelected).length,tally=element('span',count?'✓ '+count+' · '+group.items.length:String(group.items.length),'branch-count');tally.setAttribute('aria-label',count+' selected of '+group.items.length);heading.append(tally);
+      const nodes=element('div',null,group.children?'catalog-subgroups':'branch-nodes');
+      if(group.children)group.children.forEach(child=>nodes.append(branchFor(child,stateKey)));else group.items.forEach(item=>nodes.append(cardFor(item)));
+      branch.append(heading,nodes);branch.addEventListener('toggle',()=>{if(!query&&!revealed)branchState.set(stateKey,branch.open);toggleBranchLabel();});return branch;
+    };
+    if(layout==='tree')Discovery.group(items,organization,presentation,topic).forEach(g=>grid.append(branchFor(g)));
+    else Discovery.browse(items,organization,presentation,topic).forEach(item=>grid.append(cardFor(item)));
+    byId('catalog-count').textContent=items.length+' / '+catalogItems.length;byId('catalog-empty').hidden=items.length>0;byId('toggle-branches').hidden=layout!=='tree'||!items.length;toggleBranchLabel();selectionSummary();
   }
   function revealItem(target,caseId,updateLocation=true){
     const query='?item='+encodeURIComponent(target)+(caseId?'&case='+encodeURIComponent(caseId):'');
     const item=Brief.readItem(config,query,config.internal);if(!item)return;
-    revealed=item;
+    revealed=item;byId('catalog-panel').open=true;
     if(updateLocation){try{history.pushState(null,'',query);}catch(_){/* File previews may not allow history changes. */}}
     render();
     const card=byId(Brief.itemElementId(target));
@@ -215,18 +223,23 @@
   }
   function clearReveal(){revealed=null;try{const url=new URL(location.href);url.searchParams.delete('item');url.searchParams.delete('case');history.replaceState(null,'',url);}catch(_){}}
   byId("helper-search").addEventListener("input",()=>{clearReveal();render();});byId("skill-group").addEventListener("change",()=>{clearReveal();render();});
-  for(const id of ["helper-task","approach","depth","voice","helper-mode","creative-nudge"])byId(id).addEventListener("input",()=>{invalidate();updateShelf();});
+  byId('catalog-organization').addEventListener('change',event=>{organization=event.target.value;render();});
+  for(const attr of ['kind','layout'])document.querySelectorAll('[data-'+attr+']').forEach(button=>button.addEventListener('click',()=>{if(attr==='kind')kind=button.dataset.kind;else layout=button.dataset.layout;document.querySelectorAll('[data-'+attr+']').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));clearReveal();render();}));
+  byId('selected-only').addEventListener('click',event=>{selectedOnly=!selectedOnly;event.currentTarget.setAttribute('aria-pressed',String(selectedOnly));clearReveal();render();});
+  byId('toggle-branches').addEventListener('click',()=>{const branches=[...byId('catalog-grid').querySelectorAll('.catalog-branch')],open=!branches.some(b=>b.open);branches.forEach(b=>{b.open=open;branchState.set(b.dataset.branch,open);});toggleBranchLabel();});
+  byId('clear-catalog-filters').addEventListener('click',()=>{kind='all';selectedOnly=false;byId('helper-search').value='';byId('skill-group').value='';document.querySelectorAll('[data-kind]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kind==='all')));byId('selected-only').setAttribute('aria-pressed','false');clearReveal();render();});
+  for(const id of ["helper-task","approach","depth","voice","helper-mode","creative-nudge"])byId(id).addEventListener("input",()=>{invalidate();render();});
   function experienceLabels(){
     const helper=byId('helper-experience').value==='helper';
     byId('helper-task-label').textContent=helper?'Your context':'Your task';
     byId('helper-task').placeholder=helper?'Role, work area and preferences':'Task, intended outcome and constraints';
     byId('helper-deliverable-label').textContent=helper?'Preferred outputs':'Desired output';
     byId('helper-experience-note').textContent=helper?'Skills for ongoing work. No task required.':'Describe the task. Your skills shape the approach.';
-    byId('helper-build').textContent=helper?'Build helper prompt':'Prepare work brief';
+    byId('helper-build').textContent=helper?'Build helper':'Build task prompt';
   }
   byId('helper-experience').addEventListener('change',()=>{invalidate();experienceLabels();renderMix();updateShelf();});
   for(const id of ['helper-deliverable','helper-exclusions'])byId(id).addEventListener('input',()=>{invalidate();renderSummary();});
-  byId('reset-mix').addEventListener('click',()=>{for(const id of Object.keys(mix))delete mix[id];for(const id of Object.keys(resourceChoices))delete resourceChoices[id];byId('helper-deliverable').value='';byId('helper-exclusions').value='';invalidate();renderMix();updateShelf();});
+  byId('reset-mix').addEventListener('click',()=>{for(const id of Object.keys(mix))delete mix[id];for(const id of Object.keys(resourceChoices))delete resourceChoices[id];byId('helper-deliverable').value='';byId('helper-exclusions').value='';invalidate();render();});
   byId("wild-card").addEventListener("click",()=>{byId("creative-nudge").value=nextWildCard(byId("creative-nudge").value);invalidate();byId("wild-status").textContent="Creative direction added.";});
   byId("clear-nudge").addEventListener("click",()=>{byId("creative-nudge").value="";byId("wild-status").textContent="Creative nudge cleared.";invalidate();});
   byId("helper-builder").addEventListener("submit",event=>{
@@ -241,6 +254,7 @@
         copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(result.text);byId("helper-status").textContent="Prompt copied.";}catch(_){text.focus();text.select();byId("helper-status").textContent="Text selected. Use your usual Copy command.";}});
         section.append(label,text,copy);byId("helper-results").append(section);
       });
+      byId('catalog-panel').open=false;byId('output-heading').focus();byId('output-heading').scrollIntoView({block:'start'});
       byId("download-helpers").disabled=false;byId("helper-status").textContent=results.length===1?(results[0].purpose==='helper'?"Helper setup ready.":"Work brief ready."):results.length+" prompts ready. AI tailoring requires one combined prompt.";
     }catch(error){byId("helper-status").textContent=error.message;}
   });

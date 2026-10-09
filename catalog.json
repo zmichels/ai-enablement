@@ -118,6 +118,53 @@
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
     },
     {
+      "id": "chart-designer",
+      "title": "Make a useful chart",
+      "kind": "role",
+      "use_when": "Choose a chart that answers the question and shows its uncertainty.",
+      "category": "Technical help",
+      "featured": true,
+      "path": "roles/chart-designer.md",
+      "audience": "public candidate",
+      "scope": "Choose a chart that answers the question and shows its uncertainty.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "chart",
+          "plot",
+          "visualization",
+          "dashboard",
+          "graph"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Make a useful chart",
+            "cues": [
+              "chart",
+              "plot",
+              "visualization"
+            ],
+            "outcome": "A chart or executable chart specification, with source, units and a short interpretation."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:number-explainer",
+            "relation": "complements",
+            "why": "Turns interpreted numbers into a checkable visual.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "id": "checklist-maker",
       "title": "Make a checklist",
       "kind": "role",
@@ -135,6 +182,53 @@
       "reviewed_at": "2026-10-07",
       "freshness": "Review after use; verify current external facts before relying on them.",
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+    },
+    {
+      "id": "code-reviewer",
+      "title": "Review a code change",
+      "kind": "role",
+      "use_when": "Find consequential defects and explain how to reproduce them.",
+      "category": "Technical help",
+      "featured": true,
+      "path": "roles/code-reviewer.md",
+      "audience": "public candidate",
+      "scope": "Find consequential defects and explain how to reproduce them.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "code review",
+          "pull request",
+          "diff",
+          "review code",
+          "regression"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Review a code change",
+            "cues": [
+              "code review",
+              "pull request",
+              "diff"
+            ],
+            "outcome": "Prioritized findings with file/line, triggering condition, impact and a concrete verification path."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:test-designer",
+            "relation": "complements",
+            "why": "Turns review findings into focused regression checks.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "id": "communications",
@@ -287,6 +381,53 @@
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
     },
     {
+      "id": "debugging-partner",
+      "title": "Trace a failure",
+      "kind": "role",
+      "use_when": "Use observations and small experiments to isolate a cause.",
+      "category": "Technical help",
+      "featured": true,
+      "path": "roles/debugging-partner.md",
+      "audience": "public candidate",
+      "scope": "Use observations and small experiments to isolate a cause.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "debug",
+          "troubleshoot",
+          "error",
+          "failure",
+          "root cause"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Trace a failure",
+            "cues": [
+              "debug",
+              "troubleshoot",
+              "error"
+            ],
+            "outcome": "The leading explanation, supporting observations and the next discriminating check or verified fix."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:project-memory",
+            "relation": "complements",
+            "why": "Keeps the decisive observation and repair for later work.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "id": "decision-partner",
       "title": "Help me choose",
       "kind": "role",
@@ -304,6 +445,53 @@
       "reviewed_at": "2026-10-07",
       "freshness": "Review after use; verify current external facts before relying on them.",
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+    },
+    {
+      "id": "document-comparer",
+      "title": "Compare document versions",
+      "kind": "role",
+      "use_when": "Find substantive changes with references to both versions.",
+      "category": "Learn & understand",
+      "featured": true,
+      "path": "roles/document-comparer.md",
+      "audience": "public candidate",
+      "scope": "Find substantive changes with references to both versions.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "document comparison",
+          "version changes",
+          "redline",
+          "policy comparison",
+          "diff"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Compare document versions",
+            "cues": [
+              "document comparison",
+              "version changes",
+              "redline"
+            ],
+            "outcome": "A concise change table with old/new locations, implications and unresolved conflicts."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:evidence-reviewer",
+            "relation": "complements",
+            "why": "Distinguishes version change from evidence quality.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "id": "document-editor",
@@ -962,6 +1150,53 @@
       }
     },
     {
+      "id": "requirements-shaper",
+      "title": "Define the requirement",
+      "kind": "role",
+      "use_when": "Turn an idea into observable behavior and acceptance criteria.",
+      "category": "Technical help",
+      "featured": true,
+      "path": "roles/requirements-shaper.md",
+      "audience": "public candidate",
+      "scope": "Turn an idea into observable behavior and acceptance criteria.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "requirements",
+          "acceptance criteria",
+          "user story",
+          "scope",
+          "specification"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Define the requirement",
+            "cues": [
+              "requirements",
+              "acceptance criteria",
+              "user story"
+            ],
+            "outcome": "A compact requirement with acceptance criteria, scope decisions and unresolved questions."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:test-designer",
+            "relation": "complements",
+            "why": "Pairs observable requirements with discriminating tests.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "id": "research-education",
       "title": "Research and education",
       "kind": "expertise",
@@ -1032,6 +1267,53 @@
       "reviewed_at": "2026-10-08",
       "freshness": "Verify current local practices and consequential facts for each use.",
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "spreadsheet-cleaner",
+      "title": "Clean up a data table",
+      "kind": "role",
+      "use_when": "Profile a table, resolve inconsistent values and keep a change trail.",
+      "category": "Technical help",
+      "featured": true,
+      "path": "roles/spreadsheet-cleaner.md",
+      "audience": "public candidate",
+      "scope": "Profile a table, resolve inconsistent values and keep a change trail.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "spreadsheet",
+          "csv",
+          "excel",
+          "data cleaning",
+          "duplicates"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Clean up a data table",
+            "cues": [
+              "spreadsheet",
+              "csv",
+              "excel"
+            ],
+            "outcome": "A cleaned copy, change log and unresolved rows; preserve the original."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:number-explainer",
+            "relation": "complements",
+            "why": "Separates data preparation from interpretation.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "id": "strategy",
@@ -1146,6 +1428,101 @@
       "reviewed_at": "2026-10-07",
       "freshness": "Verify current local practices and consequential facts for each use.",
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
+    },
+    {
+      "id": "test-designer",
+      "title": "Design the checks",
+      "kind": "role",
+      "use_when": "Focus testing on failures that would matter.",
+      "category": "Technical help",
+      "featured": true,
+      "path": "roles/test-designer.md",
+      "audience": "public candidate",
+      "scope": "Focus testing on failures that would matter.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "test plan",
+          "test cases",
+          "regression",
+          "uat",
+          "validation"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Design the checks",
+            "cues": [
+              "test plan",
+              "test cases",
+              "regression"
+            ],
+            "outcome": "Prioritized cases with inputs, expected observations and evidence to collect."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:requirements-shaper",
+            "relation": "complements",
+            "why": "Keeps expected results tied to agreed behavior.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "usability-reviewer",
+      "title": "Review the user journey",
+      "kind": "role",
+      "use_when": "Find friction in a real task, including keyboard and narrow-screen use.",
+      "category": "Think it through",
+      "featured": true,
+      "path": "roles/usability-reviewer.md",
+      "audience": "public candidate",
+      "scope": "Find friction in a real task, including keyboard and narrow-screen use.",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Verify source versions and the working environment before dependent use.",
+      "limitations": "Instructions for an existing assistant; tool access and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "usability",
+          "accessibility",
+          "ux",
+          "user journey",
+          "keyboard",
+          "mobile"
+        ],
+        "use_cases": [
+          {
+            "id": "first-use",
+            "title": "Review the user journey",
+            "cues": [
+              "usability",
+              "accessibility",
+              "ux"
+            ],
+            "outcome": "A short issue list with observed behavior, user impact, location and a checkable improvement."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:plain-language-guide",
+            "relation": "complements",
+            "why": "Pairs interaction clarity with understandable language.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "id": "visitor-services",

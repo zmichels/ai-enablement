@@ -31,6 +31,12 @@ Choose what fits. [Catalog](catalog.json) · [Addressable items and connections]
 |---|---|---|
 | Work on servers with Ansible | A playbook, a test, and a rollout you can explain. | [Prompt or guide](roles/ansible-helper.md) |
 | Skip the copy and paste | Put a repetitive chore on a shorter leash. | [Prompt or guide](roles/automation-engineer.md) |
+| Make a useful chart | Choose a chart that answers the question and shows its uncertainty. | [Prompt or guide](roles/chart-designer.md) |
+| Review a code change | Find consequential defects and explain how to reproduce them. | [Prompt or guide](roles/code-reviewer.md) |
+| Trace a failure | Use observations and small experiments to isolate a cause. | [Prompt or guide](roles/debugging-partner.md) |
+| Define the requirement | Turn an idea into observable behavior and acceptance criteria. | [Prompt or guide](roles/requirements-shaper.md) |
+| Clean up a data table | Profile a table, resolve inconsistent values and keep a change trail. | [Prompt or guide](roles/spreadsheet-cleaner.md) |
+| Design the checks | Focus testing on failures that would matter. | [Prompt or guide](roles/test-designer.md) |
 
 ## Think it through
 
@@ -42,6 +48,7 @@ Choose what fits. [Catalog](catalog.json) · [Addressable items and connections]
 | Find the pattern in feedback | Spot the themes without losing the awkward bits. | [Prompt or guide](roles/feedback-sorter.md) |
 | Make sense of the numbers | What changed? What matters? What is missing? | [Prompt or guide](roles/number-explainer.md) |
 | Show the idea | A quick mockup can say what a meeting cannot. | [Prompt or guide](roles/prototype-helper.md) |
+| Review the user journey | Find friction in a real task, including keyboard and narrow-screen use. | [Prompt or guide](roles/usability-reviewer.md) |
 
 ## Plan & organize
 
@@ -81,6 +88,18 @@ Choose what fits. [Catalog](catalog.json) · [Addressable items and connections]
 | Make it easier to get help | Clear directions for someone having a long day. | [Prompt or guide](roles/service-helper.md) |
 | Show someone the ropes | Turn “watch me do it” into something reusable. | [Prompt or guide](roles/teaching-partner.md) |
 
+## Learn & understand
+
+| Help or context | Use it to | Read |
+|---|---|---|
+| Compare document versions | Find substantive changes with references to both versions. | [Prompt or guide](roles/document-comparer.md) |
+| Find what we already know | Useful answers may already be sitting somewhere. | [Prompt or guide](roles/evidence-miner.md) |
+| Help me learn it | A useful explanation, then a chance to try. | [Prompt or guide](roles/learning-coach.md) |
+| Keep the lesson | Make the next attempt a little wiser. | [Prompt or guide](roles/learning-curator.md) |
+| Make this make sense | Explain the tricky bits. Skip the jargon. | [Prompt or guide](roles/plain-language-guide.md) |
+| Remember and learn as we go | Keep useful ideas, decisions and lessons close at hand. | [Prompt or guide](roles/project-memory.md) |
+| Get the point of a paper | The question, the finding, and the fine print. | [Prompt or guide](roles/research-reader.md) |
+
 ## Write & explain
 
 | Help or context | Use it to | Read |
@@ -89,17 +108,6 @@ Choose what fits. [Catalog](catalog.json) · [Addressable items and connections]
 | Bridge a language gap | A translation draft with the meaning intact. | [Prompt or guide](roles/language-helper.md) |
 | Find the right words | A clear email, a kind reply, a better first draft. | [Prompt or guide](roles/message-writer.md) |
 | Give me the short version | Less wall of text. More point. | [Prompt or guide](roles/summary-maker.md) |
-
-## Learn & understand
-
-| Help or context | Use it to | Read |
-|---|---|---|
-| Find what we already know | Useful answers may already be sitting somewhere. | [Prompt or guide](roles/evidence-miner.md) |
-| Help me learn it | A useful explanation, then a chance to try. | [Prompt or guide](roles/learning-coach.md) |
-| Keep the lesson | Make the next attempt a little wiser. | [Prompt or guide](roles/learning-curator.md) |
-| Make this make sense | Explain the tricky bits. Skip the jargon. | [Prompt or guide](roles/plain-language-guide.md) |
-| Remember and learn as we go | Keep useful ideas, decisions and lessons close at hand. | [Prompt or guide](roles/project-memory.md) |
-| Get the point of a paper | The question, the finding, and the fine print. | [Prompt or guide](roles/research-reader.md) |
 
 ## Getting started
 
