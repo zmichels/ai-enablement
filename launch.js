@@ -112,19 +112,19 @@
     outcome.value = example.outcome; outcome.rows = 8;
     chosen.clear(); [...example.jobs, ...example.context].forEach(id => chosen.add(id));
     search.value = ""; invalidate(); render(); restore.disabled = false;
-    exampleStatus.textContent = "Loaded: " + example.summary + ". Edit the outcome or selections, then prepare your work brief.";
+    exampleStatus.textContent = "Example loaded: " + example.summary + ".";
   });
   document.getElementById("own-task").addEventListener("click",()=>{
     if(!savedDraft) savedDraft={route:route.value,outcome:outcome.value,chosen:[...chosen],search:search.value,rows:outcome.rows,group:group.value};
-    outcome.value=""; outcome.rows=4; previousKey=""; invalidate();restore.disabled=false;
-    exampleStatus.textContent="A fresh start. Your selections are still here—describe your own task above."; outcome.focus();
+    outcome.value=""; outcome.rows=4; previousKey=""; invalidate();updateShelf();restore.disabled=false;
+    exampleStatus.textContent="Task cleared. Selections kept."; outcome.focus();
   });
   restore.addEventListener("click", () => {
     if (!savedDraft) return;
     route.value = savedDraft.route; outcome.value = savedDraft.outcome; outcome.rows = savedDraft.rows;
     search.value = savedDraft.search; chosen.clear(); savedDraft.chosen.forEach(id => chosen.add(id));
     const savedGroup=savedDraft.group; savedDraft = null; restore.disabled = true; invalidate(); renderThemes(); renderGroups(); group.value=savedGroup; render();
-    exampleStatus.textContent = "Your previous draft and selections are restored. Prepare the brief when ready.";
+    exampleStatus.textContent = "Draft and selections restored.";
   });
   document.getElementById("builder").addEventListener("submit", e => {
     e.preventDefault();
@@ -136,12 +136,12 @@
         experience: document.getElementById("task-experience").value,
         base: /^https?:$/.test(location.protocol) ? new URL(".", location.href).href : ""});
       output.focus(); output.setSelectionRange(0,0); output.scrollTop=0;
-      status.textContent = "Your work brief is ready. Copy it to your assistant or tailor it with a configured AI connection below.";
+      status.textContent = "Brief ready. Copy it to your assistant.";
       document.getElementById("copy").disabled = false; document.getElementById("download").disabled = false;
     } catch (error) { invalidate(); status.textContent = error.message; }
   });
   document.getElementById("copy").addEventListener("click", async () => {
-    try { await navigator.clipboard.writeText(output.value); status.textContent = "Launch request copied."; }
+    try { await navigator.clipboard.writeText(output.value); status.textContent = "Brief copied."; }
     catch (_) { output.focus(); output.select(); status.textContent = "Text selected. Use your usual Copy command."; }
   });
   document.getElementById("download").addEventListener("click", () => {

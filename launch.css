@@ -59,7 +59,7 @@ html[data-forge-theme=dark] .skillforge{--ink:#e8edf7;--muted:#acb8cf;--line:#39
 .resource-details p { overflow-wrap:anywhere; }
 @media(max-width:600px){.resource-details dl{grid-template-columns:1fr;gap:.2rem}.resource-details dd{margin-bottom:.65rem}}
 
-/* Prism motif stays in the header, never over form controls. */
+/* Shared mark stays in the header, never over form controls. */
 .skillforge .prism-header{position:relative;max-width:none;padding-right:clamp(165px,24vw,290px);min-height:260px}
 .forge-art{position:absolute;right:0;top:0;width:clamp(110px,15.4vw,182px);color:var(--accent);pointer-events:none;user-select:none}
 .forge-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 10px 24px color-mix(in srgb,var(--forge-violet) 12%,transparent))}

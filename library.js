@@ -219,7 +219,7 @@
   function experienceLabels(){
     const helper=byId('helper-experience').value==='helper';
     byId('helper-task-label').textContent=helper?'Your context':'Your task';
-    byId('helper-task').placeholder=helper?'I support a busy team. Help me spot dependencies and keep explanations short.':'A first draft, a fresh idea, that thing you keep putting off…';
+    byId('helper-task').placeholder=helper?'Role, work area and preferences':'Task, intended outcome and constraints';
     byId('helper-deliverable-label').textContent=helper?'Preferred outputs':'Desired output';
     byId('helper-experience-note').textContent=helper?'Skills for ongoing work. No task required.':'Describe the task. Your skills shape the approach.';
     byId('helper-build').textContent=helper?'Build helper prompt':'Prepare work brief';
@@ -227,7 +227,7 @@
   byId('helper-experience').addEventListener('change',()=>{invalidate();experienceLabels();renderMix();updateShelf();});
   for(const id of ['helper-deliverable','helper-exclusions'])byId(id).addEventListener('input',()=>{invalidate();renderSummary();});
   byId('reset-mix').addEventListener('click',()=>{for(const id of Object.keys(mix))delete mix[id];for(const id of Object.keys(resourceChoices))delete resourceChoices[id];byId('helper-deliverable').value='';byId('helper-exclusions').value='';invalidate();renderMix();updateShelf();});
-  byId("wild-card").addEventListener("click",()=>{byId("creative-nudge").value=nextWildCard(byId("creative-nudge").value);invalidate();byId("wild-status").textContent="A little possibility, added below. Edit it or clear it if it is not your thing.";});
+  byId("wild-card").addEventListener("click",()=>{byId("creative-nudge").value=nextWildCard(byId("creative-nudge").value);invalidate();byId("wild-status").textContent="Creative direction added.";});
   byId("clear-nudge").addEventListener("click",()=>{byId("creative-nudge").value="";byId("wild-status").textContent="Creative nudge cleared.";invalidate();});
   byId("helper-builder").addEventListener("submit",event=>{
     event.preventDefault();invalidate();
@@ -238,10 +238,10 @@
         const label=document.createElement("label");label.htmlFor="helper-output-"+index;label.textContent=result.title;
         const text=document.createElement("textarea");text.id=label.htmlFor;text.value=result.text;text.readOnly=true;text.rows=12;
         const copy=document.createElement("button");copy.type="button";copy.className="secondary";copy.textContent="Copy "+(results.length===1?"prompt":result.title);
-        copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(result.text);byId("helper-status").textContent="Copied. Give the prompt to your assistant.";}catch(_){text.focus();text.select();byId("helper-status").textContent="Text selected. Use your usual Copy command.";}});
+        copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(result.text);byId("helper-status").textContent="Prompt copied.";}catch(_){text.focus();text.select();byId("helper-status").textContent="Text selected. Use your usual Copy command.";}});
         section.append(label,text,copy);byId("helper-results").append(section);
       });
-      byId("download-helpers").disabled=false;byId("helper-status").textContent=results.length===1?(results[0].purpose==='helper'?"Your helper setup is ready. Give it to your assistant, then bring the work as it comes.":"A focused brief, ready for your assistant."):results.length+" separate prompts, ready to copy. Use one combined prompt for AI tailoring.";
+      byId("download-helpers").disabled=false;byId("helper-status").textContent=results.length===1?(results[0].purpose==='helper'?"Helper setup ready.":"Work brief ready."):results.length+" prompts ready. AI tailoring requires one combined prompt.";
     }catch(error){byId("helper-status").textContent=error.message;}
   });
   byId("download-helpers").addEventListener("click",()=>{
