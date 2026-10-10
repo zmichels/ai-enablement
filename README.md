@@ -12,13 +12,13 @@ Your expertise. A little extra reach. Choose useful methods, combine them into a
 
 In **Help with a task**, **Try an example** loads a fictional situation you can edit. **Use my task** clears the text and keeps your selections; **Restore draft** brings back your earlier input and choices. Click **Prepare work brief** when ready.
 
-In **Workbench**, browse Tree or Grid, grouped by Topic, Type or A–Z. Choose what fits and click **Build helper**. **Adjust output → Contributions** gives each selection a job: main focus, a specific contribution, or a reference to keep handy. Use one combined setup or separate prompts.
+In **Workbench**, browse Tree or Grid, choose what fits, and click **Build helper**. Edit the result, save named variants in this browser, or export and import a variant file. **Adjust output → Contributions** gives each selection a job: main focus, a specific contribution, or a reference to keep handy.
 
-The pages assemble prompts locally; phrase matching helps you browse. Nothing installs or runs when you select a skill. Drafts last only while the page stays open; copy or download anything you want to keep.
+The pages assemble prompts locally; phrase matching helps you browse. Nothing installs or runs when you select a skill. Unsaved drafts last only while the page stays open. Saved variants stay in this browser when storage is available; export a file to keep one elsewhere. The task page still needs Copy or Download to retain a draft.
 
 An offline copy works too: open [index.html](index.html) from the downloaded folder. The static site and download have no model connection. On a separately configured host, **Tailor this with AI** identifies the destination before you choose to send a brief.
 
-New: [find a useful capability](roles/capability-finder.md) and [check the work](roles/deliverable-verifier.md). The catalog also links public MCP and model directories as references; it does not connect to them for you. [About Skillforge](about.html) explains the working rhythm and limits.
+The catalog includes [find a useful capability](roles/capability-finder.md) and [check the work](roles/deliverable-verifier.md), plus public MCP and model directories as references. [About Skillforge](about.html) explains the working rhythm and limits.
 
 Useful next stops: [course planning](guides/course-building.md), [connected requests](guides/request-tracking.md), [Ansible](guides/ansible.md), [reading with Gemini Notebook](guides/gemini-notebook.md), and [project memory](guides/project-memory.md). Keep actual work records in your authorized workspace; [organizational context](overlay-contract.md) stays in a separate package.
 

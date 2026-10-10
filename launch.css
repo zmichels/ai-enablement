@@ -222,3 +222,19 @@ html[data-forge-theme=dark] .skillforge{--ink:#e7edf5;--muted:#91a1b6;--line:#28
 @media(max-width:600px){.catalog-tree .branch-nodes{grid-template-columns:repeat(auto-fill,minmax(min(100%,155px),1fr))}}
 
 .catalog-tree>.catalog-branch{margin-bottom:26px}.catalog-tree .catalog-subgroups{padding-left:18px}.catalog-tree .catalog-subgroups>.catalog-branch{margin-bottom:18px}.catalog-tree .catalog-subgroups>.catalog-branch>.branch-heading{min-height:48px}
+
+/* Explicit, local variant controls sit beside the editable prompt. */
+.variant-tools,.earlier-panel{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:13px}
+.variant-tools>summary,.earlier-panel>summary{cursor:pointer;font-weight:650;color:var(--accent)}
+.variant-tools .note{font-size:12px;margin:10px 0}
+.variant-tools label{display:block;font-size:12px;margin:12px 0 5px}
+.variant-save,.variant-open{display:flex;align-items:center;gap:8px}
+.variant-save :is(input,button),.variant-open :is(select,button){margin:0}
+.variant-save input,.variant-open select{min-width:0;flex:1}
+.variant-save button,.variant-open button{white-space:nowrap}
+.variant-actions{display:flex;gap:4px;flex-wrap:wrap;margin:8px 0}
+.variant-actions button{padding-inline:8px}
+.variant-tools input[type=file]{max-width:100%;font-size:12px;color:var(--muted)}
+.variant-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+.variant-row span{overflow-wrap:anywhere}
+@media(max-width:600px){.variant-save,.variant-open{flex-wrap:wrap}.variant-save button,.variant-open button{width:100%}}

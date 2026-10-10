@@ -58,7 +58,27 @@
     if(wildCards[index]===previous) index=(index+1)%wildCards.length;
     return wildCards[index];
   }
-  if (typeof module !== "undefined" && module.exports) module.exports = {buildHelpers, nextWildCard, approaches, depths, voices};
+  const variantFormat='skillforge-variant',variantVersion=1,maxDraftLength=100000;
+  function validateVariant(value,config){
+    const plain=value&&typeof value==='object'&&!Array.isArray(value);
+    if(!plain||value.format!==variantFormat||value.version!==variantVersion||value.edition!==config.edition.id)throw new Error('This variant is not for this edition of the Workbench.');
+    if(typeof value.name!=='string'||!value.name.trim()||value.name.length>80)throw new Error('Give the variant a name under 80 characters.');
+    const state=value.workspace,allowedEntries=new Set(config.entries.map(e=>e.id)),allowedResources=new Set((config.capabilities||[]).map(e=>e.id));
+    if(!state||typeof state!=='object'||Array.isArray(state)||!Array.isArray(state.ids)||state.ids.length>allowedEntries.size||new Set(state.ids).size!==state.ids.length||state.ids.some(id=>!allowedEntries.has(id)))throw new Error('This variant uses unavailable skills.');
+    for(const [field,bank] of [['experience',{helper:1,work:1,explore:1}],['mode',{combined:1,separate:1}],['approach',approaches],['depth',depths],['voice',voices]])if(!Object.hasOwn(bank,state[field]))throw new Error('This variant has an unavailable output setting.');
+    for(const field of ['task','deliverable','exclusions','nudge'])if(typeof state[field]!=='string'||state[field].length>10000)throw new Error('This variant has invalid context.');
+    for(const [field,allowed] of [['mix',allowedEntries],['resourceChoices',allowedResources]]){
+      const choices=state[field];if(!choices||typeof choices!=='object'||Array.isArray(choices))throw new Error('This variant has invalid selections.');
+      for(const [id,choice] of Object.entries(choices))if(!allowed.has(id)||!choice||typeof choice!=='object'||Array.isArray(choice)||!Object.hasOwn(Brief.uses,choice.use)||typeof choice.scope!=='string'||choice.scope.length>1000||(field==='mix'&&(typeof choice.method!=='string'||choice.method.length>100)))throw new Error('This variant has unavailable selection details.');
+    }
+    if(!Array.isArray(value.drafts)||!value.drafts.length||value.drafts.length>config.entries.length||value.drafts.some(d=>!d||typeof d.text!=='string'||d.text.length>maxDraftLength))throw new Error('This variant has no usable draft.');
+    if(typeof value.id!=='string'||!/^v-[a-z0-9-]{8,80}$/.test(value.id)||typeof value.savedAt!=='string'||Number.isNaN(Date.parse(value.savedAt)))throw new Error('This variant has invalid file metadata.');
+    // Rebuild against the current catalog to validate the mix without trusting imported source metadata.
+    const generated=buildHelpers(config,{...state,base:''});
+    if(generated.length!==value.drafts.length)throw new Error('This variant does not match its selections.');
+    return {format:variantFormat,version:variantVersion,edition:value.edition,id:value.id,name:value.name.trim(),savedAt:value.savedAt,workspace:{...state,ids:[...state.ids],mix:{...state.mix},resourceChoices:{...state.resourceChoices}},drafts:value.drafts.map(d=>({text:d.text}))};
+  }
+  if (typeof module !== "undefined" && module.exports) module.exports = {buildHelpers, nextWildCard, validateVariant, approaches, depths, voices};
   if (typeof document === "undefined") return;
   const config=JSON.parse(document.getElementById("helper-config").textContent);
   const byId=id=>document.getElementById(id);
@@ -69,9 +89,10 @@
   const branchState=new Map();
   const selected=new Set();
   const mix={},resourceChoices={};
-  let results=[];
+  let results=[],resultWorkspace=null,savedVariants=[],unavailableVariants=[],revisions=[],activeVariantId='',blockedVariantBundle='',recoveryExported=false;
   let revealed=null,resourceQuery='',resourceBrowseOpen=false;
   const tailoring=globalThis.BriefGeneration.attach("helper",()=>results.length===1?results[0].text:"",()=>results[0]?.resources||[],()=>results[0]?.purpose||'helper');
+  const variantStorageKey='skillforge.variants.v1.'+config.edition.id;
   for(const [id,bank] of [["approach",approaches],["depth",depths],["voice",voices]]) {
     Object.entries(bank).forEach(([value,[label]])=>{const o=document.createElement("option");o.value=value;o.textContent=label;byId(id).append(o);});
   }
@@ -79,8 +100,9 @@
   for (const [value,label] of [['','All topics'],...Discovery.group(catalogItems,'topic',presentation).map(g=>[g.key,g.title])]) {
     const o=document.createElement('option');o.value=value;o.textContent=label;byId('skill-group').append(o);
   }
-  function invalidate(){tailoring.invalidate();results=[];byId("helper-results").replaceChildren();byId("download-helpers").disabled=true;byId("helper-status").textContent="";}
+  function invalidate(){tailoring.invalidate();if(results.length)byId('helper-status').textContent='Draft kept. Build again to use the changed mix.';}
   function inputState(){return {ids:[...selected],mix,resourceChoices,task:byId('helper-task').value,deliverable:byId('helper-deliverable').value,exclusions:byId('helper-exclusions').value};}
+  function workspaceState(){return {...inputState(),mix:Object.fromEntries(Object.entries(mix).map(([id,c])=>[id,Brief.choice(c)])),resourceChoices:Object.fromEntries(Object.entries(resourceChoices).map(([id,c])=>[id,Brief.choice(c,true)])),experience:byId('helper-experience').value,mode:byId('helper-mode').value,approach:byId('approach').value,depth:byId('depth').value,voice:byId('voice').value,nudge:byId('creative-nudge').value};}
   function activeIds(){return [...selected].filter(id=>Brief.choice(mix[id]).use!=='omit');}
   function element(tag,text,className){const e=document.createElement(tag);if(text)e.textContent=text;if(className)e.className=className;return e;}
   function field(parent,title,id,control){const label=element('label',title);label.htmlFor=id;control.id=id;parent.append(label,control);return control;}
@@ -222,6 +244,122 @@
     if(focus){focus.tabIndex=-1;focus.focus({preventScroll:true});focus.scrollIntoView({block:'center'});}
   }
   function clearReveal(){revealed=null;try{const url=new URL(location.href);url.searchParams.delete('item');url.searchParams.delete('case');history.replaceState(null,'',url);}catch(_){}}
+  function baseUrl(){return /^https?:$/.test(location.protocol)?new URL('.',location.href).href:'';}
+  function newVariantId(){return 'v-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,12);}
+  function download(content,type,name){
+    const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  function archiveResults(){
+    if(!results.length||!resultWorkspace)return;
+    revisions.unshift({workspace:resultWorkspace,drafts:results.map(r=>({text:r.text})),label:results.length===1?results[0].title:results.length+' prompts',at:new Date().toLocaleTimeString()});
+    revisions=revisions.slice(0,12);renderRevisions();
+  }
+  function renderRevisions(){
+    const list=byId('earlier-drafts'),count=byId('earlier-count');list.replaceChildren();count.textContent=String(revisions.length);byId('earlier-panel').hidden=!revisions.length;
+    revisions.forEach((revision,index)=>{
+      const row=element('div',null,'variant-row'),label=element('span',revision.label+' · '+revision.at),restore=element('button','Restore','text-button');restore.type='button';
+      restore.addEventListener('click',()=>{const [snapshot]=revisions.splice(index,1);archiveResults();restoreSnapshot(snapshot);byId('helper-status').textContent='Earlier draft restored. Your previous draft is still in Earlier drafts.';});
+      row.append(label,restore);list.append(row);
+    });
+  }
+  function renderResults(){
+    byId('helper-results').replaceChildren();
+    results.forEach((result,index)=>{
+      const section=element('section',null,'helper-result'),label=element('label',result.title),text=element('textarea');label.htmlFor='helper-output-'+index;text.id=label.htmlFor;text.value=result.text;text.rows=12;
+      text.addEventListener('input',()=>{result.text=text.value;tailoring.invalidate();byId('helper-status').textContent='Draft edited. Save a variant to keep it in this browser.';});
+      const copy=element('button','Copy '+(results.length===1?'prompt':result.title),'secondary');copy.type='button';
+      copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(result.text);byId('helper-status').textContent='Prompt copied.';}catch(_){text.focus();text.select();byId('helper-status').textContent='Text selected. Use your usual Copy command.';}});
+      section.append(label,text,copy);byId('helper-results').append(section);
+    });
+    byId('download-helpers').disabled=!results.length;byId('save-variant').disabled=!results.length;
+  }
+  function restoreSnapshot(snapshot){
+    const state=snapshot.workspace;
+    selected.clear();state.ids.forEach(id=>selected.add(id));Object.keys(mix).forEach(id=>delete mix[id]);Object.assign(mix,Object.fromEntries(Object.entries(state.mix).map(([id,choice])=>[id,{...choice}])));Object.keys(resourceChoices).forEach(id=>delete resourceChoices[id]);Object.assign(resourceChoices,Object.fromEntries(Object.entries(state.resourceChoices).map(([id,choice])=>[id,{...choice}])));
+    for(const [id,value] of [['helper-task',state.task],['helper-deliverable',state.deliverable],['helper-exclusions',state.exclusions],['helper-experience',state.experience],['helper-mode',state.mode],['approach',state.approach],['depth',state.depth],['voice',state.voice],['creative-nudge',state.nudge]])byId(id).value=value;
+    experienceLabels();render();tailoring.invalidate();
+    results=buildHelpers(config,{...state,base:baseUrl()});results.forEach((result,index)=>{result.text=snapshot.drafts[index].text;});resultWorkspace=state;renderResults();renderRevisions();
+  }
+  function variantFromDraft(name,id=newVariantId()){
+    return validateVariant({format:variantFormat,version:variantVersion,edition:config.edition.id,id,name,savedAt:new Date().toISOString(),workspace:resultWorkspace,drafts:results.map(r=>({text:r.text}))},config);
+  }
+  function persistVariants(){
+    if(blockedVariantBundle)throw new Error('Export and reset the unreadable browser library before saving.');
+    try{localStorage.setItem(variantStorageKey,JSON.stringify({format:'skillforge-variants',version:variantVersion,edition:config.edition.id,variants:[...savedVariants,...unavailableVariants]}));return true;}
+    catch(_){byId('variant-storage-note').textContent='Browser storage is unavailable. Variants stay in this tab; export a file to keep them.';return false;}
+  }
+  function renderVariants(choose){
+    const picker=byId('variant-picker');picker.replaceChildren();const first=element('option','Choose a saved variant');first.value='';picker.append(first);
+    savedVariants.sort((a,b)=>b.savedAt.localeCompare(a.savedAt));savedVariants.forEach(v=>{const option=element('option',v.name);option.value=v.id;picker.append(option);});
+    picker.value=choose&&savedVariants.some(v=>v.id===choose)?choose:'';
+    byId('variant-name').value=savedVariants.find(v=>v.id===picker.value)?.name||'';
+    byId('save-variant').textContent=picker.value&&picker.value===activeVariantId?'Save changes':'Save variant';
+    for(const id of ['open-variant','duplicate-variant','export-variant','delete-variant'])byId(id).disabled=!picker.value;
+  }
+  function loadVariants(){
+    let raw;
+    try{raw=localStorage.getItem(variantStorageKey);}catch(_){byId('variant-storage-note').textContent='Browser storage is unavailable. Variants stay in this tab; export a file to keep them.';return;}
+    if(!raw)return;
+    try{
+      const bundle=JSON.parse(raw);
+      if(bundle.format!=='skillforge-variants'||bundle.version!==variantVersion||bundle.edition!==config.edition.id||!Array.isArray(bundle.variants)||bundle.variants.length>100)throw new Error('Saved variants could not be read. Export any current draft before saving again.');
+      const seen=new Set();
+      for(const item of bundle.variants){
+        try{const variant=validateVariant(item,config);if(seen.has(variant.id))throw new Error('Duplicate variant ID.');seen.add(variant.id);savedVariants.push(variant);}
+        catch(_){unavailableVariants.push(item);}
+      }
+      if(unavailableVariants.length){byId('variant-storage-note').textContent=unavailableVariants.length+' older variant(s) cannot open with this catalog. They remain stored; export a recovery file before removing browser data.';byId('export-variant-recovery').hidden=false;}
+    }catch(_){
+      blockedVariantBundle=raw;byId('variant-storage-note').textContent='Saved variants could not be read. Export the original data, then reset this browser library to save again.';
+      byId('export-variant-recovery').hidden=false;byId('reset-variant-storage').hidden=false;
+    }
+  }
+  function chosenVariant(){return savedVariants.find(v=>v.id===byId('variant-picker').value);}
+  function libraryFull(){return savedVariants.length>=30||savedVariants.length+unavailableVariants.length>=100;}
+  function sameName(left,right){return left.trim().toLowerCase()===right.trim().toLowerCase();}
+  byId('variant-picker').addEventListener('change',()=>{if(byId('variant-picker').value!==activeVariantId)activeVariantId='';renderVariants(byId('variant-picker').value);});
+  byId('save-variant').addEventListener('click',()=>{
+    try{
+      if(blockedVariantBundle)throw new Error('Export and reset the unreadable browser library before saving.');
+      const name=byId('variant-name').value.trim();if(!name)throw new Error('Name this variant first.');
+      const active=savedVariants.find(v=>v.id===activeVariantId&&v.id===byId('variant-picker').value);
+      if(savedVariants.some(v=>v.id!==active?.id&&sameName(v.name,name)))throw new Error('That name is already saved. Open that variant to update it, or choose another name.');
+      if(!active&&libraryFull())throw new Error('Browser library is full. Export or delete a variant first.');
+      const variant=variantFromDraft(name,active?.id);if(active)savedVariants.splice(savedVariants.indexOf(active),1);
+      savedVariants.push(variant);activeVariantId=variant.id;const stored=persistVariants();renderVariants(variant.id);byId('helper-status').textContent=stored?'Variant saved in this browser.':'Variant kept for this tab. Export it to keep it.';
+    }catch(error){byId('helper-status').textContent=error.message;}
+  });
+  byId('open-variant').addEventListener('click',()=>{
+    try{const variant=chosenVariant();if(!variant)return;archiveResults();restoreSnapshot(variant);activeVariantId=variant.id;renderVariants(variant.id);byId('variant-name').value=variant.name;byId('helper-status').textContent='Variant opened. Edit the draft and save again when ready.';byId('output-heading').scrollIntoView({block:'start'});}
+    catch(error){byId('helper-status').textContent=error.message;}
+  });
+  byId('duplicate-variant').addEventListener('click',()=>{
+    try{const source=chosenVariant();if(!source)return;if(blockedVariantBundle)throw new Error('Export and reset the unreadable browser library before saving.');if(libraryFull())throw new Error('Browser library is full. Export or delete a variant first.');
+      let name=(source.name.slice(0,74)+' copy'),number=2;while(savedVariants.some(v=>sameName(v.name,name))){name=source.name.slice(0,70)+' copy '+number++;}
+      const copy=validateVariant({...source,id:newVariantId(),name,savedAt:new Date().toISOString()},config);savedVariants.push(copy);const stored=persistVariants();activeVariantId=copy.id;renderVariants(copy.id);archiveResults();restoreSnapshot(copy);byId('variant-name').value=copy.name;byId('helper-status').textContent=stored?'Variant duplicated and opened.':'Copy kept for this tab. Export it to keep it.';
+    }catch(error){byId('helper-status').textContent=error.message;}
+  });
+  byId('delete-variant').addEventListener('click',()=>{const variant=chosenVariant();if(!variant)return;savedVariants=savedVariants.filter(v=>v.id!==variant.id);if(activeVariantId===variant.id)activeVariantId='';persistVariants();renderVariants('');byId('helper-status').textContent='Saved variant removed. Your current draft is unchanged.';});
+  byId('export-variant').addEventListener('click',()=>{const variant=chosenVariant();if(!variant)return;download(JSON.stringify(variant,null,2)+'\n','application/json;charset=utf-8','skillforge-'+variant.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,48)+'.json');byId('helper-status').textContent='Variant exported.';});
+  byId('export-variant-recovery').addEventListener('click',()=>{
+    if(blockedVariantBundle){download(blockedVariantBundle,'text/plain;charset=utf-8','skillforge-browser-library-recovery.txt');recoveryExported=true;byId('reset-variant-storage').disabled=false;byId('helper-status').textContent='Original browser data exported. You can now reset this library.';return;}
+    download(JSON.stringify({format:'skillforge-variants',version:variantVersion,edition:config.edition.id,variants:unavailableVariants},null,2)+'\n','application/json;charset=utf-8','skillforge-unavailable-variants.json');byId('helper-status').textContent='Unavailable variant data exported for recovery.';
+  });
+  byId('reset-variant-storage').addEventListener('click',()=>{
+    if(!blockedVariantBundle||!recoveryExported)return;
+    try{localStorage.removeItem(variantStorageKey);blockedVariantBundle='';recoveryExported=false;byId('reset-variant-storage').hidden=true;byId('reset-variant-storage').disabled=true;byId('export-variant-recovery').hidden=true;byId('variant-storage-note').textContent='Browser library reset. Your current draft is unchanged.';byId('helper-status').textContent='Browser library reset. Build, save or import a variant.';}
+    catch(_){byId('helper-status').textContent='Could not reset browser storage. Your exported recovery file is unchanged.';}
+  });
+  byId('import-variant').addEventListener('change',async event=>{
+    const file=event.target.files?.[0];if(!file)return;
+    try{
+      if(blockedVariantBundle)throw new Error('Export and reset the unreadable browser library before importing.');
+      if(file.size>1000000)throw new Error('Variant file is too large.');if(libraryFull())throw new Error('Browser library is full. Export or delete a variant first.');
+      const imported=validateVariant(JSON.parse(await file.text()),config);let name=imported.name,number=2;while(savedVariants.some(v=>sameName(v.name,name)))name=imported.name.slice(0,70)+' '+number++;
+      const variant={...imported,id:newVariantId(),name,savedAt:new Date().toISOString()};savedVariants.push(variant);const stored=persistVariants();renderVariants(variant.id);byId('helper-status').textContent=stored?'Variant imported. Choose Open to load it.':'Variant imported for this tab. Export it to keep it.';
+    }catch(error){byId('helper-status').textContent=error.message||'Could not import that variant.';}
+    finally{event.target.value='';}
+  });
   byId("helper-search").addEventListener("input",()=>{clearReveal();render();});byId("skill-group").addEventListener("change",()=>{clearReveal();render();});
   byId('catalog-organization').addEventListener('change',event=>{organization=event.target.value;render();});
   for(const attr of ['kind','layout'])document.querySelectorAll('[data-'+attr+']').forEach(button=>button.addEventListener('click',()=>{if(attr==='kind')kind=button.dataset.kind;else layout=button.dataset.layout;document.querySelectorAll('[data-'+attr+']').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));clearReveal();render();}));
@@ -243,27 +381,21 @@
   byId("wild-card").addEventListener("click",()=>{byId("creative-nudge").value=nextWildCard(byId("creative-nudge").value);invalidate();byId("wild-status").textContent="Creative direction added.";});
   byId("clear-nudge").addEventListener("click",()=>{byId("creative-nudge").value="";byId("wild-status").textContent="Creative nudge cleared.";invalidate();});
   byId("helper-builder").addEventListener("submit",event=>{
-    event.preventDefault();invalidate();
+    event.preventDefault();tailoring.invalidate();
     try{
-      results=buildHelpers(config,{...inputState(),mode:byId("helper-mode").value,experience:byId("helper-experience").value,approach:byId("approach").value,depth:byId("depth").value,voice:byId("voice").value,nudge:byId("creative-nudge").value,base:/^https?:$/.test(location.protocol)?new URL('.',location.href).href:''});
-      results.forEach((result,index)=>{
-        const section=document.createElement("section");section.className="helper-result";
-        const label=document.createElement("label");label.htmlFor="helper-output-"+index;label.textContent=result.title;
-        const text=document.createElement("textarea");text.id=label.htmlFor;text.value=result.text;text.readOnly=true;text.rows=12;
-        const copy=document.createElement("button");copy.type="button";copy.className="secondary";copy.textContent="Copy "+(results.length===1?"prompt":result.title);
-        copy.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(result.text);byId("helper-status").textContent="Prompt copied.";}catch(_){text.focus();text.select();byId("helper-status").textContent="Text selected. Use your usual Copy command.";}});
-        section.append(label,text,copy);byId("helper-results").append(section);
-      });
+      const state=workspaceState(),next=buildHelpers(config,{...state,base:baseUrl()});
+      archiveResults();results=next;resultWorkspace=state;renderResults();
       byId('catalog-panel').open=false;byId('output-heading').focus();byId('output-heading').scrollIntoView({block:'start'});
-      byId("download-helpers").disabled=false;byId("helper-status").textContent=results.length===1?(results[0].purpose==='helper'?"Helper setup ready.":"Work brief ready."):results.length+" prompts ready. AI tailoring requires one combined prompt.";
+      byId("helper-status").textContent=results.length===1?(results[0].purpose==='helper'?"Helper setup ready. Edit or copy it.":"Work brief ready. Edit or copy it."):results.length+" prompts ready. AI tailoring requires one combined prompt.";
     }catch(error){byId("helper-status").textContent=error.message;}
   });
   byId("download-helpers").addEventListener("click",()=>{
     const content=results.map((r,i)=>"<!-- Prompt "+(i+1)+": "+r.title+" -->\n"+r.text).join("\n\n====================\n\n");
-    const url=URL.createObjectURL(new Blob([content],{type:"text/markdown;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download="my-helpers.md";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    download(content,'text/markdown;charset=utf-8','my-helpers.md');
   });
   window.addEventListener('popstate',()=>{const item=Brief.readItem(config,location.search,config.internal);if(item)revealItem(item.target,item.useCase?.id,false);else{revealed=null;render();}});
   experienceLabels();
   const initial=Brief.readItem(config,location.search,config.internal);
   if(initial)revealItem(initial.target,initial.useCase?.id,false);else render();
+  loadVariants();renderVariants('');renderRevisions();renderResults();
 }());
