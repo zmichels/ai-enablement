@@ -1,6 +1,6 @@
 # AI Enablement
 
-**[Open AI Enablement](https://zmichels.github.io/ai-enablement/)** · [Browse the catalog](CATALOG.md) · [Give START_HERE.md to your assistant](START_HERE.md)
+**[Open Workbench](https://zmichels.github.io/ai-enablement/)** · [Browse the catalog](CATALOG.md) · [Give START_HERE.md to your assistant](START_HERE.md)
 
 Your expertise. A little extra reach. Choose useful methods, combine them into a prompt, and take it to your assistant.
 
@@ -12,7 +12,7 @@ Your expertise. A little extra reach. Choose useful methods, combine them into a
 
 In **Help with a task**, **Try an example** loads a fictional situation you can edit. **Use my task** clears the text and keeps your selections; **Restore draft** brings back your earlier input and choices. Click **Prepare work brief** when ready.
 
-In **Workbench**, browse Tree or Grid, grouped by Topic, Type or A–Z. Choose what fits and click **Workbench**. **Adjust output → Contributions** gives each selection a job: main focus, a specific contribution, or a reference to keep handy. Use one combined setup or separate prompts.
+In **Workbench**, browse Tree or Grid, grouped by Topic, Type or A–Z. Choose what fits and click **Build helper**. **Adjust output → Contributions** gives each selection a job: main focus, a specific contribution, or a reference to keep handy. Use one combined setup or separate prompts.
 
 The pages assemble prompts locally; phrase matching helps you browse. Nothing installs or runs when you select a skill. Drafts last only while the page stays open; copy or download anything you want to keep.
 
