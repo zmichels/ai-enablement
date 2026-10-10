@@ -112,14 +112,14 @@ html[data-forge-theme=dark] .skillforge{--ink:#e7edf5;--muted:#91a1b6;--line:#28
 .catalog-layout-row select{width:auto;margin:0;padding:7px;font-size:12px}
 .catalog-layout-row>.text-button,.catalog-filter-row>.text-button{font-size:12px;padding:8px}
 .web-workbench .catalog.selector-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,205px),1fr));gap:8px;margin:14px 0}
-.web-workbench .catalog.catalog-tree{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px;align-items:start}
+.web-workbench .catalog.catalog-tree{display:block}
 .catalog-branch{border-top:1px solid var(--line);margin-block:12px}
 .branch-heading{display:flex;align-items:center;gap:9px;cursor:pointer;min-height:46px;font-size:14px;font-weight:650;list-style:none}
 .branch-heading::-webkit-details-marker{display:none}.branch-heading:before{content:'›';font-size:20px;width:12px;color:var(--muted)}
 .catalog-branch[open]>.branch-heading:before{transform:rotate(90deg)}
 .branch-symbol svg{width:18px;height:18px;display:block;color:var(--accent)}
 .branch-count{margin-left:auto;font:11px ui-monospace,monospace;color:var(--muted)}
-.branch-nodes{display:flex;flex-direction:column;gap:5px;padding-left:12px;border-left:1px solid var(--line);margin-left:6px}
+.branch-nodes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:6px 10px;padding-left:12px;border-left:1px solid var(--line);margin-left:6px}
 .catalog-subgroups{padding-left:12px;border-left:1px solid var(--line);margin-left:6px}.catalog-subgroups .catalog-branch{margin-block:0;border-top:0}
 .web-workbench .selector-grid .card{padding:0 10px;display:grid;grid-template-columns:1fr 26px;gap:0 4px;border:1px solid var(--line);border-radius:6px;min-width:0}
 .web-workbench .selector-grid .card:has(input:checked){padding:0 10px;border-color:var(--accent);background:var(--forge-selected)}
@@ -217,3 +217,8 @@ html[data-forge-theme=dark] .skillforge{--ink:#e7edf5;--muted:#91a1b6;--line:#28
 @media(max-width:1190px){.web-workbench .catalog.catalog-tree{grid-template-columns:1fr}}
 @media(min-width:601px) and (max-width:900px){.rail-guides{margin:16px 0 0;text-align:center;font-size:10px}.rail-guides nav a{font-size:11px}}
 @media(max-width:600px){.rail-guides{margin:12px 10px 0}.output-title{align-items:start}.output-purpose{width:100%;justify-content:space-between}.output-purpose select{max-width:75%}.branch-nodes{padding-left:12px}.catalog-subgroups{padding-left:12px}}
+
+/* A matrix inside each branch keeps Type groups full width and labels compact. */
+@media(max-width:600px){.catalog-tree .branch-nodes{grid-template-columns:repeat(auto-fill,minmax(min(100%,155px),1fr))}}
+
+.catalog-tree>.catalog-branch{margin-bottom:26px}.catalog-tree .catalog-subgroups{padding-left:18px}.catalog-tree .catalog-subgroups>.catalog-branch{margin-bottom:18px}.catalog-tree .catalog-subgroups>.catalog-branch>.branch-heading{min-height:48px}
