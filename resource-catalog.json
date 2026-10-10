@@ -97,6 +97,60 @@
       }
     },
     {
+      "id": "foundry-model-catalog",
+      "title": "Compare Foundry models",
+      "kind": "Model catalog reference",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview",
+      "for_ids": [
+        "capability-finder"
+      ],
+      "cues": [
+        "model catalog",
+        "Foundry",
+        "Azure AI",
+        "choose a model"
+      ],
+      "why": "Compare model purpose, deployment options and lifecycle before selecting one.",
+      "status": "Vendor documentation; model listing does not imply tenant availability or approval.",
+      "audience": "public"
+    },
+    {
+      "id": "github-mcp-registry",
+      "title": "Browse MCP servers",
+      "kind": "Public MCP directory",
+      "url": "https://github.com/mcp",
+      "for_ids": [
+        "capability-finder"
+      ],
+      "cues": [
+        "MCP",
+        "server",
+        "agent tool",
+        "tool registry"
+      ],
+      "why": "Find candidate servers and follow their publisher documentation.",
+      "status": "Public discovery only; listing does not establish safety, approval or a working connection.",
+      "audience": "public"
+    },
+    {
+      "id": "google-model-garden",
+      "title": "Explore Model Garden",
+      "kind": "Model catalog reference",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-garden/explore-models",
+      "for_ids": [
+        "capability-finder"
+      ],
+      "cues": [
+        "Model Garden",
+        "Google Cloud",
+        "Vertex AI",
+        "choose a model"
+      ],
+      "why": "Compare Google-hosted model options for a specific task.",
+      "status": "Vendor documentation; access and model availability depend on the project and region.",
+      "audience": "public"
+    },
+    {
       "id": "project-learning-ledger",
       "title": "Project memory and learning",
       "kind": "Included skill and prompt",

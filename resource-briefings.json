@@ -51,6 +51,42 @@
       "supporting_files": [],
       "entrypoint_sha256": "7b77ac590bc4557f48ce88d312526500832a088970b36ec93a4900ea08862d7a"
     },
+    "foundry-model-catalog": {
+      "purpose": "Orient a model choice in Microsoft Foundry.",
+      "inputs": "Intended task, modality, region, deployment route and usage constraints.",
+      "approach": "Use the linked guide to reach current model cards; inspect provider, lifecycle, region, deployment, support and terms.",
+      "outputs": "A model candidate and the tenant-specific checks still needed.",
+      "requirements": "Foundry access and the relevant project, quota and permissions for deployment or use.",
+      "limits": "A model is not an MCP tool. Catalog presence does not establish organizational approval, entitlement, deployment or fit.",
+      "source_url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview",
+      "reviewed": "2026-10-09",
+      "review_scope": "Official model-catalog overview inspected; no tenant models or deployments tested.",
+      "supporting_files": []
+    },
+    "github-mcp-registry": {
+      "purpose": "Find candidate MCP servers for a specific task.",
+      "inputs": "Task, host, required operation and data scope.",
+      "approach": "Search the directory, then inspect the publisher, server instructions, tools, authentication and current version.",
+      "outputs": "A candidate server and the checks needed before use.",
+      "requirements": "A compatible host and any server-specific setup, authentication and access.",
+      "limits": "The directory is a discovery surface. Selection does not install, connect, approve or test a server.",
+      "source_url": "https://github.com/mcp",
+      "reviewed": "2026-10-09",
+      "review_scope": "Public directory and official MCP Registry description inspected; individual servers were not evaluated.",
+      "supporting_files": []
+    },
+    "google-model-garden": {
+      "purpose": "Orient a model choice in Google Cloud Model Garden.",
+      "inputs": "Task, modality, project, region and deployment constraints.",
+      "approach": "Review current model cards, supported tasks, deployment options and provider terms.",
+      "outputs": "A model candidate and project-specific checks still needed.",
+      "requirements": "An eligible Google Cloud project and permissions to try or deploy a model.",
+      "limits": "Browsing a model catalog does not grant access, deploy a model or demonstrate its quality for this task.",
+      "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-garden/explore-models",
+      "reviewed": "2026-10-09",
+      "review_scope": "Official Model Garden overview inspected; no project availability or deployment tested.",
+      "supporting_files": []
+    },
     "project-learning-ledger": {
       "purpose": "Keep useful project memory and optional analysis-ready records.",
       "inputs": "Current decisions, observations, lessons and an agreed storage location.",

@@ -89,6 +89,20 @@
       "variants": [],
       "activation": "a request jumps to a solution before the problem, customer need or acceptance examples are clear."
     },
+    "capability-finder": {
+      "activation": "a task needs a fitting agent skill, connected tool, MCP server, API or model.",
+      "cues": [
+        "MCP",
+        "model garden",
+        "model catalog",
+        "agent tools",
+        "skill marketplace",
+        "find a tool",
+        "find a skill",
+        "which model"
+      ],
+      "variants": []
+    },
     "chart-designer": {
       "activation": "someone needs to compare, explain or explore data visually.",
       "cues": [
@@ -201,6 +215,18 @@
       ],
       "variants": [],
       "activation": "there are competing options, consequential assumptions or a choice that may need revisiting."
+    },
+    "deliverable-verifier": {
+      "activation": "a finished deliverable needs to be checked against its requirements and tried where it will be used.",
+      "cues": [
+        "check the work",
+        "verify the result",
+        "final check",
+        "test the deliverable",
+        "try it in the app",
+        "check the export"
+      ],
+      "variants": []
     },
     "document-comparer": {
       "activation": "two versions or sources need a traceable comparison.",

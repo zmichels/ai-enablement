@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "capability-finder",
+    "title": "Find a useful capability",
+    "kind": "role",
+    "use_when": "Find a skill, tool, connection or model for the task.",
+    "category": "Technical help",
+    "featured": false,
+    "path": "roles/capability-finder.md",
+    "audience": "public candidate",
+    "scope": "Task-specific discovery of agent methods and tools",
+    "maturity": "authored method; runtime discovery not tested",
+    "source_refs": ["product-design"],
+    "reviewed_at": "2026-10-09",
+    "freshness": "Recheck source, host support, access and terms before connecting or using a candidate.",
+    "limitations": "A discovery method for an existing assistant; no registry connection, approval or installation is included."
+  },
+  "pattern": {
+    "activation": "a task needs a fitting agent skill, connected tool, MCP server, API or model.",
+    "cues": ["MCP", "model garden", "model catalog", "agent tools", "skill marketplace", "find a tool", "find a skill", "which model"],
+    "variants": []
+  },
+  "discovery": {
+    "aliases": ["tool scout", "MCP finder", "model finder", "agent capability"],
+    "use_cases": [
+      {
+        "id": "choose-capability",
+        "title": "Find a capability for this task",
+        "cues": ["which tool can help", "MCP server", "which model"],
+        "outcome": "A short list with source, task fit, access state and the next verification step."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:connection-designer",
+        "relation": "complements",
+        "why": "Discovery finds a candidate capability; connection design decides how it fits the workflow.",
+        "status": "curated"
+      }
+    ]
+  }
+}

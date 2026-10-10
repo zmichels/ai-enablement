@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "foundry-model-catalog",
+    "title": "Compare Foundry models",
+    "kind": "Model catalog reference",
+    "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview",
+    "for_ids": ["capability-finder"],
+    "cues": ["model catalog", "Foundry", "Azure AI", "choose a model"],
+    "why": "Compare model purpose, deployment options and lifecycle before selecting one.",
+    "status": "Vendor documentation; model listing does not imply tenant availability or approval.",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Orient a model choice in Microsoft Foundry.",
+    "inputs": "Intended task, modality, region, deployment route and usage constraints.",
+    "approach": "Use the linked guide to reach current model cards; inspect provider, lifecycle, region, deployment, support and terms.",
+    "outputs": "A model candidate and the tenant-specific checks still needed.",
+    "requirements": "Foundry access and the relevant project, quota and permissions for deployment or use.",
+    "limits": "A model is not an MCP tool. Catalog presence does not establish organizational approval, entitlement, deployment or fit.",
+    "source_url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview",
+    "reviewed": "2026-10-09",
+    "review_scope": "Official model-catalog overview inspected; no tenant models or deployments tested.",
+    "supporting_files": []
+  }
+}

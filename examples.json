@@ -1657,6 +1657,58 @@
         "Keep the first result concise and ask only for information that changes the next useful step.",
         "Distinguish proposed changes and planned checks from changes made and checks actually run."
       ]
+    },
+    {
+      "id": "check-output",
+      "title": "One last look at the actual result",
+      "jobs": ["deliverable-verifier"],
+      "context": [],
+      "situations": [
+        {"label": "Length and meaning", "text": "I have a fictional workshop welcome with a 60-word limit and one measurable objective. I can provide the draft."},
+        {"label": "Document links", "text": "I have a sample PDF handout with a contents page and several links. I can provide the file."},
+        {"label": "Form result", "text": "I have a demo registration form and its stated completion behavior. I can provide a test link."}
+      ],
+      "requests": [
+        {"label": "Check the request", "instruction": "Check the finished result against the explicit request and repair a measurable miss if possible.", "jobs": []},
+        {"label": "Try the destination", "instruction": "Exercise the result where it will be used and separate observed behavior from assumptions.", "jobs": []},
+        {"label": "Verify the fix", "instruction": "Make the smallest justified correction, then rerun the affected check.", "jobs": []}
+      ],
+      "formats": [
+        {"label": "Corrected result", "instruction": "Return the corrected artifact and a brief note about checks actually run.", "jobs": []},
+        {"label": "Check note", "instruction": "List only material passes, failures and unverified steps.", "jobs": []},
+        {"label": "Reproducible check", "instruction": "Give the result and a short path another person can use to verify the remaining step.", "jobs": []}
+      ],
+      "constraints": [
+        "Use only the supplied synthetic material and available destination; do not invent a passing test.",
+        "Keep checks proportional to the requested result; do not turn this into a full test campaign.",
+        "Distinguish what was changed and rerun from what was only proposed."
+      ]
+    },
+    {
+      "id": "choose-capability",
+      "title": "A tool for the work in front of me",
+      "jobs": ["capability-finder"],
+      "context": [],
+      "situations": [
+        {"label": "Project tasks", "text": "I want an assistant to retrieve tasks from a fictional project tracker. I can describe the assistant I use."},
+        {"label": "Document model", "text": "I need a model for summarizing made-up project documents. I can give the data and hosting constraints."},
+        {"label": "Browser task", "text": "I want an assistant to inspect a demo website and report what actually renders. I can give the target host."}
+      ],
+      "requests": [
+        {"label": "Use what exists", "instruction": "Check which relevant capabilities are already connected before naming a new one.", "jobs": []},
+        {"label": "Scout options", "instruction": "Find a small set of candidate skills, tools or models from current source documentation.", "jobs": []},
+        {"label": "Choose a route", "instruction": "Compare the candidates by task fit, access state and the next check needed to use one.", "jobs": []}
+      ],
+      "formats": [
+        {"label": "Short recommendation", "instruction": "Recommend one route with a source link and state what remains to verify.", "jobs": []},
+        {"label": "Option table", "instruction": "Compare at most three options by purpose, access state and prerequisite.", "jobs": []},
+        {"label": "First trial", "instruction": "Give the smallest read-only trial that could confirm host fit when access is available.", "jobs": []}
+      ],
+      "constraints": [
+        "Use only synthetic task details and public sources; do not imply a connection or approval.",
+        "Keep the recommendation concise and name the current source used.",
+        "Distinguish a listed candidate from a configured and tested capability."
+      ]
     }
   ]
 }

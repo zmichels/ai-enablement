@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "github-mcp-registry",
+    "title": "Browse MCP servers",
+    "kind": "Public MCP directory",
+    "url": "https://github.com/mcp",
+    "for_ids": ["capability-finder"],
+    "cues": ["MCP", "server", "agent tool", "tool registry"],
+    "why": "Find candidate servers and follow their publisher documentation.",
+    "status": "Public discovery only; listing does not establish safety, approval or a working connection.",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Find candidate MCP servers for a specific task.",
+    "inputs": "Task, host, required operation and data scope.",
+    "approach": "Search the directory, then inspect the publisher, server instructions, tools, authentication and current version.",
+    "outputs": "A candidate server and the checks needed before use.",
+    "requirements": "A compatible host and any server-specific setup, authentication and access.",
+    "limits": "The directory is a discovery surface. Selection does not install, connect, approve or test a server.",
+    "source_url": "https://github.com/mcp",
+    "reviewed": "2026-10-09",
+    "review_scope": "Public directory and official MCP Registry description inspected; individual servers were not evaluated.",
+    "supporting_files": []
+  }
+}

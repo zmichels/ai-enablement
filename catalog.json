@@ -118,6 +118,52 @@
       "limitations": "A support perspective, not a credential, actual job assignment or grant of access."
     },
     {
+      "id": "capability-finder",
+      "title": "Find a useful capability",
+      "kind": "role",
+      "use_when": "Find a skill, tool, connection or model for the task.",
+      "category": "Technical help",
+      "featured": false,
+      "path": "roles/capability-finder.md",
+      "audience": "public candidate",
+      "scope": "Task-specific discovery of agent methods and tools",
+      "maturity": "authored method; runtime discovery not tested",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Recheck source, host support, access and terms before connecting or using a candidate.",
+      "limitations": "A discovery method for an existing assistant; no registry connection, approval or installation is included.",
+      "discovery": {
+        "aliases": [
+          "tool scout",
+          "MCP finder",
+          "model finder",
+          "agent capability"
+        ],
+        "use_cases": [
+          {
+            "id": "choose-capability",
+            "title": "Find a capability for this task",
+            "cues": [
+              "which tool can help",
+              "MCP server",
+              "which model"
+            ],
+            "outcome": "A short list with source, task fit, access state and the next verification step."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:connection-designer",
+            "relation": "complements",
+            "why": "Discovery finds a candidate capability; connection design decides how it fits the workflow.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "id": "chart-designer",
       "title": "Make a useful chart",
       "kind": "role",
@@ -445,6 +491,67 @@
       "reviewed_at": "2026-10-07",
       "freshness": "Review after use; verify current external facts before relying on them.",
       "limitations": "A reusable prompt for an existing assistant; tool access and authority come from the actual task."
+    },
+    {
+      "id": "deliverable-verifier",
+      "title": "Check the work",
+      "kind": "role",
+      "use_when": "Test a finished result against the request and its real destination.",
+      "category": "Technical help",
+      "featured": true,
+      "path": "roles/deliverable-verifier.md",
+      "audience": "public candidate",
+      "scope": "Proportionate verification, narrow repair and a clear account of observed results",
+      "maturity": "authored method; comparative evaluation pending",
+      "source_refs": [
+        "product-design"
+      ],
+      "reviewed_at": "2026-10-09",
+      "freshness": "Check the current request, artifact and destination before dependent use.",
+      "limitations": "Instructions for an existing assistant; destination access, authorization and successful outcomes are not implied.",
+      "discovery": {
+        "aliases": [
+          "delivery check",
+          "acceptance check",
+          "end-to-end verification"
+        ],
+        "use_cases": [
+          {
+            "id": "before-handoff",
+            "title": "Check before handoff",
+            "cues": [
+              "ready to send",
+              "final check",
+              "verify the deliverable"
+            ],
+            "outcome": "A corrected result with specific passed, failed and unverified checks."
+          },
+          {
+            "id": "real-destination",
+            "title": "Try it where it will be used",
+            "cues": [
+              "open the export",
+              "test the page",
+              "try it in the app"
+            ],
+            "outcome": "Observed destination behavior and the exact step still untested, if any."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:test-designer",
+            "relation": "complements",
+            "why": "Design broader test coverage when a final artifact check is not enough.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:usability-reviewer",
+            "relation": "complements",
+            "why": "Examine interface friction in depth when a destination test exposes it.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "id": "document-comparer",

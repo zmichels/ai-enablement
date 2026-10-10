@@ -47,6 +47,43 @@
       "revision": "970655b708c31a21093725bb46cd07c8c1e03b7ab12ccb652d609800fc94fd62"
     },
     {
+      "ref": "entry:capability-finder",
+      "title": "Find a useful capability",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/capability-finder.md",
+      "metadata": "items/entries/capability-finder.json",
+      "revision": "18f130e9da6d747bc46fe17df823fe35bcb6475ac406ef0009e7fb99672a8ecd",
+      "discovery": {
+        "aliases": [
+          "tool scout",
+          "MCP finder",
+          "model finder",
+          "agent capability"
+        ],
+        "use_cases": [
+          {
+            "id": "choose-capability",
+            "title": "Find a capability for this task",
+            "cues": [
+              "which tool can help",
+              "MCP server",
+              "which model"
+            ],
+            "outcome": "A short list with source, task fit, access state and the next verification step."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:connection-designer",
+            "relation": "complements",
+            "why": "Discovery finds a candidate capability; connection design decides how it fits the workflow.",
+            "status": "curated"
+          }
+        ]
+      }
+    },
+    {
       "ref": "entry:chart-designer",
       "title": "Make a useful chart",
       "kind": "role",
@@ -271,6 +308,58 @@
       "source": "roles/decision-partner.md",
       "metadata": "items/entries/decision-partner.json",
       "revision": "6d21aee2d97a3a75bd8f4273cff3f91ff4407fd6f06c7e45d50eca2cd0a512dc"
+    },
+    {
+      "ref": "entry:deliverable-verifier",
+      "title": "Check the work",
+      "kind": "role",
+      "audience": "public",
+      "source": "roles/deliverable-verifier.md",
+      "metadata": "items/entries/deliverable-verifier.json",
+      "revision": "d9efd6233fdfc5ef308e061d4afc8d1c0fa12f45fdb02bddb1bf2a69669a8e0d",
+      "discovery": {
+        "aliases": [
+          "delivery check",
+          "acceptance check",
+          "end-to-end verification"
+        ],
+        "use_cases": [
+          {
+            "id": "before-handoff",
+            "title": "Check before handoff",
+            "cues": [
+              "ready to send",
+              "final check",
+              "verify the deliverable"
+            ],
+            "outcome": "A corrected result with specific passed, failed and unverified checks."
+          },
+          {
+            "id": "real-destination",
+            "title": "Try it where it will be used",
+            "cues": [
+              "open the export",
+              "test the page",
+              "try it in the app"
+            ],
+            "outcome": "Observed destination behavior and the exact step still untested, if any."
+          }
+        ],
+        "links": [
+          {
+            "target": "entry:test-designer",
+            "relation": "complements",
+            "why": "Design broader test coverage when a final artifact check is not enough.",
+            "status": "curated"
+          },
+          {
+            "target": "entry:usability-reviewer",
+            "relation": "complements",
+            "why": "Examine interface friction in depth when a destination test exposes it.",
+            "status": "curated"
+          }
+        ]
+      }
     },
     {
       "ref": "entry:document-comparer",
@@ -1078,6 +1167,33 @@
       }
     },
     {
+      "ref": "resource:foundry-model-catalog",
+      "title": "Compare Foundry models",
+      "kind": "Model catalog reference",
+      "audience": "public",
+      "source": "https://learn.microsoft.com/en-us/azure/foundry/concepts/foundry-models-overview",
+      "metadata": "items/resources/foundry-model-catalog.json",
+      "revision": "7c1b6f24e376fd2dddcb5427879c0e080dd6f278116e7887941773fe2a86665c"
+    },
+    {
+      "ref": "resource:github-mcp-registry",
+      "title": "Browse MCP servers",
+      "kind": "Public MCP directory",
+      "audience": "public",
+      "source": "https://github.com/mcp",
+      "metadata": "items/resources/github-mcp-registry.json",
+      "revision": "7b8e47dd24882fa540ddb9e512f72fea9767dee8f93f591d0553481a135eedac"
+    },
+    {
+      "ref": "resource:google-model-garden",
+      "title": "Explore Model Garden",
+      "kind": "Model catalog reference",
+      "audience": "public",
+      "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-garden/explore-models",
+      "metadata": "items/resources/google-model-garden.json",
+      "revision": "70a440b11f3bf9bd35140b651a73171afd72679a10b3f88eca2ab1d1d6969b51"
+    },
+    {
       "ref": "resource:project-learning-ledger",
       "title": "Project memory and learning",
       "kind": "Included skill and prompt",
@@ -1147,6 +1263,13 @@
   ],
   "links": [
     {
+      "source": "entry:capability-finder",
+      "target": "entry:connection-designer",
+      "relation": "complements",
+      "why": "Discovery finds a candidate capability; connection design decides how it fits the workflow.",
+      "status": "curated"
+    },
+    {
       "source": "entry:chart-designer",
       "target": "entry:number-explainer",
       "relation": "complements",
@@ -1179,6 +1302,20 @@
       "target": "entry:project-memory",
       "relation": "complements",
       "why": "Keeps the decisive observation and repair for later work.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:deliverable-verifier",
+      "target": "entry:test-designer",
+      "relation": "complements",
+      "why": "Design broader test coverage when a final artifact check is not enough.",
+      "status": "curated"
+    },
+    {
+      "source": "entry:deliverable-verifier",
+      "target": "entry:usability-reviewer",
+      "relation": "complements",
+      "why": "Examine interface friction in depth when a destination test exposes it.",
       "status": "curated"
     },
     {

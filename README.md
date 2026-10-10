@@ -18,7 +18,7 @@ The pages assemble prompts locally; phrase matching helps you browse. Nothing in
 
 An offline copy works too: open [index.html](index.html) from the downloaded folder. The static site and download have no model connection. On a separately configured host, **Tailor this with AI** identifies the destination before you choose to send a brief.
 
-New in **ver-micdrop1**: eight methods for data cleanup, charts, requirements, tests, version comparison, code review, debugging and usability. [About Skillforge](about.html) explains the working rhythm and limits.
+New: [find a useful capability](roles/capability-finder.md) and [check the work](roles/deliverable-verifier.md). The catalog also links public MCP and model directories as references; it does not connect to them for you. [About Skillforge](about.html) explains the working rhythm and limits.
 
 Useful next stops: [course planning](guides/course-building.md), [connected requests](guides/request-tracking.md), [Ansible](guides/ansible.md), [reading with Gemini Notebook](guides/gemini-notebook.md), and [project memory](guides/project-memory.md). Keep actual work records in your authorized workspace; [organizational context](overlay-contract.md) stays in a separate package.
 

@@ -31,9 +31,11 @@ Choose what fits. [Catalog](catalog.json) · [Addressable items and connections]
 |---|---|---|
 | Work on servers with Ansible | A playbook, a test, and a rollout you can explain. | [Prompt or guide](roles/ansible-helper.md) |
 | Skip the copy and paste | Put a repetitive chore on a shorter leash. | [Prompt or guide](roles/automation-engineer.md) |
+| Find a useful capability | Find a skill, tool, connection or model for the task. | [Prompt or guide](roles/capability-finder.md) |
 | Make a useful chart | Choose a chart that answers the question and shows its uncertainty. | [Prompt or guide](roles/chart-designer.md) |
 | Review a code change | Find consequential defects and explain how to reproduce them. | [Prompt or guide](roles/code-reviewer.md) |
 | Trace a failure | Use observations and small experiments to isolate a cause. | [Prompt or guide](roles/debugging-partner.md) |
+| Check the work | Test a finished result against the request and its real destination. | [Prompt or guide](roles/deliverable-verifier.md) |
 | Define the requirement | Turn an idea into observable behavior and acceptance criteria. | [Prompt or guide](roles/requirements-shaper.md) |
 | Clean up a data table | Profile a table, resolve inconsistent values and keep a change trail. | [Prompt or guide](roles/spreadsheet-cleaner.md) |
 | Design the checks | Focus testing on failures that would matter. | [Prompt or guide](roles/test-designer.md) |

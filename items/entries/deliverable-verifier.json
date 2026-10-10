@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "type": "entry",
+  "entry": {
+    "id": "deliverable-verifier",
+    "title": "Check the work",
+    "kind": "role",
+    "use_when": "Test a finished result against the request and its real destination.",
+    "category": "Technical help",
+    "featured": true,
+    "path": "roles/deliverable-verifier.md",
+    "audience": "public candidate",
+    "scope": "Proportionate verification, narrow repair and a clear account of observed results",
+    "maturity": "authored method; comparative evaluation pending",
+    "source_refs": [
+      "product-design"
+    ],
+    "reviewed_at": "2026-10-09",
+    "freshness": "Check the current request, artifact and destination before dependent use.",
+    "limitations": "Instructions for an existing assistant; destination access, authorization and successful outcomes are not implied."
+  },
+  "pattern": {
+    "activation": "a finished deliverable needs to be checked against its requirements and tried where it will be used.",
+    "cues": [
+      "check the work",
+      "verify the result",
+      "final check",
+      "test the deliverable",
+      "try it in the app",
+      "check the export"
+    ],
+    "variants": []
+  },
+  "discovery": {
+    "aliases": [
+      "delivery check",
+      "acceptance check",
+      "end-to-end verification"
+    ],
+    "use_cases": [
+      {
+        "id": "before-handoff",
+        "title": "Check before handoff",
+        "cues": [
+          "ready to send",
+          "final check",
+          "verify the deliverable"
+        ],
+        "outcome": "A corrected result with specific passed, failed and unverified checks."
+      },
+      {
+        "id": "real-destination",
+        "title": "Try it where it will be used",
+        "cues": [
+          "open the export",
+          "test the page",
+          "try it in the app"
+        ],
+        "outcome": "Observed destination behavior and the exact step still untested, if any."
+      }
+    ],
+    "links": [
+      {
+        "target": "entry:test-designer",
+        "relation": "complements",
+        "why": "Design broader test coverage when a final artifact check is not enough.",
+        "status": "curated"
+      },
+      {
+        "target": "entry:usability-reviewer",
+        "relation": "complements",
+        "why": "Examine interface friction in depth when a destination test exposes it.",
+        "status": "curated"
+      }
+    ]
+  }
+}

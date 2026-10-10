@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "type": "resource",
+  "entry": {
+    "id": "google-model-garden",
+    "title": "Explore Model Garden",
+    "kind": "Model catalog reference",
+    "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-garden/explore-models",
+    "for_ids": ["capability-finder"],
+    "cues": ["Model Garden", "Google Cloud", "Vertex AI", "choose a model"],
+    "why": "Compare Google-hosted model options for a specific task.",
+    "status": "Vendor documentation; access and model availability depend on the project and region.",
+    "audience": "public"
+  },
+  "briefing": {
+    "purpose": "Orient a model choice in Google Cloud Model Garden.",
+    "inputs": "Task, modality, project, region and deployment constraints.",
+    "approach": "Review current model cards, supported tasks, deployment options and provider terms.",
+    "outputs": "A model candidate and project-specific checks still needed.",
+    "requirements": "An eligible Google Cloud project and permissions to try or deploy a model.",
+    "limits": "Browsing a model catalog does not grant access, deploy a model or demonstrate its quality for this task.",
+    "source_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-garden/explore-models",
+    "reviewed": "2026-10-09",
+    "review_scope": "Official Model Garden overview inspected; no project availability or deployment tested.",
+    "supporting_files": []
+  }
+}
